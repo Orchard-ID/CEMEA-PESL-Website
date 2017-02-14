@@ -1,0 +1,9 @@
+{
+	"stylus": true,
+	"httpPort": 7777,
+	"variation": "common.json",
+	"view": "layout.htm",
+	"routes": "routes.json",
+	"pageNotFound": "/page-inexistante/",
+	"_robots": "noindex, nofollow"
+}

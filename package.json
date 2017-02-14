@@ -1,0 +1,55 @@
+{
+  "name": "cemea-pesl-website",
+  "version": "0.0.3",
+  "description": "Site web PESL pour les CEMEA ",
+  "main": "server.na",
+  "scripts": {
+    "start": "node server.na --browse",
+    "test": "node --inspect server.na --browse",
+    "debug": "node --inspect server.na --browse"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orchard-ID/CEMEA-PESL-Website.git"
+  },
+  "keywords": [
+    "cemea",
+    "pesl",
+    "website"
+  ],
+  "author": "Orchard ID Team",
+  "bin": {
+    "cemeapesl": "server.na"
+  },
+  "contributors": [{
+    "name": "Arban Allée",
+    "email": "a.allee@orchard-id.com"
+  }, {
+    "name": "Bruno Lesieur",
+    "email": "b.lesieur@orchard-id.com"
+  }, {
+    "name": "Romain Laurier",
+    "email": "r.laurier@orchard-id.com"
+  }],
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Orchard-ID/CEMEA-PESL-Website/issues"
+  },
+  "dependencies": {
+    "node-atlas": "2.0.0-beta18"
+  },
+  "files": [
+    "assets/*",
+    "variations/*",
+    "views/*",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "server.na",
+    "package.json"
+  ],
+  "homepage": "https://github.com/Orchard-ID/CEMEA-PESL-Website#readme",
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
