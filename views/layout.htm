@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<?= languageCode ?>">
+	<head>
+		<meta charset="utf-8" />
+		<base href="<?= urlBasePath ?>/" />
+		<title><?-specific.title ?> - <?- common.title ?></title>
+		<meta name="description" content="Site web de la société Orchard ID.">
+		<meta name="robots" content="<?= webconfig._robots ?>" />
+		<meta name="og:url" content="http://www.orchard-id.com/index.html">
+		<meta name="og:locale" content="fr-fr">
+		<meta name="og:type" content="website">
+		<meta name="og:title" content="Bienvenue sur orchard-id.com">
+		<meta name="og:description" content="Ce site est actuellement en construction.">
+		<meta name="og:updated_time" content="1486378417">
+		<link rel="stylesheet" href="//static.sharedbox.com/assets/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+		<!--[if IE]><meta name="viewport" content="width=device-width" /><![endif]-->
+		<!--[if !IE]><!--><meta name="viewport" content="initial-scale=1.0" /><!--<![endif]-->
+
+		<link rel="stylesheet" href="stylesheets/common.css">
+	</head>
+	<body>
+		<div class="layout">
+			<?- include(routeParameters.view) ?>
+		</div>
+		<script src="socket.io/socket.io.js"></script>
+		<script src="node-atlas/socket.io.js"></script>
+	</body>
+</html>

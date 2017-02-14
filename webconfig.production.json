@@ -1,0 +1,10 @@
+{
+	"httpPort": 7777,
+	"urlPort": 80,
+	"urlHostname": "???",
+	"variation": "common.json",
+	"view": "layout.htm",
+	"routes": "routes.json",
+	"pageNotFound": "/page-inexistante/",
+	"_robots": "noindex, nofollow"
+}

@@ -1,0 +1,11 @@
+{
+	"httpSecure": true,
+	"httpPort": 8080,
+	"urlPort": 443,
+	"urlHostname": "cemea-pesl-website-haeresis.c9users.io",
+	"variation": "common.json",
+	"view": "layout.htm",
+	"routes": "routes.json",
+	"pageNotFound": "/page-inexistante/",
+	"_robots": "noindex, nofollow"
+}
