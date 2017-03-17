@@ -143,16 +143,16 @@ Le serveur tourne forcément. Pour le redémarrez il faut repérer dans la liste
 forever list
 ```
 
-Pour la repérer, il faut trouver celle avec `--directory .../orchard-id.com/` et récupérer son code en amont.
+Pour la repérer, il faut trouver celle avec `--path .../orchard-id.com/` et récupérer son code en amont.
 
 Exemple : pour le retour suivant
 
 ```bash
                                                                                                                                                                                                                                                                                                                             pid     id       logfile                                                          uptime
-data: [0] ev-3 /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/bin/node /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/lib/node_modules/node-atlas/ --directory /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/orchard-id.com/ --webconfig webconfig.production.json 	24827   24833    /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.forever/ev-3.log 0:2:56:55.421
+data: [0] ev-3 /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/bin/node /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/lib/node_modules/node-atlas/ --path /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/orchard-id.com/ --webconfig webconfig.production.json 	24827   24833    /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.forever/ev-3.log 0:2:56:55.421
 ```
 
-le site est la ligne `[0]` car on a `--directory .../orchard-id.com/` et le code en amont est `ev-3`.
+le site est la ligne `[0]` car on a `--path .../orchard-id.com/` et le code en amont est `ev-3`.
 
 Il faut alors utiliser
 
@@ -165,7 +165,7 @@ forever restart ev-3
 Pour le démarrez utilisez la commande suivante :
 
 ```bash
-forever start /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/lib/node_modules/node-atlas/ --directory /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/orchard-id.com/ --webconfig webconfig.production.json
+forever start /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/lib/node_modules/node-atlas/ --path /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/orchard-id.com/ --webconfig webconfig.production.json
 ```
 
 *Note : la version de Node.js peut être différente.*
