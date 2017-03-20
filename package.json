@@ -36,7 +36,7 @@
     "url": "https://github.com/Orchard-ID/CEMEA-PESL-Website/issues"
   },
   "dependencies": {
-    "node-atlas": "2.0.0-beta21"
+    "node-atlas": "2.0.0-beta22"
   },
   "files": [
     "assets/*",
