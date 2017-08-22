@@ -1,11 +1,24 @@
 {
+	"cache": true,
+	"stylus": {
+		"files": "stylus.json",
+		"autoprefix": true
+	},
+	"socketServerOptions": {
+		"transports": ["polling"]
+	},
 	"httpSecure": true,
 	"httpPort": 8080,
 	"urlPort": 443,
-	"urlHostname": "cemea-pesl-website-haeresis.c9users.io",
+	"urlHostname": "staging.orchard-id.fr",
+	"languageCode": "fr-fr",
 	"variation": "common.json",
+	"controller": "common.js",
 	"view": "layout.htm",
+	"bundles": "bundles.json",
+	"statics": "statics.js",
 	"routes": "routes.json",
-	"pageNotFound": "/page-inexistante/",
-	"_robots": "noindex, nofollow"
+	"_robots": "noindex, nofollow",
+	"_data": "data/",
+	"_min": true
 }

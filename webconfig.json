@@ -1,9 +1,18 @@
 {
-	"stylus": true,
-	"httpPort": 7777,
+	"stylus": {
+		"files": "stylus.json",
+		"autoprefix": true
+	},
+	"output": false,
+	"httpPort": 7772,
+	"languageCode": "fr-fr",
 	"variation": "common.json",
+	"controller": "common.js",
 	"view": "layout.htm",
+	"bundles": "bundles.json",
+	"statics": "statics.js",
 	"routes": "routes.json",
-	"pageNotFound": "/page-inexistante/",
-	"_robots": "noindex, nofollow"
+	"_robots": "noindex, nofollow",
+	"_data": "data/",
+	"_min": false
 }

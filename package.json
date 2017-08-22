@@ -1,12 +1,14 @@
 {
   "name": "cemea-pesl-website",
-  "version": "0.0.4",
-  "description": "Site web PESL pour les CEMEA ",
+  "version": "0.11.0",
+  "description": "Site web des Projets Éducatifs Sociaux Locaux",
   "main": "server.na",
   "scripts": {
-    "start": "node server.na --browse",
     "test": "node --inspect server.na --browse",
-    "debug": "node --inspect server.na --browse"
+    "debug": "node --inspect server.na --browse",
+    "watch": "node server.na --browse",
+    "start": "node-atlas --browse",
+    "postinstall": "node-atlas --generate --webconfig webconfig.production.json"
   },
   "repository": {
     "type": "git",
@@ -15,38 +17,66 @@
   "keywords": [
     "cemea",
     "pesl",
-    "website"
+    "website",
+    "nodejs",
+    "node-atlas"
   ],
   "author": "Orchard ID Team",
   "bin": {
-    "cemeapesl": "server.na"
+    "weboid": "server.na"
   },
-  "contributors": [{
-    "name": "Arban Allée",
-    "email": "a.allee@orchard-id.com"
-  }, {
-    "name": "Bruno Lesieur",
-    "email": "b.lesieur@orchard-id.com"
-  }, {
-    "name": "Romain Laurier",
-    "email": "r.laurier@orchard-id.com"
-  }],
+  "contributors": [
+    {
+      "name": "Alban Allée",
+      "email": "a.allee@orchard-id.com"
+    },
+    {
+      "name": "Bruno Lesieur",
+      "email": "b.lesieur@orchard-id.com"
+    },
+    {
+      "name": "Romain Laurier",
+      "email": "r.laurier@orchard-id.com"
+    }
+  ],
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/Orchard-ID/CEMEA-PESL-Website/issues"
   },
   "dependencies": {
-    "node-atlas": "2.0.0-beta22"
+    "ckeditor": "4.6.x",
+    "jquery": "3.2.x",
+    "jshashes": "1.0.x",
+    "nodemailer": "4.0.x",
+    "socket.io": "2.0.x",
+    "underscore": "1.8.x",
+    "velocity-animate": "1.5.x",
+    "vue": "2.3.x",
+    "vue-router": "2.7.x",
+    "vue-server-renderer": "2.3.x"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.x"
   },
   "files": [
     "assets/*",
+    "controllers/*",
+    "data/*",
+    "models/*",
     "variations/*",
     "views/*",
+    "bundles.json",
     "LICENSE",
+    "package.json",
     "README.md",
-    "CHANGELOG.md",
+    "routes.json",
     "server.na",
-    "package.json"
+    "statics.js",
+    "stylus.json",
+    "webconfig.json",
+    "webconfig.production.json",
+    "webconfig.staging.json",
+    "webconfig.test.json"
   ],
   "homepage": "https://github.com/Orchard-ID/CEMEA-PESL-Website#readme",
   "engines": {

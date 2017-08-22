@@ -1,10 +1,65 @@
 {
-	"/": {
-		"view": "index.htm",
-		"variation": "index.json"
+	"home_fr-fr": {
+		"url": "/",
+		"view": "home",
+		"variation": "home.json"
 	},
-	"/page-inexistante/": {
-		"view": "error.htm",
+	"agency_fr-fr": {
+		"url": "/notre-agence/",
+		"view": "agency",
+		"variation": "agency.json",
+		"_children": [{
+			"key": false,
+			"view": "agency-index"
+		}, {
+			"key": "team_fr-fr",
+			"view": "team"
+		}, {
+			"key": "know-how_fr-fr",
+			"view": "know-how"
+		}, {
+			"key": "culture_fr-fr",
+			"view": "culture"
+		}]
+	},
+	"team_fr-fr": {
+		"url": "/notre-agence/notre-equipe/",
+		"view": "agency",
+		"variation": "agency.json",
+		"_parent": "agency_fr-fr"
+	},
+	"know-how_fr-fr": {
+		"url": "/notre-agence/nos-savoirs-faire/",
+		"view": "agency",
+		"variation": "agency.json",
+		"_parent": "agency_fr-fr"
+	},
+	"culture_fr-fr": {
+		"url": "/notre-agence/notre-culture/",
+		"view": "agency",
+		"variation": "agency.json",
+		"_parent": "agency_fr-fr"
+	},
+	"projects_fr-fr": {
+		"url": "/nos-projets/",
+		"view": "projects",
+		"variation": "projects.json"
+	},
+	"contact_fr-fr": {
+		"url": "/nous-contacter/",
+		"view": "contact",
+		"controller": "contact.js",
+		"variation": "contact.json"
+	},
+	"login_fr-fr": {
+		"url": "/espace-membres/",
+		"view": "login",
+		"controller": "login.js",
+		"variation": "login.json"
+	},
+	"error_fr-fr": {
+		"url": "/*",
+		"view": "error",
 		"variation": "error.json",
 		"statusCode": 404
 	}

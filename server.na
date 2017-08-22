@@ -1,1 +1,11 @@
-require("node-atlas")().start();
+/* jshint node: true */
+var browserSync = require('browser-sync');
+global.NA = new require("node-atlas")();
+
+global.NA.started(function () {
+	browserSync.init(null, {
+		proxy: "http://localhost:7772",
+		files: ["views/**", "assets/**", "variations/**"],
+		port: 57772,
+	});
+}).start();
