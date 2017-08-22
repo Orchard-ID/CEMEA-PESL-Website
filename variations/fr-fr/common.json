@@ -1,0 +1,118 @@
+{
+	"meta": {
+		"title": "Site des PESL",
+		"emails": {
+			"enter": {
+				"subject": "L'utilisateur %channel% a ouvert le chat",
+				"content": "L'utilisateur %channel% a ouvert le chat depuis l'adresse %url%."
+			},
+			"leave": {
+				"subject": "L'utilisateur %channel% a quitté le site",
+				"content": "L'utilisateur %channel% a quitté le site.\n\nVoici le contenu de ses logs :\n\n%logs%"
+			}
+		}
+	},
+	"body": {
+		"loading": "Chargement...",
+		"title": "Projets Éducatifs Sociaux Locaux",
+		"subtitle": "<img alt=\"CEMÉA\" src=\"./media/images/cemea-blue.png\" style=\"height:42px; width:104px\" />",
+		"navigation": {
+			"title": "Menu",
+			"main": {
+				"title": "Navigation",
+				"links": [
+					{
+						"href": "/presentation/",
+						"content": "Présentation"
+					},
+					{
+						"href": "/demarches/",
+						"content": "Démarches"
+					},
+					{
+						"href": "/contact/",
+						"content": "Contact"
+					}
+				]
+			},
+			"members": {
+				"href": "/espace-membres/",
+				"content": "Espace membres"
+			},
+			"information": {
+				"title": "Contact",
+				"identity": "Orchard ID S.A.S.<br>4 rue Saint-François de Salles<br>74000 Annecy France",
+				"contacts": [
+					"+33 6 66 86 92 78",
+					"<a href=\"mailto:hello@orchard-id.com\" title=\"Contacter Orchard ID\">hello@orchard-id.com</a>",
+					"<a href=\"https://www.orchard-id.com\" title=\"Site Internet de Orchard ID\">www.orchard-id.com</a>"
+				]
+			},
+			"networks": {
+				"title": "Réseau sociaux",
+				"links": [
+					"<a href=\"http://www.linkedin.com/company/orchard-id\">Twitter</a>",
+					"<a href=\"http://www.linkedin.com/company/orchard-id\">Facebook</a>"
+				]
+			}
+		},
+		"contact": {
+			"title": "Contactez-nous",
+			"cemea": "<p>CEMÉA Normandie</p>\n\n<p>5 rue du Docteur Laënnec<br />\n14200 Hérouville Saint Clair</p>\n\n<p>Caen : 02.31.86.14.11<br />\nRouen : 02.32.76.08.40<br />\nwww.cemea-normandie.fr<br />\ncontact.caen@cemea-normandie.fr</p>\n",
+			"pesl": "<p>Projet éducatif social local</p>\n\n<p>Christophe Maulny<br />\nResponsable projet CEMÉA</p>\n\n<p>contact@pesl-normandie.fr<br />\n06 .13.37.36.28</p>\n\n<p><a href=\"https://twitter.com/\">Twitter</a> <a href=\"https://www.facebook.com/\">Facebook</a></p>\n"
+		},
+		"partner": {
+			"title": "Nos partenaires",
+			"content": "<p>&nbsp;Mission financée par le Département et la Caisse d'Allocations Familiales de la Manche dans le cadre du contrat enfance-jeunesse.</p>\n\n<p></p>\n\n<p><img alt=\"La Manche\" src=\"./media/images/la-manche.png\" style=\"height:82px; width:82px\" />&nbsp;<img alt=\"République Française\" src=\"./media/images/republique-francaise.png\" style=\"height:56px; width:77px\" />&nbsp;<img alt=\"CAF\" src=\"./media/images/caf.png\" style=\"height:85px; width:58px\" />&nbsp;<img alt=\"Académie Caen\" src=\"./media/images/academie-caen.png\" style=\"height:87px; width:103px\" />&nbsp;<img alt=\"CEMÉA\" src=\"./media/images/cemea.png\" style=\"height:43px; width:106px\" />&nbsp;<img alt=\"MSA\" src=\"./media/images/msa.png\" style=\"height:43px; width:92px\" /></p>\n"
+		},
+		"me": "Moi",
+		"separator": "et/ou",
+		"dates": {
+			"smallDay": [
+				"dim",
+				"lun",
+				"mar",
+				"mer",
+				"jeu",
+				"ven",
+				"sam"
+			],
+			"smallMonth": [
+				"jan",
+				"fév",
+				"mars",
+				"avril",
+				"mai",
+				"juin",
+				"juil",
+				"août",
+				"sept",
+				"nov",
+				"déc"
+			]
+		},
+		"edit": {
+			"global": "Édition site",
+			"local": "Édition page",
+			"save": "Sauver",
+			"close": "Fermer",
+			"metadata": "Metadonnées",
+			"data": "Données",
+			"updateJSON": {
+				"title": "Mise à jour externe",
+				"message": "<p>Le contenu de cette page a été mise à jour par une autre personne. Mettre à jour et perdre vos changements ?</p>",
+				"ok": "Mettre à jour",
+				"nok": "Garder mes changements"
+			},
+			"lostJSON": {
+				"title": "Mise à jour externe",
+				"message": "<p>Le contenu de cette page a été mise à jour par une autre personne. Vos modifications non sauvées ont été écrasées.</p>",
+				"ok": "Mince..."
+			}
+		},
+		"contactEmail": {
+			"subject": "Message de la part de %email%",
+			"message": "Email de %email%\n\n %message%"
+		}
+	}
+}

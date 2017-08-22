@@ -1,0 +1,46 @@
+{
+	"meta": {
+		"title": "Connexion / Déconnexion",
+		"description": "Page de connexion à l'espace membre."
+	},
+	"body": {
+		"title": "Espace membres",
+		"content": {
+			"unauthenticated": "<p>Veillez entrer vos identifiants pour vous authentifier.</p>",
+			"authenticated": "<p>Cliquez sur le bouton ci-dessous pour vous déconnecter.</p>"
+		},
+		"link": "<p><a href=\"./\">Retour à l'accueil <img alt=\"En savoir plus\" src=\"media/images/arrow.svg\" style=\"width:32px\" /></a>&nbsp;</p>\n",
+		"email": {
+			"label": {
+				"content": "Email :",
+				"placeholder": "Email"
+			},
+			"error": {
+				"empty": "Le champ Email est vide.",
+				"badFormat": "Le champ Email est incorrecte."
+			}
+		},
+		"password": {
+			"label": {
+				"content": "Mot de passe :",
+				"placeholder": "Mot de passe"
+			},
+			"error": {
+				"empty": "Le champ Mot de passe est vide."
+			}
+		},
+		"button": {
+			"label": {
+				"content": "Connexion"
+			},
+			"error": {
+				"authFailure": "Les email/mot de passe sont invalides."
+			}
+		},
+		"cancel": {
+			"label": {
+				"content": "Déconnexion"
+			}
+		}
+	}
+}

@@ -4,49 +4,18 @@
 		"view": "home",
 		"variation": "home.json"
 	},
-	"agency_fr-fr": {
-		"url": "/notre-agence/",
-		"view": "agency",
-		"variation": "agency.json",
-		"_children": [{
-			"key": false,
-			"view": "agency-index"
-		}, {
-			"key": "team_fr-fr",
-			"view": "team"
-		}, {
-			"key": "know-how_fr-fr",
-			"view": "know-how"
-		}, {
-			"key": "culture_fr-fr",
-			"view": "culture"
-		}]
-	},
-	"team_fr-fr": {
-		"url": "/notre-agence/notre-equipe/",
-		"view": "agency",
-		"variation": "agency.json",
-		"_parent": "agency_fr-fr"
-	},
-	"know-how_fr-fr": {
-		"url": "/notre-agence/nos-savoirs-faire/",
-		"view": "agency",
-		"variation": "agency.json",
-		"_parent": "agency_fr-fr"
-	},
-	"culture_fr-fr": {
-		"url": "/notre-agence/notre-culture/",
-		"view": "agency",
-		"variation": "agency.json",
-		"_parent": "agency_fr-fr"
-	},
 	"projects_fr-fr": {
-		"url": "/nos-projets/",
+		"url": "/presentation/",
 		"view": "projects",
 		"variation": "projects.json"
 	},
+	"approach_fr-fr": {
+		"url": "/demarches/",
+		"view": "approach",
+		"variation": "approach.json"
+	},
 	"contact_fr-fr": {
-		"url": "/nous-contacter/",
+		"url": "/contact/",
 		"view": "contact",
 		"controller": "contact.js",
 		"variation": "contact.json"

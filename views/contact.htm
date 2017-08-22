@@ -1,0 +1,89 @@
+<div class="contact">
+	<div class="contact--background">
+
+	</div>
+	<div class="contact--content">
+		<div class="contact--content--inner">
+			<h1>
+				<inline v-model="specific.title" :global="global" />
+			</h1>
+			<div class="contact--intro">
+				<div class="contact--intro--content">
+					<div class="contact--intro--header">
+						<inline v-model="specific.title" :global="global" />
+					</div>
+					<div class="contact--intro--main">
+						<h2>
+							<inline v-model="specific.subtitle" :global="global" />
+						</h2>
+						<div class="contact--intro--main--inner">
+							<height-transition>
+								<div v-if="!isSent" key="step-1">
+									<block v-model="specific.content.step1" :global="global" />
+									<form class="contact--form" action="" method="post">
+										<div class="field email" v-bind:class="{ empty: email === '' || email === undefined, invalid: !isEmail(email) && email !== undefined }">
+											<label for="contact-form--email" v-html="specific.email.label.content"></label>
+											<input type="text" id="contact-form--email" class="contact-form--email" name="email" v-bind:placeholder="specific.email.label.placeholder" v-model="email">
+											<div class="errors" v-if="email === '' && email !== undefined" v-html="specific.email.error.empty"></div>
+											<div class="errors" v-if="!isEmail(email) && email != undefined && email !== ''" v-html="specific.email.error.badFormat"></div>
+										</div>
+
+										<div class="field message" v-bind:class="{ empty: message === '' || message === undefined, invalid: !message && message !== undefined }">
+											<label for="contact-form--message" v-html="specific.message.label.content" class="label-textarea"></label>
+											<textarea type="text" id="contact-form--message" class="contact-form--message" name="message" v-bind:placeholder="specific.message.label.placeholder" v-model="message"></textarea>
+											<div class="errors" v-if="message === '' && message !== undefined" v-html="specific.message.error.empty"></div>
+										</div>
+
+										<div class="submit">
+											<attrs :global="global">
+												<label><button v-on:click.prevent="sendMessage" v-bind:class="{ invalid: !isSendable() }" class="contact-form--button" v-html="specific.button.label.content"></button></label>
+												<template slot="attrs">
+													<attr :label="'Email: '" v-model="specific.email.label.placeholder" :global="global" />
+													<attr :label="'Message: '" v-model="specific.message.label.placeholder" :global="global" />
+													<attr :label="'Send: '" v-model="specific.button.label.content" :global="global" />
+												</template>
+											</attrs>
+											<span v-if="error" class="errors">
+												<span class="empty" v-html="specific.button.error.sendFailure"></span>
+											</span>
+										</div>
+									</form>
+								</div>
+								<div v-else key="step-2">
+									<block v-model="specific.content.step2" :global="global" />
+									<form class="contact--form" action="" method="post">
+										<button class="contact-form--more" v-on:click.prevent="moreDetails" v-html="specific.more.label.content"></button>
+									</form>
+									<block v-model="specific.or" :global="global" /></block>
+									<p class="a" v-on:click="newMessage">
+										<inline v-model="specific.link.content" :global="global" />
+									</p>
+								</div>
+							</height-transition>
+						</div>
+					</div>
+					<div class="contact--intro--footer">
+						<ul>
+							<li>
+								<inline v-model="common.navigation.information.contacts[1]" :global="global" />
+							</li>
+							<li>
+								<inline v-model="common.navigation.information.contacts[0]" :global="global" />
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="contact--intro--image"></div>
+			</div>
+		</div>
+	</div>
+	<edit v-if="global.isClient && global.me.id"
+		ref="edit"
+		v-bind:global="global"
+		v-bind:common="common"
+		v-bind:file="$options.name"
+		v-bind:meta="meta"
+		v-bind:body="specific"
+		v-bind:current="common.edit.local"
+		v-bind:options="options"></edit>
+</div>

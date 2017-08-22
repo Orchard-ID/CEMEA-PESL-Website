@@ -1,0 +1,8 @@
+<header class="main-header" v-bind:class="{ 'is-opened': global.navigation }">
+	<h1 class="main-header--title">
+		<inline v-model="common.title" :global="global" />
+	</h1>
+	<aside class="main-header--aside">
+		<inline v-model="common.subtitle" :global="global" />
+	</aside>
+</header>

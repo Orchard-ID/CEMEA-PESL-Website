@@ -1,0 +1,12 @@
+<aside class="confirm-message" v-bind:class="{ 'is-displayed': displayed }">
+	<div class="confirm-message--outer">
+		<div class="confirm-message--inner">
+			<h1 class="confirm-message--title" v-html="current.title"></h1>
+			<div class="confirm-message--message" v-html="current.message"></div>
+			<div class="confirm-message--actions">
+				<button v-on:click="update" class="confirm-message--ok" v-html="current.ok"></button>
+				<button v-on:click="close" class="confirm-message--nok" v-html="current.nok"></button>
+			</div>
+		</div>
+	</div>
+</aside>

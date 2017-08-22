@@ -1,0 +1,110 @@
+{
+	"meta": {
+		"title": "Nos projets",
+		"description": "La liste de nos projets"
+	},
+	"body": {
+		"title": "Présentation du PESL",
+		"content": "<p>La Caisse d&rsquo;Allocations Familiales de la Manche, la Mutualité Sociale Agricole Côtes Normandes, le Département de la Manche, l&rsquo;Académie de Caen et la Préfecture de la Manche sont des acteurs majeurs des politiques éducatives et sociales dans le département de la Manche.</p>\n\n<p>Le partenariat entre ces institutions, initié dès 1998 à partir de la &nbsp;dynamique des contrats éducatifs locaux et des contrats temps libre, s&rsquo;est construit dans la durée, non seulement en termes d&rsquo;allocations de moyens financiers, mais aussi en termes de méthode globale d&rsquo;accompagnement des territoires. Cette volonté partagée a permis de voir émerger des projets éducatifs locaux (PEL) sur la quasi-totalité du département.</p>\n\n<p>Si ce partenariat a indéniablement permis de développer &nbsp;structurellement et fonctionnellement des politiques éducatives sur la quasi-totalité des territoires de la Manche, les disparités constatées entre les projets mis en œuvre, l&rsquo;évolution du contexte social et les réformes institutionnelles, invitent à une réflexion sur les changements à opérer pour inscrire le PEL dans une réelle démarche de développement territorial.</p>\n\n<p>Le Projet Educatif Social Local (PESL) répond à cette ambition&nbsp;: à travers la combinaison de volontés institutionnelles, politiques et la mise en œuvre technique capable d&rsquo;associer les acteurs et les usagers concernés, il propose un cadre méthodologique basé sur le principe du partenariat. A cela s&rsquo;ajoute l&rsquo;accompagnement proposé par la coordination départementale des P.E.L. et des P.E.S.L. permettant ainsi à chaque territoire d&rsquo;opérer un travail de réflexion et de transformation adapté à ses besoins,&nbsp;ses réalités.</p>\n\n<p></p>\n",
+		"cta": [
+			{
+				"content": "Définition"
+			},
+			{
+				"content": "Principes"
+			},
+			{
+				"content": "Champs d'intervention"
+			}
+		],
+		"quote": "<p>&laquo;&nbsp;améliorer le quotidien de la vie&nbsp;des populations&nbsp;&raquo;</p>\n",
+		"about": {
+			"title": "Définition du PESL",
+			"content": "<p>Le Projet Educatif et Social Local, est un processus continu qui vise à créer les conditions nécessaires pour améliorer le quotidien de la vie des populations à partir d&rsquo;une action éducative et sociale globale. Il répond aux principes d&rsquo;une démarche de développement social territorial en impulsant le croisement de la commande publique et de la demande sociale. Il s&rsquo;appuie sur une dynamique de proximité en provoquant la mobilisation du plus grand nombre.</p>\n",
+			"image": "<img alt=\"Projet Éducatif Social Local\" src=\"./media/images/pesl.png\" style=\"height:529px; width:683px\" />"
+		},
+		"overview": {
+			"title": "Les principes du projet éducatif social local",
+			"overviews": [
+				{
+					"content": "<p>Une définition claire et adaptée de problématiques, d&rsquo;objectifs &nbsp;prioritaires et d&rsquo;orientations répondant à une analyse des besoins exprimés dans le cadre d&rsquo;un diagnostic.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>Une définition claire et adaptée de problématiques, d&rsquo;objectifs &nbsp;prioritaires et d&rsquo;orientations répondant à une analyse des besoins exprimés dans le cadre d&rsquo;un diagnostic.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>Une définition claire et adaptée de problématiques, d&rsquo;objectifs &nbsp;prioritaires et d&rsquo;orientations répondant à une analyse des besoins exprimés dans le cadre d&rsquo;un diagnostic.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>Une définition claire et adaptée de problématiques, d&rsquo;objectifs &nbsp;prioritaires et d&rsquo;orientations répondant à une analyse des besoins exprimés dans le cadre d&rsquo;un diagnostic.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>Une définition claire et adaptée de problématiques, d&rsquo;objectifs &nbsp;prioritaires et d&rsquo;orientations répondant à une analyse des besoins exprimés dans le cadre d&rsquo;un diagnostic.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>Une définition claire et adaptée de problématiques, d&rsquo;objectifs &nbsp;prioritaires et d&rsquo;orientations répondant à une analyse des besoins exprimés dans le cadre d&rsquo;un diagnostic.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				}
+			]
+		},
+		"more": {
+			"title": "Champs d’intervention et publics concernés",
+			"sections": [
+				{
+					"content": "<p>Les publics</p>\n\n<p>Le Projet Educatif Social Local a vocation à prendre en compte l&rsquo;ensemble des besoins éducatifs des jeunes sur un territoire donné, de leur naissance jusqu'à leur intégration dans la vie sociale et/ou professionnelle. Il prend également en compte le soutien à l&rsquo;action éducative des parents.&nbsp;</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/audience.png\" style=\"height:297px; width:440px\" />"
+				},
+				{
+					"content": "<p>Les temps&nbsp;</p>\n\n<p>Le projet éducatif social local concerne l&rsquo;ensemble des temps scolaires, périscolaires et extrascolaires. Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/courses.png\" style=\"height:297px; width:440px\" />"
+				},
+				{
+					"content": "<p>Les champs d&rsquo;activités&nbsp;</p>\n\n<p>Le projet éducatif social local couvre auprès des publics&nbsp;<br />\net des temps concernés l&rsquo;accès à : une offre d&rsquo;accueil, une pratique de loisirs culturels, sportifs, scientifiques et techniques, un accompagnement à la scolarité, une information, une orientation, un soutien à la parentalité et un engagement associatif et citoyen.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/audience.png\" style=\"height:297px; width:440px\" />"
+				},
+				{
+					"content": "<p>Les acteurs&nbsp;</p>\n\n<p>Le projet éducatif social local est conçu et mis en œuvre sur les territoires par : les élus locaux, les professionnels de l&rsquo;éducation nationale, de l&rsquo;animation et du champ social les bénévoles, les parents et les jeunes.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/courses.png\" style=\"height:297px; width:440px\" />"
+				}
+			]
+		},
+		"goal": {
+			"title": "Objectifs du projet éducatif social local ",
+			"goals": [
+				{
+					"content": "<p>L&rsquo;accompagnement à la scolarité</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>L&rsquo;accès aux structures d&rsquo;accueil&nbsp;</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>L&rsquo;accès à l&rsquo;orientation</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>L&rsquo;accès aux pratiques culturelles, sportives et techniques</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>Développement de l&rsquo;initiative et de la citoyenneté</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>L&rsquo;engagement dans la vie associative</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				},
+				{
+					"content": "<p>L&rsquo;accès à l&rsquo;information</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+				}
+			]
+		}
+	}
+}

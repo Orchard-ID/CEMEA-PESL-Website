@@ -1,0 +1,21 @@
+<footer class="main-footer" v-bind:class="{ 'is-opened': global.navigation }">
+	<div class="main-footer--contact">
+		<h2 class="main-footer--contact--title">
+			<inline v-model="common.contact.title" :global="global" />
+		</h2>
+		<div class="main-footer--contact--cemea">
+			<block v-model="common.contact.cemea" :global="global" />
+		</div>
+		<div class="main-footer--contact--pesl">
+			<block v-model="common.contact.pesl" :global="global" />
+		</div>
+	</div>
+	<div class="main-footer--partner">
+		<h2 class="main-footer--partner--title">
+			<inline v-model="common.partner.title" :global="global" />
+		</h2>
+		<div class="main-footer--partner--content">
+			<block v-model="common.partner.content" :global="global" />
+		</div>
+	</div>
+</footer>

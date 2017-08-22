@@ -1,0 +1,20 @@
+<div class="layout" v-bind:class="{ 'as-loaded-page': global.isClient && !global.isWaiting }">
+	<div class="main-content">
+		<transition v-bind:name="global.routerTransition">
+			<router-view ref="router" key="router" v-bind:common="common" v-bind:global="global" v-on:specific="value => { specific = value }"></router-view>
+		</transition>
+	</div>
+	<main-header ref="main-header" v-bind:common="common" v-bind:global="global" v-bind:specific="specific"></main-header>
+	<navigation ref="navigation" v-bind:common="common" v-bind:global="global" v-bind:meta="meta"></navigation>
+	<main-footer ref="main-footer" v-bind:common="common" v-bind:global="global" v-bind:specific="specific"></main-footer>
+	<div class="loading" v-html="common.loading"></div>
+	<edit v-if="global.isClient && global.me.id"
+		ref="edit"
+		v-bind:global="global"
+		v-bind:common="common"
+		v-bind:file="'common'"
+		v-bind:meta="meta"
+		v-bind:body="common"
+		v-bind:current="common.edit.global"
+		v-bind:options="options"></edit>
+</div>

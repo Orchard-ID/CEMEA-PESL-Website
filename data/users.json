@@ -1,0 +1,26 @@
+[
+    {
+        "publics": {
+            "id": "c82c8370-ee9f-11e6-be90-17360ea14e75",
+            "email": "bruno.lesieur@gmail.com",
+            "firstname": "Bruno"
+        },
+        "password": "a39e06042c77594c75b534030ec36e2bbc3cdaaa"
+    },
+    {
+        "publics": {
+            "id": "f5cea470-ee9f-11e6-8e17-371822d5bbb4",
+            "email": "a.allee@orchard-id.com",
+            "firstname": "Alban"
+        },
+        "password": "5f5604364be2135195236944e487aace312c03f9"
+    },
+    {
+        "password": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3",
+        "publics": {
+            "id": "0f6f6fb0-efb1-11e6-ac84-43a396bdeaf9",
+            "email": "r.laurier@orchard-id.com",
+            "firstname": "Romain"
+        }
+    }
+]

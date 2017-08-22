@@ -1,0 +1,53 @@
+{
+	"meta": {
+		"title": "Contactez-nous",
+		"description": "Utilisez le formulaire pour nous contacter."
+	},
+	"body": {
+		"title": "Contact",
+		"subtitle": "Contact",
+		"image": "<img src=\"media/images/arrow.svg\" width=\"32\" alt=\"Toto\">",
+		"content": {
+			"step1": "<p>Envie de collaborer avec nous ?</p>\n",
+			"step2": "<p><em><strong>Merci d'avoir pris contact avec nous ! Nous vous répondrons dans les plus brefs délais.</strong></em></p>\n\n<p>Afin d'écourter votre attente, souhaitez-vous nous aider à prioriser votre demande avec des informations complémentaires&nbsp;?</p>\n"
+		},
+		"or": "<p>ou</p>\n",
+		"link": {
+			"href": "/",
+			"title": "Retour à l'accueil",
+			"content": "Écrire un nouveau message&nbsp;<img alt=\"Écrire un nouveau message\" src=\"media/images/arrow.svg\" style=\"height:15px; width:32px\" />"
+		},
+		"email": {
+			"label": {
+				"content": "Email :",
+				"placeholder": "Email"
+			},
+			"error": {
+				"empty": "Le champ Email est vide.",
+				"badFormat": "Le champ Email est incorrecte."
+			}
+		},
+		"message": {
+			"label": {
+				"content": "Message :",
+				"placeholder": "Message"
+			},
+			"error": {
+				"empty": "Le champ Message est vide."
+			}
+		},
+		"button": {
+			"label": {
+				"content": "Envoyer"
+			},
+			"error": {
+				"sendFailure": "Votre message n'a pas pu nous être remis. Vous pouvez nous l'envoyer par email à l'adresse <a href=\"mailto:contact@orchard-id.com\">contact@orchard-id.com</a>."
+			}
+		},
+		"more": {
+			"label": {
+				"content": "J'en dis plus"
+			}
+		}
+	}
+}

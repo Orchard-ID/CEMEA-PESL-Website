@@ -1,0 +1,87 @@
+<div class="projects">
+	<article class="projects--article">
+		<h1>
+			<inline v-model="specific.title" :global="global" />
+		</h1>
+		<div class="projects--content">
+			<block v-model="specific.content" :global="global" />
+		</div>
+		<div class="projects--cta">
+			<ul>
+				<li v-for="(item, index) in specific.cta">
+					<div class="projects--cta--link">
+						<inline v-model="specific.cta[index].content" :global="global" />
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="projects--quote">
+			<block v-model="specific.quote" :global="global" />
+		</div>
+		<aside class="projects--about">
+			<h2 class="projects--about--title">
+				<inline v-model="specific.about.title" :global="global" />
+			</h2>
+			<div class="projects--about--content">
+				<block v-model="specific.about.content" :global="global" />
+			</div>
+			<div class="projects--about--image">
+				<inline v-model="specific.about.image" :global="global" />
+			</div>
+		</aside>
+	</article>
+	<section class="projects--overview">
+		<h2 class="projects--overview--title">
+			<inline v-model="specific.overview.title" :global="global" />
+		</h2>
+		<ul>
+			<li v-for="(item, index) in specific.overview.overviews">
+				<div class="projects--overview--image">
+					<inline v-model="specific.overview.overviews[index].image" :global="global" />
+				</div>
+				<div class="projects--overview--content">
+					<block v-model="specific.overview.overviews[index].content" :global="global" />
+				</div>
+			</li>
+		</ul>
+	</section>
+	<section class="projects--more">
+		<h2 class="projects--more--title">
+			<inline v-model="specific.more.title" :global="global" />
+		</h2>
+		<ul>
+			<li v-for="(item, index) in specific.more.sections">
+				<div class="projects--more--image">
+					<inline v-model="specific.more.sections[index].image" :global="global" />
+				</div>
+				<div class="projects--more--content">
+					<block v-model="specific.more.sections[index].content" :global="global" />
+				</div>
+			</li>
+		</ul>
+	</section>
+	<section class="projects--goal">
+		<h2 class="projects--goal--title">
+			<inline v-model="specific.goal.title" :global="global" />
+		</h2>
+		<ul>
+			<li v-for="(item, index) in specific.goal.goals">
+				<div class="projects--goal--image">
+					<inline v-model="specific.goal.goals[index].image" :global="global" />
+				</div>
+				<div class="projects--goal--content">
+					<block v-model="specific.goal.goals[index].content" :global="global" />
+				</div>
+			</li>
+		</ul>
+	</section>
+	<edit v-if="global.isClient && global.me.id"
+		ref="edit"
+		v-bind:global="global"
+		v-bind:common="common"
+		v-bind:file="$options.name"
+		v-bind:meta="meta"
+		v-bind:body="specific"
+		v-bind:current="common.edit.local"
+		v-bind:options="options"></edit>
+</div>

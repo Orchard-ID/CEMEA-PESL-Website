@@ -1,0 +1,29 @@
+<nav class="navigation" v-bind:class="{ 'is-opened': global.navigation }">
+	<h1 class="navigation--title">
+		<inline v-model="common.navigation.title" :global="global" />
+	</h1>
+	<div class="navigation--menu">
+		<nav class="navigation--menu--main">
+			<ul>
+				<li v-for="(link, index) in common.navigation.main.links">
+					<attrs :global="global">
+						<router-link v-bind:to="link.href" v-html="link.content"></router-link>
+						<template slot="attrs">
+							<attr :label="'Content: '" v-model="common.navigation.main.links[index].content" :global="global" />
+							<attr :label="'Link: '" v-model="common.navigation.main.links[index].href" :global="global" />
+						</template>
+					</attrs>
+				</li>
+			</ul>
+		</nav>
+		<nav class="navigation--members-area">
+			<attrs :global="global">
+				<router-link v-bind:to="common.navigation.members.href" v-html="common.navigation.members.content"></router-link>
+				<template slot="attrs">
+					<attr :label="'Content: '" v-model="common.navigation.members.content" :global="global" />
+					<attr :label="'Link: '" v-model="common.navigation.members.href" :global="global" />
+				</template>
+			</attrs>
+		</nav>
+	</div>
+</nav>

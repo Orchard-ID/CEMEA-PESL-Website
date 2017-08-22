@@ -1,0 +1,50 @@
+{
+	"meta": {
+		"title": "Bienvenue",
+		"description": "Bienvenue sur le site des Projets Éducatifs Sociaux Locaux améliorant le quotidien de vie des populations."
+	},
+	"body": {
+		"title": "Bienvenue",
+		"about": {
+			"title": "Le projet éducatif et social local",
+			"content": "<p>C&rsquo;est un processus continu qui vise à créer les conditions nécessaires pour améliorer le quotidien de la vie des populations à partir d&rsquo;une action éducative et sociale globale. Il répond aux principes d&rsquo;une démarche de développement social territorial en impulsant le croisement de la commande publique et de la demande sociale. Il s&rsquo;appuie sur une dynamique de proximité en provoquant la mobilisation du plus grand nombre.</p>\n",
+			"cta": "En savoir plus",
+			"image": "<img alt=\"Le projet éducatif et social local\" src=\"./media/images/about.png\" style=\"height:528px; width:683px\" />"
+		},
+		"approach": {
+			"title": "Les démarches",
+			"content": "<p>C&rsquo;est un processus continu qui vise à créer les conditions nécessaires pour améliorer le quotidien de la vie des populations à partir d&rsquo;une action éducative et sociale globale. Il répond aux principes d&rsquo;une démarche de développement social territorial en impulsant le croisement de la commande publique et de la demande sociale. Il s&rsquo;appuie sur une dynamique de proximité en provoquant la mobilisation du plus grand nombre.</p>\n",
+			"cta": "En savoir plus",
+			"image": "<img alt=\"\" src=\"./media/images/approach.png\" style=\"height:529px; width:683px\" />"
+		},
+		"partner": {
+			"title": "Nos partenaires",
+			"partners": [
+				{
+					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+				},
+				{
+					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+				},
+				{
+					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+				},
+				{
+					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+				},
+				{
+					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+				},
+				{
+					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+				}
+			]
+		}
+	}
+}

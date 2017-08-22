@@ -1,0 +1,32 @@
+<div class="approach">
+	<article class="approach--article">
+		<h1>
+			<inline v-model="specific.title" :global="global" />
+		</h1>
+		<div class="approach--content">
+			<block v-model="specific.content" :global="global" />
+		</div>
+		<div class="approach--quote">
+			<block v-model="specific.quote" :global="global" />
+		</div>
+	</article>
+	<section class="approach--structure">
+		<h2 class="approach--structure--title">
+			<inline v-model="specific.structure.title" :global="global" />
+		</h2>
+	</section>
+	<section class="approach--documentation">
+		<h2 class="approach--documentation--title">
+			<inline v-model="specific.documentation.title" :global="global" />
+		</h2>
+	</section>
+	<edit v-if="global.isClient && global.me.id"
+		ref="edit"
+		v-bind:global="global"
+		v-bind:common="common"
+		v-bind:file="$options.name"
+		v-bind:meta="meta"
+		v-bind:body="specific"
+		v-bind:current="common.edit.local"
+		v-bind:options="options"></edit>
+</div>

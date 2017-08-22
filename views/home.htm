@@ -1,0 +1,57 @@
+<div class="home">
+	<h1 class="home--title">
+		<inline v-model="specific.title" :global="global" />
+	</h1>
+	<section class="home--about">
+		<h2 class="home--about--title">
+			<inline v-model="specific.about.title" :global="global" />
+		</h2>
+		<div class="home--about--content">
+			<block v-model="specific.about.content" :global="global" />
+		</div>
+		<div class="home--about--cta">
+			<inline v-model="specific.about.cta" :global="global" />
+		</div>
+		<div class="home--about--image">
+			<inline v-model="specific.about.image" :global="global" />
+		</div>
+	</section>
+	<section class="home--approach">
+		<h2 class="home--approach--title">
+			<inline v-model="specific.approach.title" :global="global" />
+		</h2>
+		<div class="home--approach--content">
+			<block v-model="specific.approach.content" :global="global" />
+		</div>
+		<div class="home--approach--cta">
+			<inline v-model="specific.approach.cta" :global="global" />
+		</div>
+		<div class="home--approach--image">
+			<inline v-model="specific.approach.image" :global="global" />
+		</div>
+	</section>
+	<section class="home--partner">
+		<h2 class="home--partner--title">
+			<inline v-model="specific.partner.title" :global="global" />
+		</h2>
+		<ul>
+			<li v-for="(parner, index) in specific.partner.partners">
+				<div class="home--partner--image">
+					<inline v-model="specific.partner.partners[index].image" :global="global" />
+				</div>
+				<div class="home--partner--content">
+					<block v-model="specific.partner.partners[index].content" :global="global" />
+				</div>
+			</li>
+		</ul>
+	</section>
+	<edit v-if="global.isClient && global.me.id"
+		ref="edit"
+		v-bind:global="global"
+		v-bind:common="common"
+		v-bind:file="$options.name"
+		v-bind:meta="meta"
+		v-bind:body="specific"
+		v-bind:current="common.edit.local"
+		v-bind:options="options"></edit>
+</div>

@@ -1,0 +1,11 @@
+<aside v-on:click.self="close" class="alert-message" v-bind:class="{ 'is-displayed': displayed }">
+	<div class="alert-message--outer">
+		<div class="alert-message--inner">
+			<h1 class="alert-message--title" v-html="current.title"></h1>
+			<div class="alert-message--message" v-html="current.message"></div>
+			<div class="alert-message--actions">
+				<button v-on:click="close" class="alert-message--ok" v-html="current.ok"></button>
+			</div>
+		</div>
+	</div>
+</aside>
