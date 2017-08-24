@@ -45,7 +45,7 @@
 			</li>
 		</ul>
 	</section>
-	<edit v-if="global.isClient && global.me.id"
+	<edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
 		v-bind:global="global"
 		v-bind:common="common"

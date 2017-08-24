@@ -1,38 +1,31 @@
-<div class="approach" v-bind:data-search="JSON.stringify(specific.search.results)">
-	<article class="approach--article">
+<div class="google-drive" v-bind:data-search="JSON.stringify(specific.search.results)">
+	<article class="google-drive--article">
 		<h1>
 			<inline v-model="specific.title" :global="global" />
 		</h1>
-		<div class="approach--image">
+		<div class="google-drive--image">
 			<inline v-model="specific.image" :global="global" />
 		</div>
-		<div class="approach--content">
+		<div class="google-drive--content">
 			<block v-model="specific.content" :global="global" />
 		</div>
-		<div class="approach--quote">
-			<block v-model="specific.quote" :global="global" />
+		<div v-if="global.me.role === 'admin'" class="google-drive--tips">
+			<block v-model="specific.tips" :global="global" />
 		</div>
 	</article>
-	<section class="approach--structure">
-		<h2 class="approach--structure--title">
-			<inline v-model="specific.structure.title" :global="global" />
+	<section class="google-drive--information">
+		<h2 class="google-drive--information--title">
+			<inline v-model="specific.information.title" :global="global" />
 		</h2>
-		<ul>
-			<li v-for="(item, index) in specific.structure.roles">
-				<div class="approach--structure--role">
-					<block v-model="specific.structure.roles[index].content" :global="global" />
-					<div class="approach--structure--role--image">
-						<inline v-model="specific.structure.roles[index].image" :global="global" />
-					</div>
-				</div>
-			</li>
-		</ul>
+		<div class="google-drive--information--content">
+			<block v-model="specific.information.content" :global="global" />
+		</div>
 	</section>
-	<section class="approach--documentation">
-		<h2 class="approach--documentation--title">
+	<section class="google-drive--documentation">
+		<h2 class="google-drive--documentation--title">
 			<inline v-model="specific.documentation.title" :global="global" />
 		</h2>
-		<div class="approach--search-bar">
+		<div class="google-drive--search-bar">
 			<attrs :global="global">
 				<input type="text" v-model="searchQuery" v-bind:placeholder="specific.documentation.placeholder">
 				<template slot="attrs">
@@ -43,14 +36,14 @@
 				<inline v-model="specific.documentation.button" :global="global" />
 			</button>
 		</div>
-		<div class="approach--search-result">
+		<div class="google-drive--search-result">
 			<ul v-if="specific.search.results.length > 0">
 				<li v-for="(item, index) in specific.search.results">
-					<div class="approach--documentation--result">
-						<div class="approach--documentation--result--title">
+					<div class="google-drive--documentation--result">
+						<div class="google-drive--documentation--result--title">
 							<inline v-model="specific.search.results[index].title" :global="global" />
 						</div>
-						<div class="approach--documentation--result--image">
+						<div class="google-drive--documentation--result--image">
 							<inline v-model="specific.search.results[index].image" :global="global" />
 						</div>
 					</div>

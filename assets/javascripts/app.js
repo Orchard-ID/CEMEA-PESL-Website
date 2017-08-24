@@ -48,7 +48,7 @@ module.exports = function () {
 				keys[e.keyCode] = true;
 				ctrl[e.keyCode] = e.ctrlKey;
 
-				if (ctrl[83] && keys[83]) {
+				if (ctrl[83] && keys[83] && vm.global.me.role === 'admin') {
 					e.preventDefault();
 					vm.global.isEditable = !vm.global.isEditable;
 				}

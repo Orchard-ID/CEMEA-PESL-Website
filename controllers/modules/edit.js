@@ -8,7 +8,8 @@ exports.setSockets = function () {
 		var session = socket.request.session;
 
 		socket.on('edit--save', function (file, body, meta) {
-			if (session.user) {
+			console.log(session.user);
+			if (session.user && session.user.publics.role === 'admin') {
 				Edit.save.call(NA, file, body, meta, function () {
 					socket.emit('edit--save');
 					socket.broadcast.emit('edit--save', file, body, meta);

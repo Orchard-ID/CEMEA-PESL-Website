@@ -142,6 +142,8 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 		// Create all first level route...
 		var route = {},
 			name = key.split('_')[0],
+			view = webconfig.routes[key].view,
+			variation = webconfig.routes[key].variation,
 			model,
 			specific,
 			template,
@@ -158,9 +160,9 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 		// ...by precise a component
 		route.component = function (resolve) {
 			Promise.all([
-				xhr('views-models/' + name + '.js'),
-				xhr('variations/' + name + '.json'),
-				xhr('views-models/' + name + '.htm')
+				xhr('views-models/' + view + '.js'),
+				xhr('variations/' + variation),
+				xhr('views-models/' + view + '.htm')
 			]).then(function (files) {
 				model = files[0];
 				specific = files[1];

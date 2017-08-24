@@ -17,13 +17,28 @@
 			</ul>
 		</nav>
 		<nav class="navigation--members-area">
-			<attrs :global="global">
-				<router-link v-bind:to="common.navigation.members.href" v-html="common.navigation.members.content"></router-link>
-				<template slot="attrs">
-					<attr :label="'Content: '" v-model="common.navigation.members.content" :global="global" />
-					<attr :label="'Link: '" v-model="common.navigation.members.href" :global="global" />
-				</template>
-			</attrs>
+			<ul v-if="global.me.id">
+				<li v-if="link.status === 'auth' && checkRoles(link)" v-for="(link, index) in common.navigation.privates.links">
+					<attrs :global="global">
+						<router-link v-bind:to="link.href" v-html="link.content"></router-link>
+						<template slot="attrs">
+							<attr :label="'Content: '" v-model="common.navigation.privates.links[index].content" :global="global" />
+							<attr :label="'Link: '" v-model="common.navigation.privates.links[index].href" :global="global" />
+						</template>
+					</attrs>
+				</li>
+			</ul>
+			<ul v-else>
+				<li v-if="link.status !== 'auth'" v-for="(link, index) in common.navigation.privates.links">
+					<attrs :global="global">
+						<router-link v-bind:to="link.href" v-html="link.content"></router-link>
+						<template slot="attrs">
+							<attr :label="'Content: '" v-model="common.navigation.privates.links[index].content" :global="global" />
+							<attr :label="'Link: '" v-model="common.navigation.privates.links[index].href" :global="global" />
+						</template>
+					</attrs>
+				</li>
+			</ul>
 		</nav>
 	</div>
 </nav>

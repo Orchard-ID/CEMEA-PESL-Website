@@ -12,7 +12,19 @@
 	"approach_fr-fr": {
 		"url": "/demarches/",
 		"view": "approach",
-		"variation": "approach.json"
+		"variation": "approach.json",
+		"controller": "google-drive.js"
+	},
+	"coordinator_fr-fr": {
+		"url": "/coordinateurs/",
+		"view": "google-drive",
+		"variation": "coordinator.json"
+	},
+	"partner_fr-fr": {
+		"url": "/partenaires-institutionnels/",
+		"view": "google-drive",
+		"variation": "partner.json",
+		"controller": "google-drive.js"
 	},
 	"contact_fr-fr": {
 		"url": "/contact/",

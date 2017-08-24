@@ -22,6 +22,10 @@
 				"title": "Navigation",
 				"links": [
 					{
+						"href": "/",
+						"content": "Accueil"
+					},
+					{
 						"href": "/presentation/",
 						"content": "Présentation"
 					},
@@ -35,9 +39,31 @@
 					}
 				]
 			},
-			"members": {
-				"href": "/espace-membres/",
-				"content": "Espace membres"
+			"privates": {
+				"title": "Espace membres",
+				"links": [
+					{
+						"href": "/coordinateurs/",
+						"content": "Coordinateurs",
+						"roles": ["admin", "double", "coordinator"],
+						"status": "auth"
+					},
+					{
+						"href": "/partenaires-institutionnels/",
+						"content": "Partenaires Institutionnels",
+						"roles": ["admin", "double", "partner"],
+						"status": "auth"
+					},
+					{
+						"href": "/espace-membres/",
+						"content": "Connexion"
+					},
+					{
+						"href": "/espace-membres/",
+						"content": "Déconnexion",
+						"status": "auth"
+					}
+				]
 			},
 			"information": {
 				"title": "Contact",

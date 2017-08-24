@@ -3,6 +3,9 @@
 		<h1>
 			<inline v-model="specific.title" :global="global" />
 		</h1>
+		<div class="projects--image">
+			<inline v-model="specific.image" :global="global" />
+		</div>
 		<div class="projects--content">
 			<block v-model="specific.content" :global="global" />
 		</div>
@@ -75,7 +78,7 @@
 			</li>
 		</ul>
 	</section>
-	<edit v-if="global.isClient && global.me.id"
+	<edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
 		v-bind:global="global"
 		v-bind:common="common"

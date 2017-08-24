@@ -2,12 +2,12 @@
 /* global NA */
 module.exports = function (specific, template, mixin, options) {
 	return {
-		name: 'approach',
+		name: 'google-drive',
 		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: ['common', 'global'],
 		beforeMount: function () {
-			var data = document.getElementsByClassName('approach')[0];
+			var data = document.getElementsByClassName('google-drive')[0];
 			if (data) {
 				this.specific.search.results = JSON.parse(data.getAttribute('data-search'));
 			} else {

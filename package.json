@@ -45,6 +45,8 @@
   },
   "dependencies": {
     "ckeditor": "4.6.x",
+    "connect-redis": "3.3.x",
+    "googleapis": "^20.1.0",
     "jquery": "3.2.x",
     "jshashes": "1.0.x",
     "nodemailer": "4.0.x",

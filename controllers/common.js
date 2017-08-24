@@ -86,6 +86,10 @@ exports.setModules = function () {
 	NA.modules.VueServerRenderer = require("vue-server-renderer");
 
 	NA.modules.nodemailer = require("nodemailer");
+	NA.modules.RedisStore = require('connect-redis');
+	NA.modules.readline = require('readline');
+	NA.modules.googleApis = require('googleapis');
+	NA.modules.googleAuthLibrary = require('google-auth-library');
 
 	NA.modules.helper = require("./modules/helper.js")(NA);
 	NA.modules.edit = require("./modules/edit.js");
@@ -95,6 +99,16 @@ exports.setModules = function () {
 	NA.models.Edit = require("../models/connectors/edit.js");
 
 	NA.modules.Vue.use(NA.modules.VueRouter);
+};
+
+exports.setSessions = function (next) {
+	var NA = this,
+		session = NA.modules.session,
+		RedisStore = NA.modules.RedisStore(session);
+
+	NA.sessionStore = new RedisStore();
+
+	next();
 };
 
 exports.setRoutes = function (next) {
