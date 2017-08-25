@@ -118,14 +118,17 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 							maxResults: 100,
 							q: search + "'" + codes[variation] + "' in parents"
 						}, function(err, response) {
+							var files,
+								results = [],
+								file;
+
 							if (err) {
 								console.log('The API returned an error: ' + err);
 								mainCallback(results);
+								return;
 							}
 
-							var files = response.items,
-								results = [],
-								file;
+							files = response.items;
 
 							for (var i = 0; i < files.length; i++) {
 								file = files[i];

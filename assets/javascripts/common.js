@@ -132,6 +132,21 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 		return parsed[0].outerHTML;
 	};
 
+	window.checkRoles = function (link) {
+		var output = false;
+
+		if (link.roles) {
+			link.roles.forEach(function (role) {
+				if (vm.global.me.role === role) {
+					output = true;
+				}
+			});
+		} else {
+			output = true;
+		}
+		return output;
+	};
+
 	// Create the app tree.
 	keys.filter(function (key) {
 
@@ -188,11 +203,22 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 		routes: routes
 	});
 
+
 	vm = new Vue(app.model(common, { body: {} }, app.template, router, webconfig));
 
 	router.onReady(function () {
 		vm.$mount('.layout');
 		vm.global.isClient = true;
+
+		router.beforeEach(function (to, from, next) {
+			if (vm.global.webconfig.routes[to.name + '_' + vm.global.webconfig.languageCode].middlewares && !window.checkRoles({ roles: ['admin', 'double', to.name] })) {
+				console.log("Redirection !");
+				vm.$router.replace({ path: '/' });
+				vm.$router.replace({ path: '/espace-membres/' });
+			}
+
+			next();
+		});
 
 		global.setTracking();
 		global.setSockets(vm);

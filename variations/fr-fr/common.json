@@ -36,6 +36,14 @@
 					{
 						"href": "/contact/",
 						"content": "Contact"
+					},
+					{
+						"href": "/coordinateurs/",
+						"content": "Coordinateurs"
+					},
+					{
+						"href": "/partenaires-institutionnels/",
+						"content": "Partenaires Institutionnels"
 					}
 				]
 			},

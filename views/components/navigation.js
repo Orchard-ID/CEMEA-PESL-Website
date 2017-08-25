@@ -6,12 +6,12 @@ module.exports = function (template) {
 		template: template,
 		methods: {
 			checkRoles: function (link) {
-				var self = this,
+				var vm = this,
 					output = false;
 
 				if (link.roles) {
 					link.roles.forEach(function (role) {
-						if (self.global.me.role === role) {
+						if (vm.global.me.role === role) {
 							output = true;
 						}
 					});

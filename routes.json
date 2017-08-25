@@ -16,12 +16,14 @@
 		"controller": "google-drive.js"
 	},
 	"coordinator_fr-fr": {
+		"middlewares": ["is-authenticated.js"],
 		"url": "/coordinateurs/",
 		"view": "google-drive",
 		"variation": "coordinator.json",
 		"controller": "google-drive.js"
 	},
 	"partner_fr-fr": {
+		"middlewares": ["is-authenticated.js"],
 		"url": "/partenaires-institutionnels/",
 		"view": "google-drive",
 		"view": "google-drive",
