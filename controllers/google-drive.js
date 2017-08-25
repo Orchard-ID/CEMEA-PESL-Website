@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-function getGoogleDrive(NA, query, mainCallback) {
+function getGoogleDrive(NA, query, variation, mainCallback) {
 	var fs = NA.modules.fs,
 		googleAuthLibrary = NA.modules.googleAuthLibrary,
 		googleApis = NA.modules.googleApis,
@@ -68,7 +68,12 @@ function getGoogleDrive(NA, query, mainCallback) {
 
 	function listFiles(auth) {
 		var service = googleApis.drive('v2'),
-			search = ""/*,
+			search = "",
+			codes = {
+				'approach': '0Bx898FhOCnEmbzZNTWJpcTFtdzQ',
+				'coordinator': '0Bx898FhOCnEmdVNZUHZ2ZnN0Z1U',
+				'partner': '0Bx898FhOCnEmOTVobWVnUFl0MjA',
+			}/*,
 			fileMetadata = {
 				'name' : 'Invoices',
 				'mimeType' : 'application/vnd.google-apps.folder'
@@ -111,14 +116,11 @@ function getGoogleDrive(NA, query, mainCallback) {
 						service.files.list({
 							auth: auth,
 							maxResults: 100,
-							q: search + "'0Bx898FhOCnEmbzZNTWJpcTFtdzQ' in parents"
-							// Publics: 0Bx898FhOCnEmbzZNTWJpcTFtdzQ
-							// Coordinateurs: 0Bx898FhOCnEmdVNZUHZ2ZnN0Z1U
-							// Partenaires institutionnels: 0Bx898FhOCnEmOTVobWVnUFl0MjA
+							q: search + "'" + codes[variation] + "' in parents"
 						}, function(err, response) {
 							if (err) {
 								console.log('The API returned an error: ' + err);
-								return;
+								mainCallback(results);
 							}
 
 							var files = response.items,
@@ -154,7 +156,7 @@ function getGoogleDrive(NA, query, mainCallback) {
 exports.changeVariations = function (next, locals) {
 	var NA = this;
 
-	getGoogleDrive(NA, "", function (results) {
+	getGoogleDrive(NA, "", locals.routeKey.split('_')[0], function (results) {
 		locals.specific.body.search.results = results;
 		next();
 	});
@@ -168,8 +170,8 @@ exports.setSockets = function () {
 		/*var session = socket.request.session,
 			sessionID = socket.request.sessionID;*/
 
-		socket.on('google-drive--search-query', function (query) {
-			getGoogleDrive(NA, query, function (results) {
+		socket.on('google-drive--search-query', function (query, variation) {
+			getGoogleDrive(NA, query, variation, function (results) {
 				socket.emit('google-drive--search-query', results);
 			});
 		});

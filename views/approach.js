@@ -11,11 +11,7 @@ module.exports = function (specific, template, mixin, options) {
 			if (data) {
 				this.specific.search.results = JSON.parse(data.getAttribute('data-search'));
 			} else {
-				var self = this;
-				NA.socket.emit('google-drive--search-query', "");
-				NA.socket.once('google-drive--search-query', function (data) {
-					self.specific.search.results = data;
-				});
+				this.searchResult(this.searchQuery);
 			}
 		},
 		data: function () {
@@ -27,12 +23,15 @@ module.exports = function (specific, template, mixin, options) {
 			};
 		},
 		methods: {
-			getSearchResult: function () {
-				var self = this;
-				NA.socket.emit('google-drive--search-query', self.searchQuery);
+			searchResult: function (query) {
+				var vm = this;
+				NA.socket.emit('google-drive--search-query', query, 'approach');
 				NA.socket.once('google-drive--search-query', function (data) {
-					self.specific.search.results = data;
+					vm.specific.search.results = data;
 				});
+			},
+			getSearchResult: function () {
+				this.searchResult(this.searchQuery);
 			}
 		}
 	};

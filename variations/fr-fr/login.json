@@ -7,9 +7,9 @@
 		"title": "Espace membres",
 		"content": {
 			"unauthenticated": "<p>Veillez entrer vos identifiants pour vous authentifier.</p>",
-			"authenticated": "<p>Cliquez sur le bouton ci-dessous pour vous déconnecter.</p>"
+			"authenticated": "<p>Cliquez sur le bouton ci-dessous pour vous déconnecter.</p>",
+			"me": "Actuellement connecté en tant que :"
 		},
-		"link": "<p><a href=\"./\">Retour à l'accueil <img alt=\"En savoir plus\" src=\"media/images/arrow.svg\" style=\"width:32px\" /></a>&nbsp;</p>\n",
 		"email": {
 			"label": {
 				"content": "Email :",

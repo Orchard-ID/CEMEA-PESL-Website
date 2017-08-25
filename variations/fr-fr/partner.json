@@ -7,7 +7,7 @@
 		"title": "Partie Partenaires institutionnels",
 		"image": "<img alt=\"Démarches\" src=\"./media/images/approach-background.png\" style=\"height:668px; width:1366px\" />",
 		"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>\n",
-		"tips": "<p>&laquo; Lorem ipsum dolor sit amet, consectetur &raquo;</p>\n",
+		"tips": "<p>Google Drive par ici, Accédez à votre!</p>\n",
 		"information": {
 			"title": "Dates",
 			"content": "<p>Comité de pilotage</p>\n\n<p>Animation&nbsp;<br />\nChef de pôle Jeunesse, Sports, Vie associative et Politique de la Ville Direction Départementale de la Cohésion Sociale (DDCS) de la Manche.</p>\n\n<p>Membres<br />\nDirecteur et chargée de projet du Service des Sports et de la Jeunesse Conseil Général de la Manche&nbsp;; Responsable de l&rsquo;Action Sociale CAF&nbsp;de la Manche ; Responsable Adjointe de l&rsquo;Action Sociale MSA Côtes Normandes ; Inspectrice Education Nationale en charge de la réforme des rythmes scolaires DSDEN de la Manche.</p>\n"
@@ -19,7 +19,12 @@
 			"empty": "Il n'y a aucun document ici. Essayez une recherche avec d'autres mots-clés."
 		},
 		"search": {
-			"results": []
+			"results": [
+				{
+					"title": "<a href='https://docs.google.com/feeds/download/presentations/Export?id=12VNpdwtvy7Ia2riWxrsdPFYg6SdsyXcuDIxp-HAYGXU&exportFormat=pdf' download><img src='https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.presentation' width='16' height='16'>C'est magnifique !</a>",
+					"image": "<img src='undefined'>"
+				}
+			]
 		}
 	}
 }
