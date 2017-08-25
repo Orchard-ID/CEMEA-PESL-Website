@@ -36,14 +36,6 @@
 					{
 						"href": "/contact/",
 						"content": "Contact"
-					},
-					{
-						"href": "/coordinateurs/",
-						"content": "Coordinateurs"
-					},
-					{
-						"href": "/partenaires-institutionnels/",
-						"content": "Partenaires Institutionnels"
 					}
 				]
 			},
@@ -53,13 +45,21 @@
 					{
 						"href": "/coordinateurs/",
 						"content": "Coordinateurs",
-						"roles": ["admin", "double", "coordinator"],
+						"roles": [
+							"admin",
+							"double",
+							"coordinator"
+						],
 						"status": "auth"
 					},
 					{
 						"href": "/partenaires-institutionnels/",
 						"content": "Partenaires Institutionnels",
-						"roles": ["admin", "double", "partner"],
+						"roles": [
+							"admin",
+							"double",
+							"partner"
+						],
 						"status": "auth"
 					},
 					{
@@ -97,7 +97,7 @@
 		},
 		"partner": {
 			"title": "Nos partenaires",
-			"content": "<p>&nbsp;Mission financée par le Département et la Caisse d'Allocations Familiales de la Manche dans le cadre du contrat enfance-jeunesse.</p>\n\n<p></p>\n\n<p><img alt=\"La Manche\" src=\"./media/images/la-manche.png\" style=\"height:82px; width:82px\" />&nbsp;<img alt=\"République Française\" src=\"./media/images/republique-francaise.png\" style=\"height:56px; width:77px\" />&nbsp;<img alt=\"CAF\" src=\"./media/images/caf.png\" style=\"height:85px; width:58px\" />&nbsp;<img alt=\"Académie Caen\" src=\"./media/images/academie-caen.png\" style=\"height:87px; width:103px\" />&nbsp;<img alt=\"CEMÉA\" src=\"./media/images/cemea.png\" style=\"height:43px; width:106px\" />&nbsp;<img alt=\"MSA\" src=\"./media/images/msa.png\" style=\"height:43px; width:92px\" /></p>\n"
+			"content": "<p>Mission financée par le Département et la Caisse d'Allocations Familiales de la Manche dans le cadre du contrat enfance-jeunesse.</p>\n\n<p></p>\n\n<p><img alt=\"La Manche\" src=\"./media/images/la-manche.png\" style=\"height:82px; width:82px\" />&nbsp;<img alt=\"République Française\" src=\"./media/images/republique-francaise.png\" style=\"height:56px; width:77px\" />&nbsp;<img alt=\"CAF\" src=\"./media/images/caf.png\" style=\"height:85px; width:58px\" />&nbsp;<img alt=\"Académie Caen\" src=\"./media/images/academie-caen.png\" style=\"height:87px; width:103px\" />&nbsp;<img alt=\"CEMÉA\" src=\"./media/images/cemea.png\" style=\"height:43px; width:106px\" />&nbsp;<img alt=\"MSA\" src=\"./media/images/msa.png\" style=\"height:43px; width:92px\" /></p>\n"
 		},
 		"me": "Moi",
 		"separator": "et/ou",
