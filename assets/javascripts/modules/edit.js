@@ -46,10 +46,7 @@ module.exports = function () {
 					i,
 					j;
 
-				// When a page is updated from outside tab, this part is used if
-				// your current page is the same as the page which was been updated.
-				if (file === 'common' || vm.$refs.router.$options.name === file) {
-
+				function nextStep() {
 					// variation `body` part update.
 					for (i in body) {
 						if (body.hasOwnProperty(i)) {
@@ -69,23 +66,30 @@ module.exports = function () {
 						document.title = currentMeta.title;
 					}
 
+					currentEdit && currentEdit.updateJSON(currentMeta, currentBody);
+				}
+
+				// When a page is updated from outside tab, this part is used if
+				// your current page is the same as the page which was been updated.
+				if (file === 'common' || vm.$refs.router.$options.name === file) {
+
 					// If you have updated page in same time, a message say
 					// your content is in conflict and invite you to update
 					// yours or kept others.
 					if (dirty) {
 						currentEdit.confirmUpdateJSON = true;
 						currentEdit.$refs.confirm.callback = function () {
-							currentEdit.updateJSON(currentMeta, currentBody);
+							nextStep();
 						};
 
 					// Case without update in same time.
 					} else {
-						currentEdit.updateJSON(currentMeta, currentBody);
+						nextStep();
 					}
 
 				// This part is used if you not currently on the page from
 				// outside tab. The update will be done later.
-				// See `setBeforeRouterEnter`.
+				// See `setBeforeRouterEnter`.*/
 				} else if (vm.$refs.router.$options.name !== file) {
 					window.nextUpdates[file] = {
 						meta: meta,
