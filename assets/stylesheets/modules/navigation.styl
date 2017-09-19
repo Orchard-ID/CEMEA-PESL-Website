@@ -4,10 +4,11 @@
 	top 50%
 	right 8px
 	width auto
-	@media (min-width: 420px)
-		width calc(100% - 348px)
 	text-align right
 	transform translateY(-50%)
+
+	@media (min-width: 420px)
+		width calc(100% - 348px)
 
 	@media (min-width: 950px)
 		padding 0 140px 0 8px
@@ -50,79 +51,87 @@
 			display none
 
 	&--menu
+		.router-link-exact-active
+			cursor default
+			color #ff0068
+
 		@media (max-width: 949px)
 			display none
 
 	&.is-opened
-		position fixed
-		top 0
-		left 0
-		width 100%
-		height 100%
-		background-color rgba(0, 55, 255, 0.9)
-		display block
-		transform none
+		@media (max-width: 949px)
+			position fixed
+			top 0
+			left 0
+			width 100%
+			height 100%
+			background-color rgba(0, 55, 255, 0.9)
+			display block
+			transform none
 
-		.inline
-			opacity 0
+			.inline
+				opacity 0
 
-		& ^[0]--title
-			color $linkColorReversed
+			& ^[0]--title
+				color $linkColorReversed
 
-			right 8px
-			top 36px
-
-			&::after
-			&::before
-				top 8px
-				bottom 8px
-				background-color $linkColorReversed
-				border 1px solid $linkColorReversed
-
-			&::after
-				transform rotate(45deg)
-
-			&::before
-				transform rotate(-45deg)
-
-			&:hover
-				color $highlightLinkColor
+				right 8px
+				top 36px
 
 				&::after
 				&::before
-					background-color $highlightLinkColor
-					border 1px solid $highlightLinkColor
-
-		& ^[0]--menu
-			display block
-
-			a
-				color $linkColorReversed
-				&:hover
-					color $highlightLinkColorReversed
-
-			@media (max-width: 949px)
-				position absolute
-				top 50%
-				left 50%
-				transform translate(-50%, -50%)
-				text-align center
-
-				li
-					display block
-					line-height 4rem
-
-		& ^[0]--members-area
-			li:last-child
-				position static
-				line-height 6rem
-				transform none
-
-				a
+					top 8px
+					bottom 8px
+					background-color $linkColorReversed
 					border 1px solid $linkColorReversed
 
-					&:hover
+				&::after
+					transform rotate(45deg)
+
+				&::before
+					transform rotate(-45deg)
+
+				&:hover
+					color $highlightLinkColor
+
+					&::after
+					&::before
+						background-color $highlightLinkColor
 						border 1px solid $highlightLinkColor
+
+			& ^[0]--menu
+				display block
+
+				a
+					color $linkColorReversed
+					&:hover
+						color $highlightLinkColorReversed
+					&.router-link-exact-active
+						cursor default
+						color #ff0068
+
+				@media (max-width: 949px)
+					position absolute
+					top 50%
+					left 50%
+					transform translate(-50%, -50%)
+					text-align center
+
+					li
+						display block
+						line-height 4rem
+
+			& ^[0]--members-area
+				li:last-child
+					position static
+					line-height 6rem
+					transform none
+
+					a
+						border 1px solid $linkColorReversed
+
+						&:hover
+							border 1px solid $highlightLinkColor
 
 	&--members-area
 	&--menu--main

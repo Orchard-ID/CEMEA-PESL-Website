@@ -22,27 +22,27 @@
 			"partners": [
 				{
 					"content": "<h3>La Manche</h3>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p><a href=\"http://www.manche.fr\" target=\"_blank\"><strong>www.manche.fr</strong></a></p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue@2x.png\" style=\"height:195px; width:196px\" />"
 				},
 				{
 					"content": "<h3>République française</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"http://www.manche.gouv.fr\" target=\"_blank\"><strong>www.manche.gouv.fr</strong></a></p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/republique-francaise-blue@2x.png\" style=\"height:115px; width:196px\" />"
 				},
 				{
 					"content": "<h3>Allocations familiales</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"https://www.caf.fr\" target=\"_blank\"><strong>www.caf.fr</strong></a></p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/caf-blue@2x.png\" style=\"height:195px; width:132px\" />"
 				},
 				{
 					"content": "<h3>Académie Caen</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"https://www.ac-caen.fr/\" target=\"_blank\"><strong>www.ac-caen.fr</strong></a></p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/academie-caen-blue@2x.png\" style=\"height:210px; width:246px\" />"
 				},
 				{
 					"content": "<h3>CEMÉA</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"http://www.cemea-normandie.fr/\" target=\"_blank\"><strong>www.cemea-normandie.fr</strong></a></p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/cemea-blue@2x.png\" style=\"height:104px; width:255px\" />"
 				},
 				{
 					"content": "<h3>MSA</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"http://www.msa.fr/\" target=\"_blank\"><strong>www.msa.fr</strong></a></p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/msa-blue@2x.png\" style=\"height:104px; width:222px\" />"
 				}
 			]
 		}

@@ -1,8 +1,8 @@
 <div class="layout" v-bind:class="{ 'as-loaded-page': global.isClient && !global.isWaiting }">
 	<div class="main-content">
-		<transition v-bind:name="global.routerTransition">
+		<height-transition>
 			<router-view ref="router" key="router" v-bind:common="common" v-bind:global="global" v-on:specific="value => { specific = value }"></router-view>
-		</transition>
+		</height-transition>
 	</div>
 	<div class="upper-content">
 		<div class="upper-content--inner">
