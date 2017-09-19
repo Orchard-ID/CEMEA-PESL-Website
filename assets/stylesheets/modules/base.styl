@@ -1,3 +1,18 @@
+::-webkit-input-placeholder {
+	color: #fff;
+}
+:-moz-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+::-moz-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+::-ms-input-placeholder {
+	color: #fff;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -47,7 +62,7 @@ body
 	line-height 1.4
 	font-size 1.4rem
 	font-weight lighter
-	font-family Regular, Arial, sans-serif
+	font-family 'Quicksand', 'Open Sans', 'Arial'
 	letter-spacing .04rem
 
 ol, ul
@@ -65,16 +80,35 @@ table
 	border-collapse collapse
 	border-spacing 0
 
+p
+	font-size 1.4rem
+
+h1 + p
+h2 + p
+h3 + p
+p + p
+	margin-top 16px
+
+hr.separator
+	border 0
+	height 1px
+	background-image: linear-gradient(to right, #1592E6 33%, #fff 0%);
+	background-position: bottom;
+	background-size: 8px 1px;
+	background-repeat: repeat-x;
+
 .a
 a
 	cursor pointer
 	color $linkColor
 	text-decoration none
-	transition letter-spacing .5s ease
+	transition color .3s ease, border .3s ease
 
 	&:hover
-		text-decoration none
-		letter-spacing .08rem
+		color $highlightLinkColor
+
+.text-justify
+	text-align justify
 
 .arrow
 	max-width 3.2rem
@@ -89,7 +123,28 @@ a
 	width 100%
 
 .main-content
-	background-color #066
+	margin-top 95px
+	background-color $backgroundColorReversed
+
+.upper-content
+	z-index 2
+	color $highlightTextColor
+	background-color $backgroundColorReversed
+	position absolute
+	top 0
+	width 100%
+
+	&--inner
+		position relative
+		margin 0 auto
+		max-width 1200px
+		&::after
+			content ""
+			display block
+			clear both
+
+.lower-content
+	background-color $backgroundColor
 
 .errors
 	color #d9534f
@@ -99,15 +154,19 @@ button
 	transition opacity .5s ease
 	font-family inherit
 	font-size inherit
-	color inherit
-	border 1px solid #95989A
-	background-color inherit
-	padding .6rem 2rem
+	color $highlightTextColor
+	border 1px solid $borderColor
+	border-radius 40px
+	padding 6px 12px
 	opacity .8
-	background-color #FFF
+	background-color $backgroundColorReversed
 	cursor pointer
+	font-weight bold
+	transition color .2s ease, border .2s ease
 	&:hover
 		opacity 1
+		color $highlightLinkColor
+		border-color $highlightLinkColor
 	&.invalid
 		opacity .2
 		cursor not-allowed
@@ -137,7 +196,7 @@ button
 		font-family inherit
 		font-size inherit
 		padding 1.4rem 0 0.2rem
-		margin-bottom 1.6rem
+		margin-bottom 2.4rem
 		display block
 		width 100%
 		&:focus

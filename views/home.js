@@ -9,8 +9,20 @@ module.exports = function (specific, template, mixin, options) {
 			return {
 				options: options,
 				meta: specific.meta,
-				specific: specific.body
+				specific: specific.body,
+				slider: 0
 			};
+		},
+		methods: {
+			goToSlide: function (slide) {
+				this.slider = slide;
+			},
+			goToPreviousSlide: function (slide) {
+				this.slider = (this.slider > 1) ? this.slider - 1 : this.specific.partner.partners.length - 1;
+			},
+			goToNextSlide: function (slide) {
+				this.slider = (this.slider < this.specific.partner.partners.length - 1) ? this.slider + 1 : 0;
+			}
 		}
 	};
 };

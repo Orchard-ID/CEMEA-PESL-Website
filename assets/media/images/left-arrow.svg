@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="116.2 1808 11.8 21.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #0037ff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <path id="Tracé_12" data-name="Tracé 12" class="cls-1" d="M1.5,1.5l9.8,9.8,9.9-9.8" transform="translate(128.5 1807.5) rotate(90)"/>
+</svg>

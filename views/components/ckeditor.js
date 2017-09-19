@@ -85,17 +85,17 @@ module.exports = function (template) {
 				];
 			}
 
-				if (this.types === 'inline') {
-					CKEDITOR.inline(this.id, Object.assign({}, config, this.config));
-				} else {
-					CKEDITOR.replace(this.id, Object.assign({}, config, this.config));
+			if (this.types === 'inline') {
+				CKEDITOR.inline(this.id, Object.assign({}, config, this.config));
+			} else {
+				CKEDITOR.replace(this.id, Object.assign({}, config, this.config));
+			}
+			this.instance.on('change', () => {
+				let html = this.instance.getData();
+				if (html !== this.value) {
+					this.$emit('input', html);
 				}
-				this.instance.on('change', () => {
-					let html = this.instance.getData();
-					if (html !== this.value) {
-						this.$emit('input', html);
-					}
-				});
+			});
 		},
 		beforeDestroy: function () {
 			if (this.instance) {

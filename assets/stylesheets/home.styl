@@ -1,2 +1,209 @@
 .home
-	background-color #f0f
+
+	img
+		max-width 100%
+		height auto!important
+
+	h3
+		font-size 2.4rem
+
+	&--title
+		display none
+
+	&--partner
+	&--approach
+	&--about
+		padding 24px 0
+		position relative
+		max-width 1200px
+		margin 0 auto
+
+		&--title
+			font-size 2.4rem
+			font-weight bold
+			margin-top 24px
+			margin-bottom 24px
+			line-height 4.2rem
+
+			@media (min-width: 600px)
+				margin-top 0
+				font-size 4rem
+
+			&::after
+				margin-top 16px
+				content ""
+				width 48px
+				height 3px
+				border 1px solid $backgroundColor
+				border-radius 8px
+				display block
+				clear both
+				background-color $backgroundColor
+
+	&--approach
+	&--about
+
+		&--main
+			padding 0 64px
+
+			@media (min-width: 600px)
+				position absolute
+				top 50%
+				width 70%
+				transform translateY(-50%)
+
+			@media (min-width: 950px)
+				width 50%
+
+		&--cta
+			margin-top 32px
+			a
+				color $highlightTextColor
+				border 1px solid $borderColor
+				border-radius 40px
+				padding 6px 12px
+				background-color $backgroundColorReversed
+				font-weight bold
+				transition color .2s ease, border .2s ease
+				&:hover
+					color $highlightLinkColor
+					border-color $highlightLinkColor
+
+	&--about
+
+		@media (min-width: 600px)
+			&--main
+				left 0
+
+			&--image
+				margin-left 70%
+				width 30%
+				height 464px
+
+		@media (min-width: 950px)
+			&--image
+				margin-left 50%
+				width 50%
+
+	&--approach
+
+		@media (min-width: 600px)
+			&--main
+				right 0
+
+			&--image
+				width 30%
+				height 464px
+
+		@media (min-width: 950px)
+			&--image
+				width 50%
+
+	&--partner
+		text-align center
+
+		&--slider
+			padding 32px
+			position relative
+
+			&--content
+				ul
+					position relative
+
+				li:first-child
+					position relative
+
+				li
+					top 0
+					position absolute
+					width 100%
+					background-color $backgroundColorReversed
+					z-index 1
+					opacity 0
+					transition opacity 1s ease, z-index 1s ease
+
+					&:first-child
+						position relative
+
+					&.is-selected
+						z-index 2
+						opacity 1
+
+					&::after
+						content ""
+						display block
+						clear both
+
+			&--navigation
+				.left
+				.right
+					z-index 3
+					position absolute
+					top 50%
+					transform translateY(-50%)
+					cursor pointer
+					border 2px solid $borderColor
+					border-radius 50%
+					padding 0 7px
+
+					img
+						margin-top 4px
+
+				.left
+					left 16px
+					@media (min-width: 600px)
+						left 64px
+					img
+						margin-right 2px
+
+				.right
+					right 16px
+					@media (min-width: 600px)
+						right 64px
+					img
+						margin-left 2px
+
+			&--pagination
+				display none
+				@media (min-width: 600px)
+					display inline-block
+
+				ul
+					padding-top 48px
+
+				li
+					display inline-block
+					border-radius 50%
+					background-color $backgroundColor
+					width 16px
+					height 16px
+					margin 0 16px
+					opacity .4
+					cursor pointer
+
+					&.is-selected
+						cursor default
+						opacity 1
+
+		&--image
+			padding 0 32px
+
+			@media (min-width: 600px)
+				width 50%
+				text-align right
+
+		&--content
+			padding 0 32px
+
+			@media (min-width: 600px)
+				text-align left
+				position absolute
+				width 50%
+				top 50%
+				left 50%
+				max-width 424px
+				transform translateY(-50%)
+
+		&--title
+			&::after
+				margin 16px auto 0

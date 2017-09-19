@@ -1,5 +1,5 @@
 <nav class="navigation" v-bind:class="{ 'is-opened': global.navigation }">
-	<h1 class="navigation--title">
+	<h1 class="navigation--title" v-on:click="toggleMenu" >
 		<inline v-model="common.navigation.title" :global="global" />
 	</h1>
 	<div class="navigation--menu">

@@ -18,7 +18,7 @@
 		<meta name="og:title" content="<?-specific.meta.title ?> - <?- common.title ?>">
 		<meta name="og:description" content="<?- specific.meta.description ?>">
 		<meta name="og:image" content="<?= urlBasePath ?>/media/images/logo.jpg">
-		<meta name="viewport" content="initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 		<link rel="apple-touch-icon" sizes="180x180" href="media/apple-icon-180x180.png">
 		<link rel="icon" type="image/png" sizes="192x192" href="media/android-icon-192x192.png">
@@ -27,6 +27,7 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
 
 		<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
 		<? if (webconfig._min) { ?>
 		<link rel="stylesheet" href="stylesheets/common.<?= webconfig.version ?>.min.css">

@@ -14,7 +14,7 @@
 	},
 	"body": {
 		"loading": "Chargement...",
-		"title": "Projets Éducatifs Sociaux Locaux",
+		"title": "<a href=\"/\">Projets éducatifs<br />\nsociaux locaux</a>",
 		"subtitle": "<img alt=\"CEMÉA\" src=\"./media/images/cemea-blue.png\" style=\"height:42px; width:104px\" />",
 		"navigation": {
 			"title": "Menu",
@@ -92,12 +92,12 @@
 		},
 		"contact": {
 			"title": "Contactez-nous",
-			"cemea": "<p>CEMÉA Normandie</p>\n\n<p>5 rue du Docteur Laënnec<br />\n14200 Hérouville Saint Clair</p>\n\n<p>Caen : 02.31.86.14.11<br />\nRouen : 02.32.76.08.40<br />\nwww.cemea-normandie.fr<br />\ncontact.caen@cemea-normandie.fr</p>\n",
-			"pesl": "<p>Projet éducatif social local</p>\n\n<p>Christophe Maulny<br />\nResponsable projet CEMÉA</p>\n\n<p>contact@pesl-normandie.fr<br />\n06 .13.37.36.28</p>\n\n<p><a href=\"https://twitter.com/\">Twitter</a> <a href=\"https://www.facebook.com/\">Facebook</a></p>\n"
+			"cemea": "<h3>CEMÉA Normandie</h3>\n\n<p>5 rue du Docteur Laënnec<br />\n14200 Hérouville Saint Clair</p>\n\n<p>Caen : 02.31.86.14.11<br />\nRouen : 02.32.76.08.40<br />\n<a href=\"http://www.cemea-normandie.fr\">www.cemea-normandie.fr</a><br />\n<a href=\"mailto:contact.caen@cemea-normandie.fr\">contact.caen@cemea-normandie.fr</a></p>\n",
+			"pesl": "<h3>Projet éducatif social local</h3>\n\n<p>Christophe Maulny<br />\nResponsable projet CEMÉA</p>\n\n<p><a href=\"mailto:contact@pesl-normandie.fr\">contact@pesl-normandie.fr</a><br />\n06 .13.37.36.28</p>\n\n<p><a href=\"https://www.twitter.com/\"><img alt=\"\" src=\"./media/images/twitter.svg\" style=\"height:32px; width:32px\" /></a>&nbsp;&nbsp;<a href=\"http://www.facebook.com/\"><img alt=\"\" src=\"./media/images/facebook.svg\" style=\"height:32px; width:32px\" /></a></p>\n"
 		},
 		"partner": {
 			"title": "Nos partenaires",
-			"content": "<p>Mission financée par le Département et la Caisse d'Allocations Familiales de la Manche dans le cadre du contrat enfance-jeunesse.</p>\n\n<p></p>\n\n<p><img alt=\"La Manche\" src=\"./media/images/la-manche.png\" style=\"height:82px; width:82px\" />&nbsp;<img alt=\"République Française\" src=\"./media/images/republique-francaise.png\" style=\"height:56px; width:77px\" />&nbsp;<img alt=\"CAF\" src=\"./media/images/caf.png\" style=\"height:85px; width:58px\" />&nbsp;<img alt=\"Académie Caen\" src=\"./media/images/academie-caen.png\" style=\"height:87px; width:103px\" />&nbsp;<img alt=\"CEMÉA\" src=\"./media/images/cemea.png\" style=\"height:43px; width:106px\" />&nbsp;<img alt=\"MSA\" src=\"./media/images/msa.png\" style=\"height:43px; width:92px\" /></p>\n"
+			"content": "<p>Mission financée par le Département et la Caisse d'Allocations Familiales de la Manche dans le cadre du contrat enfance-jeunesse.</p>\n\n<p class=\"text-justify\"><a href=\"http://www.manche.fr\" target=\"_blank\"><img alt=\"La Manche\" src=\"./media/images/la-manche.png\" style=\"height:82px; width:82px\" /></a>&nbsp;<a href=\"http://www.manche.gouv.fr\" target=\"_blank\"><img alt=\"République Française\" src=\"./media/images/republique-francaise.png\" style=\"height:56px; width:77px\" /></a>&nbsp;<a href=\"http://www.caf.fr\" target=\"_blank\"><img alt=\"CAF\" src=\"./media/images/caf.png\" style=\"height:85px; width:58px\" /></a>&nbsp;<a href=\"http://www.ac-caen.fr/\"><img alt=\"Académie Caen\" src=\"./media/images/academie-caen.png\" style=\"height:87px; width:103px\" /></a>&nbsp;<a href=\"http://www.cemea-normandie.fr/\" target=\"_blank\"><img alt=\"CEMÉA\" src=\"./media/images/cemea.png\" style=\"height:43px; width:106px\" /></a>&nbsp;<a href=\"http://www.msa.fr/\" target=\"_blank\"><img alt=\"MSA\" src=\"./media/images/msa.png\" style=\"height:43px; width:92px\" /></a></p>\n"
 		},
 		"me": "Moi",
 		"separator": "et/ou",

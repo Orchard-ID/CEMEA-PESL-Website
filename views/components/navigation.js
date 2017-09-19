@@ -19,6 +19,9 @@ module.exports = function (template) {
 					output = true;
 				}
 				return output;
+			},
+			toggleMenu: function () {
+				this.global.navigation = !this.global.navigation;
 			}
 		},
 		data: function () {

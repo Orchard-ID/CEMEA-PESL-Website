@@ -8,6 +8,11 @@ if (window.location.pathname.slice(-1) !== '/') {
 	window.location = window.location.pathname + '/';
 }
 
+CKEDITOR.stylesSet.add( 'cemea', [
+	{ name: 'Justifier', element: 'p', attributes: { 'class': 'text-justify' } }
+]);
+CKEDITOR.config.stylesSet = 'cemea';
+
 function xhr(url) {
 	return new Promise(function (resolve, reject) {
 		var request = new XMLHttpRequest(),
@@ -200,7 +205,20 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 		mode: 'history',
 		fallback: false,
 		base: '/',
-		routes: routes
+		routes: routes,
+		scrollBehavior (to, from, savedPosition) {
+			if (to.hash) {
+				return {
+					selector: to.hash
+				}
+			}
+
+			if (savedPosition) {
+				return savedPosition
+			} else {
+				return { x: 0, y: 0 }
+			}
+		}
 	});
 
 
