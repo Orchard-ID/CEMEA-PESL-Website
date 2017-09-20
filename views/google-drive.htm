@@ -1,16 +1,18 @@
 <div class="google-drive" v-bind:data-search="JSON.stringify(specific.search.results)">
 	<article class="google-drive--article">
-		<h1>
-			<inline v-model="specific.title" :global="global" />
-		</h1>
 		<div class="google-drive--image">
 			<inline v-model="specific.image" :global="global" />
 		</div>
-		<div class="google-drive--content">
-			<block v-model="specific.content" :global="global" />
-		</div>
-		<div v-if="global.me.role === 'admin'" class="google-drive--tips">
-			<block v-model="specific.tips" :global="global" />
+		<div class="google-drive--main">
+			<h1 class="google-drive--title">
+				<inline v-model="specific.title" :global="global" />
+			</h1>
+			<div class="google-drive--content">
+				<block v-model="specific.content" :global="global" />
+			</div>
+			<div v-if="global.me.role === 'admin'" class="google-drive--tips">
+				<block v-model="specific.tips" :global="global" />
+			</div>
 		</div>
 	</article>
 	<section class="google-drive--information">
@@ -26,26 +28,26 @@
 			<inline v-model="specific.documentation.title" :global="global" />
 		</h2>
 		<div class="google-drive--search-bar">
-			<attrs :global="global">
-				<input type="text" v-model="searchQuery" v-bind:placeholder="specific.documentation.placeholder">
-				<template slot="attrs">
-					<attr :label="'Placeholder: '" v-model="specific.documentation.placeholder" :global="global" />
-				</template>
-			</attrs>
-			<button v-on:click="getSearchResult">
-				<inline v-model="specific.documentation.button" :global="global" />
-			</button>
+			<div class="field search" v-bind:class="{ empty: searchQuery === '' }">
+				<button v-on:click="getSearchResult">
+					<inline v-model="specific.documentation.button" :global="global" />
+				</button>
+				<attrs :global="global">
+					<label for="google-drive-form--search" v-html="specific.documentation.search.label.content"></label>
+					<template slot="attrs">
+						<attr :label="'Placeholder: '" v-model="specific.documentation.placeholder" :global="global" />
+					</template>
+				</attrs>
+				<input v-on:keyup.enter="getSearchResult" type="text" id="google-drive-form--search" class="google-drive-form--search" name="search" v-bind:placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
+			</div>
 		</div>
 		<div class="google-drive--search-result">
 			<ul v-if="specific.search.results.length > 0">
 				<li v-for="(item, index) in specific.search.results">
 					<div class="google-drive--documentation--result">
-						<div class="google-drive--documentation--result--title">
-							<inline v-model="specific.search.results[index].title" :global="global" />
-						</div>
-						<div class="google-drive--documentation--result--image">
-							<inline v-model="specific.search.results[index].image" :global="global" />
-						</div>
+						<div class="google-drive--documentation--result--image" v-html="specific.search.results[index].image"></div>
+						<div class="google-drive--documentation--result--title" v-html="specific.search.results[index].title"></div>
+						<div class="google-drive--documentation--result--detail" v-html="specific.search.results[index].detail"></div>
 					</div>
 				</li>
 			</ul>

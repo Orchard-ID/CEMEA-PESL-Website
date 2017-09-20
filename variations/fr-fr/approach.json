@@ -12,44 +12,39 @@
 			"title": "Organigramme",
 			"roles": [
 				{
-					"content": "<p>Comité de pilotage</p>\n\n<p>Animation&nbsp;<br />\nChef de pôle Jeunesse, Sports, Vie associative et Politique de la Ville Direction Départementale de la Cohésion Sociale (DDCS) de la Manche.</p>\n\n<p>Membres<br />\nDirecteur et chargée de projet du Service des Sports et de la Jeunesse Conseil Général de la Manche&nbsp;; Responsable de l&rsquo;Action Sociale CAF&nbsp;de la Manche ; Responsable Adjointe de l&rsquo;Action Sociale MSA Côtes Normandes ; Inspectrice Education Nationale en charge de la réforme des rythmes scolaires DSDEN de la Manche.</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
-				},
-				{
-					"content": "<p>Comité technique</p>\n\n<p>Animation<br />\nCoordonnateur Départemental PEL (CEMEA)</p>\n\n<p>Composition<br />\nConseillère Technique Animation de la Vie Sociale et Jeunesse (CAF)&nbsp;; Direction de l&rsquo;Education, de la Jeunesse et des Sports &nbsp;du Conseil Général&nbsp;; Animatrice territoriale MSA Côtes Normandes&nbsp;; Conseillère Education Populaire et Jeunesse DDCS.</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/arrow-bottom.png\" style=\"height:78px; width:32px\" />"
-				},
-				{
-					"content": "<p>Groupe de travail</p>\n",
+					"content": "<h3>Comité de pilotage</h3>\n\n<p><strong>Animation</strong>&nbsp;<br />\nChef de pôle Jeunesse, Sports, Vie associative et Politique de la Ville Direction Départementale de la Cohésion Sociale (DDCS) de la Manche.</p>\n\n<p><strong>Membres</strong><br />\nDirecteur et chargée de projet du Service des Sports et de la Jeunesse Conseil Général de la Manche&nbsp;; Responsable de l&rsquo;Action Sociale CAF&nbsp;de la Manche ; Responsable Adjointe de l&rsquo;Action Sociale MSA Côtes Normandes ; Inspectrice Education Nationale en charge de la réforme des rythmes scolaires DSDEN de la Manche.</p>\n",
 					"image": "<img alt=\"\" src=\"./media/images/arrow-top.png\" style=\"height:78px; width:32px\" />"
 				},
 				{
-					"content": "<p>Groupe de travail</p>\n",
+					"content": "<h3>Comité technique</h3>\n\n<p><strong>Animation</strong><br />\nCoordonnateur Départemental PEL (CEMEA)</p>\n\n<p><strong>Composition</strong><br />\nConseillère Technique Animation de la Vie Sociale et Jeunesse (CAF)&nbsp;; Direction de l&rsquo;Education, de la Jeunesse et des Sports &nbsp;du Conseil Général&nbsp;; Animatrice territoriale MSA Côtes Normandes&nbsp;; Conseillère Education Populaire et Jeunesse DDCS.</p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/arrow-bottom.png\" style=\"height:78px; width:32px\" />"
+				},
+				{
+					"content": "<h3 class=\"text-center\">Groupe de travail</h3>\n",
+					"image": "<img alt=\"\" src=\"./media/images/arrow-top.png\" style=\"height:78px; width:32px\" />"
+				},
+				{
+					"content": "<h3 class=\"text-center\">Groupe de travail</h3>\n",
 					"image": "<img alt=\"\" src=\"./media/images/arrow-bottom.png\" style=\"height:78px; width:32px\" />"
 				}
 			]
 		},
 		"documentation": {
 			"title": "Structure",
-			"placeholder": "Rechercher",
+			"search": {
+				"label": {
+					"content": "Rechercher :",
+					"placeholder": "Rechercher"
+				},
+				"error": {
+					"empty": "Le champ Rechercher est vide."
+				}
+			},
 			"button": "<img alt=\"\" src=\"./media/images/search.png\" style=\"height:20px; width:20px\" />",
 			"empty": "Il n'y a aucun document ici. Essayez une recherche avec d'autres mots-clés."
 		},
 		"search": {
-			"results": [
-				{
-					"title": "<a href='https://docs.google.com/feeds/download/presentations/Export?id=1Wm2CoLkeozS0qDKEO0hndq6LoDf7mRrA9fM4-OpV6co&exportFormat=pdf' download><img src='https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.presentation' width='16' height='16'>Test 4</a>",
-					"image": "<img src='https://docs.google.com/feeds/vt?gd=true&id=1Wm2CoLkeozS0qDKEO0hndq6LoDf7mRrA9fM4-OpV6co&v=3&s=AMedNnoAAAAAWZ790RWm_NFXLIWCcSYNzjkn0ttYKNyp&sz=s220'>"
-				},
-				{
-					"title": "<a href='https://docs.google.com/spreadsheets/export?id=1c1xGmg37gZEG1HvWR3sTT7NRME1ScIPk6ja9CzCg_kQ&exportFormat=pdf' download><img src='https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.spreadsheet' width='16' height='16'>Test 2</a>",
-					"image": "<img src='https://docs.google.com/feeds/vt?gd=true&id=1c1xGmg37gZEG1HvWR3sTT7NRME1ScIPk6ja9CzCg_kQ&v=1&s=AMedNnoAAAAAWZ790Qe2oEpROdtrHFw7kfelbaO1gzyo&sz=s220'>"
-				},
-				{
-					"title": "<a href='https://docs.google.com/feeds/download/documents/export/Export?id=1YAxxHkrU24h2US6tyhvFtsMTJ-3JnyWEZUXVAmx80CU&exportFormat=pdf' download><img src='https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.document' width='16' height='16'>Test 1</a>",
-					"image": "<img src='https://docs.google.com/feeds/vt?gd=true&id=1YAxxHkrU24h2US6tyhvFtsMTJ-3JnyWEZUXVAmx80CU&v=1&s=AMedNnoAAAAAWZ790T1CjAEJ0o1mnErm4dIYRLebtmMc&sz=s220'>"
-				}
-			]
+			"results": []
 		}
 	}
 }

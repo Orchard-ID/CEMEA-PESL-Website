@@ -1,4 +1,4 @@
-.approach
+.google-drive
 
 	img
 		max-width 100%
@@ -14,7 +14,7 @@
 			height auto
 
 	&--documentation
-	&--structure
+	&--information
 	&--main
 		max-width 920px
 		margin 0 auto
@@ -30,9 +30,17 @@
 		@media (min-width: 950px)
 			margin -300px auto 0
 
+	&--information
+		padding-bottom 32px
+		h3
+			font-weight bold
+			font-size 1.8rem
+			@media (min-width: 600px)
+				font-size 2.4rem
+
 	&--title
 	&--documentation--title
-	&--structure--title
+	&--information--title
 		font-size 2.4rem
 		font-weight bold
 		margin-top 24px
@@ -58,69 +66,13 @@
 			clear both
 			background-color $backgroundColor
 
-	&--quote
-		margin-top 64px
-		text-align center
-		p
-			line-height 1.2
-			font-size 3.0rem
-			@media (min-width: 600px)
-				font-size 4.0rem
-
-	&--structure
-		h3
-			font-weight bold
-			font-size 1.8rem
-			@media (min-width: 600px)
-				font-size 2.4rem
-
-		ul
-			padding-top 32px
-			padding-bottom 32px
-
-		li:nth-child(1)
-			& ^[0..1]--role
-				img
-					bottom 0
-					left 25%
-					transform translate(-50%, calc(50% + 12px))
-
-		li:nth-child(2)
-			& ^[0..1]--role
-				img
-					top 0
-					right 25%
-					transform translate(50%, -50% - 12px)
-
-		li:nth-child(3)
-			& ^[0..1]--role
-				float left
-				width calc(50% - 12px)
-				img
-					left 50%
-					top 0
-					transform translate(-50%, -50%)
-
-		li:nth-child(4)
-				margin-left calc(50% + 12px)
-				width calc(50% - 12px)
-				img
-					right 50%
-					top 0
-					transform translate(50%, -50%)
-
-		&--role
-			position relative
-			border-radius 8px
-			padding 24px
-			@media (min-width: 600px)
-				padding 48px
-			box-shadow 0 0 10px 2px #e0e0e0
-			margin-bottom 24px
-
-			img
-				z-index 2
-				position absolute
+	&--tips
+		margin-top 48px
+		border-radius 8px
+		padding 24px
+		@media (min-width: 600px)
+			padding 48px
+		box-shadow 0 0 10px 2px #e0e0e0
 
 	&--documentation
 		padding-bottom 32px

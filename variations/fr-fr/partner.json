@@ -13,16 +13,25 @@
 			"content": "<p>Comité de pilotage</p>\n\n<p>Animation&nbsp;<br />\nChef de pôle Jeunesse, Sports, Vie associative et Politique de la Ville Direction Départementale de la Cohésion Sociale (DDCS) de la Manche.</p>\n\n<p>Membres<br />\nDirecteur et chargée de projet du Service des Sports et de la Jeunesse Conseil Général de la Manche&nbsp;; Responsable de l&rsquo;Action Sociale CAF&nbsp;de la Manche ; Responsable Adjointe de l&rsquo;Action Sociale MSA Côtes Normandes ; Inspectrice Education Nationale en charge de la réforme des rythmes scolaires DSDEN de la Manche.</p>\n"
 		},
 		"documentation": {
-			"title": "Structure",
-			"placeholder": "Rechercher",
+			"title": "Documents",
+			"search": {
+				"label": {
+					"content": "Rechercher :",
+					"placeholder": "Rechercher"
+				},
+				"error": {
+					"empty": "Le champ Rechercher est vide."
+				}
+			},
 			"button": "<img alt=\"\" src=\"./media/images/search.png\" style=\"height:20px; width:20px\" />",
 			"empty": "Il n'y a aucun document ici. Essayez une recherche avec d'autres mots-clés."
 		},
 		"search": {
 			"results": [
 				{
-					"title": "<a href='https://docs.google.com/feeds/download/presentations/Export?id=12VNpdwtvy7Ia2riWxrsdPFYg6SdsyXcuDIxp-HAYGXU&exportFormat=pdf' download><img src='https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.presentation' width='16' height='16'>C'est magnifique !</a>",
-					"image": "<img src='undefined'>"
+					"title": "<a href='https://docs.google.com/document/d/1zHQ-41VijgTxC2zNhPqEpzHDuaqvX9S15UaHpSb-B_w/preview' target='_blank'><img src='https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.document' width='16' height='16' style='margin-bottom: -2px'> TaDaDam</a>",
+					"image": "<img src='https://docs.google.com/feeds/vt?gd=true&id=1zHQ-41VijgTxC2zNhPqEpzHDuaqvX9S15UaHpSb-B_w&v=1&s=AMedNnoAAAAAWcKe0CeG-lI_sX0GFna1zKXsGT_nzWsS&sz=s220'>",
+					"detail": "<a href='https://docs.google.com/feeds/download/documents/export/Export?id=1zHQ-41VijgTxC2zNhPqEpzHDuaqvX9S15UaHpSb-B_w&exportFormat=pdf' download><strong>Télécharger</strong></a> · ven 25 août2017 à 10:15"
 				}
 			]
 		}

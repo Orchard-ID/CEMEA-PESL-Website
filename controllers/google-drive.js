@@ -73,6 +73,25 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 				'approach': '0Bx898FhOCnEmbzZNTWJpcTFtdzQ',
 				'coordinator': '0Bx898FhOCnEmdVNZUHZ2ZnN0Z1U',
 				'partner': '0Bx898FhOCnEmOTVobWVnUFl0MjA',
+			},
+			dateLine = function (date) {
+				var join = NA.modules.path.join,
+					path = join(NA.serverPath, NA.webconfig.variationsRelativePath, NA.webconfig.languageCode, NA.webconfig.variation),
+					common,
+					now = new Date(date),
+					padLeft = function (pad, str) {
+						str = "" + str;
+						return pad.substring(0, pad.length - str.length) + str;
+					};
+
+				delete require.cache[path];
+				common = require(path);
+
+				return common.body.dates.smallDay[now.getDay()] + ' ' +
+					now.getDate() + ' ' +
+					common.body.dates.smallMonth[now.getMonth()] + now.getFullYear() + ' à ' +
+					now.getHours() + ':' +
+					padLeft("00", now.getMinutes());
 			}/*,
 			fileMetadata = {
 				'name' : 'Invoices',
@@ -133,8 +152,9 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 							for (var i = 0; i < files.length; i++) {
 								file = files[i];
 								results.push({
-									"title": "<a href='" + file.exportLinks['application/pdf'] + "' download><img src='" +  file.iconLink + "' width='16' height='16'>" + file.title + "</a>",
-									"image": "<img src='" +  file.thumbnailLink + "'>"
+									"title": "<a href='" + file.embedLink + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
+									"image": "<img src='" +  file.thumbnailLink + "'>",
+									"detail": "<a href='" + file.exportLinks['application/pdf'] + "' download><strong>Télécharger</strong></a> · " + dateLine(file.modifiedDate)
 								});
 							}
 

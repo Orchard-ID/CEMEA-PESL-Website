@@ -79,31 +79,31 @@
 			"goals": [
 				{
 					"content": "<p>L&rsquo;accompagnement à la scolarité</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/accompagnement-scolarite@2x.png\" style=\"height:112px; width:112px\" />"
 				},
 				{
 					"content": "<p>L&rsquo;accès aux structures d&rsquo;accueil&nbsp;</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/acces-structures-accueil@2x.png\" style=\"height:112px; width:112px\" />"
 				},
 				{
 					"content": "<p>L&rsquo;accès à l&rsquo;orientation</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/acces-orientation@2x.png\" style=\"height:112px; width:112px\" />"
 				},
 				{
 					"content": "<p>L&rsquo;accès aux pratiques culturelles, sportives et techniques</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/acces-pratiques-culturelles-techniques-sportives@2x.png\" style=\"height:112px; width:112px\" />"
 				},
 				{
 					"content": "<p>Développement de l&rsquo;initiative et de la citoyenneté</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/developpement-initiative-citoyenete@2x.png\" style=\"height:112px; width:112px\" />"
 				},
 				{
 					"content": "<p>L&rsquo;engagement dans la vie associative</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/engagement-associative@2x.png\" style=\"height:112px; width:112px\" />"
 				},
 				{
 					"content": "<p>L&rsquo;accès à l&rsquo;information</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/file.png\" style=\"height:80px; width:58px\" />"
+					"image": "<img alt=\"\" src=\"./media/images/acces-information@2x.png\" style=\"height:112px; width:112px\" />"
 				}
 			]
 		}

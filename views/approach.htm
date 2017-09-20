@@ -3,8 +3,8 @@
 		<div class="approach--image">
 			<inline v-model="specific.image" :global="global" />
 		</div>
-		<div class="appoach--main">
-			<h1>
+		<div class="approach--main">
+			<h1 class="approach--title">
 				<inline v-model="specific.title" :global="global" />
 			</h1>
 			<div class="approach--content">
@@ -35,26 +35,26 @@
 			<inline v-model="specific.documentation.title" :global="global" />
 		</h2>
 		<div class="approach--search-bar">
-			<attrs :global="global">
-				<input type="text" v-model="searchQuery" v-bind:placeholder="specific.documentation.placeholder">
-				<template slot="attrs">
-					<attr :label="'Placeholder: '" v-model="specific.documentation.placeholder" :global="global" />
-				</template>
-			</attrs>
-			<button v-on:click="getSearchResult">
-				<inline v-model="specific.documentation.button" :global="global" />
-			</button>
+			<div class="field search" v-bind:class="{ empty: searchQuery === '' }">
+				<button v-on:click="getSearchResult">
+					<inline v-model="specific.documentation.button" :global="global" />
+				</button>
+				<attrs :global="global">
+					<label for="approach-form--search" v-html="specific.documentation.search.label.content"></label>
+					<template slot="attrs">
+						<attr :label="'Placeholder: '" v-model="specific.documentation.placeholder" :global="global" />
+					</template>
+				</attrs>
+				<input v-on:keyup.enter="getSearchResult" type="text" id="approach-form--search" class="approach-form--search" name="search" v-bind:placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
+			</div>
 		</div>
 		<div class="approach--search-result">
 			<ul v-if="specific.search.results.length > 0">
 				<li v-for="(item, index) in specific.search.results">
 					<div class="approach--documentation--result">
-						<div class="approach--documentation--result--title">
-							<inline v-model="specific.search.results[index].title" :global="global" />
-						</div>
-						<div class="approach--documentation--result--image">
-							<inline v-model="specific.search.results[index].image" :global="global" />
-						</div>
+						<div class="approach--documentation--result--image" v-html="specific.search.results[index].image"></div>
+						<div class="approach--documentation--result--title" v-html="specific.search.results[index].title"></div>
+						<div class="approach--documentation--result--detail" v-html="specific.search.results[index].detail"></div>
 					</div>
 				</li>
 			</ul>
