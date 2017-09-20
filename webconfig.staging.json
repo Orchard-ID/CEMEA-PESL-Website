@@ -19,6 +19,6 @@
 	"statics": "statics.js",
 	"routes": "routes.json",
 	"_robots": "noindex, nofollow",
-	"_data": "../verger.digital/data/",
+	"_data": "../verger.digital/data/cemea-pesl/",
 	"_min": true
 }
