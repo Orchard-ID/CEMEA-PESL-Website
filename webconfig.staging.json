@@ -8,9 +8,9 @@
 		"transports": ["polling"]
 	},
 	"httpSecure": true,
-	"httpPort": 8080,
+	"httpPort": 8081,
 	"urlPort": 443,
-	"urlHostname": "staging.orchard-id.fr",
+	"urlHostname": "staging.orchard-id.com",
 	"languageCode": "fr-fr",
 	"variation": "common.json",
 	"controller": "common.js",
@@ -19,6 +19,6 @@
 	"statics": "statics.js",
 	"routes": "routes.json",
 	"_robots": "noindex, nofollow",
-	"_data": "data/",
+	"_data": "../verger.digital/data/",
 	"_min": true
 }
