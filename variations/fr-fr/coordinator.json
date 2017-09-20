@@ -5,7 +5,7 @@
 	},
 	"body": {
 		"title": "Partie Coordinateur",
-		"image": "<img alt=\"Démarches\" src=\"./media/images/approach-background.png\" style=\"height:668px; width:1366px\" />",
+		"image": "<img alt=\"Partie Coordinateurs\" src=\"./media/images/approach-background.jpg\" style=\"height:668px; width:1366px\" />",
 		"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>\n",
 		"tips": "<p><a href=\"https://drive.google.com/drive/my-drive\"><strong>Accédez à votre Google Drive par ici !</strong></a></p>\n",
 		"information": {
@@ -27,13 +27,7 @@
 			"empty": "Il n'y a aucun document ici. Essayez une recherche avec d'autres mots-clés."
 		},
 		"search": {
-			"results": [
-				{
-					"title": "<a href='https://docs.google.com/presentation/d/12VNpdwtvy7Ia2riWxrsdPFYg6SdsyXcuDIxp-HAYGXU/preview' target='_blank'><img src='https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.presentation' width='16' height='16' style='margin-bottom: -2px'> C'est magnifique !</a>",
-					"image": "<img src='https://docs.google.com/feeds/vt?gd=true&id=12VNpdwtvy7Ia2riWxrsdPFYg6SdsyXcuDIxp-HAYGXU&v=1&s=AMedNnoAAAAAWcKf1eOyc4nhehK7PGOwPRCw7UWOCB-Q&sz=s220'>",
-					"detail": "<a href='https://docs.google.com/feeds/download/presentations/Export?id=12VNpdwtvy7Ia2riWxrsdPFYg6SdsyXcuDIxp-HAYGXU&exportFormat=pdf' download><strong>Télécharger</strong></a> · ven 25 août2017 à 10:28"
-				}
-			]
+			"results": []
 		}
 	}
 }

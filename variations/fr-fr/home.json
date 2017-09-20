@@ -9,13 +9,13 @@
 			"title": "Le projet éducatif et social local",
 			"content": "<p>C&rsquo;est un processus continu qui vise à créer les conditions nécessaires pour améliorer le quotidien de la vie des populations à partir d&rsquo;une action éducative et sociale globale. Il répond aux principes d&rsquo;une démarche de développement social territorial en impulsant le croisement de la commande publique et de la demande sociale. Il s&rsquo;appuie sur une dynamique de proximité en provoquant la mobilisation du plus grand nombre.</p>\n",
 			"cta": "<a href=\"/presentation/\">En savoir plus</a>",
-			"image": "<img alt=\"Le projet éducatif et social local\" src=\"./media/images/about.png\" style=\"height:528px; width:683px\" />"
+			"image": "<img alt=\"Le projet éducatif et social local\" src=\"./media/images/about.jpg\" style=\"height:528px; width:683px\" />"
 		},
 		"approach": {
 			"title": "Les démarches",
 			"content": "<p>C&rsquo;est un processus continu qui vise à créer les conditions nécessaires pour améliorer le quotidien de la vie des populations à partir d&rsquo;une action éducative et sociale globale. Il répond aux principes d&rsquo;une démarche de développement social territorial en impulsant le croisement de la commande publique et de la demande sociale. Il s&rsquo;appuie sur une dynamique de proximité en provoquant la mobilisation du plus grand nombre.</p>\n",
 			"cta": "<a href=\"/demarches/\">En savoir plus</a>",
-			"image": "<img alt=\"\" src=\"./media/images/approach.png\" style=\"height:529px; width:683px\" />"
+			"image": "<img alt=\"Les démarches\" src=\"./media/images/approach.jpg\" style=\"height:529px; width:683px\" />"
 		}
 	}
 }

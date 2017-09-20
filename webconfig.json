@@ -9,6 +9,7 @@
 	"variation": "common.json",
 	"controller": "common.js",
 	"view": "layout.htm",
+	"optimizations": "optimizations.json",
 	"bundles": "bundles.json",
 	"statics": "statics.js",
 	"routes": "routes.json",

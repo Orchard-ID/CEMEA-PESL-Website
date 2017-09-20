@@ -5,7 +5,7 @@
 	},
 	"body": {
 		"title": "Démarches",
-		"image": "<img alt=\"Démarches\" src=\"./media/images/approach-background.png\" style=\"height:668px; width:1366px\" />",
+		"image": "<img alt=\"Démarches\" src=\"./media/images/approach-background.jpg\" style=\"height:668px; width:1366px\" />",
 		"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>\n",
 		"quote": "<p>&laquo; Loremu ipsum dolor sit amet, consectetur &raquo;</p>\n",
 		"structure": {

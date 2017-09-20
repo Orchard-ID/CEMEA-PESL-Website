@@ -18,6 +18,7 @@
 	"bundles": "bundles.json",
 	"statics": "statics.js",
 	"routes": "routes.json",
+	"_smtp": "smtp.json",
 	"_robots": "noindex, nofollow",
 	"_data": "../verger.digital/data/cemea-pesl/",
 	"_min": true

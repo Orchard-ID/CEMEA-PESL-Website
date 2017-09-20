@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="6039 989 24.5 30.006">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-        stroke: #0037ff;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 10;
-        stroke-width: 2px;
-      }
-    </style>
-  </defs>
-  <path id="Tracé_89" data-name="Tracé 89" class="cls-1" d="M20.853,1.5H4.518C2.811,1.5,1.4,3.171,1.4,5.294V18.168c0,2.259,1.522,4.111,3.378,4.111h7.87l4.566,7.227V22.279h3.3c1.856,0,3.378-1.852,3.378-4.111V5.294C23.971,3.171,22.561,1.5,20.853,1.5Z" transform="translate(6038.6 988.5)"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6039 989 24.5 30.006"><defs><style>.cls-1{fill:none;stroke:#0037ff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px}</style></defs><path id="Tracé_89" data-name="Tracé 89" class="cls-1" d="M20.853 1.5H4.518C2.811 1.5 1.4 3.171 1.4 5.294v12.874c0 2.259 1.522 4.111 3.378 4.111h7.87l4.566 7.227v-7.227h3.3c1.856 0 3.378-1.852 3.378-4.111V5.294c.079-2.123-1.331-3.794-3.039-3.794z" transform="translate(6038.6 988.5)"/></svg>
