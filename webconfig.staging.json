@@ -8,7 +8,7 @@
 		"transports": ["polling"]
 	},
 	"httpSecure": true,
-	"httpPort": 8081,
+	"httpPort": 8082,
 	"urlPort": 443,
 	"urlHostname": "staging.orchard-id.com",
 	"languageCode": "fr-fr",
