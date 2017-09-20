@@ -37,17 +37,17 @@
 	</section>
 	<section class="home--partner">
 		<h2 class="home--partner--title">
-			<inline v-model="specific.partner.title" :global="global" />
+			<inline v-model="common.partner.title" :global="global" />
 		</h2>
 		<div class="home--partner--slider">
 			<div class="home--partner--slider--content">
 				<ul>
-					<li v-for="(parner, index) in specific.partner.partners" v-bind:class="{ 'is-selected': index === slider }">
+					<li v-for="(parner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }">
 						<div class="home--partner--image">
-							<inline v-model="specific.partner.partners[index].image" :global="global" />
+							<inline v-model="common.partner.partners[index].image" :global="global" />
 						</div>
 						<div class="home--partner--content">
-							<block v-model="specific.partner.partners[index].content" :global="global" />
+							<block v-model="common.partner.partners[index].content" :global="global" />
 						</div>
 					</li>
 				</ul>
@@ -62,7 +62,7 @@
 			</div>
 			<div class="home--partner--slider--pagination">
 				<ul>
-					<li v-on:click="goToSlide(index)" v-for="(parner, index) in specific.partner.partners" v-bind:class="{ 'is-selected': index === slider }"></li>
+					<li v-on:click="goToSlide(index)" v-for="(partner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }"></li>
 				</ul>
 			</div>
 		</div>

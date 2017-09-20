@@ -1,32 +1,36 @@
 <div class="projects">
 	<article class="projects--article">
-		<h1>
-			<inline v-model="specific.title" :global="global" />
-		</h1>
 		<div class="projects--image">
 			<inline v-model="specific.image" :global="global" />
 		</div>
-		<div class="projects--content">
-			<block v-model="specific.content" :global="global" />
+		<div class="projects--main">
+			<h1 class="projects--title">
+				<inline v-model="specific.title" :global="global" />
+			</h1>
+			<div class="projects--content">
+				<block v-model="specific.content" :global="global" />
+			</div>
+			<div class="projects--cta">
+				<ul>
+					<li v-for="(item, index) in specific.cta">
+						<div class="projects--cta--link">
+							<inline v-model="specific.cta[index].content" :global="global" />
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="projects--quote">
+				<block v-model="specific.quote" :global="global" />
+			</div>
 		</div>
-		<div class="projects--cta">
-			<ul>
-				<li v-for="(item, index) in specific.cta">
-					<div class="projects--cta--link">
-						<inline v-model="specific.cta[index].content" :global="global" />
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="projects--quote">
-			<block v-model="specific.quote" :global="global" />
-		</div>
-		<aside class="projects--about">
-			<h2 class="projects--about--title">
-				<inline v-model="specific.about.title" :global="global" />
-			</h2>
-			<div class="projects--about--content">
-				<block v-model="specific.about.content" :global="global" />
+		<aside id="definition" class="projects--about">
+			<div class="projects--about--main">
+				<h2 class="projects--about--title">
+					<inline v-model="specific.about.title" :global="global" />
+				</h2>
+				<div class="projects--about--content">
+					<block v-model="specific.about.content" :global="global" />
+				</div>
 			</div>
 			<div class="projects--about--image">
 				<inline v-model="specific.about.image" :global="global" />
@@ -37,16 +41,33 @@
 		<h2 class="projects--overview--title">
 			<inline v-model="specific.overview.title" :global="global" />
 		</h2>
-		<ul>
-			<li v-for="(item, index) in specific.overview.overviews">
-				<div class="projects--overview--image">
-					<inline v-model="specific.overview.overviews[index].image" :global="global" />
+		<div class="projects--overview--slider">
+			<div class="projects--overview--slider--content">
+				<ul>
+					<li v-for="(item, index) in specific.overview.overviews" v-bind:class="{ 'is-selected': index === slider }">
+						<div class="projects--overview--image">
+							<inline v-model="specific.overview.overviews[index].image" :global="global" />
+						</div>
+						<div class="projects--overview--content">
+							<block v-model="specific.overview.overviews[index].content" :global="global" />
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="projects--overview--slider--navigation">
+				<div v-on:click="goToPreviousSlide" class="left">
+					<img src="./media/images/left-arrow.svg" width="10" alt="Précedent">
 				</div>
-				<div class="projects--overview--content">
-					<block v-model="specific.overview.overviews[index].content" :global="global" />
+				<div v-on:click="goToNextSlide" class="right">
+					<img src="./media/images/right-arrow.svg" width="10" alt="Suivant">
 				</div>
-			</li>
-		</ul>
+			</div>
+			<div class="projects--overview--slider--pagination">
+				<ul>
+					<li v-on:click="goToSlide(index)" v-for="(overview, index) in specific.overview.overviews" v-bind:class="{ 'is-selected': index === slider }"></li>
+				</ul>
+			</div>
+		</div>
 	</section>
 	<section class="projects--more">
 		<h2 class="projects--more--title">

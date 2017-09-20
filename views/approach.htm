@@ -1,16 +1,18 @@
 <div class="approach" v-bind:data-search="JSON.stringify(specific.search.results)">
 	<article class="approach--article">
-		<h1>
-			<inline v-model="specific.title" :global="global" />
-		</h1>
 		<div class="approach--image">
 			<inline v-model="specific.image" :global="global" />
 		</div>
-		<div class="approach--content">
-			<block v-model="specific.content" :global="global" />
-		</div>
-		<div class="approach--quote">
-			<block v-model="specific.quote" :global="global" />
+		<div class="appoach--main">
+			<h1>
+				<inline v-model="specific.title" :global="global" />
+			</h1>
+			<div class="approach--content">
+				<block v-model="specific.content" :global="global" />
+			</div>
+			<div class="approach--quote">
+				<block v-model="specific.quote" :global="global" />
+			</div>
 		</div>
 	</article>
 	<section class="approach--structure">

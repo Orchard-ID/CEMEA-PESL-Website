@@ -97,7 +97,33 @@
 		},
 		"partner": {
 			"title": "Nos partenaires",
-			"content": "<p>Mission financée par le Département et la Caisse d'Allocations Familiales de la Manche dans le cadre du contrat enfance-jeunesse.</p>\n\n<p class=\"text-justify\"><a href=\"http://www.manche.fr\" target=\"_blank\"><img alt=\"La Manche\" src=\"./media/images/la-manche.png\" style=\"height:82px; width:82px\" /></a>&nbsp;<a href=\"http://www.manche.gouv.fr\" target=\"_blank\"><img alt=\"République Française\" src=\"./media/images/republique-francaise.png\" style=\"height:56px; width:77px\" /></a>&nbsp;<a href=\"http://www.caf.fr\" target=\"_blank\"><img alt=\"CAF\" src=\"./media/images/caf.png\" style=\"height:85px; width:58px\" /></a>&nbsp;<a href=\"http://www.ac-caen.fr/\"><img alt=\"Académie Caen\" src=\"./media/images/academie-caen.png\" style=\"height:87px; width:103px\" /></a>&nbsp;<a href=\"http://www.cemea-normandie.fr/\" target=\"_blank\"><img alt=\"CEMÉA\" src=\"./media/images/cemea.png\" style=\"height:43px; width:106px\" /></a>&nbsp;<a href=\"http://www.msa.fr/\" target=\"_blank\"><img alt=\"MSA\" src=\"./media/images/msa.png\" style=\"height:43px; width:92px\" /></a></p>\n"
+			"content": "<p>Mission financée par le Département et la Caisse d'Allocations Familiales de la Manche dans le cadre du contrat enfance-jeunesse.</p>\n\n<p class=\"text-justify\"><a href=\"http://www.manche.fr\" target=\"_blank\"><img alt=\"La Manche\" src=\"./media/images/la-manche.png\" style=\"height:82px; width:82px\" /></a>&nbsp;<a href=\"http://www.manche.gouv.fr\" target=\"_blank\"><img alt=\"République Française\" src=\"./media/images/republique-francaise.png\" style=\"height:56px; width:77px\" /></a>&nbsp;<a href=\"http://www.caf.fr\" target=\"_blank\"><img alt=\"CAF\" src=\"./media/images/caf.png\" style=\"height:85px; width:58px\" /></a>&nbsp;<a href=\"http://www.ac-caen.fr/\"><img alt=\"Académie Caen\" src=\"./media/images/academie-caen.png\" style=\"height:87px; width:103px\" /></a>&nbsp;<a href=\"http://www.cemea-normandie.fr/\" target=\"_blank\"><img alt=\"CEMÉA\" src=\"./media/images/cemea.png\" style=\"height:43px; width:106px\" /></a>&nbsp;<a href=\"http://www.msa.fr/\" target=\"_blank\"><img alt=\"MSA\" src=\"./media/images/msa.png\" style=\"height:43px; width:92px\" /></a></p>\n",
+			"partners": [
+				{
+					"content": "<h3>La Manche</h3>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p><a href=\"http://www.manche.fr\" target=\"_blank\"><strong>www.manche.fr</strong></a></p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue@2x.png\" style=\"height:195px; width:196px\" />"
+				},
+				{
+					"content": "<h3>République française</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"http://www.manche.gouv.fr\" target=\"_blank\"><strong>www.manche.gouv.fr</strong></a></p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/republique-francaise-blue@2x.png\" style=\"height:115px; width:196px\" />"
+				},
+				{
+					"content": "<h3>Allocations familiales</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"https://www.caf.fr\" target=\"_blank\"><strong>www.caf.fr</strong></a></p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/caf-blue@2x.png\" style=\"height:195px; width:132px\" />"
+				},
+				{
+					"content": "<h3>Académie Caen</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"https://www.ac-caen.fr/\" target=\"_blank\"><strong>www.ac-caen.fr</strong></a></p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/academie-caen-blue@2x.png\" style=\"height:210px; width:246px\" />"
+				},
+				{
+					"content": "<h3>CEMÉA</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"http://www.cemea-normandie.fr/\" target=\"_blank\"><strong>www.cemea-normandie.fr</strong></a></p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/cemea-blue@2x.png\" style=\"height:104px; width:255px\" />"
+				},
+				{
+					"content": "<h3>MSA</h3>\n\n<p>En cours de rédaction.</p>\n\n<p><a href=\"http://www.msa.fr/\" target=\"_blank\"><strong>www.msa.fr</strong></a></p>\n",
+					"image": "<img alt=\"\" src=\"./media/images/msa-blue@2x.png\" style=\"height:104px; width:222px\" />"
+				}
+			]
 		},
 		"me": "Moi",
 		"separator": "et/ou",

@@ -24,13 +24,17 @@
 			margin-top 24px
 			margin-bottom 24px
 			line-height 4.2rem
+			text-align center
 
 			@media (min-width: 600px)
+				text-align left
 				margin-top 0
 				font-size 4rem
 
 			&::after
-				margin-top 16px
+				margin 16px auto 0
+				@media (min-width: 600px)
+					margin 16px 0 0
 				content ""
 				width 48px
 				height 3px
@@ -42,21 +46,16 @@
 
 	&--approach
 	&--about
-
-		&--main
-			padding 0 64px
-
-			@media (min-width: 600px)
-				position absolute
-				top 50%
-				width 70%
-				transform translateY(-50%)
-
-			@media (min-width: 950px)
-				width 50%
+		@media (min-width: 600px)
+			margin-top 48px
+			margin-bottom 48px
+			padding-top 64px
+			padding-bottom 64px
+			overflow hidden
 
 		&--cta
 			margin-top 32px
+			margin-bottom 32px
 			a
 				color $highlightTextColor
 				border 1px solid $borderColor
@@ -70,34 +69,47 @@
 					border-color $highlightLinkColor
 
 	&--about
+		@media (max-width: 599px)
+			padding-top 0
 
-		@media (min-width: 600px)
-			&--main
-				left 0
-
-			&--image
-				margin-left 70%
-				width 30%
-				height 464px
-
-		@media (min-width: 950px)
-			&--image
-				margin-left 50%
+		&--main
+			padding 0 24px
+			@media (min-width: 600px)
+				padding 0 64px
 				width 50%
+
+		&--image
+			height 264px
+			overflow hidden
+			@media (min-width: 600px)
+				overflow auto
+				height auto
+				position absolute
+				top 50%
+				left 50%
+				width 50%
+				transform translateY(-50%)
 
 	&--approach
 
-		@media (min-width: 600px)
-			&--main
-				right 0
-
-			&--image
-				width 30%
-				height 464px
-
-		@media (min-width: 950px)
-			&--image
+		&--main
+			padding 0 24px
+			@media (min-width: 600px)
+				padding 0 64px
 				width 50%
+				margin-left 50%
+
+		&--image
+			height 264px
+			overflow hidden
+			@media (min-width: 600px)
+				overflow auto
+				height auto
+				position absolute
+				top 50%
+				left 0
+				width 50%
+				transform translateY(-50%)
 
 	&--partner
 		text-align center
@@ -205,5 +217,6 @@
 				transform translateY(-50%)
 
 		&--title
+			text-align center
 			&::after
 				margin 16px auto 0

@@ -8,8 +8,8 @@
 		"image": "<img alt=\"Contactez-nous\" src=\"./media/images/contact-background.png\" style=\"height:668px; width:1366px\" />",
 		"content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>\n",
 		"explaination": {
-			"step1": "<p>Envie de collaborer avec nous ?</p>\n",
-			"step2": "<p><em><strong>Merci d'avoir pris contact avec nous ! Nous vous répondrons dans les plus brefs délais.</strong></em></p>\n"
+			"step1": "<p>Remplissez le formulaire ci-dessous pour nous contacter.</p>\n",
+			"step2": "<p><em><strong>Merci d'avoir pris contact avec nous ! Nous vous répondrons dans les plus brefs délais.</strong></em><br />\n&nbsp;</p>\n"
 		},
 		"link": {
 			"href": "/",
@@ -19,7 +19,7 @@
 		"email": {
 			"label": {
 				"content": "Email :",
-				"placeholder": "Email"
+				"placeholder": "Votre adresse email"
 			},
 			"error": {
 				"empty": "Le champ Email est vide.",
@@ -29,7 +29,7 @@
 		"message": {
 			"label": {
 				"content": "Message :",
-				"placeholder": "Message"
+				"placeholder": "Rédigez votre message ici"
 			},
 			"error": {
 				"empty": "Le champ Message est vide."
@@ -42,35 +42,6 @@
 			"error": {
 				"sendFailure": "Votre message n'a pas pu nous être remis. Vous pouvez nous l'envoyer par email à l'adresse <a href=\"mailto:contact@orchard-id.com\">contact@orchard-id.com</a>."
 			}
-		},
-		"partner": {
-			"title": "Nos partenaires",
-			"partners": [
-				{
-					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
-				},
-				{
-					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
-				},
-				{
-					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
-				},
-				{
-					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
-				},
-				{
-					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
-				},
-				{
-					"content": "<p>La Manche</p>\n\n<p>Le conseil départemental de la Manche est l'assemblée délibérante du département français de la Manche, collectivité territoriale décentralisée.</p>\n\n<p>www.manche.fr</p>\n",
-					"image": "<img alt=\"\" src=\"./media/images/la-manche-blue.png\" style=\"height:195px; width:196px\" />"
-				}
-			]
 		}
 	}
 }

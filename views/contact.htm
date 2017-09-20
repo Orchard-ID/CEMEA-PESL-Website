@@ -1,19 +1,29 @@
 <div class="contact">
-	<h1>
-		<inline v-model="specific.title" :global="global" />
-	</h1>
-	<div class="contact--image">
-		<inline v-model="specific.image" :global="global" />
-	</div>
-	<div class="contact--content">
-		<block v-model="specific.content" :global="global" />
-	</div>
-	<div class="contact--form">
+	<section class="contact--article">
+		<div class="contact--image">
+			<inline v-model="specific.image" :global="global" />
+		</div>
+		<div class="contact--main">
+			<h1 class="contact--title">
+				<inline v-model="specific.title" :global="global" />
+			</h1>
+			<div class="contact--content">
+				<block v-model="specific.content" :global="global" />
+			</div>
+		</div>
+	</section>
+	<div class="contact--message">
 		<height-transition>
 			<div v-if="!isSent" key="step-1">
 				<block v-model="specific.explaination.step1" :global="global" />
 				<form class="contact--form" action="" method="post">
 					<div class="field email" v-bind:class="{ empty: email === '' || email === undefined, invalid: !isEmail(email) && email !== undefined }">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-374 307 19.546 27" style="width: 24px">
+							<g id="Groupe_117" data-name="Groupe 117" transform="translate(-374.4 306.5)">
+								<circle id="Ellipse_13" data-name="Ellipse 13" class="cls-1" cx="6.25" cy="6.25" r="6.25" transform="translate(3.946 1.5)"/>
+								<path id="Tracé_20" data-name="Tracé 20" class="cls-1" d="M10.2,40.973h8.75v-3.75a8.681,8.681,0,0,0-3.75-7.176h0a8.7,8.7,0,0,0-10.046,0h0A8.681,8.681,0,0,0,1.4,37.223v3.75Z" transform="translate(0 -14.473)"/>
+							</g>
+						</svg>
 						<label for="contact-form--email" v-html="specific.email.label.content"></label>
 						<input type="text" id="contact-form--email" class="contact-form--email" name="email" v-bind:placeholder="specific.email.label.placeholder" v-model="email">
 						<div class="errors" v-if="email === '' && email !== undefined" v-html="specific.email.error.empty"></div>
@@ -21,6 +31,7 @@
 					</div>
 
 					<div class="field message" v-bind:class="{ empty: message === '' || message === undefined, invalid: !message && message !== undefined }">
+						<img src="./media/images/message.svg" alt="Email" style="width: 24px">
 						<label for="contact-form--message" v-html="specific.message.label.content" class="label-textarea"></label>
 						<textarea type="text" id="contact-form--message" class="contact-form--message" name="message" v-bind:placeholder="specific.message.label.placeholder" v-model="message"></textarea>
 						<div class="errors" v-if="message === '' && message !== undefined" v-html="specific.message.error.empty"></div>
@@ -52,18 +63,35 @@
 	</div>
 	<section class="contact--partner">
 		<h2 class="contact--partner--title">
-			<inline v-model="specific.partner.title" :global="global" />
+			<inline v-model="common.partner.title" :global="global" />
 		</h2>
-		<ul>
-			<li v-for="(parner, index) in specific.partner.partners">
-				<div class="contact--partner--image">
-					<inline v-model="specific.partner.partners[index].image" :global="global" />
+		<div class="contact--partner--slider">
+			<div class="contact--partner--slider--content">
+				<ul>
+					<li v-for="(parner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }">
+						<div class="contact--partner--image">
+							<inline v-model="common.partner.partners[index].image" :global="global" />
+						</div>
+						<div class="contact--partner--content">
+							<block v-model="common.partner.partners[index].content" :global="global" />
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="contact--partner--slider--navigation">
+				<div v-on:click="goToPreviousSlide" class="left">
+					<img src="./media/images/left-arrow.svg" width="10" alt="Précedent">
 				</div>
-				<div class="contact--partner--content">
-					<block v-model="specific.partner.partners[index].content" :global="global" />
+				<div v-on:click="goToNextSlide" class="right">
+					<img src="./media/images/right-arrow.svg" width="10" alt="Suivant">
 				</div>
-			</li>
-		</ul>
+			</div>
+			<div class="contact--partner--slider--pagination">
+				<ul>
+					<li v-on:click="goToSlide(index)" v-for="(partner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }"></li>
+				</ul>
+			</div>
+		</div>
 	</section>
 	<edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"

@@ -1,18 +1,3 @@
-::-webkit-input-placeholder {
-	color: #fff;
-}
-:-moz-placeholder {
-	color: #fff;
-	opacity: 1;
-}
-::-moz-placeholder {
-	color: #fff;
-	opacity: 1;
-}
-::-ms-input-placeholder {
-	color: #fff;
-}
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -185,13 +170,13 @@ button
 		top 0
 		font-size 1.2rem
 		&.label-textarea
+			z-index 2
 			top -2px
-			padding-left 8px
 
 	textarea
 	input
 		box-sizing border-box
-		transition color 1s ease, border-color 1s ease, padding .5s ease
+		transition color 1s ease, border-color 1s ease, padding .5s ease!important
 		border 0
 		border-bottom 1px solid #95989A
 		font-family inherit
@@ -200,14 +185,13 @@ button
 		margin-bottom 2.4rem
 		display block
 		width 100%
+		color $textColor
 		&:focus
 			outline -webkit-focus-ring-color auto 0
 			color #00a00c
 			border-color #00a00c
 
 	textarea
-		padding 12px 8px
-		border-left 1px solid #95989A
 		min-height 200px
 
 	button
@@ -217,8 +201,11 @@ button
 		label
 			top 10px
 			opacity 0
+
 		input
+		textarea
 			padding .8rem 0
+
 	.errors
 		position absolute
 		top calc(100% + 2px)

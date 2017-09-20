@@ -1,2 +1,211 @@
 .contact
-	background-color #080
+
+	img
+		max-width 100%
+		height auto!important
+
+	&--image
+		height 264px
+		overflow hidden
+		width 578px
+		@media (min-width: 600px)
+			width auto
+			overflow auto
+			height auto
+
+	&--main
+		position relative
+		background-color $backgroundColorReversed
+		max-width 920px
+		margin 0 auto
+		padding 0 24px
+		@media (min-width: 600px)
+			padding 64px
+		@media (min-width: 950px)
+			margin -300px auto 0
+
+	&--message
+		max-width 920px
+		margin 0 auto
+		padding 0 24px
+		@media (min-width: 600px)
+			padding 64px
+
+		.field
+			box-shadow: 0 0 10px 2px #e0e0e0;
+			border-radius 8px
+			padding 8px 16px
+			margin-bottom 24px
+
+			&:first-child
+				margin-top 24px
+
+			svg
+			img
+				position absolute
+				top 8px
+				left 12px
+				.cls-1
+					fill none
+					stroke $textColor
+					stroke-linecap round
+					stroke-linejoin round
+					stroke-miterlimit 10
+					stroke-width 2px
+
+			label
+				margin-left 32px
+				top 8px
+
+			&.empty
+				label
+					top 18px
+
+		input
+		textarea
+			padding 1.6rem 0 0
+			margin-left 32px
+			width calc(100% - 64px)
+			margin-bottom 0
+			border 0
+
+	&--title
+	&--partner--title
+		font-size 2.4rem
+		font-weight bold
+		margin-top 24px
+		margin-bottom 24px
+		line-height 4.2rem
+		text-align center
+
+		@media (min-width: 600px)
+			text-align left
+			margin-top 0
+			font-size 4rem
+
+		&::after
+			margin 16px auto 0
+			@media (min-width: 600px)
+				margin 16px 0 0
+			content ""
+			width 48px
+			height 3px
+			border 1px solid $backgroundColor
+			border-radius 8px
+			display block
+			clear both
+			background-color $backgroundColor
+
+	&--partner
+		padding 24px 0
+		position relative
+		max-width 1200px
+		margin 0 auto
+		text-align center
+
+		&--slider
+			padding 32px
+			position relative
+
+			&--content
+				ul
+					position relative
+
+				li:first-child
+					position relative
+
+				li
+					top 0
+					position absolute
+					width 100%
+					background-color $backgroundColorReversed
+					z-index 1
+					opacity 0
+					transition opacity 1s ease, z-index 1s ease
+
+					&:first-child
+						position relative
+
+					&.is-selected
+						z-index 2
+						opacity 1
+
+					&::after
+						content ""
+						display block
+						clear both
+
+			&--navigation
+				.left
+				.right
+					z-index 3
+					position absolute
+					top 50%
+					transform translateY(-50%)
+					cursor pointer
+					border 2px solid $borderColor
+					border-radius 50%
+					padding 0 7px
+
+					img
+						margin-top 4px
+
+				.left
+					left 16px
+					@media (min-width: 600px)
+						left 64px
+					img
+						margin-right 2px
+
+				.right
+					right 16px
+					@media (min-width: 600px)
+						right 64px
+					img
+						margin-left 2px
+
+			&--pagination
+				display none
+				@media (min-width: 600px)
+					display inline-block
+
+				ul
+					padding-top 48px
+
+				li
+					display inline-block
+					border-radius 50%
+					background-color $backgroundColor
+					width 16px
+					height 16px
+					margin 0 16px
+					opacity .4
+					cursor pointer
+
+					&.is-selected
+						cursor default
+						opacity 1
+
+		&--image
+			padding 0 32px
+
+			@media (min-width: 600px)
+				width 50%
+				text-align right
+
+		&--content
+			padding 0 32px
+
+			@media (min-width: 600px)
+				text-align left
+				position absolute
+				width 50%
+				top 50%
+				left 50%
+				max-width 424px
+				transform translateY(-50%)
+
+		&--title
+			text-align center
+			&::after
+				margin 16px auto 0

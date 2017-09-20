@@ -1,2 +1,330 @@
 .projects
-	background-color #800000
+
+	img
+		max-width 100%
+		height auto!important
+
+	&--image
+		height 264px
+		overflow hidden
+		width 578px
+		@media (min-width: 600px)
+			width auto
+			overflow auto
+			height auto
+
+	&--main
+		position relative
+		background-color $backgroundColorReversed
+		max-width 920px
+		margin 0 auto
+		padding 0 24px
+		@media (min-width: 600px)
+			padding 64px
+		@media (min-width: 950px)
+			margin -300px auto 0
+
+	&--title
+	&--about--title
+	&--overview--title
+	&--more--title
+	&--goal--title
+		font-size 2.4rem
+		font-weight bold
+		margin-top 24px
+		margin-bottom 24px
+		line-height 4.2rem
+		text-align center
+
+		@media (min-width: 600px)
+			text-align left
+			margin-top 0
+			font-size 4rem
+
+		&::after
+			margin 16px auto 0
+			@media (min-width: 600px)
+				margin 16px 0 0
+			content ""
+			width 48px
+			height 3px
+			border 1px solid $backgroundColor
+			border-radius 8px
+			display block
+			clear both
+			background-color $backgroundColor
+
+	&--cta
+		text-align center
+		padding-top 8px
+		padding-bottom 8px
+
+		li
+			margin 16px
+			@media (min-width: 600px)
+				display inline-block
+				margin 32px
+
+		&--link
+			display inline-block
+			transition opacity .5s ease
+			font-family inherit
+			font-size inherit
+			color $highlightTextColor
+			border 1px solid $borderColor
+			border-radius 40px
+			padding 6px 12px
+			opacity .8
+			background-color $backgroundColorReversed
+			cursor pointer
+			font-weight bold
+			transition color .2s ease, border .2s ease
+			&:hover
+				opacity 1
+				color $highlightLinkColor
+				border-color $highlightLinkColor
+			&.invalid
+				opacity .2
+				cursor not-allowed
+			&:focus
+				outline -webkit-focus-ring-color auto 0
+
+
+	&--quote
+		margin-top 32px
+		margin-bottom 32px
+		text-align center
+		p
+			line-height 1.2
+			font-size 3.0rem
+			@media (min-width: 600px)
+				font-size 4.0rem
+
+	&--about
+	&--overview
+		@media (min-width: 600px)
+			padding 24px 0
+		position relative
+		max-width 1200px
+		margin 0 auto
+
+	&--about
+		@media (min-width: 600px)
+			margin-bottom 48px
+			padding-top 64px
+			padding-bottom 64px
+			overflow hidden
+
+		&--main
+			padding 0 24px
+			@media (min-width: 600px)
+				padding 0 64px
+				width 50%
+
+		&--image
+			margin-top 24px
+			@media (min-width: 600px)
+				margin-top 0
+				position absolute
+				top 50%
+				left 50%
+				width 50%
+				transform translateY(-50%)
+
+	&--overview
+		text-align center
+
+		&--slider
+			padding 32px
+			position relative
+
+			&--content
+				ul
+					position relative
+
+				li:first-child
+					position relative
+
+				li
+					top 0
+					position absolute
+					width 100%
+					background-color $backgroundColorReversed
+					z-index 1
+					opacity 0
+					transition opacity 1s ease, z-index 1s ease
+
+					&:first-child
+						position relative
+
+					&.is-selected
+						z-index 2
+						opacity 1
+
+					&::after
+						content ""
+						display block
+						clear both
+
+			&--navigation
+				.left
+				.right
+					z-index 3
+					position absolute
+					top 50%
+					transform translateY(-50%)
+					cursor pointer
+					border 2px solid $borderColor
+					border-radius 50%
+					padding 0 7px
+
+					img
+						margin-top 4px
+
+				.left
+					left 16px
+					@media (min-width: 950px)
+						left 64px
+					img
+						margin-right 2px
+
+				.right
+					right 16px
+					@media (min-width: 950px)
+						right 64px
+					img
+						margin-left 2px
+
+			&--pagination
+				display none
+				@media (min-width: 600px)
+					display inline-block
+
+				ul
+					padding-top 48px
+
+				li
+					display inline-block
+					border-radius 50%
+					background-color $backgroundColor
+					width 16px
+					height 16px
+					margin 0 16px
+					opacity .4
+					cursor pointer
+
+					&.is-selected
+						cursor default
+						opacity 1
+
+		&--image
+			padding 0 32px
+
+			@media (min-width: 600px)
+				width 50%
+				text-align right
+
+		&--content
+			padding 0 32px
+
+			@media (min-width: 600px)
+				text-align left
+				position absolute
+				width 50%
+				top 50%
+				left 50%
+				max-width 424px
+				transform translateY(-50%)
+
+		&--title
+			text-align center
+			&::after
+				margin 16px auto 0
+
+	&--more
+		@media (min-width: 600px)
+			padding 24px 0
+		position relative
+		max-width 920px
+		margin 0 auto
+
+		h3
+			margin-top 16px
+			@media (min-width: 600px)
+				margin-top 0
+			font-weight bold
+			font-size 2rem
+			@media (min-width: 600px)
+				font-size 3rem
+
+		li
+			@media (min-width: 600px)
+				padding-top 16px
+				padding-bottom 16px
+			position relative
+
+		&--image
+			margin-top 32px
+			text-align center
+			padding 0 24px
+
+		&--title
+			text-align center
+			&::after
+				margin 16px auto 0
+
+		&--content
+			padding 0 24px
+
+			@media (min-width: 600px)
+				position absolute
+				top 50%
+				width 50%
+				transform translateY(-50%)
+
+		@media (min-width: 600px)
+			&--image
+				margin-top 0
+
+			li:nth-child(even)
+				& ^[0..1]--content
+					left 0
+
+				& ^[0..1]--image
+					margin-left 50%
+					width 50%
+					height 278px
+
+			li:nth-child(odd)
+				& ^[0..1]--content
+					right 0
+
+				& ^[0..1]--image
+					width 50%
+					height 278px
+
+	&--goal
+		max-width 600px
+		margin 0 auto
+		padding 24px 16px
+
+		&--title
+			text-align center
+			&::after
+				margin 16px auto 0
+
+		@media (min-width: 600px)
+			p
+				font-size 1.6rem
+
+		ul
+			text-align center
+
+		li
+			vertical-align top
+			padding 24px 8px
+			font-size inherit
+			display inline-block
+			width 50%
+			@media (min-width: 600px)
+				width 33.33333333%
