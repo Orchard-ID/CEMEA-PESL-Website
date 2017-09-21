@@ -8,7 +8,7 @@ module.exports = (function () {
 		"/javascripts/vendors/underscore.js": "node_modules/underscore/underscore.js",
 		"/javascripts/vendors/jshashes.js": "node_modules/jshashes/hashes.min.js",
 		"/javascripts/vendors/velocity.js": "node_modules/velocity-animate/velocity.js",
-		"/javascripts/vendors/": "node_modules/ckeditor/",
+		"/javascripts/vendors/ckeditor/": "node_modules/ckeditor/",
 		"/javascripts/vendors/vue.js": "node_modules/vue/dist/vue.js",
 		"/javascripts/vendors/vue.router.js": "node_modules/vue-router/dist/vue-router.js",
 		"/views-models": {

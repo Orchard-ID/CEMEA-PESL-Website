@@ -40,11 +40,12 @@
 		<? if (webconfig._min) { ?>
 		<script src="javascripts/common.<?= webconfig.version ?>.min.js"></script>
 		<? } else { ?>
+		<script src="javascripts/config.js"></script>
 		<script src="socket.io/socket.io.js"></script>
 		<script src="node-atlas/socket.io.js"></script>
 		<script src="javascripts/vendors/jshashes.js"></script>
 		<script src="javascripts/vendors/velocity.js"></script>
-		<script src="javascripts/vendors/ckeditor.js"></script>
+		<script src="javascripts/vendors/ckeditor/ckeditor.js"></script>
 		<script src="javascripts/vendors/vue.js"></script>
 		<script src="javascripts/vendors/vue.router.js"></script>
 		<script src="javascripts/common.js"></script>

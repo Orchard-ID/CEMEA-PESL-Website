@@ -2,6 +2,7 @@
 	"javascripts": {
 		"javascripts/vendors/jsoneditor.fr-fr.{version}.min.js": ["javascripts/vendors/jsoneditor.fr-fr.js"],
 		"javascripts/common.{version}.min.js": [
+			"javascripts/config.js",
 			"javascripts/vendors/ga.min.js",
 			"../node_modules/underscore/underscore-min.js",
 			"../node_modules/jshashes/hashes.min.js",
