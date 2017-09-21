@@ -15,7 +15,7 @@
 	"body": {
 		"loading": "Chargement...",
 		"title": "<a href=\"/\">Projets éducatifs<br />\nsociaux locaux</a>",
-		"subtitle": "<img alt=\"CEMÉA\" src=\"./media/images/cemea-blue.png\" style=\"height:42px; width:104px\" />",
+		"subtitle": "<a href=\"http://www.cemea-normandie.fr/\"><img alt=\"CEMÉA\" src=\"./media/images/cemea-blue.png\" style=\"height:42px; width:104px\" /></a>",
 		"navigation": {
 			"title": "Menu",
 			"main": {

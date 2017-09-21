@@ -39,7 +39,7 @@ module.exports = function (template) {
 				});
 			},
 			leave: function (el, done) {
-				Velocity(el,  {
+				Velocity(el, {
 					height: 0,
 					paddingTop: 0,
 					paddingBottom: 0

@@ -3,22 +3,25 @@
 		<inline v-model="specific.title" :global="global" />
 	</h1>
 	<section class="home--about">
-		<div class="home--about--image">
-			<inline v-model="specific.about.image" :global="global" />
-		</div>
-		<div class="home--about--main">
-			<h2 class="home--about--title">
-				<inline v-model="specific.about.title" :global="global" />
-			</h2>
-			<div class="home--about--content">
-				<block v-model="specific.about.content" :global="global" />
+		<div class="home--about--inner">
+			<div class="home--about--image">
+				<inline v-model="specific.about.image" :global="global" />
 			</div>
-			<div class="home--about--cta">
-				<inline v-model="specific.about.cta" :global="global" />
+			<div class="home--about--main">
+				<h2 class="home--about--title">
+					<inline v-model="specific.about.title" :global="global" />
+				</h2>
+				<div class="home--about--content">
+					<block v-model="specific.about.content" :global="global" />
+				</div>
+				<div class="home--about--cta">
+					<inline v-model="specific.about.cta" :global="global" />
+				</div>
 			</div>
 		</div>
+		<div class="next"><img src="./media/images/left-arrow.svg" width="10" alt="Suivant"></div>
 	</section>
-	<hr class="separator">
+	<!-- <hr class="separator"> -->
 	<section class="home--approach">
 		<div class="home--approach--image">
 			<inline v-model="specific.approach.image" :global="global" />

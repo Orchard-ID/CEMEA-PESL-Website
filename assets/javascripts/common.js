@@ -43,6 +43,17 @@ function xhr(url) {
 	});
 }
 
+function scrollState () {
+	var html = document.getElementsByTagName('html')[0]
+	if (document.body.scrollTop || document.documentElement.scrollTop > 0) {
+		html.classList.remove('is-on-top')
+	}
+}
+
+window.addEventListener("scroll", function () {
+	scrollState();
+});
+
 xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 	var files = eval(results),
 		webconfig = {

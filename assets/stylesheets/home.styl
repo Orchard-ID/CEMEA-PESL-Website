@@ -1,3 +1,16 @@
+@media (min-width: 900px)
+	.is-on-top
+		.home
+			&--about
+				min-height calc(100vh - 95px)
+
+				.next
+					opacity 1
+
+				&--inner
+					top 33.33333333vh
+					transform translateY(-50%)
+
 .home
 
 	img
@@ -17,6 +30,7 @@
 		position relative
 		max-width 1200px
 		margin 0 auto
+		min-height 0
 
 		&--title
 			font-size 2.4rem
@@ -46,7 +60,7 @@
 
 	&--approach
 	&--about
-		@media (min-width: 600px)
+		@media (min-width: 900px)
 			margin-bottom 48px
 			padding-top 64px
 			padding-bottom 64px
@@ -68,6 +82,30 @@
 					border-color $highlightLinkColor
 
 	&--about
+		position relative
+		transition min-height 3s ease
+
+		.next
+			transition opacity .5s ease
+			opacity 0
+			position absolute
+			bottom 10vh
+			left 50%
+			border 2px solid #0037ff
+			border-radius 50%
+			padding 0 7px
+			transform translateX(-50%) rotate(-90deg)
+			cursor pointer
+			img
+				margin-right 2px
+				margin-top 4px
+
+		&--inner
+			position relative
+			top 32px
+			transform translateY(0)
+			transition top 1s ease, transform 1s ease
+
 		@media (max-width: 599px)
 			padding-top 0
 
@@ -91,7 +129,7 @@
 
 	&--approach
 
-		@media (min-width: 600px)
+		@media (min-width: 900px)
 			margin-top 48px
 
 		&--main
