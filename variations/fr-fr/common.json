@@ -93,7 +93,7 @@
 		"contact": {
 			"title": "Contactez-nous",
 			"cemea": "<h3>CEMÉA Normandie</h3>\n\n<p>5 rue du Docteur Laënnec<br />\n14200 Hérouville Saint Clair</p>\n\n<p>Caen : 02.31.86.14.11<br />\nRouen : 02.32.76.08.40<br />\n<a href=\"http://www.cemea-normandie.fr\">www.cemea-normandie.fr</a><br />\n<a href=\"mailto:contact.caen@cemea-normandie.fr\">contact.caen@cemea-normandie.fr</a></p>\n",
-			"pesl": "<h3>Projet éducatif social local</h3>\n\n<p>Christophe Maulny<br />\nResponsable projet CEMÉA</p>\n\n<p><a href=\"mailto:contact@pesl-normandie.fr\">contact@pesl-normandie.fr</a><br />\n06 .13.37.36.28</p>\n\n<p><a href=\"https://www.twitter.com/\"><img alt=\"\" src=\"./media/images/twitter.svg\" style=\"height:32px; width:32px\" /></a>&nbsp;&nbsp;<a href=\"http://www.facebook.com/\"><img alt=\"\" src=\"./media/images/facebook.svg\" style=\"height:32px; width:32px\" /></a></p>\n"
+			"pesl": "<h3>Projet éducatif social local</h3>\n\n<p>Christophe Maulny<br />\nResponsable projet CEMÉA</p>\n\n<p><a href=\"mailto:contact@pesl-normandie.fr\">contact@pesl-normandie.fr</a><br />\n06 .13.37.36.28</p>\n\n<p><a href=\"https://www.twitter.com/\" target=\"_blank\"><img alt=\"\" src=\"./media/images/twitter.svg\" style=\"height:32px; width:32px\" /></a>&nbsp;&nbsp;<a href=\"http://www.facebook.com/\" target=\"_blank\"><img alt=\"\" src=\"./media/images/facebook.svg\" style=\"height:32px; width:32px\" /></a></p>\n"
 		},
 		"partner": {
 			"title": "Nos partenaires",
