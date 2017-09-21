@@ -41,8 +41,10 @@
 						<attrs :global="global">
 							<label><button v-on:click.prevent="sendMessage" v-bind:class="{ invalid: !isSendable() }" class="contact-form--button" v-html="specific.button.label.content"></button></label>
 							<template slot="attrs">
-								<attr :label="'Email: '" v-model="specific.email.label.placeholder" :global="global" />
-								<attr :label="'Message: '" v-model="specific.message.label.placeholder" :global="global" />
+								<attr :label="'Email -: '" v-model="specific.email.label.placeholder" :global="global" />
+								<attr :label="'Email +: '" v-model="specific.email.label.content" :global="global" />
+								<attr :label="'Message -: '" v-model="specific.message.label.placeholder" :global="global" />
+								<attr :label="'Message +: '" v-model="specific.message.label.content" :global="global" />
 								<attr :label="'Send: '" v-model="specific.button.label.content" :global="global" />
 							</template>
 						</attrs>

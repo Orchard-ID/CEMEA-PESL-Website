@@ -88,6 +88,8 @@ div.jsoneditor.jsoneditor
 .ckeditor
 	&.is-editable > div:not(.cke_focus)
 		background-color rgba(238, 236, 248, 0.8); /* #fdf3cb */
+		img
+			opacity .5
 	&.is-inline > div
 		display inline-block
 
@@ -95,19 +97,27 @@ div.jsoneditor.jsoneditor
 	background-color rgba(193,244,180,0.8)
 	position relative
 	.attr-list
+		font-weight lighter
+		font-size 1.2rem
+		box-shadow: 0 0 10px 2px #e0e0e0;
+		text-align left
+		color #000
+		min-width 200px
 		background-color transparent
 		display none
 		position absolute
-		top 0
-		left 100%
+		top: 100%;
+		left: -8px;
 		padding 8px 8px 4px 8px
 		background #FFF
 		border-radius 8px
-		border-top-left-radius 0
 		font-size 14px
+		.attr
+			display block
+			white-space: nowrap;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 8px;
 	&:hover
 		z-index 2
 		.attr-list
 			display block
-	.attr
-		padding-bottom 4px

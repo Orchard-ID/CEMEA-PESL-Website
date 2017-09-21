@@ -35,7 +35,8 @@
 				<attrs :global="global">
 					<label for="google-drive-form--search" v-html="specific.documentation.search.label.content"></label>
 					<template slot="attrs">
-						<attr :label="'Placeholder: '" v-model="specific.documentation.placeholder" :global="global" />
+						<attr :label="'Placeholder -: '" v-model="specific.documentation.search.label.placeholder" :global="global" />
+						<attr :label="'Placeholder +: '" v-model="specific.documentation.search.label.content" :global="global" />
 					</template>
 				</attrs>
 				<input v-on:keyup.enter="getSearchResult" type="text" id="google-drive-form--search" class="google-drive-form--search" name="search" v-bind:placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
