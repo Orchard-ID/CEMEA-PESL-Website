@@ -8,11 +8,11 @@ if (window.location.pathname.slice(-1) !== '/') {
 	window.location = window.location.pathname + '/';
 }
 
-CKEDITOR.stylesSet.add( 'cemea', [
+CKEDITOR.stylesSet.add('website', [
 	{ name: 'Titre 3 Centré', element: 'h3', attributes: { 'class': 'text-center' } },
 	{ name: 'Contenu Justifié', element: 'p', attributes: { 'class': 'text-justify' } }
 ]);
-CKEDITOR.config.stylesSet = 'cemea';
+CKEDITOR.config.stylesSet = 'website';
 
 function xhr(url) {
 	return new Promise(function (resolve, reject) {
