@@ -47,21 +47,6 @@ module.exports = function (template) {
 			}
 		},
 		beforeUpdate: function () {
-			var start = this.$parent,
-				current = this.$parent.$refs.edit;
-
-			while (!current) {
-				start = start.$parent;
-				current = start.$refs.edit;
-			}
-
-			current.options.dirty = true;
-			/*if (current.options.global) {
-				current.updateJSON(start.meta, start.common, true);
-			} else {
-				current.updateJSON(start.meta, start.specific, true);
-			}*/
-
 			if (this.value !== this.instance.getData()) {
 				this.instance.setData(this.value);
 			}

@@ -121,10 +121,34 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 				});
 			},
 			watch: {
-				specific: function () {
-					Vue.nextTick(() => {
+				common: {
+					handler: function() {
+						var active = document.activeElement.getAttribute('class');
+						if (window.lockDirty) {
+							window.lockDirty = false;
+						} else {
+							vm.options.dirty = true;
+						}
+						if (active && active.indexOf('cke') !== -1) {
+							vm.$refs.edit.updateJSON(vm.meta, vm.common);
+						}
+					},
+					deep: true
+				},
+				specific: {
+					handler: function() {
+						var active = document.activeElement.getAttribute('class');
+						if (window.lockDirty) {
+							window.lockDirty = false;
+						} else {
+							this.options.dirty = true;
+						}
+						if (active && active.indexOf('cke') !== -1) {
+							vm.$refs.router.$refs.edit.updateJSON(vm.$refs.router.meta, vm.$refs.router.specific);
+						}
 						this.$emit('specific', this.specific);
-					});
+					},
+					deep: true
 				}
 			},
 			mounted: function () {

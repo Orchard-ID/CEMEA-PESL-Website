@@ -11,6 +11,7 @@ module.exports = function () {
 			// If a content was updated from outside tab before you go on this page.
 			// Only for specific edition.
 			if (json) {
+				window.lockDirty = true;
 
 				// variation `body` part update.
 				for (i in json.body) {
@@ -47,6 +48,8 @@ module.exports = function () {
 					j;
 
 				function nextStep() {
+					window.lockDirty = true;
+
 					// variation `body` part update.
 					for (i in body) {
 						if (body.hasOwnProperty(i)) {

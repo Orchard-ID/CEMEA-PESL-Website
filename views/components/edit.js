@@ -10,7 +10,6 @@ module.exports = function (template) {
 			indentation: 4,
 			sortObjectKeys: false,
 			onChange: function () {
-				vm.options.dirty = true;
 				var json;
 				if (vm.editorMeta) {
 					json = vm.editorMeta.get();
@@ -33,7 +32,6 @@ module.exports = function (template) {
 			indentation: 4,
 			sortObjectKeys: false,
 			onChange: function () {
-				vm.options.dirty = true;
 				var json;
 				if (vm.editorBody) {
 					json = vm.editorBody.get();
