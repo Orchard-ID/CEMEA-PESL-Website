@@ -22,6 +22,12 @@ module.exports = function (template) {
 			},
 			toggleMenu: function () {
 				this.global.navigation = !this.global.navigation;
+			},
+			doUnauthentication: function () {
+				NA.socket.emit('unauthentication');
+				NA.socket.once('unauthentication', () => {
+					this.global.me = {};
+				});
 			}
 		},
 		data: function () {
