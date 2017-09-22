@@ -9,6 +9,7 @@ module.exports = function (specific, template, mixin, options) {
 		beforeMount: function () {
 			var data = document.getElementsByClassName('google-drive')[0];
 			if (data) {
+				window.lockDirty = true;
 				this.specific.search.results = JSON.parse(data.getAttribute('data-search'));
 			}
 		},
@@ -32,6 +33,7 @@ module.exports = function (specific, template, mixin, options) {
 				var vm = this;
 				NA.socket.emit('google-drive--search-query', query, vm.$route.name);
 				NA.socket.once('google-drive--search-query', function (data) {
+					window.lockDirty = true;
 					vm.specific.search.results = data;
 				});
 			},

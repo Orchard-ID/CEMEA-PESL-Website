@@ -41,3 +41,4 @@ assets/stylesheets/*.css
 assets/javascripts/*.min.js
 /assets/javascripts/vendors/jsoneditor.en-us.0.9.0.min.js
 /assets/javascripts/vendors/jsoneditor.fr-fr.0.9.0.min.js
+/google-drive.json

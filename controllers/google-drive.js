@@ -61,6 +61,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 				getNewToken(oauth2Client, callback);
 			} else {
 				oauth2Client.credentials = JSON.parse(token);
+				oauth2Client.setCredentials(oauth2Client.credentials);
 				callback(oauth2Client);
 			}
 		});
@@ -92,81 +93,44 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 					common.body.dates.smallMonth[now.getMonth()] + now.getFullYear() + ' à ' +
 					now.getHours() + ':' +
 					padLeft("00", now.getMinutes());
-			}/*,
-			fileMetadata = {
-				'name' : 'Invoices',
-				'mimeType' : 'application/vnd.google-apps.folder'
-			}*/;
+			};
 
-			/* service.files.insert({
-				auth: auth,
-				resource: fileMetadata,
-				fields: 'id'
-			}, function(err, directory) {
-				if (err) {
-					console.log(err);
-				} else {
-					console.log('Folder Id: ', directory.id);
-					var fileMetadata = {
-							'title': 'photo.jpg',
-							parents: [{ id: directory.id }]
-						},
-						media = {
-							mimeType: 'image/jpeg',
-							body: fs.createReadStream('photo.jpg')
-						};
+		if (query) {
+			search = "fullText contains '" + query + "' and ";
+		}
 
-					service.files.insert({
-						auth: auth,
-						resource: fileMetadata,
-						media: media,
-						fields: 'id'
-					}, function(err, file) {
-						if (err) {
-							// Handle error
-							console.log(err);
-						} else {
-							console.log('File Id: ', file.id);*/
+		service.files.list({
+			auth: auth,
+			maxResults: 100,
+			q: search + "'" + codes[variation] + "' in parents"
+		}, function(err, response) {
+			var files,
+				results = [],
+				file;
 
-						if (query) {
-							search = "fullText contains '" + query + "' and ";
-						}
+			if (err) {
+				console.log(err);
+				console.log('The API returned an error: ' + err);
+				mainCallback(results);
+				return;
+			}
 
-						service.files.list({
-							auth: auth,
-							maxResults: 100,
-							q: search + "'" + codes[variation] + "' in parents"
-						}, function(err, response) {
-							var files,
-								results = [],
-								file;
+			files = response.items;
 
-							if (err) {
-								console.log('The API returned an error: ' + err);
-								mainCallback(results);
-								return;
-							}
-
-							files = response.items;
-
-							for (var i = 0; i < files.length; i++) {
-								file = files[i];
-								results.push({
-									"title": "<a href='" + file.embedLink + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
-									"image": "<img src='" +  file.thumbnailLink + "'>",
-									"detail": "<a href='" + file.exportLinks['application/pdf'] + "' download><strong>Télécharger</strong></a> · " + dateLine(file.modifiedDate)
-								});
-							}
-
-							mainCallback(results);
-						});/*
-					}
+			for (var i = 0; i < files.length; i++) {
+				file = files[i];
+				results.push({
+					"title": "<a href='" + file.embedLink + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
+					"image": "<img src='" +  file.thumbnailLink + "'>",
+					"detail": "<a href='" + file.exportLinks['application/pdf'] + "' download><strong>Télécharger</strong></a> · " + dateLine(file.modifiedDate)
 				});
 			}
-		});*/
+
+			mainCallback(results);
+		});
 	}
 
-	fs.readFile('google-drive.json', function processClientSecrets(err, content) {
+	fs.readFile('google-drive.json', function (err, content) {
 		if (err) {
 			console.log('Error loading client secret file: ' + err);
 			return;
@@ -190,9 +154,6 @@ exports.setSockets = function () {
 		io = NA.io;
 
 	io.on('connection', function (socket) {
-		/*var session = socket.request.session,
-			sessionID = socket.request.sessionID;*/
-
 		socket.on('google-drive--search-query', function (query, variation) {
 			getGoogleDrive(NA, query, variation, function (results) {
 				socket.emit('google-drive--search-query', results);
