@@ -6,7 +6,7 @@
 	"httpSecure": true,
 	"httpPort": 7772,
 	"urlPort": 443,
-	"urlHostname": "www.cemea-pesl.org",
+	"urlHostname": "www.cemea-pesl.com",
 	"languageCode": "fr-fr",
 	"variation": "common.json",
 	"controller": "common.js",
@@ -22,6 +22,6 @@
 	"_data": "../data/cemea-pesl/",
 	"_smtp": "smtp.json",
 	"_googledrive": "google-drive.json",
-	"_ua": "UA-91358693-?",
+	"_ua": "UA-91358693-5",
 	"_min": true
 }
