@@ -26,7 +26,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 	function getNewToken(oauth2Client, callback) {
 		var authUrl = oauth2Client.generateAuthUrl({
 			access_type: 'offline',
-			redirect_uri: NA.webconfig.urlRoot,
+			//redirect_uri: NA.webconfig.urlRoot,
 			scope: SCOPES
 		});
 
@@ -40,8 +40,9 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 		rl.question('Enter the code from that page here: ', function (code) {
 			rl.close();
 			oauth2Client.getToken(code, function(err, token) {
+				console.log(token);
 				if (err) {
-					console.log('Error while trying to retrieve access token', err);
+					console.log('Error while trying to retrieve access token', code, err);
 					return;
 				}
 				oauth2Client.credentials = token;
@@ -73,9 +74,9 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 		var service = googleApis.drive('v2'),
 			search = "",
 			codes = {
-				'approach': '0Bx898FhOCnEmbzZNTWJpcTFtdzQ',
-				'coordinator': '0Bx898FhOCnEmdVNZUHZ2ZnN0Z1U',
-				'partner': '0Bx898FhOCnEmOTVobWVnUFl0MjA',
+				'approach': '0By4_w_w1iJBoYVBtd0t4REJJdGs',
+				'coordinator': '0By4_w_w1iJBoY0VuTHVEOEIzbEk',
+				'partner': '0By4_w_w1iJBoRFJTdjJrNGN1YTQ',
 			},
 			dateLine = function (date) {
 				var join = NA.modules.path.join,
@@ -124,7 +125,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 				results.push({
 					"title": "<a href='" + file.embedLink + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
 					"image": "<img src='" +  file.thumbnailLink + "'>",
-					"detail": "<a href='" + file.exportLinks['application/pdf'] + "' download><strong>Télécharger</strong></a> · " + dateLine(file.modifiedDate)
+					"detail": ((file.exportLinks) ? "<a href='" + file.exportLinks['application/pdf'] + "' download><strong>Format PDF</strong></a> · " : '') + dateLine(file.modifiedDate)
 				});
 			}
 
