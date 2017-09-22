@@ -26,6 +26,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 	function getNewToken(oauth2Client, callback) {
 		var authUrl = oauth2Client.generateAuthUrl({
 			access_type: 'offline',
+			redirect_uri: NA.webconfig.urlRoot,
 			scope: SCOPES
 		});
 
