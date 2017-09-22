@@ -45,10 +45,10 @@ module.exports = function () {
 
 			window.addEventListener('keydown', function (e) {
 				e = e || event;
-				keys[e.keyCode] = true;
-				ctrl[e.keyCode] = e.ctrlKey;
+				keys[e.which] = true;
+				ctrl[e.which] = e.ctrlKey;
 
-				if (ctrl[83] && keys[83] && vm.global.me.role === 'admin') {
+				if (((ctrl[83] && keys[83]) || (ctrl[115] && keys[115])) && vm.global.me.role === 'admin') {
 					e.preventDefault();
 					vm.global.isEditable = !vm.global.isEditable;
 				}
@@ -56,8 +56,8 @@ module.exports = function () {
 
 			window.addEventListener('keyup', function (e) {
 				e = e || event;
-				keys[e.keyCode] = false;
-				ctrl[e.keyCode] = false;
+				keys[e.which] = false;
+				ctrl[e.which] = false;
 			});
 		}
 	};
