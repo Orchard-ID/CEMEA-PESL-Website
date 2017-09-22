@@ -2,6 +2,7 @@
 
 function getGoogleDrive(NA, query, variation, mainCallback) {
 	var fs = NA.modules.fs,
+		path = NA.modules.path,
 		googleAuthLibrary = NA.modules.googleAuthLibrary,
 		googleApis = NA.modules.googleApis,
 		readline = NA.modules.readline,
@@ -130,7 +131,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 		});
 	}
 
-	fs.readFile('google-drive.json', function (err, content) {
+	fs.readFile(path.join(NA.serverPath, NA.webconfig._data, NA.webconfig._googledrive), function (err, content) {
 		if (err) {
 			console.log('Error loading client secret file: ' + err);
 			return;

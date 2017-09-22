@@ -19,7 +19,9 @@
 	"statics": "statics.js",
 	"routes": "routes.json",
 	"_robots": "index, follow",
-	"_min": true,
-	"_data": "../cemea-pesl.org/data/",
-	"_ua": "UA-91358693-?"
+	"_data": "../data/cemea-pesl/",
+	"_smtp": "smtp.json",
+	"_googledrive": "google-drive.json",
+	"_ua": "UA-91358693-?",
+	"_min": true
 }

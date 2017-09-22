@@ -15,5 +15,7 @@
 	"routes": "routes.json",
 	"_robots": "noindex, nofollow",
 	"_data": "data/",
+	"_smtp": "smtp.json",
+	"_googledrive": "google-drive.json",
 	"_min": false
 }

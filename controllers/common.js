@@ -79,7 +79,7 @@ exports.setModules = function () {
 	var NA = this,
 		join = NA.modules.path.join;
 
-	NA.webconfig._smtp = (NA.webconfig._smtp) ? require(join(NA.serverPath, NA.webconfig._smtp)) : undefined;
+	NA.webconfig._smtp = (NA.webconfig._smtp) ? require(join(NA.serverPath, NA.webconfig._data, NA.webconfig._smtp)) : undefined;
 
 	NA.modules.Vue = require("vue");
 	NA.modules.VueRouter = require("vue-router");
