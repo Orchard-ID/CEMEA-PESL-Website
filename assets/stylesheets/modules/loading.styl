@@ -1,17 +1,17 @@
 .loading
 	position fixed;
-	top 8px
+	top -14px
 	right 50%
 	transform translateX(50%)
 	@media(min-width: 600px)
 		transform translateX(100%)
 	@media(min-width: 900px)
 		transform translateX(0)
-	opacity .8
-	background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(255,255,255,1) 50%, rgba(229,229,229,0) 100%);
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 1%,rgba(255,255,255,1) 50%,rgba(229,229,229,0) 100%);
-	background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 1%,rgba(255,255,255,1) 50%,rgba(229,229,229,0) 100%);
-	padding 20px 20px
+	opacity 1
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,.8) 50%, rgba(255,255,255,0) 70%);
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,.8) 50%, rgba(255,255,255,0) 70%);
+	background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(255,255,255,.8) 50%, rgba(255,255,255,0) 70%);
+	padding 40px 40px
 	font-size 3rem
 	transition opacity .5s ease, top 2s ease-in
 	z-index 10
