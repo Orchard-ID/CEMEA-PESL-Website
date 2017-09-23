@@ -27,6 +27,10 @@ module.exports = function (template) {
 				NA.socket.emit('unauthentication');
 				NA.socket.once('unauthentication', () => {
 					this.global.me = {};
+					if (this.global.webconfig.routes[this.$route.name + '_' + this.global.webconfig.languageCode].middlewares) {
+						this.$router.replace({ path: '/' });
+						this.$router.replace({ path: '/espace-membres/' });
+					}
 				});
 			}
 		},

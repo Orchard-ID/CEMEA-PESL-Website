@@ -266,7 +266,6 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 
 		router.beforeEach(function (to, from, next) {
 			if (vm.global.webconfig.routes[to.name + '_' + vm.global.webconfig.languageCode].middlewares && !window.checkRoles({ roles: ['admin', 'double', to.name] })) {
-				console.log("Redirection !");
 				vm.$router.replace({ path: '/' });
 				vm.$router.replace({ path: '/espace-membres/' });
 			}
