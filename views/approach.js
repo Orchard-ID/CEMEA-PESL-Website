@@ -8,9 +8,10 @@ module.exports = function (specific, template, mixin, options) {
 		props: ['common', 'global'],
 		beforeMount: function () {
 			var data = document.getElementsByClassName('approach')[0];
+			Vue.set(this.global, 'search', {});
+			Vue.set(this.global.search, 'results', {});
 			if (data) {
-				window.lockDirty = true;
-				this.specific.search.results = JSON.parse(data.getAttribute('data-search'));
+				this.global.search.results = JSON.parse(data.getAttribute('data-search'));
 			}
 		},
 		beforeRouteEnter: function (to, from, next) {
@@ -33,8 +34,7 @@ module.exports = function (specific, template, mixin, options) {
 				var vm = this;
 				NA.socket.emit('google-drive--search-query', query, 'approach');
 				NA.socket.once('google-drive--search-query', function (data) {
-					window.lockDirty = true;
-					vm.specific.search.results = data;
+					vm.global.search.results = data;
 				});
 			},
 			getSearchResult: function () {

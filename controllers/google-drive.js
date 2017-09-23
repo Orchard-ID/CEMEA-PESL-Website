@@ -124,7 +124,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 				file = files[i];
 				results.push({
 					"title": "<a href='" + file.embedLink + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
-					"image": "<img src='" +  file.thumbnailLink + "'>",
+					"image": (!file.exportLinks) ? "<img src='" +  file.thumbnailLink + "'>" : '',
 					"detail": ((file.exportLinks) ? "<a href='" + file.exportLinks['application/pdf'] + "' download><strong>Format PDF</strong></a> · " : '') + dateLine(file.modifiedDate)
 				});
 			}
@@ -147,7 +147,9 @@ exports.changeVariations = function (next, locals) {
 	var NA = this;
 
 	getGoogleDrive(NA, "", locals.routeKey.split('_')[0], function (results) {
-		locals.specific.body.search.results = results;
+		locals.global = {};
+		locals.global.search = {};
+		locals.global.search.results = results;
 		next();
 	});
 };

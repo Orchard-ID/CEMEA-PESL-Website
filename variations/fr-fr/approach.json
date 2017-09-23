@@ -42,9 +42,6 @@
 			},
 			"button": "<img alt=\"\" src=\"./media/images/search.png\" style=\"height:20px; width:20px\" />",
 			"empty": "Il n'y a aucun document ici. Essayez une recherche avec d'autres mots-clés."
-		},
-		"search": {
-			"results": []
 		}
 	}
 }

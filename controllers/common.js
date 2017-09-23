@@ -188,6 +188,7 @@ exports.changeDom = function (next, locals, request, response) {
 			var router = new VueRouter({
 					routes: [currentRoute]
 				}),
+				extra = locals.global || {},
 				common = locals.common,
 				specific = locals.specific,
 				webconfig = {
@@ -196,7 +197,7 @@ exports.changeDom = function (next, locals, request, response) {
 				},
 
 				// We create the render.
-				stream = renderer.renderToStream(new Vue(require(appModel)(common, specific, template, router, webconfig)), locals);
+				stream = renderer.renderToStream(new Vue(require(appModel)(common, specific, template, router, webconfig, extra)), locals);
 
 			// We set the current (only) route to allows content to be rendered.
 			router.push(locals.routeParameters.url);

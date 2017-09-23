@@ -258,7 +258,7 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 	});
 
 
-	vm = new Vue(app.model(common, { body: {} }, app.template, router, webconfig));
+	vm = new Vue(app.model(common, { body: {} }, app.template, router, webconfig, {}));
 
 	router.onReady(function () {
 		vm.$mount('.layout');
