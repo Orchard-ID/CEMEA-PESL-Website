@@ -1,6 +1,7 @@
 /* jshint node: true */
 module.exports = (function () {
 	var NA = this.NA,
+		path = NA.modules.path,
 		lang = NA.webconfig.languageCode;
 
 	return {
@@ -18,7 +19,7 @@ module.exports = (function () {
 				"maxAge": (NA.webconfig.cache) ? 86400000 * 30 : 0
 			}
 		},
-		"/variations": "variations/" + lang + "/",
+		"/variations": path.join(NA.serverPath, NA.webconfig.variationsRelativePath, "variations/") + lang + "/",
 		"/options.json": "options.json",
 		"/routes.json": (lang === 'fr-fr') ? "routes.json" : "routes." + lang + ".json"
 	};
