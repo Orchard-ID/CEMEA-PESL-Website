@@ -13,6 +13,7 @@
 	"urlHostname": "staging.orchard-id.com",
 	"languageCode": "fr-fr",
 	"variation": "common.json",
+	"variationsRelativePath": "../data/cemea-pesl/variations/",
 	"controller": "common.js",
 	"view": "layout.htm",
 	"bundles": "bundles.json",
