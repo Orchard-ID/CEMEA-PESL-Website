@@ -112,7 +112,6 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 				file;
 
 			if (err) {
-				console.log(err);
 				console.log('The API returned an error: ' + err);
 				mainCallback(results);
 				return;
