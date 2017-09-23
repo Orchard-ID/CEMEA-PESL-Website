@@ -1,1 +1,1 @@
-<span v-bind:class="{ 'is-attr': global.isClient && global.me.id && global.isEditable }"><slot></slot><span v-if="global.isClient && global.me.id && global.isEditable" class="attr-list"><slot name="attrs"></slot></span></span>
+<div v-bind:class="{ 'is-attr': global.isClient && global.me.id && global.isEditable }"><slot></slot><span v-if="global.isClient && global.me.id && global.isEditable" class="attr-list"><slot name="attrs"></slot></span></div>
