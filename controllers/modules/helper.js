@@ -29,7 +29,7 @@ module.exports = function (NA) {
 					}
 				});
 			} else {
-				file = path.join(NA.serverPath, NA.webconfig._data, "email", (+new Date()) + '_' + mailOptions.to + '.json');
+				file = path.join(NA.serverPath, NA.webconfig._data, "data", "email", (+new Date()) + '_' + mailOptions.to + '.json');
 				fs.writeFile(file, JSON.stringify(mailOptions, undefined, '	'), function (error) {
 					if (error) {
 						console.log(error);

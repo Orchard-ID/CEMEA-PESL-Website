@@ -19,7 +19,7 @@ function setVueComponents(NA) {
 	});
 
 	animations.forEach(function (name) {
-		Vue.component(name, { template: '<span><slot></slot></span>' });
+		Vue.component(name, { template: '<div><slot></slot></div>' });
 	});
 }
 

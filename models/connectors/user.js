@@ -3,7 +3,7 @@ exports.authentication = function (email, password, next) {
 	var NA = this,
 		fs = NA.modules.fs,
 		path = NA.modules.path,
-		pathfile = path.join(NA.serverPath, NA.webconfig._data, "users.json");
+		pathfile = path.join(NA.serverPath, NA.webconfig._data, "data", "users.json");
 
 	fs.readFile(pathfile, "utf-8", function (err, content) {
 		var users = JSON.parse(content),
