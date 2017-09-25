@@ -23,7 +23,7 @@ module.exports = function (specific, template, mixin, options) {
 				this.slider = slide;
 			},
 			goToPreviousSlide: function (slide) {
-				this.slider = (this.slider > 1) ? this.slider - 1 : this.common.partner.partners.length - 1;
+				this.slider = (this.slider > 0) ? this.slider - 1 : this.common.partner.partners.length - 1;
 			},
 			goToNextSlide: function (slide) {
 				this.slider = (this.slider < this.common.partner.partners.length - 1) ? this.slider + 1 : 0;
