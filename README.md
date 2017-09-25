@@ -40,13 +40,15 @@ Quand vous devrez ajouter, modifier ou supprimer du code, [respectez ces convent
 Pour modifier le site avec un rendu en temps réel, il vous faudra :
 
 1. installer [Node.js] sur votre poste de développement ainsi que [Git] :
+
    - [Télécharger Node.js](https://nodejs.org/en/download/)
    - [Télécharger Git](https://git-scm.com/downloads)
 
 2. installer [NodeAtlas] en global sur votre poste de développement :
+   
    ```bash
-$ npm install -g node-atlas
-```
+   $ npm install -g node-atlas
+   ```
 
 3. récupérer la structure du site sur votre poste de développement depuis le dépôt `Orchard-ID/CEMEA-PESL-Website` sur la branche `develop` :
    ```bash
