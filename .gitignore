@@ -44,3 +44,6 @@ assets/javascripts/*.min.js
 /google-drive.json
 /data
 /variations
+
+# Mac OS Files
+.DS_Store
