@@ -11,7 +11,7 @@
 
 ## Avant-propos ##
 
-Ce dépôt contient l'intégralité du code source permettant de mettre en ligne le site web de CEMEA-PESL dans ses différenctes langues. Celui-ci fonctionne avec [NodeAtlas] qui est un module [npm] tournant sous [Node.js].
+Ce dépôt contient l'intégralité du code source permettant de mettre en ligne le site web https://www.cemea-pesl.fr/. Celui-ci fonctionne avec [NodeAtlas] qui est un module [npm] tournant sous [Node.js].
 
 Il peut servir d'inspiration pour créer d'autres sites.
 
@@ -37,72 +37,77 @@ Quand vous devrez ajouter, modifier ou supprimer du code, [respectez ces convent
 
 ### Installation ###
 
-Pour modifier le site avec un rendu en temps réel, il vous faudra installer [Node.js] sur votre poste de développement ainsi que [Git] :
+Pour modifier le site avec un rendu en temps réel, il vous faudra :
 
-- [Télécharger Node.js](https://nodejs.org/en/download/)
-- [Télécharger Git](https://git-scm.com/downloads)
+1. installer [Node.js] sur votre poste de développement ainsi que [Git] :
+   - [Télécharger Node.js](https://nodejs.org/en/download/)
+   - [Télécharger Git](https://git-scm.com/downloads)
 
-puis récupérer le dépôt en local sur votre machine :
-
-```bash
-$ cd </path/to/workspace/>
-$ git clone https://github.com/Orchard-ID/CEMEA-PESL-Website.git
-```
-
-puis initialisez la branche de développement :
-
-```bash
-git checkout develop
-```
-
-puis installer [NodeAtlas] :
-
-```bash
-$ cd CEMEA-PESL-Website
+2. installer [NodeAtlas] en global sur votre poste de développement :
+   ```bash
 $ npm install -g node-atlas
 ```
 
-et les autres module [npm] dont dépend le projet dans le dossier projet :
-
+3. récupérer la structure du site sur votre poste de développement depuis le dépôt `Orchard-ID/CEMEA-PESL-Website` sur la branche `develop` :
+   ```bash
+$ cd </chemin/vers/votre/espace/de/travail/>
+$ git clone https://github.com/Orchard-ID/CEMEA-PESL-Website.git
 ```
+
+4. récupérer un jeu de donnée pour le site sur votre poste de développement depuis le dépôt `Orchard-ID/Data` sur la branche `develop` :
+   ```bash
+$ cd </chemin/vers/votre/espace/de/travail/>
+$ git clone https://github.com/Orchard-ID/Data.git
+```
+
+5. initialiser le dossier `CEMEA-PESL-Website` :
+   ```bash
+$ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
 $ npm install
 ```
 
-puis lancez le site avec la commande :
+
+
+### Version standard ###
+
+Lancer le site avec la commande :
 
 ```bash
-$ npm run start
+$ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
+$ npm run start # ou `$ node-atlas --browse`
 ```
-
-ou lancez `server.na` en double cliquant dessus :
-- en expliquant à votre OS que les fichiers `.na` sont lancé par défaut par `node`,
-- en étant sur que votre variable d'environnement `NODE_PATH` pointe bien sur le dossier des `node_modules` globaux.
 
 Le site sera accessible à l'adresse suivante :
 
 - *http://localhost:7772/*
 
-Vous pouvez également lancez le débogeur [Node.js] dans Chrome pour la version française avec la commande :
+
+
+### Version rechargement à chaud ###
+
+Lancer le site avec browserSync pour recharger votre navigateur à chaud lors des changements dans les fichiers du dossier `assets` avec la commande :
 
 ```bash
-$ npm run debug
+$ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
+$ npm run watch # ou `$ node server.na --browse`
 ```
 
-il vous suffit ensuite d'atteindre l'url de debug proposé par la console.
+Le site sera accessible à l'adresse suivante :
+
+- *http://localhost:57772/*
 
 
 
+### Version débogue ###
 
-### Rechargement à chaud ###
-
-Vous pouvez utiliser browserSync pour recharger votre navigateur pour une modification d'un fichier frontal en lançant le site avec cette commande :
+Lancer le débogeur [Node.js] dans Chrome avec la commande :
 
 ```bash
-npm run watch
+$ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
+$ npm run debug # ou `$ node --inspect server.na --browse`
 ```
 
-Le site sera disponible à l'adresse *http://localhost:57772/*
-
+Le site sera accessible à l'adresse de debug proposée par la console.
 
 
 
@@ -110,88 +115,43 @@ Le site sera disponible à l'adresse *http://localhost:57772/*
 
 ## Environnement de pré-production ##
 
-### Rejoindre ###
+L'environnement de pré-production est visible à l'adresse :
 
-L'environnement de préproduction est visible à l'adresse :
+- https://staging.orchard-id.com/
 
-- https://website-haeresis.c9users.io/
+Et se trouve sur l'hébergement web `orchard-nodejs`.
 
-L'ensemble des fichiers est listé ici :
+### (Re)démarrer le site ###
 
-- https://preview.c9users.io/haeresis/website
-
-### Démarrer le serveur ###
-
-Il est possible que le serveur ne tourne pas, dans ce cas il faut le lancer en vous rendant à l'adresse :
-
-- https://ide.c9.io/haeresis/website
-
-Et en lançant dans la console (onglet "bash") la commande
-
-```bash
-$ node-atlas --webconfig webconfig.staging.json
-```
-
-### Mettre à jour l'environnement ###
-
-Pour mettre à jour l'environnement avec la version que vous souhaitez, utilisez git.
-
-- Par exemple pour mettre à jour avec la dernière version de la branche `develop` :
-
+1. se mettre dans l'environnement du site avec la commande :
    ```bash
-$ git checkout develop
-$ git pull
-```
-
-- Par exemple pour récupérer la version du commit `13b55fbdb8b4ba332becb15ebe54187464aae179`
-
-   ```bash
-$ git checkout 13b55fbdb8b4ba332becb15ebe54187464aae179
-```
-
-
-
-
-
-## Environnement de production ##
-
-L'environnement de production est visible à l'adresse :
-
-- http://www.cemea-pesl.org/
-
-### Redémarrer le serveur ###
-
-Tout d'abord il faut se mettre dans l'environnement du serveur avec la commande
-
-```bash
 nvm use 6.11.0
 ```
 
-Le serveur tourne forcément. Pour le redémarrez il faut repérer dans la liste des applications [Node.js] de `forever` laquelle est la notre :
-
-```bash
+2. vérifier que le site tourne avec la commande :
+   ```bash
 forever list
 ```
-
-Si le code de l'application est `ev-3`, il faut alors utiliser
-
+et trouver l'entrée
 ```bash
-forever restart ev-3
+XXXX /home/clients/xxx...xxx/.nvm/versions/node/v6.11.0/bin/node /home/clients/xxx...xxx/.nvm/versions/node/v6.11.0/bin/node-atlas --path /home/clients/xxx...xxx/staging.orchard-id.com/ --webconfig webconfig.staging.json
 ```
 
-**Si le serveur est down** (et que l'entrée ou que l'entrée n'est pas dans forever)
-
-Pour le démarrez utilisez la commande suivante :
-
+3. démarrer le serveur **si l'entrée précédente n'est pas dans la liste** avec la commande :
+   ```bash
+forever start /home/clients/xxx...xxx/.nvm/versions/node/v6.11.0/bin/node-atlas --path /home/clients/xxx...xxx/staging.orchard-id.com/ --webconfig webconfig.staging.json
+```
+ou si l'entrée est dans la liste, repérer la valeur de `XXXX` et utiliser la commande
 ```bash
-forever start <path-to-node-atlas> --path <path-to-orchard-id> --webconfig webconfig.production.json
+forever restart XXXX # par ex. si XXXX vaut eg-v, la commande sera `forever restart eg-v`
 ```
 
-### Mettre à jour l'environnement ###
+### Mettre à jour le site ###
 
-Pour mettre à jour l'environnement avec la dernière version (`master`) prète à tourner, utilisez git.
+Pour mettre à jour le site avec la dernière version (`master`) prète à tourner, utilisez Git.
 
 ```bash
+$ cd /home/clients/xxx...xxx/staging.orchard-id.com/
 $ git checkout master
 $ git pull
 ```
@@ -199,11 +159,11 @@ $ git pull
 puis redémarrez avec
 
 ```bash
-forever restart ev-3
+forever restart XXXX
 ```
 
 ### Serveur frontal ###
 
-L'application [Node.js] tourne sous son propre serveur HTTP sur le port `7772`. Pour qu'il puisse répondre publiquement sur Internet par le port 80, il faut que le serveur Apache qui tourne redirige les demandes de `cemea-pesl.org` sur ce port. Pour cela on utilise le gist `cemea-pesl.org`.
+L'application [Node.js] tourne sous son propre serveur HTTP sur le port `7772`. Pour qu'il puisse répondre publiquement sur Internet par le port 80, il faut que le serveur Apache qui tourne redirige les demandes de `staging.orchard-id.com` sur ce port. Pour cela on utilise le Gist `staging.orchard-id.com`.
 
-La configuration pour rediriger `cemea-pesl.org` est dans le dossier serveur `/cemea-pesl.org/.htaccess` (https://gist.github.com/Haeresis/6db2d89bc895d9c650b7a2825444d308)
+La configuration pour rediriger `staging.orchard-id.com` est dans le fichier serveur `/home/clients/xxx...xxx/.htaccess`
