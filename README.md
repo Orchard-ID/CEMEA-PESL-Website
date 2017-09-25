@@ -166,7 +166,7 @@ Pour mettre à jour le site avec la dernière version (`master`) prète à tourn
 
 ```bash
 $ cd /home/clients/xxx...xxx/staging.orchard-id.com/
-$ git checkout master
+$ git checkout develop
 $ git pull
 ```
 
