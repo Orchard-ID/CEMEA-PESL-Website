@@ -49,11 +49,10 @@ $ npm install -g node-atlas
 ```
 
 3. récupérer la structure du site sur votre poste de développement depuis le dépôt `Orchard-ID/CEMEA-PESL-Website` sur la branche `develop` :
-
-```bash
-$ cd </chemin/vers/votre/espace/de/travail/>
-$ git clone https://github.com/Orchard-ID/CEMEA-PESL-Website.git
-```
+   ```bash
+   $ cd </chemin/vers/votre/espace/de/travail/>
+   $ git clone https://github.com/Orchard-ID/CEMEA-PESL-Website.git
+   ```
 
 4. récupérer un jeu de donnée pour le site sur votre poste de développement depuis le dépôt `Orchard-ID/Data` sur la branche `develop` :
    ```bash
