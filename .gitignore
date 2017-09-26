@@ -47,3 +47,4 @@ assets/javascripts/*.min.js
 
 # Mac OS Files
 .DS_Store
+/assets/javascripts/vendors/jsoneditor.fr-fr.0.12.0.min.js

@@ -3,7 +3,7 @@ function setVueComponents(NA) {
 	var path = NA.modules.path,
 		Vue = NA.modules.Vue,
 		fs = NA.modules.fs,
-		components = ['attrs', 'attr', 'inline', 'block', 'navigation', 'main-header', 'main-footer'],
+		components = ['attrs', 'attr', 'inline', 'block', 'navigation', 'main-header', 'main-footer', 'parallax'],
 		animations = ['height-transition'];
 
 	components.forEach(function (name) {
@@ -59,7 +59,9 @@ function createBundleClient(NA, callback) {
 			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/main-footer.js"),
 			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/main-footer.htm"),
 			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "animations/height-transition.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "animations/height-transition.htm")
+			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "animations/height-transition.htm"),
+			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/parallax.js"),
+			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/parallax.htm")
 		];
 
 	async.map(components, function (sourceFile, callback) {

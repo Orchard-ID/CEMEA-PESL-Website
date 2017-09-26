@@ -13,24 +13,7 @@
 	<div class="lower-content">
 		<main-footer ref="main-footer" v-bind:common="common" v-bind:global="global" v-bind:specific="specific"></main-footer>
 	</div>
-	<div class="parallax-content">
-		<ul id="parallax-scene">
-			<template v-for="(n, index) in parallax.quantity">
-				<li v-if="index < 3" class="parallax-layer is-tiny" :data-depth="0.25">
-					<img :src="getRandomParallaxImage()">
-				</li>
-				<li v-if="index >= 3 && index < 6" class="parallax-layer is-small" :data-depth="0.5">
-					<img :src="getRandomParallaxImage()">
-				</li>
-				<li v-if="index >= 6 && index < 9" class="parallax-layer is-medium" :data-depth="0.5">
-					<img :src="getRandomParallaxImage()">
-				</li>
-				<li v-if="index >= 9 && index < 12" class="parallax-layer is-big" :data-depth="0.75">
-					<img :src="getRandomParallaxImage()">
-				</li>
-			</template>
-		</ul>
-	</div>
+	<parallax ref="parallax" v-bind:common="common" v-bind:global="global" v-bind:meta="meta"></parallax>
 	<div class="loading" v-html="common.loading"></div>
 	<edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"

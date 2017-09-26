@@ -89,6 +89,7 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 	Vue.component('main-header', eval(files[25])(files[26]));
 	Vue.component('main-footer', eval(files[27])(files[28]));
 	Vue.component('height-transition', eval(files[29])(files[30]));
+	Vue.component('parallax', eval(files[31])(files[32]));
 
 	mixin = function (unactive) {
 		return {
