@@ -48,7 +48,7 @@ strong
 html
 body
 	-webkit-font-smoothing antialiased
-	background-color $backgroundColor
+	background-color $mainBackgroundColor
 	color $textColor
 	height 100%
 	width 100%
@@ -123,12 +123,14 @@ a
 
 .main-content
 	margin-top 95px
-	background-color $backgroundColorReversed
+	background-color rgba($backgroundColorReversed, .33)
+	position relative
+	z-index 1
 
 .upper-content
 	z-index 2
 	color $highlightTextColor
-	background-color $backgroundColorReversed
+	background-color $footerBackgroundColor
 	position absolute
 	top 0
 	width 100%
@@ -144,6 +146,8 @@ a
 
 .lower-content
 	background-color $footerBackgroundColor
+	position relative
+	z-index 1
 
 .errors
 	color #d9534f

@@ -7,6 +7,7 @@ module.exports = (function () {
 	return {
 		"/socket.io/socket.io.js": "node_modules/socket.io-client/dist/socket.io.js",
 		"/javascripts/vendors/underscore.js": "node_modules/underscore/underscore.js",
+		"/javascripts/vendors/parallax.js": "node_modules/parallax-js/dist/parallax.min.js",
 		"/javascripts/vendors/jshashes.js": "node_modules/jshashes/hashes.min.js",
 		"/javascripts/vendors/velocity.js": "node_modules/velocity-animate/velocity.js",
 		"/javascripts/vendors/ckeditor/": "node_modules/ckeditor/",

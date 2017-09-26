@@ -1,6 +1,6 @@
 {
   "name": "cemea-pesl-website",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Site web des Projets Éducatifs Sociaux Locaux",
   "main": "server.na",
   "scripts": {
@@ -50,6 +50,7 @@
     "jquery": "3.2.x",
     "jshashes": "1.0.x",
     "nodemailer": "4.0.x",
+    "parallax-js": "^3.1.0",
     "socket.io": "2.0.x",
     "underscore": "1.8.x",
     "velocity-animate": "1.5.x",

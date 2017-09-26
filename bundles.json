@@ -5,6 +5,7 @@
 			"javascripts/config.js",
 			"javascripts/vendors/ga.min.js",
 			"../node_modules/underscore/underscore-min.js",
+			"../node_modules/parallax-js/dist/parallax.min.js",
 			"../node_modules/jshashes/hashes.min.js",
 			"../node_modules/velocity-animate/velocity.min.js",
 			"../node_modules/ckeditor/ckeditor.js",
