@@ -19,6 +19,7 @@
 	"bundles": "bundles.json",
 	"statics": "statics.js",
 	"routes": "routes.json",
+	"_components": "components.json",
 	"_robots": "noindex, nofollow",
 	"_data": "../data/cemea-pesl/",
 	"_smtp": "smtp.json",

@@ -19,6 +19,7 @@
 	},
 	"statics": "statics.js",
 	"routes": "routes.json",
+	"_components": "components.json",
 	"_robots": "index, follow",
 	"_data": "../data/cemea-pesl/",
 	"_smtp": "smtp.json",

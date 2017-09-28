@@ -20,7 +20,13 @@ module.exports = (function () {
 				"maxAge": (NA.webconfig.cache) ? 86400000 * 30 : 0
 			}
 		},
-		"/variations": NA.webconfig.variationsRelativePath + lang + "/",
+		"/variations": {
+			"path": NA.webconfig.variationsRelativePath + lang + "/",
+			"output": false,
+			"staticOptions": {
+				"maxAge": 0
+			}
+		},
 		"/options.json": "options.json",
 		"/routes.json": (lang === 'fr-fr') ? "routes.json" : "routes." + lang + ".json"
 	};

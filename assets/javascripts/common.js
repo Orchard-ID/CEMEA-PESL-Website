@@ -43,25 +43,27 @@ function xhr(url) {
 	});
 }
 
-xhr('javascripts/bundle.' + version + '.js').then(function (results) {
-	var files = eval(results),
+Promise.all([
+	xhr('variations/common.json'),
+	xhr('javascripts/bundle.' + version + '.js')
+]).then(function (results) {
+	var common = results[0],
+		files = eval(results[1]),
 		webconfig = {
 			routes: JSON.parse(files[0]),
 			languageCode: document.getElementsByTagName('html')[0].getAttribute('lang')
 		},
-		common = JSON.parse(files[1]),
 		app = {
+			view: files[1],
 			model: eval(files[2]),
-			template: files[3]
+			module: eval(files[3])()
 		},
+		modules = {},
 		keys = Object.keys(webconfig.routes),
 		routes = [],
 		mixin,
 		router,
 		vm,
-		global = eval(files[4])(),
-		edit = eval(files[5])(),
-		navigation = eval(files[6])(),
 		historyRouterLink = function (e) {
 			var url;
 
@@ -75,21 +77,15 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 					}
 				}
 			}
-		};
+		},
+		componentsCount = files.slice(4).length / 4;
 
-	Vue.component('ckeditor', eval(files[7])(files[8]));
-	Vue.component('attr', eval(files[9])(files[10]));
-	Vue.component('attrs', eval(files[11])(files[12]));
-	Vue.component('inline', eval(files[13])(files[14]));
-	Vue.component('block', eval(files[15])(files[16]));
-	Vue.component('edit', eval(files[17])(files[18]));
-	Vue.component('alert-message', eval(files[19])(files[20]));
-	Vue.component('confirm-message', eval(files[21])(files[22]));
-	Vue.component('navigation', eval(files[23])(files[24]));
-	Vue.component('main-header', eval(files[25])(files[26]));
-	Vue.component('main-footer', eval(files[27])(files[28]));
-	Vue.component('height-transition', eval(files[29])(files[30]));
-	Vue.component('parallax', eval(files[31])(files[32]));
+	for (var i = 4; i <= componentsCount * 4; i = i + 4) {
+		Vue.component(files[i], eval(files[i + 2])(files[i + 1]));
+		if (files[i + 3]) {
+			modules[files[i]] = eval(files[i + 3])();
+		}
+	}
 
 	mixin = function (unactive) {
 		return {
@@ -99,12 +95,12 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 			},
 			beforeRouteEnter: function (to, from, next) {
 				next(function (vmComponent) {
-					global.setHistoryLink(historyRouterLink);
+					app.module.setHistoryLink(historyRouterLink);
 
 					if (unactive) {
-						global.setBeforeRouterEnter(vmComponent, to);
-						edit.setBeforeRouterEnter(vmComponent);
-						navigation.setBeforeRouterEnter(vm);
+						app.module.setBeforeRouterEnter(vmComponent, to);
+						modules.edit.setBeforeRouterEnter(vmComponent);
+						modules.navigation.setBeforeRouterEnter(vm);
 					}
 
 					vm.global.isWaiting = false;
@@ -248,7 +244,7 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 	});
 
 
-	vm = new Vue(app.model(common, { body: {} }, app.template, router, webconfig, {}));
+	vm = new Vue(app.model(common, { body: {} }, app.view, router, webconfig, {}));
 
 	router.onReady(function () {
 		vm.$mount('.layout');
@@ -263,9 +259,9 @@ xhr('javascripts/bundle.' + version + '.js').then(function (results) {
 			next();
 		});
 
-		global.setTracking();
-		global.setSockets(vm);
-		global.editMode(vm);
-		edit.setSockets(vm);
+		app.module.setTracking();
+		app.module.setSockets(vm);
+		app.module.editMode(vm);
+		modules.edit.setSockets(vm);
 	});
 });

@@ -3,23 +3,21 @@ function setVueComponents(NA) {
 	var path = NA.modules.path,
 		Vue = NA.modules.Vue,
 		fs = NA.modules.fs,
-		components = ['attrs', 'attr', 'inline', 'block', 'navigation', 'main-header', 'main-footer', 'parallax'],
-		animations = ['height-transition'];
+		components = NA.webconfig._components,
+		keys = Object.keys(components);
 
-	components.forEach(function (name) {
-		var pathfile = path.join(NA.serverPath, NA.webconfig.viewsRelativePath, 'components/' + name + '.js');
+	keys.filter(function (name) {
+		return !components[name].clientOnly;
+	}).forEach(function (name) {
+		var pathfile = path.join(NA.serverPath, NA.webconfig.viewsRelativePath, components[name].model);
 
 		if (!NA.webconfig.cache) {
 			delete require.cache[pathfile];
 		}
 
 		Vue.component(name, require(pathfile)(
-			fs.readFileSync(path.join(NA.serverPath, NA.webconfig.viewsRelativePath, 'components/' + name + ".htm"), 'utf-8')
+			fs.readFileSync(path.join(NA.serverPath, NA.webconfig.viewsRelativePath, components[name].view), 'utf-8')
 		));
-	});
-
-	animations.forEach(function (name) {
-		Vue.component(name, { template: '<div><slot></slot></div>' });
 	});
 }
 
@@ -30,48 +28,35 @@ function createBundleClient(NA, callback) {
 		uglifyEs = NA.modules.uglifyEs,
 		components = [
 			path.join(NA.serverPath, "routes.json"),
-			path.join(NA.serverPath, NA.webconfig.variationsRelativePath, NA.webconfig.languageCode, "common.json"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.js"),
 			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.htm"),
+			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.js"),
 			path.join(NA.serverPath, NA.webconfig.assetsRelativePath, "javascripts/app.js"),
-			path.join(NA.serverPath, NA.webconfig.assetsRelativePath, "javascripts/modules/edit.js"),
-			path.join(NA.serverPath, NA.webconfig.assetsRelativePath, "javascripts/modules/navigation.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/ckeditor.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/ckeditor.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/attr.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/attr.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/attrs.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/attrs.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/inline.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/inline.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/block.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/block.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/edit.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/edit.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/alert-message.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/alert-message.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/confirm-message.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/confirm-message.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/navigation.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/navigation.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/main-header.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/main-header.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/main-footer.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/main-footer.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "animations/height-transition.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "animations/height-transition.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/parallax.js"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "components/parallax.htm")
-		];
+		],
+		keys = Object.keys(NA.webconfig._components);
+
+	keys.forEach(function (name) {
+		components.push(name);
+		components.push(path.join(NA.serverPath, NA.webconfig.viewsRelativePath, NA.webconfig._components[name].view));
+		components.push(path.join(NA.serverPath, NA.webconfig.viewsRelativePath, NA.webconfig._components[name].model));
+		if (NA.webconfig._components[name].module) {
+			components.push(path.join(NA.serverPath, NA.webconfig.assetsRelativePath, NA.webconfig._components[name].module));
+		} else {
+			components.push("");
+		}
+	});
 
 	async.map(components, function (sourceFile, callback) {
-		fs.readFile(sourceFile, 'utf-8', function (err, result) {
-			if (/\.js?$/g.test(sourceFile)) {
-				callback(null, uglifyEs.minify(result).code);
-			} else {
-				callback(null, result);
-			}
-		});
+		if (/\.(js|htm|json)?$/g.test(sourceFile)) {
+			fs.readFile(sourceFile, 'utf-8', function (err, result) {
+				if (/\.js?$/g.test(sourceFile)) {
+					callback(null, uglifyEs.minify(result).code);
+				} else {
+					callback(null, result);
+				}
+			});
+		} else {
+			callback(null, sourceFile);
+		}
 	}, function (error, results) {
 		callback(JSON.stringify(results));
 	});
@@ -82,6 +67,7 @@ exports.setModules = function () {
 		join = NA.modules.path.join;
 
 	NA.webconfig._smtp = (NA.webconfig._smtp) ? require(join(NA.serverPath, NA.webconfig._data, NA.webconfig._smtp)) : undefined;
+	NA.webconfig._components = require(join(NA.serverPath, NA.webconfig._components));
 
 	NA.modules.Vue = require("vue");
 	NA.modules.VueRouter = require("vue-router");

@@ -1,0 +1,60 @@
+{
+	"ckeditor": {
+		"view": "components/ckeditor.htm",
+		"model": "components/ckeditor.js",
+		"client": true
+	},
+	"attr": {
+		"view": "components/attr.htm",
+		"model": "components/attr.js"
+	},
+	"attrs": {
+		"view": "components/attrs.htm",
+		"model": "components/attrs.js"
+	},
+	"inline": {
+		"view": "components/inline.htm",
+		"model": "components/inline.js"
+	},
+	"block": {
+		"view": "components/block.htm",
+		"model": "components/block.js"
+	},
+	"edit": {
+		"view": "components/edit.htm",
+		"model": "components/edit.js",
+		"module": "javascripts/modules/edit.js",
+		"client": true
+	},
+	"alert-message": {
+		"view": "components/alert-message.htm",
+		"model": "components/alert-message.js",
+		"client": true
+	},
+	"confirm-message": {
+		"view": "components/confirm-message.htm",
+		"model": "components/confirm-message.js",
+		"client": true
+	},
+	"navigation": {
+		"view": "components/navigation.htm",
+		"model": "components/navigation.js",
+		"module": "javascripts/modules/navigation.js"
+	},
+	"main-header": {
+		"view": "components/main-header.htm",
+		"model": "components/main-header.js"
+	},
+	"main-footer": {
+		"view": "components/main-footer.htm",
+		"model": "components/main-footer.js"
+	},
+	"height-transition": {
+		"view": "animations/height-transition.htm",
+		"model": "animations/height-transition.js"
+	},
+	"parallax": {
+		"view": "components/parallax.htm",
+		"model": "components/parallax.js"
+	}
+}
