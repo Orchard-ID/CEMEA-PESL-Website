@@ -3,7 +3,7 @@
 function getGoogleDrive(NA, query, variation, mainCallback) {
 	var fs = NA.modules.fs,
 		path = NA.modules.path,
-		googleAuthLibrary = NA.modules.googleAuthLibrary,
+		GoogleAuthLibrary = NA.modules.googleAuthLibrary,
 		googleApis = NA.modules.googleApis,
 		readline = NA.modules.readline,
 		SCOPES = ['https://www.googleapis.com/auth/drive'],
@@ -55,7 +55,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 		var clientSecret = credentials.web.client_secret,
 			clientId = credentials.web.client_id,
 			redirectUrl = credentials.web.redirect_uris[0],
-			auth = new googleAuthLibrary(),
+			auth = new GoogleAuthLibrary(),
 			oauth2Client = new auth.OAuth2(clientId, clientSecret, redirectUrl);
 
 		fs.readFile(TOKEN_PATH, function(err, token) {
@@ -108,7 +108,8 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 		}, function(err, response) {
 			var files,
 				results = [],
-				file;
+				file,
+				current;
 
 			if (err) {
 				console.log('The API returned an error: ' + err);
@@ -118,13 +119,28 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 
 			files = response.items;
 
-			for (var i = 0; i < files.length; i++) {
+			for (var i = 0; i < files.length; i = i + 1) {
 				file = files[i];
-				results.push({
-					"title": "<a href='" + file.embedLink + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
-					"image": (!file.exportLinks) ? "<img src='" +  file.thumbnailLink + "'>" : '',
-					"detail": ((file.exportLinks) ? "<a href='" + file.exportLinks['application/pdf'] + "' download><strong>Format PDF</strong></a> · " : '') + dateLine(file.modifiedDate)
-				});
+
+				if (file.exportLinks) {
+					current = {
+						"title": (variation === "approach") ? "<a href='" + file.embedLink + "' target='_blank'><img src='" + file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>" : "<a href='" + file.alternateLink + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
+						"image": '',
+						"detail": "<a href='" + file.embedLink + "' target='_blank'><strong>Visualiser</strong></a> · " +
+							"<a href='" + file.alternateLink + "' target='_blank'><strong>Éditer</strong></a> · " +
+							"<a href='" + file.exportLinks['application/pdf'] + "' download><strong>Télécharger</strong></a> · " +
+							dateLine(file.modifiedDate)
+					};
+				} else {
+					current = {
+						"title": "<a href='https://docs.google.com/uc?id=" + file.id + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
+						"image": "<img src='" + file.thumbnailLink + "'>",
+						"detail": "<a href='https://docs.google.com/uc?id=" + file.id + "' target='_blank'><strong>Visualiser</strong></a> · " +
+							"<a href='https://docs.google.com/uc?id=" + file.id + "' download><strong>Télécharger</strong></a> · " +
+							dateLine(file.modifiedDate)
+					};
+				}
+				results.push(current);
 			}
 
 			mainCallback(results);
