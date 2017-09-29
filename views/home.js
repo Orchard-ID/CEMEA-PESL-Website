@@ -15,10 +15,10 @@ module.exports = function (specific, template, mixin, options) {
 		},
 		mounted: function () {
 			document.getElementsByClassName('next')[0].addEventListener('click', function () {
-				var height = parseInt(window.getComputedStyle(document.getElementsByClassName('home--about--main')[0]).height, 10)
-						+ parseInt(window.getComputedStyle(document.getElementsByClassName('home--about')[0]).paddingTop, 10) * 2
-						+ parseInt(window.getComputedStyle(document.getElementsByClassName('home--about')[0]).marginBottom, 10)
-						+ parseInt(window.getComputedStyle(document.getElementsByClassName('upper-content--inner')[0]).height, 10)
+				var height = parseInt(window.getComputedStyle(document.getElementsByClassName('home--about--main')[0]).height, 10) +
+						parseInt(window.getComputedStyle(document.getElementsByClassName('home--about')[0]).paddingTop, 10) * 2 +
+						parseInt(window.getComputedStyle(document.getElementsByClassName('home--about')[0]).marginBottom, 10) +
+						parseInt(window.getComputedStyle(document.getElementsByClassName('upper-content--inner')[0]).height, 10);
 				window.scrollTo(0, height);
 			});
 		},
