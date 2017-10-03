@@ -1,7 +1,7 @@
 <div class="approach" v-bind:data-search="JSON.stringify(global.search.results)">
 	<article class="approach--article">
 		<div class="approach--image">
-			<inline v-model="specific.image" :global="global" />
+			<inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
 		<div class="approach--main">
 			<h1 class="approach--title">
@@ -24,7 +24,7 @@
 				<div class="approach--structure--role">
 					<block v-model="specific.structure.roles[index].content" :global="global" />
 					<div class="approach--structure--role--image">
-						<inline v-model="specific.structure.roles[index].image" :global="global" />
+						<inline v-model="specific.structure.roles[index].image" :global="global" :empty="'Image manquante'" />
 					</div>
 				</div>
 			</li>

@@ -4,7 +4,7 @@ module.exports = function (template) {
 	return {
 		name: 'inline',
 		template: template,
-		props: ['value', 'global', 'config'],
+		props: ['value', 'global', 'config', 'empty'],
 		data: function () {
 			return {
 				output: undefined

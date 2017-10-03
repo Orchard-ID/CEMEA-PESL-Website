@@ -1,7 +1,7 @@
 <div class="projects">
 	<article class="projects--article">
 		<div class="projects--image">
-			<inline v-model="specific.image" :global="global" />
+			<inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
 		<div class="projects--main">
 			<h1 class="projects--title">
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<div class="projects--about--image">
-				<inline v-model="specific.about.image" :global="global" />
+				<inline v-model="specific.about.image" :global="global" :empty="'Image manquante'" />
 			</div>
 		</aside>
 	</article>
@@ -46,7 +46,7 @@
 				<ul>
 					<li v-for="(item, index) in specific.overview.overviews" v-bind:class="{ 'is-selected': index === slider }">
 						<div class="projects--overview--image">
-							<inline v-model="specific.overview.overviews[index].image" :global="global" />
+							<inline v-model="specific.overview.overviews[index].image" :global="global" :empty="'Image manquante'" />
 						</div>
 						<div class="projects--overview--content">
 							<block v-model="specific.overview.overviews[index].content" :global="global" />
@@ -76,7 +76,7 @@
 		<ul>
 			<li v-for="(item, index) in specific.more.sections">
 				<div class="projects--more--image">
-					<inline v-model="specific.more.sections[index].image" :global="global" />
+					<inline v-model="specific.more.sections[index].image" :global="global" :empty="'Image manquante'" />
 				</div>
 				<div class="projects--more--content">
 					<block v-model="specific.more.sections[index].content" :global="global" />
@@ -91,7 +91,7 @@
 		<ul>
 			<li v-for="(item, index) in specific.goal.goals">
 				<div class="projects--goal--image">
-					<inline v-model="specific.goal.goals[index].image" :global="global" />
+					<inline v-model="specific.goal.goals[index].image" :global="global" :empty="'Image manquante'" />
 				</div>
 				<div class="projects--goal--content">
 					<block v-model="specific.goal.goals[index].content" :global="global" />

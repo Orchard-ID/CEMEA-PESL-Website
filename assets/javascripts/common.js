@@ -1,5 +1,5 @@
 /* jshint browser: true, esversion: 6, evil: true */
-/* global Vue, VueRouter, location */
+/* global Vue, VueRouter, location, CKEDITOR */
 var version = document.getElementsByTagName("html")[0].getAttribute('data-version');
 
 window.module = {};

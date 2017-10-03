@@ -5,7 +5,7 @@
 	<section class="home--about">
 		<div class="home--about--inner">
 			<div class="home--about--image">
-				<inline v-model="specific.about.image" :global="global" />
+				<inline v-model="specific.about.image" :global="global" :empty="'Image manquante'" />
 			</div>
 			<div class="home--about--main">
 				<h2 class="home--about--title">
@@ -24,7 +24,7 @@
 	<!-- <hr class="separator"> -->
 	<section class="home--approach">
 		<div class="home--approach--image">
-			<inline v-model="specific.approach.image" :global="global" />
+			<inline v-model="specific.approach.image" :global="global" :empty="'Image manquante'" />
 		</div>
 		<div class="home--approach--main">
 			<h2 class="home--approach--title">
@@ -47,7 +47,7 @@
 				<ul>
 					<li v-for="(parner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }">
 						<div class="home--partner--image">
-							<inline v-model="common.partner.partners[index].image" :global="global" />
+							<inline v-model="common.partner.partners[index].image" :global="global" :empty="'Image manquante'" />
 						</div>
 						<div class="home--partner--content">
 							<block v-model="common.partner.partners[index].content" :global="global" />

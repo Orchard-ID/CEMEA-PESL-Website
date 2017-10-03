@@ -4,7 +4,7 @@ module.exports = function (template) {
 	return {
 		name: 'block',
 		template: template,
-		props: ['value', 'global'],
+		props: ['value', 'global', 'config', 'empty'],
 		data: function () {
 			return {
 				output: undefined

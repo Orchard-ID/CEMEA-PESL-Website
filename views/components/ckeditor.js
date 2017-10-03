@@ -34,6 +34,12 @@ module.exports = function (template) {
 					return 2;
 				}
 			},
+			empty: {
+				type: String,
+				default: function () {
+					return '&nbsp;&nbsp;';
+				}
+			},
 			config: {
 				type: Object,
 				default: function () {
@@ -75,8 +81,16 @@ module.exports = function (template) {
 			} else {
 				CKEDITOR.replace(this.id, Object.assign({}, config, this.config));
 			}
+			this.instance.on('blur', () => {
+				console.log(this.empty);
+				var data = this.instance.getData().replace(/^(&nbsp;)+$/g, '');
+				if (!data) {
+					this.instance.setData(this.empty);
+				}
+				//console.log('test', data, !!data);
+			});
 			this.instance.on('change', () => {
-				let html = this.instance.getData();
+				var html = this.instance.getData();
 				if (html !== this.value) {
 					this.$emit('input', html);
 				}
