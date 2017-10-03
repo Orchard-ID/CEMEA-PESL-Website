@@ -82,12 +82,10 @@ module.exports = function (template) {
 				CKEDITOR.replace(this.id, Object.assign({}, config, this.config));
 			}
 			this.instance.on('blur', () => {
-				console.log(this.empty);
-				var data = this.instance.getData().replace(/^(&nbsp;)+$/g, '');
-				if (!data) {
+				var isEmpty = this.instance.getData().replace(/^(&nbsp;)+$/g, '');
+				if (!isEmpty) {
 					this.instance.setData(this.empty);
 				}
-				//console.log('test', data, !!data);
 			});
 			this.instance.on('change', () => {
 				var html = this.instance.getData();
