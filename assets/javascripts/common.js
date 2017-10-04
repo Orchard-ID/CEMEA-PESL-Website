@@ -194,10 +194,6 @@ Promise.all([
 		// ...by adding a route
 		route.name = name;
 		route.path = webconfig.routes[key].url;
-		//route.pathToRegexpOptions = { strict: true };
-		route.meta = { first: (function (i) {
-			return i;
-		})(i) };
 
 		// ...by precise a component
 		route.component = function (resolve) {
@@ -232,13 +228,13 @@ Promise.all([
 			if (to.hash) {
 				return {
 					selector: to.hash
-				}
+				};
 			}
 
 			if (savedPosition) {
-				return savedPosition
+				return savedPosition;
 			} else {
-				return { x: 0, y: 0 }
+				return { x: 0, y: 0 };
 			}
 		}
 	});
