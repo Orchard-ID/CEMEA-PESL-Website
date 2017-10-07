@@ -36,6 +36,11 @@
 		"controller": "contact.js",
 		"variation": "contact.json"
 	},
+	"cookies_fr-fr": {
+		"url": "/cookies/",
+		"view": "about",
+		"variation": "cookies.json"
+	},
 	"login_fr-fr": {
 		"url": "/espace-membres/",
 		"view": "login",

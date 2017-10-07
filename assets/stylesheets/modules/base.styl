@@ -78,17 +78,41 @@ qbefore, qafter
 	content ''
 	content none
 
-table
+.textoi table
 	border-collapse collapse
 	border-spacing 0
+	border 1px solid $textColor
+.textoi tr
+.textoi td
+.textoi th
+	padding 8px
+	border 1px solid $textColor!important
+.textoi li
+	margin-left 24px
+	list-style-type initial
+.textoi li
+	margin-left 24px
+	list-style-type initial
 
 p
 	font-size 1.4rem
 
+p + p
 h1 + p
 h2 + p
 h3 + p
-p + p
+p + ul
+p + ol
+p + table
+ul + p
+ul + ol
+ul + table
+ol + p
+ol + ul
+ol + table
+table + p
+table + ul
+table + ol
 	margin-top 16px
 
 hr.separator

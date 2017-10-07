@@ -18,4 +18,16 @@
 			<block v-model="common.partner.content" :global="global" />
 		</div>
 	</div>
+	<div class="main-footer--copyright">
+		<attrs :global="global" tag="span">
+			{{ common.navigation.aside.links[0].copyright }} ·
+			<router-link class="cookies" v-bind:to="common.navigation.aside.links[0].href" v-html="common.navigation.aside.links[0].content"></router-link>
+			<template slot="attrs">
+				<attr :label="'Content: '" v-model="common.navigation.aside.links[0].content" :global="global" />
+				<attr :label="'Link: '" v-model="common.navigation.aside.links[0].href" :global="global" />
+				<attr :label="'Copyright: '" v-model="common.navigation.aside.links[0].copyright" :global="global" />
+			</template>
+			 · Ce site est une réalisation <a href='https://www.orchard-id.com/' target='_blank'>Orchard ID</a>
+		</attrs>
+	</div>
 </footer>

@@ -1,6 +1,18 @@
 /* jshint browser: true, esversion: 6, evil: true */
 /* global Vue, VueRouter, location, CKEDITOR */
-var version = document.getElementsByTagName("html")[0].getAttribute('data-version');
+var version = document.getElementsByTagName("html")[0].getAttribute('data-version'),
+	popupCookieConsent;
+
+window.cookieconsent.initialise({
+	"content": {
+		"message": "En poursuivant votre navigation vous consentez à l’utilisation de cookies pour des statistiques de visite.",
+		"dismiss": "Compris",
+		"link": "En savoir plus.",
+		"href": document.getElementsByClassName('cookies')[0].getAttribute('href')
+	}
+}, function (popup) {
+	popupCookieConsent = popup;
+});
 
 window.module = {};
 
@@ -9,8 +21,9 @@ if (window.location.pathname.slice(-1) !== '/') {
 }
 
 CKEDITOR.stylesSet.add('website', [
-	{ name: 'Titre 3 Centré', element: 'h3', attributes: { 'class': 'text-center' } },
-	{ name: 'Contenu Justifié', element: 'p', attributes: { 'class': 'text-justify' } }
+	{ name: 'Contenu Centré', element: 'p', attributes: { 'class': 'text-center' } },
+	{ name: 'Contenu Justifié', element: 'p', attributes: { 'class': 'text-justify' } },
+	{ name: 'Titre 3 Centré', element: 'h3', attributes: { 'class': 'text-center' } }
 ]);
 CKEDITOR.config.stylesSet = 'website';
 
@@ -91,6 +104,8 @@ Promise.all([
 		return {
 			beforeRouteLeave: function (to, from, next) {
 				vm.global.isWaiting = true;
+				popupCookieConsent.setStatus(cookieconsent.status.allow);
+				popupCookieConsent.close();
 				next();
 			},
 			beforeRouteEnter: function (to, from, next) {
@@ -239,6 +254,10 @@ Promise.all([
 		}
 	});
 
+	document.getElementsByClassName('cc-link')[0].addEventListener('click', function (e) {
+		e.preventDefault();
+		router.push({ path: e.target.getAttribute('href') });
+	});
 
 	vm = new Vue(app.model(common, { body: {} }, app.view, router, webconfig, {}));
 
