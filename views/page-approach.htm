@@ -1,40 +1,40 @@
-<div class="approach" v-bind:data-search="JSON.stringify(global.search.results)">
-	<article class="approach--article">
-		<div class="approach--image">
+<div class="page-approach" v-bind:data-search="JSON.stringify(global.search.results)">
+	<article class="page-approach--article">
+		<div class="page-approach--image">
 			<cmpt-inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
-		<div class="approach--main">
-			<h1 class="approach--title">
+		<div class="page-approach--main">
+			<h1 class="page-approach--title">
 				<cmpt-inline v-model="specific.title" :global="global" />
 			</h1>
-			<div class="approach--content">
+			<div class="page-approach--content">
 				<cmpt-block v-model="specific.content" :global="global" />
 			</div>
-			<div class="approach--quote">
+			<div class="page-approach--quote">
 				<cmpt-block v-model="specific.quote" :global="global" />
 			</div>
 		</div>
 	</article>
-	<section class="approach--structure">
-		<h2 class="approach--structure--title">
+	<section class="page-approach--structure">
+		<h2 class="page-approach--structure--title">
 			<cmpt-inline v-model="specific.structure.title" :global="global" />
 		</h2>
 		<ul>
 			<li v-for="(item, index) in specific.structure.roles">
-				<div class="approach--structure--role">
+				<div class="page-approach--structure--role">
 					<cmpt-block v-model="specific.structure.roles[index].content" :global="global" />
-					<div class="approach--structure--role--image">
+					<div class="page-approach--structure--role--image">
 						<cmpt-inline v-model="specific.structure.roles[index].image" :global="global" :empty="'Image manquante'" />
 					</div>
 				</div>
 			</li>
 		</ul>
 	</section>
-	<section class="approach--documentation">
-		<h2 class="approach--documentation--title">
+	<section class="page-approach--documentation">
+		<h2 class="page-approach--documentation--title">
 			<cmpt-inline v-model="specific.documentation.title" :global="global" />
 		</h2>
-		<div class="approach--search-bar">
+		<div class="page-approach--search-bar">
 			<div class="field search" v-bind:class="{ empty: searchQuery === '' }">
 				<button v-on:click="getSearchResult">
 					<cmpt-inline v-model="specific.documentation.button" :global="global" />
@@ -49,13 +49,13 @@
 				<input v-on:keyup.enter="getSearchResult" type="text" id="approach-form--search" class="approach-form--search" name="search" v-bind:placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
 			</div>
 		</div>
-		<div class="approach--search-result">
+		<div class="page-approach--search-result">
 			<ul v-if="global.search.results.length > 0">
 				<li v-for="(item, index) in global.search.results">
-					<div class="approach--documentation--result">
-						<div class="approach--documentation--result--image" v-html="global.search.results[index].image"></div>
-						<div class="approach--documentation--result--title" v-html="global.search.results[index].title"></div>
-						<div class="approach--documentation--result--detail" v-html="global.search.results[index].detail"></div>
+					<div class="page-approach--documentation--result">
+						<div class="page-approach--documentation--result--image" v-html="global.search.results[index].image"></div>
+						<div class="page-approach--documentation--result--title" v-html="global.search.results[index].title"></div>
+						<div class="page-approach--documentation--result--detail" v-html="global.search.results[index].detail"></div>
 					</div>
 				</li>
 			</ul>

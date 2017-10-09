@@ -1,22 +1,22 @@
-<div class="contact">
-	<section class="contact--article">
-		<div class="contact--image">
+<div class="page-contact">
+	<section class="page-contact--article">
+		<div class="page-contact--image">
 			<cmpt-inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
-		<div class="contact--main">
-			<h1 class="contact--title">
+		<div class="page-contact--main">
+			<h1 class="page-contact--title">
 				<cmpt-inline v-model="specific.title" :global="global" />
 			</h1>
-			<div class="contact--content">
+			<div class="page-contact--content">
 				<cmpt-block v-model="specific.content" :global="global" />
 			</div>
 		</div>
 	</section>
-	<div class="contact--message">
+	<div class="page-contact--message">
 		<anim-height>
 			<div v-if="!isSent" key="step-1">
 				<cmpt-block v-model="specific.explaination.step1" :global="global" />
-				<form class="contact--form" action="" method="post">
+				<form class="page-contact--form" action="" method="post">
 					<div class="field email" v-bind:class="{ empty: email === '' || email === undefined, invalid: !isEmail(email) && email !== undefined }">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-374 307 19.546 27" style="width: 24px">
 							<g id="Groupe_117" data-name="Groupe 117" transform="translate(-374.4 306.5)">
@@ -63,24 +63,24 @@
 			</div>
 		</anim-height>
 	</div>
-	<section class="contact--partner">
-		<h2 class="contact--partner--title">
+	<section class="page-contact--partner">
+		<h2 class="page-contact--partner--title">
 			<cmpt-inline v-model="common.partner.title" :global="global" />
 		</h2>
-		<div class="contact--partner--slider">
-			<div class="contact--partner--slider--content">
+		<div class="page-contact--partner--slider">
+			<div class="page-contact--partner--slider--content">
 				<ul>
 					<li v-for="(parner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }">
-						<div class="contact--partner--image">
+						<div class="page-contact--partner--image">
 							<cmpt-inline v-model="common.partner.partners[index].image" :global="global" :empty="'Image manquante'" />
 						</div>
-						<div class="contact--partner--content">
+						<div class="page-contact--partner--content">
 							<cmpt-block v-model="common.partner.partners[index].content" :global="global" />
 						</div>
 					</li>
 				</ul>
 			</div>
-			<div class="contact--partner--slider--navigation">
+			<div class="page-contact--partner--slider--navigation">
 				<div v-on:click="goToPreviousSlide" class="left">
 					<img src="./media/images/left-arrow.svg" width="10" alt="Précedent">
 				</div>
@@ -88,7 +88,7 @@
 					<img src="./media/images/right-arrow.svg" width="10" alt="Suivant">
 				</div>
 			</div>
-			<div class="contact--partner--slider--pagination">
+			<div class="page-contact--partner--slider--pagination">
 				<ul>
 					<li v-on:click="goToSlide(index)" v-for="(partner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }"></li>
 				</ul>

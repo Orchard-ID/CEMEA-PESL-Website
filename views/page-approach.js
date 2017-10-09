@@ -2,12 +2,12 @@
 /* global NA */
 module.exports = function (specific, template, mixin, options) {
 	return {
-		name: 'google-drive',
+		name: 'page-approach',
 		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: ['common', 'global'],
 		beforeMount: function () {
-			var data = document.getElementsByClassName('google-drive')[0];
+			var data = document.getElementsByClassName('page-approach')[0];
 			Vue.set(this.global, 'search', {});
 			Vue.set(this.global.search, 'results', {});
 			if (data) {
@@ -32,8 +32,8 @@ module.exports = function (specific, template, mixin, options) {
 		methods: {
 			searchResult: function (query) {
 				var vm = this;
-				NA.socket.emit('google-drive--search-query', query, vm.$route.name);
-				NA.socket.once('google-drive--search-query', function (data) {
+				NA.socket.emit('page-google-drive--search-query', query, 'approach');
+				NA.socket.once('page-google-drive--search-query', function (data) {
 					vm.global.search.results = data;
 				});
 			},

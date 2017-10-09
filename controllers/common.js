@@ -80,7 +80,7 @@ exports.setModules = function () {
 	NA.modules.googleAuthLibrary = require('google-auth-library');
 
 	NA.modules.helper = require("./modules/helper.js")(NA);
-	NA.modules.cmptEdit = require("./modules/cmpt-edit.js");
+	NA.modules.edit = require("./modules/edit.js");
 
 	NA.models = {};
 	NA.models.User = require("../models/connectors/user.js");
@@ -206,7 +206,7 @@ exports.changeDom = function (next, locals, request, response) {
 exports.setSockets = function () {
 	var NA = this,
 		io = NA.io,
-		cmptEdit = NA.modules.cmptEdit;
+		edit = NA.modules.edit;
 
 	io.on('connection', function (socket) {
 		var session = socket.request.session,
@@ -218,5 +218,5 @@ exports.setSockets = function () {
 		});
 	});
 
-	cmptEdit.setSockets.call(NA);
+	edit.setSockets.call(NA);
 };

@@ -1,60 +1,60 @@
-<div class="projects">
-	<article class="projects--article">
-		<div class="projects--image">
+<div class="page-projects">
+	<article class="page-projects--article">
+		<div class="page-projects--image">
 			<cmpt-inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
-		<div class="projects--main">
-			<h1 class="projects--title">
+		<div class="page-projects--main">
+			<h1 class="page-projects--title">
 				<cmpt-inline v-model="specific.title" :global="global" />
 			</h1>
-			<div class="projects--content">
+			<div class="page-projects--content">
 				<cmpt-block v-model="specific.content" :global="global" />
 			</div>
-			<div class="projects--cta">
+			<div class="page-projects--cta">
 				<ul>
 					<li v-for="(item, index) in specific.cta">
-						<div class="projects--cta--link">
+						<div class="page-projects--cta--link">
 							<cmpt-inline v-model="specific.cta[index].content" :global="global" />
 						</div>
 					</li>
 				</ul>
 			</div>
-			<div class="projects--quote">
+			<div class="page-projects--quote">
 				<cmpt-block v-model="specific.quote" :global="global" />
 			</div>
 		</div>
-		<aside id="definition" class="projects--about">
-			<div class="projects--about--main">
-				<h2 class="projects--about--title">
+		<aside id="definition" class="page-projects--about">
+			<div class="page-projects--about--main">
+				<h2 class="page-projects--about--title">
 					<cmpt-inline v-model="specific.about.title" :global="global" />
 				</h2>
-				<div class="projects--about--content">
+				<div class="page-projects--about--content">
 					<cmpt-block v-model="specific.about.content" :global="global" />
 				</div>
 			</div>
-			<div class="projects--about--image">
+			<div class="page-projects--about--image">
 				<cmpt-inline v-model="specific.about.image" :global="global" :empty="'Image manquante'" />
 			</div>
 		</aside>
 	</article>
-	<section id="principes" class="projects--overview">
-		<h2 class="projects--overview--title">
+	<section id="principes" class="page-projects--overview">
+		<h2 class="page-projects--overview--title">
 			<cmpt-inline v-model="specific.overview.title" :global="global" />
 		</h2>
-		<div class="projects--overview--slider">
-			<div class="projects--overview--slider--content">
+		<div class="page-projects--overview--slider">
+			<div class="page-projects--overview--slider--content">
 				<ul>
 					<li v-for="(item, index) in specific.overview.overviews" v-bind:class="{ 'is-selected': index === slider }">
-						<div class="projects--overview--image">
+						<div class="page-projects--overview--image">
 							<cmpt-inline v-model="specific.overview.overviews[index].image" :global="global" :empty="'Image manquante'" />
 						</div>
-						<div class="projects--overview--content">
+						<div class="page-projects--overview--content">
 							<cmpt-block v-model="specific.overview.overviews[index].content" :global="global" />
 						</div>
 					</li>
 				</ul>
 			</div>
-			<div class="projects--overview--slider--navigation">
+			<div class="page-projects--overview--slider--navigation">
 				<div v-on:click="goToPreviousSlide" class="left">
 					<img src="./media/images/left-arrow.svg" width="10" alt="Précedent">
 				</div>
@@ -62,38 +62,38 @@
 					<img src="./media/images/right-arrow.svg" width="10" alt="Suivant">
 				</div>
 			</div>
-			<div class="projects--overview--slider--pagination">
+			<div class="page-projects--overview--slider--pagination">
 				<ul>
 					<li v-on:click="goToSlide(index)" v-for="(overview, index) in specific.overview.overviews" v-bind:class="{ 'is-selected': index === slider }"></li>
 				</ul>
 			</div>
 		</div>
 	</section>
-	<section id="champs-intervention" class="projects--more">
-		<h2 class="projects--more--title">
+	<section id="champs-intervention" class="page-projects--more">
+		<h2 class="page-projects--more--title">
 			<cmpt-inline v-model="specific.more.title" :global="global" />
 		</h2>
 		<ul>
 			<li v-for="(item, index) in specific.more.sections">
-				<div class="projects--more--image">
+				<div class="page-projects--more--image">
 					<cmpt-inline v-model="specific.more.sections[index].image" :global="global" :empty="'Image manquante'" />
 				</div>
-				<div class="projects--more--content">
+				<div class="page-projects--more--content">
 					<cmpt-block v-model="specific.more.sections[index].content" :global="global" />
 				</div>
 			</li>
 		</ul>
 	</section>
-	<section class="projects--goal">
-		<h2 class="projects--goal--title">
+	<section class="page-projects--goal">
+		<h2 class="page-projects--goal--title">
 			<cmpt-inline v-model="specific.goal.title" :global="global" />
 		</h2>
 		<ul>
 			<li v-for="(item, index) in specific.goal.goals">
-				<div class="projects--goal--image">
+				<div class="page-projects--goal--image">
 					<cmpt-inline v-model="specific.goal.goals[index].image" :global="global" :empty="'Image manquante'" />
 				</div>
-				<div class="projects--goal--content">
+				<div class="page-projects--goal--content">
 					<cmpt-block v-model="specific.goal.goals[index].content" :global="global" />
 				</div>
 			</li>

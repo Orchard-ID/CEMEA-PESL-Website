@@ -173,9 +173,9 @@ exports.setSockets = function () {
 		io = NA.io;
 
 	io.on('connection', function (socket) {
-		socket.on('google-drive--search-query', function (query, variation) {
+		socket.on('page-google-drive--search-query', function (query, variation) {
 			getGoogleDrive(NA, query, variation, function (results) {
-				socket.emit('google-drive--search-query', results);
+				socket.emit('page-google-drive--search-query', results);
 			});
 		});
 	});

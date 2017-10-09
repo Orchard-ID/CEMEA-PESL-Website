@@ -1,33 +1,33 @@
-<div class="google-drive" v-bind:data-search="JSON.stringify(global.search.results)">
-	<article class="google-drive--article">
-		<div class="google-drive--image">
+<div class="page-google-drive" v-bind:data-search="JSON.stringify(global.search.results)">
+	<article class="page-google-drive--article">
+		<div class="page-google-drive--image">
 			<cmpt-inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
-		<div class="google-drive--main">
-			<h1 class="google-drive--title">
+		<div class="page-google-drive--main">
+			<h1 class="page-google-drive--title">
 				<cmpt-inline v-model="specific.title" :global="global" />
 			</h1>
-			<div class="google-drive--content">
+			<div class="page-google-drive--content">
 				<cmpt-block v-model="specific.content" :global="global" />
 			</div>
-			<div v-if="global.me.role === 'admin'" class="google-drive--tips">
+			<div v-if="global.me.role === 'admin'" class="page-google-drive--tips">
 				<cmpt-block v-model="specific.tips" :global="global" />
 			</div>
 		</div>
 	</article>
-	<section class="google-drive--information">
-		<h2 class="google-drive--information--title">
+	<section class="page-google-drive--information">
+		<h2 class="page-google-drive--information--title">
 			<cmpt-inline v-model="specific.information.title" :global="global" />
 		</h2>
-		<div class="google-drive--information--content">
+		<div class="page-google-drive--information--content">
 			<cmpt-block v-model="specific.information.content" :global="global" />
 		</div>
 	</section>
-	<section class="google-drive--documentation">
-		<h2 class="google-drive--documentation--title">
+	<section class="page-google-drive--documentation">
+		<h2 class="page-google-drive--documentation--title">
 			<cmpt-inline v-model="specific.documentation.title" :global="global" />
 		</h2>
-		<div class="google-drive--search-bar">
+		<div class="page-google-drive--search-bar">
 			<div class="field search" v-bind:class="{ empty: searchQuery === '' }">
 				<button v-on:click="getSearchResult">
 					<cmpt-inline v-model="specific.documentation.button" :global="global" />
@@ -42,13 +42,13 @@
 				<input v-on:keyup.enter="getSearchResult" type="text" id="google-drive-form--search" class="google-drive-form--search" name="search" v-bind:placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
 			</div>
 		</div>
-		<div class="google-drive--search-result">
+		<div class="page-google-drive--search-result">
 			<ul v-if="global.search.results.length > 0">
 				<li v-for="(item, index) in global.search.results">
-					<div class="google-drive--documentation--result">
-						<div class="google-drive--documentation--result--image" v-html="global.search.results[index].image" :empty="'Image manquante'"></div>
-						<div class="google-drive--documentation--result--title" v-html="global.search.results[index].title"></div>
-						<div class="google-drive--documentation--result--detail" v-html="global.search.results[index].detail"></div>
+					<div class="page-google-drive--documentation--result">
+						<div class="page-google-drive--documentation--result--image" v-html="global.search.results[index].image" :empty="'Image manquante'"></div>
+						<div class="page-google-drive--documentation--result--title" v-html="global.search.results[index].title"></div>
+						<div class="page-google-drive--documentation--result--detail" v-html="global.search.results[index].detail"></div>
 					</div>
 				</li>
 			</ul>

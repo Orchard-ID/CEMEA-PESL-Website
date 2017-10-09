@@ -1,12 +1,12 @@
-<div class="login">
-	<div class="login--inner">
+<div class="page-login">
+	<div class="page-login--inner">
 		<h1>
 			<cmpt-inline v-model="specific.title" :global="global" />
 		</h1>
 		<anim-height>
 			<div v-if="!global.me.id" key="logout">
 				<cmpt-block v-model="specific.content.unauthenticated" :global="global" />
-				<form class="login--form" action="" method="post">
+				<form class="page-login--form" action="" method="post">
 					<div class="field email" v-bind:class="{ empty: email === '' || email === undefined, invalid: !isEmail(email) && email !== undefined }">
 						<img src="./media/images/email.svg" alt="Email" style="width: 24px">
 						<label for="login-form--email" v-html="specific.email.label.content"></label>
@@ -31,13 +31,13 @@
 				</form>
 			</div>
 			<div v-else key="login">
-				<div class="login--me">
+				<div class="page-login--me">
 					<p>
 						<cmpt-inline v-model="specific.content.me" :global="global" /> <strong>{{ global.me.email }}</strong>
 					</p>
 				</div>
 				<cmpt-block v-model="specific.content.authenticated" :global="global" />
-				<form class="login--form" action="" method="post">
+				<form class="page-login--form" action="" method="post">
 					<cmpt-attrs :global="global">
 						<button class="login-form--cancel" v-on:click.prevent="doUnauthentication" v-html="specific.cancel.label.content"></button>
 						<template slot="attrs">
