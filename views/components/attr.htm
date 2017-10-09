@@ -1,6 +1,0 @@
-<span class="attr textoi" v-if="global.isClient && global.me.id && global.isEditable">{{ label }}<ckeditor
-		v-bind:value="value"
-		v-on:input="value => { output = value }"
-		v-bind:class="{ 'is-editable': global.isEditable, 'is-inline': true }"
-		v-bind:types="'inline'"
-		v-bind:config="{ toolbar: [] }"></ckeditor></span>

@@ -1,24 +1,24 @@
 {
-	"ckeditor": {
-		"view": "components/ckeditor.htm",
-		"model": "components/ckeditor.js",
+	"cmpt-ckeditor": {
+		"view": "components/cmpt-ckeditor.htm",
+		"model": "components/cmpt-ckeditor.js",
 		"client": true
 	},
-	"attr": {
-		"view": "components/attr.htm",
-		"model": "components/attr.js"
+	"cmpt-attr": {
+		"view": "components/cmpt-attr.htm",
+		"model": "components/cmpt-attr.js"
 	},
-	"attrs": {
-		"view": "components/attrs.htm",
-		"model": "components/attrs.js"
+	"cmpt-attrs": {
+		"view": "components/cmpt-attrs.htm",
+		"model": "components/cmpt-attrs.js"
 	},
-	"inline": {
-		"view": "components/inline.htm",
-		"model": "components/inline.js"
+	"cmpt-inline": {
+		"view": "components/cmpt-inline.htm",
+		"model": "components/cmpt-inline.js"
 	},
-	"block": {
-		"view": "components/block.htm",
-		"model": "components/block.js"
+	"cmpt-block": {
+		"view": "components/cmpt-block.htm",
+		"model": "components/cmpt-block.js"
 	},
 	"cmpt-edit": {
 		"view": "components/cmpt-edit.htm",

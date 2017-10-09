@@ -1,8 +1,8 @@
-<span class="inline textoi"><span v-if="!global.me.id || !global.isEditable" v-html="value"></span><ckeditor
+<span class="cmpt-block textoi"><span v-if="!global.me.id || !global.isEditable" v-html="value"></span><cmpt-ckeditor
 		v-if="global.isClient && global.me.id && global.isEditable"
 		v-bind:value="value"
 		v-on:input="value => { output = value }"
 		v-bind:class="{ 'is-editable': global.isEditable, 'is-inline': true }"
 		v-bind:types="'inline'"
-		v-bind:config="config"
-		v-bind:empty="empty"></ckeditor></span>
+		v-bind:mode="1"
+		v-bind:empty="empty"></cmpt-ckeditor></span>

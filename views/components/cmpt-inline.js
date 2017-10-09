@@ -2,7 +2,7 @@
 /* global Vue */
 module.exports = function (template) {
 	return {
-		name: 'block',
+		name: 'cmpt-inline',
 		template: template,
 		props: ['value', 'global', 'config', 'empty'],
 		data: function () {

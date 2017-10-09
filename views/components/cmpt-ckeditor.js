@@ -4,7 +4,7 @@ module.exports = function (template) {
 	var inc = 0;
 
 	return {
-		name: 'ckeditor',
+		name: 'cmpt-ckeditor',
 		template: template,
 		props: {
 			value: {

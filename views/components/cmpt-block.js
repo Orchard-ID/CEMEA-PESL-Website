@@ -2,9 +2,9 @@
 /* global Vue */
 module.exports = function (template) {
 	return {
-		name: 'attr',
+		name: 'cmpt-block',
 		template: template,
-		props: ['value', 'global', 'label'],
+		props: ['value', 'global', 'config', 'empty'],
 		data: function () {
 			return {
 				output: undefined

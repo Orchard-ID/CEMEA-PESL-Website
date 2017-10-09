@@ -1,33 +1,33 @@
 <footer class="main-footer">
 	<div class="main-footer--contact">
 		<h2 class="main-footer--contact--title">
-			<inline v-model="common.contact.title" :global="global" />
+			<cmpt-inline v-model="common.contact.title" :global="global" />
 		</h2>
 		<div class="main-footer--contact--cemea">
-			<block v-model="common.contact.cemea" :global="global" />
+			<cmpt-block v-model="common.contact.cemea" :global="global" />
 		</div>
 		<div class="main-footer--contact--pesl">
-			<block v-model="common.contact.pesl" :global="global" />
+			<cmpt-block v-model="common.contact.pesl" :global="global" />
 		</div>
 	</div>
 	<div class="main-footer--partner">
 		<h2 class="main-footer--partner--title">
-			<inline v-model="common.partner.title" :global="global" />
+			<cmpt-inline v-model="common.partner.title" :global="global" />
 		</h2>
 		<div class="main-footer--partner--content">
-			<block v-model="common.partner.content" :global="global" />
+			<cmpt-block v-model="common.partner.content" :global="global" />
 		</div>
 	</div>
 	<div class="main-footer--copyright">
-		<attrs :global="global" tag="span">
+		<cmpt-attrs :global="global" tag="span">
 			{{ common.navigation.aside.links[0].copyright }} ·
 			<router-link class="cookies" v-bind:to="common.navigation.aside.links[0].href" v-html="common.navigation.aside.links[0].content"></router-link>
 			<template slot="attrs">
-				<attr :label="'Content: '" v-model="common.navigation.aside.links[0].content" :global="global" />
-				<attr :label="'Link: '" v-model="common.navigation.aside.links[0].href" :global="global" />
-				<attr :label="'Copyright: '" v-model="common.navigation.aside.links[0].copyright" :global="global" />
+				<cmpt-attr :label="'Content: '" v-model="common.navigation.aside.links[0].content" :global="global" />
+				<cmpt-attr :label="'Link: '" v-model="common.navigation.aside.links[0].href" :global="global" />
+				<cmpt-attr :label="'Copyright: '" v-model="common.navigation.aside.links[0].copyright" :global="global" />
 			</template>
 			 · Ce site est une réalisation <a href='https://www.orchard-id.com/' target='_blank'>Orchard ID</a>
-		</attrs>
+		</cmpt-attrs>
 	</div>
 </footer>

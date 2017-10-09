@@ -1,21 +1,21 @@
 <div class="contact">
 	<section class="contact--article">
 		<div class="contact--image">
-			<inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
+			<cmpt-inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
 		<div class="contact--main">
 			<h1 class="contact--title">
-				<inline v-model="specific.title" :global="global" />
+				<cmpt-inline v-model="specific.title" :global="global" />
 			</h1>
 			<div class="contact--content">
-				<block v-model="specific.content" :global="global" />
+				<cmpt-block v-model="specific.content" :global="global" />
 			</div>
 		</div>
 	</section>
 	<div class="contact--message">
 		<anim-height>
 			<div v-if="!isSent" key="step-1">
-				<block v-model="specific.explaination.step1" :global="global" />
+				<cmpt-block v-model="specific.explaination.step1" :global="global" />
 				<form class="contact--form" action="" method="post">
 					<div class="field email" v-bind:class="{ empty: email === '' || email === undefined, invalid: !isEmail(email) && email !== undefined }">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-374 307 19.546 27" style="width: 24px">
@@ -38,16 +38,16 @@
 					</div>
 
 					<div class="submit">
-						<attrs :global="global">
+						<cmpt-attrs :global="global">
 							<label><button v-on:click.prevent="sendMessage" v-bind:class="{ invalid: !isSendable() }" class="contact-form--button" v-html="specific.button.label.content"></button></label>
 							<template slot="attrs">
-								<attr :label="'Email -: '" v-model="specific.email.label.placeholder" :global="global" />
-								<attr :label="'Email +: '" v-model="specific.email.label.content" :global="global" />
-								<attr :label="'Message -: '" v-model="specific.message.label.placeholder" :global="global" />
-								<attr :label="'Message +: '" v-model="specific.message.label.content" :global="global" />
-								<attr :label="'Send: '" v-model="specific.button.label.content" :global="global" />
+								<cmpt-attr :label="'Email -: '" v-model="specific.email.label.placeholder" :global="global" />
+								<cmpt-attr :label="'Email +: '" v-model="specific.email.label.content" :global="global" />
+								<cmpt-attr :label="'Message -: '" v-model="specific.message.label.placeholder" :global="global" />
+								<cmpt-attr :label="'Message +: '" v-model="specific.message.label.content" :global="global" />
+								<cmpt-attr :label="'Send: '" v-model="specific.button.label.content" :global="global" />
 							</template>
-						</attrs>
+						</cmpt-attrs>
 						<span v-if="error" class="errors">
 							<span class="empty" v-html="specific.button.error.sendFailure"></span>
 						</span>
@@ -55,27 +55,27 @@
 				</form>
 			</div>
 			<div v-else key="step-2">
-				<block v-model="specific.explaination.step2" :global="global" />
-				<block v-model="specific.or" :global="global" />
+				<cmpt-block v-model="specific.explaination.step2" :global="global" />
+				<cmpt-block v-model="specific.or" :global="global" />
 				<button v-on:click="newMessage">
-					<inline v-model="specific.link.content" :global="global" />
+					<cmpt-inline v-model="specific.link.content" :global="global" />
 				</button>
 			</div>
 		</anim-height>
 	</div>
 	<section class="contact--partner">
 		<h2 class="contact--partner--title">
-			<inline v-model="common.partner.title" :global="global" />
+			<cmpt-inline v-model="common.partner.title" :global="global" />
 		</h2>
 		<div class="contact--partner--slider">
 			<div class="contact--partner--slider--content">
 				<ul>
 					<li v-for="(parner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }">
 						<div class="contact--partner--image">
-							<inline v-model="common.partner.partners[index].image" :global="global" :empty="'Image manquante'" />
+							<cmpt-inline v-model="common.partner.partners[index].image" :global="global" :empty="'Image manquante'" />
 						</div>
 						<div class="contact--partner--content">
-							<block v-model="common.partner.partners[index].content" :global="global" />
+							<cmpt-block v-model="common.partner.partners[index].content" :global="global" />
 						</div>
 					</li>
 				</ul>

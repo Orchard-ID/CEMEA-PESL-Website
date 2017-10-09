@@ -2,10 +2,10 @@
 	<article class="about--article">
 		<div class="about--main">
 			<h1 class="about--title">
-				<inline v-model="specific.title" :global="global" />
+				<cmpt-inline v-model="specific.title" :global="global" />
 			</h1>
 			<div class="about--content">
-				<block v-model="specific.content" :global="global" />
+				<cmpt-block v-model="specific.content" :global="global" />
 			</div>
 		</div>
 	</article>

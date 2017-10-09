@@ -1,11 +1,11 @@
 <div class="login">
 	<div class="login--inner">
 		<h1>
-			<inline v-model="specific.title" :global="global" />
+			<cmpt-inline v-model="specific.title" :global="global" />
 		</h1>
 		<anim-height>
 			<div v-if="!global.me.id" key="logout">
-				<block v-model="specific.content.unauthenticated" :global="global" />
+				<cmpt-block v-model="specific.content.unauthenticated" :global="global" />
 				<form class="login--form" action="" method="post">
 					<div class="field email" v-bind:class="{ empty: email === '' || email === undefined, invalid: !isEmail(email) && email !== undefined }">
 						<img src="./media/images/email.svg" alt="Email" style="width: 24px">
@@ -33,18 +33,18 @@
 			<div v-else key="login">
 				<div class="login--me">
 					<p>
-						<inline v-model="specific.content.me" :global="global" /> <strong>{{ global.me.email }}</strong>
+						<cmpt-inline v-model="specific.content.me" :global="global" /> <strong>{{ global.me.email }}</strong>
 					</p>
 				</div>
-				<block v-model="specific.content.authenticated" :global="global" />
+				<cmpt-block v-model="specific.content.authenticated" :global="global" />
 				<form class="login--form" action="" method="post">
-					<attrs :global="global">
+					<cmpt-attrs :global="global">
 						<button class="login-form--cancel" v-on:click.prevent="doUnauthentication" v-html="specific.cancel.label.content"></button>
 						<template slot="attrs">
-							<attr :label="'Logged: '" v-model="specific.button.label.content" :global="global" />
-							<attr :label="'Not logged: '" v-model="specific.cancel.label.content" :global="global" />
+							<cmpt-attr :label="'Logged: '" v-model="specific.button.label.content" :global="global" />
+							<cmpt-attr :label="'Not logged: '" v-model="specific.cancel.label.content" :global="global" />
 						</template>
-					</attrs>
+					</cmpt-attrs>
 				</form>
 			</div>
 		</anim-height>

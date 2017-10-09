@@ -1,30 +1,30 @@
 <div class="approach" v-bind:data-search="JSON.stringify(global.search.results)">
 	<article class="approach--article">
 		<div class="approach--image">
-			<inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
+			<cmpt-inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
 		<div class="approach--main">
 			<h1 class="approach--title">
-				<inline v-model="specific.title" :global="global" />
+				<cmpt-inline v-model="specific.title" :global="global" />
 			</h1>
 			<div class="approach--content">
-				<block v-model="specific.content" :global="global" />
+				<cmpt-block v-model="specific.content" :global="global" />
 			</div>
 			<div class="approach--quote">
-				<block v-model="specific.quote" :global="global" />
+				<cmpt-block v-model="specific.quote" :global="global" />
 			</div>
 		</div>
 	</article>
 	<section class="approach--structure">
 		<h2 class="approach--structure--title">
-			<inline v-model="specific.structure.title" :global="global" />
+			<cmpt-inline v-model="specific.structure.title" :global="global" />
 		</h2>
 		<ul>
 			<li v-for="(item, index) in specific.structure.roles">
 				<div class="approach--structure--role">
-					<block v-model="specific.structure.roles[index].content" :global="global" />
+					<cmpt-block v-model="specific.structure.roles[index].content" :global="global" />
 					<div class="approach--structure--role--image">
-						<inline v-model="specific.structure.roles[index].image" :global="global" :empty="'Image manquante'" />
+						<cmpt-inline v-model="specific.structure.roles[index].image" :global="global" :empty="'Image manquante'" />
 					</div>
 				</div>
 			</li>
@@ -32,20 +32,20 @@
 	</section>
 	<section class="approach--documentation">
 		<h2 class="approach--documentation--title">
-			<inline v-model="specific.documentation.title" :global="global" />
+			<cmpt-inline v-model="specific.documentation.title" :global="global" />
 		</h2>
 		<div class="approach--search-bar">
 			<div class="field search" v-bind:class="{ empty: searchQuery === '' }">
 				<button v-on:click="getSearchResult">
-					<inline v-model="specific.documentation.button" :global="global" />
+					<cmpt-inline v-model="specific.documentation.button" :global="global" />
 				</button>
-				<attrs :global="global">
+				<cmpt-attrs :global="global">
 					<label for="approach-form--search" v-html="specific.documentation.search.label.content"></label>
 					<template slot="attrs">
-						<attr :label="'Placeholder -: '" v-model="specific.documentation.search.label.placeholder" :global="global" />
-						<attr :label="'Placeholder +: '" v-model="specific.documentation.search.label.content" :global="global" />
+						<cmpt-attr :label="'Placeholder -: '" v-model="specific.documentation.search.label.placeholder" :global="global" />
+						<cmpt-attr :label="'Placeholder +: '" v-model="specific.documentation.search.label.content" :global="global" />
 					</template>
-				</attrs>
+				</cmpt-attrs>
 				<input v-on:keyup.enter="getSearchResult" type="text" id="approach-form--search" class="approach-form--search" name="search" v-bind:placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 				</li>
 			</ul>
 			<div v-else>
-				<inline v-model="specific.documentation.empty" :global="global" />
+				<cmpt-inline v-model="specific.documentation.empty" :global="global" />
 			</div>
 		</div>
 	</section>

@@ -1,9 +1,9 @@
 <div class="error">
 	<div class="error--inner">
 		<h1>
-			<inline v-model="specific.title" :global="global" />
+			<cmpt-inline v-model="specific.title" :global="global" />
 		</h1>
-		<block v-model="specific.content" :global="global" />
+		<cmpt-block v-model="specific.content" :global="global" />
 		<cmpt-edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 			ref="edit"
 			v-bind:global="global"

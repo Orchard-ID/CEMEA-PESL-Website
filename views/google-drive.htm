@@ -1,44 +1,44 @@
 <div class="google-drive" v-bind:data-search="JSON.stringify(global.search.results)">
 	<article class="google-drive--article">
 		<div class="google-drive--image">
-			<inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
+			<cmpt-inline v-model="specific.image" :global="global" :empty="'Image manquante'" />
 		</div>
 		<div class="google-drive--main">
 			<h1 class="google-drive--title">
-				<inline v-model="specific.title" :global="global" />
+				<cmpt-inline v-model="specific.title" :global="global" />
 			</h1>
 			<div class="google-drive--content">
-				<block v-model="specific.content" :global="global" />
+				<cmpt-block v-model="specific.content" :global="global" />
 			</div>
 			<div v-if="global.me.role === 'admin'" class="google-drive--tips">
-				<block v-model="specific.tips" :global="global" />
+				<cmpt-block v-model="specific.tips" :global="global" />
 			</div>
 		</div>
 	</article>
 	<section class="google-drive--information">
 		<h2 class="google-drive--information--title">
-			<inline v-model="specific.information.title" :global="global" />
+			<cmpt-inline v-model="specific.information.title" :global="global" />
 		</h2>
 		<div class="google-drive--information--content">
-			<block v-model="specific.information.content" :global="global" />
+			<cmpt-block v-model="specific.information.content" :global="global" />
 		</div>
 	</section>
 	<section class="google-drive--documentation">
 		<h2 class="google-drive--documentation--title">
-			<inline v-model="specific.documentation.title" :global="global" />
+			<cmpt-inline v-model="specific.documentation.title" :global="global" />
 		</h2>
 		<div class="google-drive--search-bar">
 			<div class="field search" v-bind:class="{ empty: searchQuery === '' }">
 				<button v-on:click="getSearchResult">
-					<inline v-model="specific.documentation.button" :global="global" />
+					<cmpt-inline v-model="specific.documentation.button" :global="global" />
 				</button>
-				<attrs :global="global">
+				<cmpt-attrs :global="global">
 					<label for="google-drive-form--search" v-html="specific.documentation.search.label.content"></label>
 					<template slot="attrs">
-						<attr :label="'Placeholder -: '" v-model="specific.documentation.search.label.placeholder" :global="global" />
-						<attr :label="'Placeholder +: '" v-model="specific.documentation.search.label.content" :global="global" />
+						<cmpt-attr :label="'Placeholder -: '" v-model="specific.documentation.search.label.placeholder" :global="global" />
+						<cmpt-attr :label="'Placeholder +: '" v-model="specific.documentation.search.label.content" :global="global" />
 					</template>
-				</attrs>
+				</cmpt-attrs>
 				<input v-on:keyup.enter="getSearchResult" type="text" id="google-drive-form--search" class="google-drive-form--search" name="search" v-bind:placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 				</li>
 			</ul>
 			<div v-else>
-				<inline v-model="specific.documentation.empty" :global="global" />
+				<cmpt-inline v-model="specific.documentation.empty" :global="global" />
 			</div>
 		</div>
 	</section>
