@@ -8,13 +8,8 @@ module.exports = function (template) {
 		template: template,
 		props: {
 			value: {
-				type: String
-			},
-			global: {
-				type: Object,
-				default: function () {
-					return {};
-				}
+				type: String,
+				required: true
 			},
 			id: {
 				type: String,
@@ -37,7 +32,7 @@ module.exports = function (template) {
 			empty: {
 				type: String,
 				default: function () {
-					return '&nbsp;&nbsp;';
+					return '';
 				}
 			},
 			config: {
@@ -64,17 +59,6 @@ module.exports = function (template) {
 				fillEmptyBlocks: false,
 				enterMode: this.mode
 			};
-
-			if (config.enterMode !== 1) {
-				config.toolbar = [
-					{ name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', '-', 'Undo', 'Redo' ] },
-					'/',
-					{ name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-					{ name: 'insert', items: [ 'Image', 'SpecialChar' ] },
-					'/',
-					{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] }
-				];
-			}
 
 			if (this.types === 'inline') {
 				CKEDITOR.inline(this.id, Object.assign({}, config, this.config));

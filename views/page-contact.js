@@ -5,7 +5,16 @@ module.exports = function (specific, template, mixin, options) {
 		name: 'page-contact',
 		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
-		props: ['common', 'global'],
+		props: {
+			common: {
+				type: Object,
+				required: true
+			},
+			global: {
+				type: Object,
+				required: true
+			}
+		},
 		data: function () {
 			return {
 				options: options,
@@ -22,10 +31,10 @@ module.exports = function (specific, template, mixin, options) {
 			goToSlide: function (slide) {
 				this.slider = slide;
 			},
-			goToPreviousSlide: function (slide) {
+			goToPreviousSlide: function () {
 				this.slider = (this.slider > 0) ? this.slider - 1 : this.common.partner.partners.length - 1;
 			},
-			goToNextSlide: function (slide) {
+			goToNextSlide: function () {
 				this.slider = (this.slider < this.common.partner.partners.length - 1) ? this.slider + 1 : 0;
 			},
 			isEmail: function (email) {

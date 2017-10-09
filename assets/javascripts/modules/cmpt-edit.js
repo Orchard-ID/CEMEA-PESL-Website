@@ -5,7 +5,7 @@ module.exports = function () {
 		setBeforeRouterEnter: function (vmComponent) {
 			window.nextUpdates = window.nextUpdates || {};
 
-			var json = window.nextUpdates[vmComponent.$options.name],
+			var json = window.nextUpdates[vmComponent.$options.name.replace(/page-/g, '')],
 				i, j;
 
 			// If a content was updated from outside tab before you go on this page.
@@ -74,7 +74,7 @@ module.exports = function () {
 
 				// When a page is updated from outside tab, this part is used if
 				// your current page is the same as the page which was been updated.
-				if (file === 'common' || vm.$refs.router.$options.name === file) {
+				if (file === 'common' || vm.$refs.router.$options.name.replace(/page-/g, '') === file) {
 
 					// If you have updated page in same time, a message say
 					// your content is in conflict and invite you to update
@@ -82,6 +82,11 @@ module.exports = function () {
 					if (dirty) {
 						currentEdit.confirmUpdateJSON = true;
 						currentEdit.$refs.confirm.callback = function () {
+							if (file === 'common') {
+								vm.options.dirty = false;
+							} else {
+								vm.$refs.router.options.dirty = false;
+							}
 							nextStep();
 						};
 
@@ -93,7 +98,7 @@ module.exports = function () {
 				// This part is used if you not currently on the page from
 				// outside tab. The update will be done later.
 				// See `setBeforeRouterEnter`.
-				} else if (vm.$refs.router.$options.name !== file) {
+				} else if (vm.$refs.router.$options.name.replace(/page-/g, '') !== file) {
 					window.nextUpdates[file] = {
 						meta: meta,
 						body: body

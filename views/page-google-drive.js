@@ -1,11 +1,20 @@
 /* jshint node: true */
-/* global NA */
+/* global NA, Vue */
 module.exports = function (specific, template, mixin, options) {
 	return {
 		name: 'page-google-drive',
 		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
-		props: ['common', 'global'],
+		props: {
+			common: {
+				type: Object,
+				required: true
+			},
+			global: {
+				type: Object,
+				required: true
+			}
+		},
 		beforeMount: function () {
 			var data = document.getElementsByClassName('page-google-drive')[0];
 			Vue.set(this.global, 'search', {});

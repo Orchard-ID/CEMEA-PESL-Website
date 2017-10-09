@@ -4,7 +4,36 @@ module.exports = function (template) {
 	return {
 		name: 'cmpt-attr',
 		template: template,
-		props: ['value', 'global', 'label'],
+		props: {
+			value: {
+				type: String,
+				required: true
+			},
+			config: {
+				type: Object,
+				default: function () {
+					return {
+						toolbar: []
+					};
+				}
+			},
+			global: {
+				type: Object,
+				required: true
+			},
+			empty: {
+				type: String,
+				default: function () {
+					return '&nbsp;&nbsp;';
+				}
+			},
+			label: {
+				type: String,
+				default: function () {
+					return "";
+				}
+			}
+		},
 		data: function () {
 			return {
 				output: undefined

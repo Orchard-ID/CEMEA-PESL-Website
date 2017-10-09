@@ -3,8 +3,21 @@
 module.exports = function (template) {
 	return {
 		name: "cmpt-parallax",
-		props: ['common', 'global', 'meta'],
 		template: template,
+		props: {
+			common: {
+				type: Object,
+				required: true
+			},
+			global: {
+				type: Object,
+				required: true
+			},
+			meta: {
+				type: Object,
+				required: true
+			}
+		},
 		mounted: function(){
 			var scene = document.getElementsByClassName('cmpt-parallax--scene')[0];
 			new Parallax(scene);

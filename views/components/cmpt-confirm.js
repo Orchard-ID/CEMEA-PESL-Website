@@ -3,8 +3,17 @@ module.exports = function (template) {
 
 	return {
 		name: "cmpt-confirm",
-		props: ['current', 'displayed'],
 		template: template,
+		props: {
+			current: {
+				type: Object,
+				required: true
+			},
+			displayed: {
+				type: Boolean,
+				required: true
+			}
+		},
 		data: function () {
 			return {
 				callback: undefined

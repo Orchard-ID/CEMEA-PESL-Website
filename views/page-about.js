@@ -4,7 +4,16 @@ module.exports = function (specific, template, mixin, options) {
 		name: 'page-about',
 		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
-		props: ['common', 'global'],
+		props: {
+			common: {
+				type: Object,
+				required: true
+			},
+			global: {
+				type: Object,
+				required: true
+			}
+		},
 		data: function () {
 			return {
 				options: options,

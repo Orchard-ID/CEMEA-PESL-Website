@@ -3,6 +3,11 @@ module.exports = function (template) {
 	return {
 		name: 'cmpt-attrs',
 		template: template,
-		props: ['global']
+		props: {
+			global: {
+				type: Object,
+				required: true
+			}
+		}
 	};
 };

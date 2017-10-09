@@ -55,8 +55,37 @@ module.exports = function (template) {
 
 	return {
 		name: "cmpt-edit",
-		props: ['global', 'common', 'meta', 'body', 'current', 'options', 'file'],
 		template: template,
+		props: {
+			global: {
+				type: Object,
+				required: true
+			},
+			common: {
+				type: Object,
+				required: true
+			},
+			meta: {
+				type: Object,
+				required: true
+			},
+			body: {
+				type: Object,
+				required: true
+			},
+			current: {
+				type: String,
+				required: true
+			},
+			options: {
+				type: Object,
+				required: true
+			},
+			file: {
+				type: String,
+				required: true
+			}
+		},
 		data: function () {
 			return {
 				tab: 'body',

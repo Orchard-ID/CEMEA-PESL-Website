@@ -2,10 +2,16 @@
 module.exports = function (template) {
 	return {
 		name: "cmpt-footer",
-		props: ['common', 'global', 'specific'],
 		template: template,
-		data: function () {
-			return {};
+		props: {
+			common: {
+				type: Object,
+				required: true
+			},
+			global: {
+				type: Object,
+				required: true
+			}
 		}
 	};
 };

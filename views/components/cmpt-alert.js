@@ -3,8 +3,17 @@ module.exports = function (template) {
 
 	return {
 		name: "cmpt-alert",
-		props: ['current', 'displayed'],
 		template: template,
+		props: {
+			current: {
+				type: Object,
+				required: true
+			},
+			displayed: {
+				type: Boolean,
+				required: true
+			}
+		},
 		methods: {
 			close: function () {
 				this.$emit('close');

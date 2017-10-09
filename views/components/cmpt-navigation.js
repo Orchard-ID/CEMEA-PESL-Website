@@ -2,8 +2,17 @@
 module.exports = function (template) {
 	return {
 		name: "cmpt-navigation",
-		props: ['common', 'global', 'meta'],
 		template: template,
+		props: {
+			common: {
+				type: Object,
+				required: true
+			},
+			global: {
+				type: Object,
+				required: true
+			}
+		},
 		methods: {
 			checkRoles: function (link) {
 				var vm = this,
@@ -33,9 +42,6 @@ module.exports = function (template) {
 					}
 				});
 			}
-		},
-		data: function () {
-			return {};
 		}
 	};
 };

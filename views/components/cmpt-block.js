@@ -4,7 +4,28 @@ module.exports = function (template) {
 	return {
 		name: 'cmpt-block',
 		template: template,
-		props: ['value', 'global', 'config', 'empty'],
+		props: {
+			value: {
+				type: String,
+				required: true
+			},
+			config: {
+				type: Object,
+				default: function () {
+					return {};
+				}
+			},
+			global: {
+				type: Object,
+				required: true
+			},
+			empty: {
+				type: String,
+				default: function () {
+					return '&nbsp;&nbsp;';
+				}
+			}
+		},
 		data: function () {
 			return {
 				output: undefined

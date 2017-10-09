@@ -2,10 +2,16 @@
 module.exports = function (template) {
 	return {
 		name: "cmpt-header",
-		props: ['common', 'global', 'specific'],
 		template: template,
-		data: function () {
-			return {};
+		props: {
+			common: {
+				type: Object,
+				required: true
+			},
+			global: {
+				type: Object,
+				required: true
+			}
 		},
 		methods: {
 			toggleMenu: function () {

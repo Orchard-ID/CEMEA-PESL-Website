@@ -68,7 +68,7 @@
 		ref="edit"
 		v-bind:global="global"
 		v-bind:common="common"
-		v-bind:file="$options.name"
+		v-bind:file="$options.name.replace(/page-/, '')"
 		v-bind:meta="meta"
 		v-bind:body="specific"
 		v-bind:current="common.edit.local"
