@@ -15,7 +15,7 @@
 	</div>
 	<parallax ref="parallax" v-bind:common="common" v-bind:global="global" v-bind:meta="meta"></parallax>
 	<div class="loading" v-html="common.loading"></div>
-	<edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+	<cmpt-edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
 		v-bind:global="global"
 		v-bind:common="common"
@@ -23,5 +23,5 @@
 		v-bind:meta="meta"
 		v-bind:body="common"
 		v-bind:current="common.edit.global"
-		v-bind:options="options"></edit>
+		v-bind:options="options"></cmpt-edit>
 </div>

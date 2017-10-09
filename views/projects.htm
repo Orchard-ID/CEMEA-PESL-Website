@@ -99,7 +99,7 @@
 			</li>
 		</ul>
 	</section>
-	<edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+	<cmpt-edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
 		v-bind:global="global"
 		v-bind:common="common"
@@ -107,5 +107,5 @@
 		v-bind:meta="meta"
 		v-bind:body="specific"
 		v-bind:current="common.edit.local"
-		v-bind:options="options"></edit>
+		v-bind:options="options"></cmpt-edit>
 </div>

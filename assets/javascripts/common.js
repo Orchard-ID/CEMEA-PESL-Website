@@ -114,7 +114,7 @@ Promise.all([
 
 					if (unactive) {
 						app.module.setBeforeRouterEnter(vmComponent, to);
-						modules.edit.setBeforeRouterEnter(vmComponent);
+						modules['cmpt-edit'].setBeforeRouterEnter(vmComponent);
 						modules.navigation.setBeforeRouterEnter(vm);
 					}
 
@@ -277,6 +277,6 @@ Promise.all([
 		app.module.setTracking();
 		app.module.setSockets(vm);
 		app.module.editMode(vm);
-		modules.edit.setSockets(vm);
+		modules['cmpt-edit'].setSockets(vm);
 	});
 });

@@ -20,10 +20,10 @@
 		"view": "components/block.htm",
 		"model": "components/block.js"
 	},
-	"edit": {
-		"view": "components/edit.htm",
-		"model": "components/edit.js",
-		"module": "javascripts/modules/edit.js",
+	"cmpt-edit": {
+		"view": "components/cmpt-edit.htm",
+		"model": "components/cmpt-edit.js",
+		"module": "javascripts/modules/cmpt-edit.js",
 		"client": true
 	},
 	"cmpt-alert": {

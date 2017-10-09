@@ -3,8 +3,8 @@
 module.exports = function (template) {
 
 	function createJson(vm) {
-		var containerBody = vm.$el.getElementsByClassName('edit--editbox--body')[0],
-			containerMeta = vm.$el.getElementsByClassName('edit--editbox--meta')[0];
+		var containerBody = vm.$el.getElementsByClassName('cmpt-edit--editbox--body')[0],
+			containerMeta = vm.$el.getElementsByClassName('cmpt-edit--editbox--meta')[0];
 
 		vm.editorMeta = new JSONEditor(containerMeta, {
 			indentation: 4,
@@ -54,7 +54,7 @@ module.exports = function (template) {
 	}
 
 	return {
-		name: "edit",
+		name: "cmpt-edit",
 		props: ['global', 'common', 'meta', 'body', 'current', 'options', 'file'],
 		template: template,
 		data: function () {
@@ -84,8 +84,8 @@ module.exports = function (template) {
 				}
 			},
 			save: function () {
-				NA.socket.emit('edit--save', this.file, this.body, this.meta);
-				NA.socket.once('edit--save', () => {
+				NA.socket.emit('cmpt-edit--save', this.file, this.body, this.meta);
+				NA.socket.once('cmpt-edit--save', () => {
 					Vue.nextTick(() => {
 						if (this.editorMeta) {
 							this.editorMeta.destroy();

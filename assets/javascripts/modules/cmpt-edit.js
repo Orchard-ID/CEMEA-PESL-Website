@@ -39,7 +39,7 @@ module.exports = function () {
 		setSockets: function (vm) {
 			window.nextUpdates = window.nextUpdates || {};
 
-			NA.socket.on('edit--save', function (file, body, meta) {
+			NA.socket.on('cmpt-edit--save', function (file, body, meta) {
 				var currentMeta = (file === 'common') ? vm.meta : vm.$refs.router.meta,
 					currentBody = (file === 'common') ? vm.common : vm.$refs.router.specific,
 					currentEdit = (file === 'common') ? vm.$refs.edit : vm.$refs.router.$refs.edit,
@@ -92,7 +92,7 @@ module.exports = function () {
 
 				// This part is used if you not currently on the page from
 				// outside tab. The update will be done later.
-				// See `setBeforeRouterEnter`.*/
+				// See `setBeforeRouterEnter`.
 				} else if (vm.$refs.router.$options.name !== file) {
 					window.nextUpdates[file] = {
 						meta: meta,
