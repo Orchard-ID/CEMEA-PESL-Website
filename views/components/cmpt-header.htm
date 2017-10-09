@@ -1,8 +1,8 @@
-<header class="main-header" v-bind:class="{ 'is-opened': global.navigation }">
-	<h1 class="main-header--title">
+<header class="cmpt-header" v-bind:class="{ 'is-opened': global.navigation }">
+	<h1 class="cmpt-header--title">
 		<cmpt-inline v-model="common.title" :global="global" />
 	</h1>
-	<aside class="main-header--aside">
+	<aside class="cmpt-header--aside">
 		<cmpt-inline v-model="common.subtitle" :global="global" :empty="'Image manquante'" />
 	</aside>
 </header>

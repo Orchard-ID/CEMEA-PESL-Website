@@ -6,14 +6,14 @@
 	</div>
 	<div class="upper-content">
 		<div class="upper-content--inner">
-			<main-header ref="main-header" v-bind:common="common" v-bind:global="global" v-bind:specific="specific"></main-header>
-			<navigation ref="navigation" v-bind:common="common" v-bind:global="global" v-bind:meta="meta"></navigation>
+			<cmpt-header v-bind:common="common" v-bind:global="global" v-bind:specific="specific"></cmpt-header>
+			<cmpt-navigation v-bind:common="common" v-bind:global="global" v-bind:meta="meta"></cmpt-navigation>
 		</div>
 	</div>
 	<div class="lower-content">
-		<main-footer ref="main-footer" v-bind:common="common" v-bind:global="global" v-bind:specific="specific"></main-footer>
+		<cmpt-footer v-bind:common="common" v-bind:global="global" v-bind:specific="specific"></cmpt-footer>
 	</div>
-	<parallax ref="parallax" v-bind:common="common" v-bind:global="global" v-bind:meta="meta"></parallax>
+	<cmpt-parallax v-bind:common="common" v-bind:global="global" v-bind:meta="meta"></cmpt-parallax>
 	<div class="loading" v-html="common.loading"></div>
 	<cmpt-edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"

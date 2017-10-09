@@ -1,9 +1,9 @@
-<nav class="navigation" v-bind:class="{ 'is-opened': global.navigation }">
-	<h1 class="navigation--title" v-on:click="toggleMenu" >
+<nav class="cmpt-navigation" v-bind:class="{ 'is-opened': global.navigation }">
+	<h1 class="cmpt-navigation--title" v-on:click="toggleMenu" >
 		<cmpt-inline v-model="common.navigation.title" :global="global" />
 	</h1>
-	<div class="navigation--menu">
-		<nav class="navigation--menu--main">
+	<div class="cmpt-navigation--menu">
+		<nav class="cmpt-navigation--menu--main">
 			<ul>
 				<li v-for="(link, index) in common.navigation.main.links">
 					<cmpt-attrs :global="global">
@@ -16,7 +16,7 @@
 				</li>
 			</ul>
 		</nav>
-		<nav class="navigation--members-area">
+		<nav class="cmpt-navigation--members-area">
 			<ul v-if="global.me.id">
 				<li v-if="link.status === 'auth' && checkRoles(link)" v-for="(link, index) in common.navigation.privates.links">
 					<cmpt-attrs :global="global">

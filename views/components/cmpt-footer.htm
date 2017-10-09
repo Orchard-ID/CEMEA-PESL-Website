@@ -1,24 +1,24 @@
-<footer class="main-footer">
-	<div class="main-footer--contact">
-		<h2 class="main-footer--contact--title">
+<footer class="cmpt-footer">
+	<div class="cmpt-footer--contact">
+		<h2 class="cmpt-footer--contact--title">
 			<cmpt-inline v-model="common.contact.title" :global="global" />
 		</h2>
-		<div class="main-footer--contact--cemea">
+		<div class="cmpt-footer--contact--cemea">
 			<cmpt-block v-model="common.contact.cemea" :global="global" />
 		</div>
-		<div class="main-footer--contact--pesl">
+		<div class="cmpt-footer--contact--pesl">
 			<cmpt-block v-model="common.contact.pesl" :global="global" />
 		</div>
 	</div>
-	<div class="main-footer--partner">
-		<h2 class="main-footer--partner--title">
+	<div class="cmpt-footer--partner">
+		<h2 class="cmpt-footer--partner--title">
 			<cmpt-inline v-model="common.partner.title" :global="global" />
 		</h2>
-		<div class="main-footer--partner--content">
+		<div class="cmpt-footer--partner--content">
 			<cmpt-block v-model="common.partner.content" :global="global" />
 		</div>
 	</div>
-	<div class="main-footer--copyright">
+	<div class="cmpt-footer--copyright">
 		<cmpt-attrs :global="global" tag="span">
 			{{ common.navigation.aside.links[0].copyright }} ·
 			<router-link class="cookies" v-bind:to="common.navigation.aside.links[0].href" v-html="common.navigation.aside.links[0].content"></router-link>

@@ -36,25 +36,25 @@
 		"model": "components/cmpt-confirm.js",
 		"client": true
 	},
-	"navigation": {
-		"view": "components/navigation.htm",
-		"model": "components/navigation.js",
-		"module": "javascripts/modules/navigation.js"
+	"cmpt-navigation": {
+		"view": "components/cmpt-navigation.htm",
+		"model": "components/cmpt-navigation.js",
+		"module": "javascripts/modules/cmpt-navigation.js"
 	},
-	"main-header": {
-		"view": "components/main-header.htm",
-		"model": "components/main-header.js"
+	"cmpt-header": {
+		"view": "components/cmpt-header.htm",
+		"model": "components/cmpt-header.js"
 	},
-	"main-footer": {
-		"view": "components/main-footer.htm",
-		"model": "components/main-footer.js"
+	"cmpt-footer": {
+		"view": "components/cmpt-footer.htm",
+		"model": "components/cmpt-footer.js"
 	},
 	"anim-height": {
 		"view": "animations/anim-height.htm",
 		"model": "animations/anim-height.js"
 	},
-	"parallax": {
-		"view": "components/parallax.htm",
-		"model": "components/parallax.js"
+	"cmpt-parallax": {
+		"view": "components/cmpt-parallax.htm",
+		"model": "components/cmpt-parallax.js"
 	}
 }

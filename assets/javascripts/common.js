@@ -115,7 +115,7 @@ Promise.all([
 					if (unactive) {
 						app.module.setBeforeRouterEnter(vmComponent, to);
 						modules['cmpt-edit'].setBeforeRouterEnter(vmComponent);
-						modules.navigation.setBeforeRouterEnter(vm);
+						modules['cmpt-navigation'].setBeforeRouterEnter(vm);
 					}
 
 					vm.global.isWaiting = false;

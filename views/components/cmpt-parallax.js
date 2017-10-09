@@ -1,12 +1,13 @@
 /* jshint node: true */
+/* global Parallax */
 module.exports = function (template) {
 	return {
-		name: "parallax",
+		name: "cmpt-parallax",
 		props: ['common', 'global', 'meta'],
 		template: template,
 		mounted: function(){
-			var scene = document.getElementsByClassName('parallax--scene')[0],
-				parallaxInstance = new Parallax(scene);
+			var scene = document.getElementsByClassName('cmpt-parallax--scene')[0];
+			new Parallax(scene);
 		},
 		methods: {
 			getRandomParallaxImage: function(){

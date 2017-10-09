@@ -1,7 +1,7 @@
 /* jshint node: true */
 module.exports = function (template) {
 	return {
-		name: "navigation",
+		name: "cmpt-navigation",
 		props: ['common', 'global', 'meta'],
 		template: template,
 		methods: {
