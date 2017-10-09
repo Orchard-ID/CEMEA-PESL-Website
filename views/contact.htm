@@ -13,7 +13,7 @@
 		</div>
 	</section>
 	<div class="contact--message">
-		<height-transition>
+		<anim-height>
 			<div v-if="!isSent" key="step-1">
 				<block v-model="specific.explaination.step1" :global="global" />
 				<form class="contact--form" action="" method="post">
@@ -61,7 +61,7 @@
 					<inline v-model="specific.link.content" :global="global" />
 				</button>
 			</div>
-		</height-transition>
+		</anim-height>
 	</div>
 	<section class="contact--partner">
 		<h2 class="contact--partner--title">

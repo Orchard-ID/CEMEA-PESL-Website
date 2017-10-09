@@ -2,20 +2,10 @@
 module.exports = function (template) {
 
 	return {
-		name: "confirm-message",
+		name: "cmpt-alert",
 		props: ['current', 'displayed'],
 		template: template,
-		data: function () {
-			return {
-				callback: undefined
-			};
-		},
 		methods: {
-			update: function () {
-				this.callback();
-				this.callback = undefined;
-				this.$emit('close');
-			},
 			close: function () {
 				this.$emit('close');
 			}

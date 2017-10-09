@@ -1,0 +1,11 @@
+<aside v-on:click.self="close" class="cmpt-alert" v-bind:class="{ 'is-displayed': displayed }">
+	<div class="cmpt-alert--outer">
+		<div class="cmpt-alert--inner">
+			<h1 class="cmpt-alert--title" v-html="current.title"></h1>
+			<div class="cmpt-alert--message" v-html="current.message"></div>
+			<div class="cmpt-alert--actions">
+				<button v-on:click="close" class="cmpt-alert--ok" v-html="current.ok"></button>
+			</div>
+		</div>
+	</div>
+</aside>

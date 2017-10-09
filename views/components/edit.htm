@@ -2,7 +2,7 @@
 		<span v-show="!state" v-html="current"></span>
 		<span v-show="state" v-html="common.edit.close"></span>
 	</button>
-	<height-transition>
+	<anim-height>
 		<div key="box" v-show="state" class="edit--editbox">
 			<div class="edit--tabs">
 				<span class="edit--editbox--set-body" v-bind:class="{ 'is-current': tab === 'body' }" v-on:click="tab = 'body'" v-html="common.edit.data"></span>
@@ -11,7 +11,7 @@
 			<div v-show="tab === 'body'" class="edit--editbox--body"></div>
 			<div v-show="tab === 'meta'" class="edit--editbox--meta"></div>
 		</div>
-	</height-transition>
-	<confirm-message ref="confirm" v-on:close="confirmUpdateJSON = false" v-bind:displayed="confirmUpdateJSON" v-bind:current="common.edit.updateJSON"></confirm-message>
-	<alert-message ref="alert" v-on:close="alertLostJSON = false" v-bind:displayed="alertLostJSON" v-bind:current="common.edit.lostJSON"></alert-message>
+	</anim-height>
+	<cmpt-confirm ref="confirm" v-on:close="confirmUpdateJSON = false" v-bind:displayed="confirmUpdateJSON" v-bind:current="common.edit.updateJSON"></cmpt-confirm>
+	<cmpt-alert ref="alert" v-on:close="alertLostJSON = false" v-bind:displayed="alertLostJSON" v-bind:current="common.edit.lostJSON"></cmpt-alert>
 </aside>

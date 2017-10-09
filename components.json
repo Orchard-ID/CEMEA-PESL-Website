@@ -26,14 +26,14 @@
 		"module": "javascripts/modules/edit.js",
 		"client": true
 	},
-	"alert-message": {
-		"view": "components/alert-message.htm",
-		"model": "components/alert-message.js",
+	"cmpt-alert": {
+		"view": "components/cmpt-alert.htm",
+		"model": "components/cmpt-alert.js",
 		"client": true
 	},
-	"confirm-message": {
-		"view": "components/confirm-message.htm",
-		"model": "components/confirm-message.js",
+	"cmpt-confirm": {
+		"view": "components/cmpt-confirm.htm",
+		"model": "components/cmpt-confirm.js",
 		"client": true
 	},
 	"navigation": {
@@ -49,9 +49,9 @@
 		"view": "components/main-footer.htm",
 		"model": "components/main-footer.js"
 	},
-	"height-transition": {
-		"view": "animations/height-transition.htm",
-		"model": "animations/height-transition.js"
+	"anim-height": {
+		"view": "animations/anim-height.htm",
+		"model": "animations/anim-height.js"
 	},
 	"parallax": {
 		"view": "components/parallax.htm",
