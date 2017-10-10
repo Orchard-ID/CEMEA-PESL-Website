@@ -45,7 +45,7 @@
 		<div class="page-home--partner--slider">
 			<div class="page-home--partner--slider--content">
 				<ul>
-					<li v-for="(parner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }">
+					<li v-for="(partner, index) in common.partner.partners" v-bind:class="{ 'is-selected': index === slider }">
 						<div class="page-home--partner--image">
 							<cmpt-inline v-model="common.partner.partners[index].image" :global="global" :empty="'Image manquante'" />
 						</div>

@@ -124,6 +124,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 
 				if (file.exportLinks) {
 					current = {
+						"id": file.id,
 						"title": (variation === "approach") ? "<a href='" + file.embedLink + "' target='_blank'><img src='" + file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>" : "<a href='" + file.alternateLink + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
 						"image": '',
 						"detail": "<a href='" + file.embedLink + "' target='_blank'><strong>Visualiser</strong></a> · " +
@@ -133,6 +134,7 @@ function getGoogleDrive(NA, query, variation, mainCallback) {
 					};
 				} else {
 					current = {
+						"id": file.id,
 						"title": "<a href='https://docs.google.com/uc?id=" + file.id + "' target='_blank'><img src='" +  file.iconLink + "' width='16' height='16' style='margin-bottom: -2px'> " + file.title + "</a>",
 						"image": "<img src='" + file.thumbnailLink + "'>",
 						"detail": "<a href='https://docs.google.com/uc?id=" + file.id + "' target='_blank'><strong>Visualiser</strong></a> · " +
