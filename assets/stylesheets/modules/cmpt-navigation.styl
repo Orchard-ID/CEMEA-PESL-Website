@@ -50,10 +50,11 @@
 		@media (min-width: 950px)
 			display none
 
-	&--menu
-		.router-link-exact-active
-			cursor default
-			color #ff0068
+	&--menu--main li:nth-child(1) .router-link-exact-active
+	&--menu--main li + li .router-link-active
+	&--members-area .router-link-active
+		cursor default
+		color #ff0068
 
 		@media (max-width: 949px)
 			display none
@@ -99,6 +100,13 @@
 						background-color $highlightLinkColor
 						border 1px solid $highlightLinkColor
 
+
+			& ^[0]--menu--main li:nth-child(1) .router-link-exact-active
+			& ^[0]--menu--main li + li .router-link-active
+			& ^[0]--members-area .router-link-active
+				cursor default
+				color #ff0068
+
 			& ^[0]--menu
 				display block
 
@@ -106,9 +114,6 @@
 					color $linkColorReversed
 					&:hover
 						color $highlightLinkColorReversed
-					&.router-link-exact-active
-						cursor default
-						color #ff0068
 
 				@media (max-width: 949px)
 					position absolute
