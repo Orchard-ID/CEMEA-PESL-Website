@@ -6,9 +6,9 @@ module.exports = function (NA) {
 				path = NA.modules.path,
 				fs = NA.modules.fs,
 				mailOptions = {
-					from: "\"Orchard ID\" <postmaster@lesieur.name>",
-					to: to,
-					replyTo: "\"Client\" <" + to + ">",
+					from: "\"CEMÉA PESL\" <contact@cemea-pesl.fr>",
+					to: "contact@cemea-pesl.fr",
+					replyTo: to,
 					subject: subject,
 					text: content
 				},
