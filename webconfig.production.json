@@ -6,17 +6,13 @@
 	"httpSecure": true,
 	"httpPort": 7772,
 	"urlPort": 443,
-	"urlHostname": "www.cemea-pesl.com",
+	"urlHostname": "www.cemea-pesl.fr",
 	"languageCode": "fr-fr",
 	"variation": "common.json",
 	"variationsRelativePath": "../data/cemea-pesl/variations/",
 	"controller": "common.js",
 	"view": "layout.htm",
 	"bundles": "bundles.json",
-	"stylus": {
-		"files": "stylus.json",
-		"autoprefix": true
-	},
 	"statics": "statics.js",
 	"routes": "routes.json",
 	"_components": "components.json",

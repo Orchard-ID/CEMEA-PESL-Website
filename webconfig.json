@@ -3,7 +3,6 @@
 		"files": "stylus.json",
 		"autoprefix": true
 	},
-	"output": false,
 	"httpPort": 7772,
 	"languageCode": "fr-fr",
 	"variation": "common.json",

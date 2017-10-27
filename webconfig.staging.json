@@ -1,16 +1,12 @@
 {
 	"cache": true,
-	"stylus": {
-		"files": "stylus.json",
-		"autoprefix": true
-	},
 	"socketServerOptions": {
 		"transports": ["polling"]
 	},
 	"httpSecure": true,
 	"httpPort": 8082,
 	"urlPort": 443,
-	"urlHostname": "staging.orchard-id.com",
+	"urlHostname": "staging.cemea-pesl.fr",
 	"languageCode": "fr-fr",
 	"variation": "common.json",
 	"variationsRelativePath": "../data/cemea-pesl/variations/",
