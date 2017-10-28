@@ -64,62 +64,54 @@ function createBundleClient(NA, callback) {
 		}
 	});
 
-	async.parallel([
-		function(callback) {
-			openFile(NA, components.routes, function (error, result) {
-				components.routes = result;
-				callback(null);
+	async.parallel([function (callback) {
+		openFile(NA, components.routes, function (error, result) {
+			components.routes = result;
+			callback(null);
+		});
+	}, function (callback) {
+		openFile(NA, components.appView, function (error, result) {
+			components.appView = result;
+			callback(null);
+		});
+	}, function (callback) {
+		openFile(NA, components.appModel, function (error, result) {
+			components.appModel = result;
+			callback(null);
+		});
+	}, function (callback) {
+		openFile(NA, components.appModule, function (error, result) {
+			components.appModule = result;
+			callback(null);
+		});
+	}, function (callback) {
+		async.map(components.views, function (sourceFile, callback) {
+			openFile(NA, sourceFile, function (error, result) {
+				callback(null, result);
 			});
-		},
-		function(callback) {
-			openFile(NA, components.appView, function (error, result) {
-				components.appView = result;
-				callback(null);
+		}, function (error, results) {
+			components.views = results;
+			callback(null);
+		});
+	}, function (callback) {
+		async.map(components.models, function (sourceFile, callback) {
+			openFile(NA, sourceFile, function (error, result) {
+				callback(null, result);
 			});
-		},
-		function(callback) {
-			openFile(NA, components.appModel, function (error, result) {
-				components.appModel = result;
-				callback(null);
+		}, function (error, results) {
+			components.models = results;
+			callback(null);
+		});
+	}, function (callback) {
+		async.map(components.modules, function (sourceFile, callback) {
+			openFile(NA, sourceFile, function (error, result) {
+				callback(null, result);
 			});
-		},
-		function(callback) {
-			openFile(NA, components.appModule, function (error, result) {
-				components.appModule = result;
-				callback(null);
-			});
-		},
-		function(callback) {
-			async.map(components.views, function (sourceFile, callback) {
-				openFile(NA, sourceFile, function (error, result) {
-					callback(null, result);
-				});
-			}, function (error, results) {
-				components.views = results;
-				callback(null);
-			});
-		},
-		function(callback) {
-			async.map(components.models, function (sourceFile, callback) {
-				openFile(NA, sourceFile, function (error, result) {
-					callback(null, result);
-				});
-			}, function (error, results) {
-				components.models = results;
-				callback(null);
-			});
-		},
-		function(callback) {
-			async.map(components.modules, function (sourceFile, callback) {
-				openFile(NA, sourceFile, function (error, result) {
-					callback(null, result);
-				});
-			}, function (error, results) {
-				components.modules = results;
-				callback(null);
-			});
-		}
-	], function () {
+		}, function (error, results) {
+			components.modules = results;
+			callback(null);
+		});
+	}], function () {
 		callback("(function () { return " + JSON.stringify(components) + " })()");
 	});
 }
