@@ -3,6 +3,7 @@
 
 module.exports = function (template) {
 	return {
+		name: "AnimHeight",
 		template: template,
 		data: function () {
 			return {

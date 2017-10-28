@@ -1,5 +1,5 @@
-/* jshint browser: true, esversion: 6, evil: true */
-/* global Vue, VueRouter, location, CKEDITOR */
+/* jshint esversion: 6 */
+/* global Vue, VueRouter, CKEDITOR */
 var version = document.getElementsByTagName("html")[0].getAttribute('data-version'),
 	popupCookieConsent;
 
@@ -104,7 +104,7 @@ Promise.all([
 		return {
 			beforeRouteLeave: function (to, from, next) {
 				vm.global.isWaiting = true;
-				popupCookieConsent.setStatus(cookieconsent.status.allow);
+				popupCookieConsent.setStatus(window.cookieconsent.status.allow);
 				popupCookieConsent.close();
 				next();
 			},
@@ -114,8 +114,8 @@ Promise.all([
 
 					if (unactive) {
 						app.module.setBeforeRouterEnter(vmComponent, to);
-						modules['cmpt-edit'].setBeforeRouterEnter(vmComponent);
-						modules['cmpt-navigation'].setBeforeRouterEnter(vm);
+						modules['edit-global'].setBeforeRouterEnter(vmComponent);
+						modules['the-navigation'].setBeforeRouterEnter(vm);
 					}
 
 					vm.global.isWaiting = false;
@@ -194,7 +194,7 @@ Promise.all([
 
 		// Remove all child paths.
 		return !webconfig.routes[key]._parent;
-	}).forEach(function (key, i) {
+	}).forEach(function (key) {
 
 		// Create all first level route...
 		var route = {},
@@ -277,6 +277,6 @@ Promise.all([
 		app.module.setTracking();
 		app.module.setSockets(vm);
 		app.module.editMode(vm);
-		modules['cmpt-edit'].setSockets(vm);
+		modules['edit-global'].setSockets(vm);
 	});
 });

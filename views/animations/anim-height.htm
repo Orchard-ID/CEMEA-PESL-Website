@@ -1,5 +1,5 @@
 <transition-group name="anim-height" tag="div"
-	v-on:enter="enter"
-	v-on:leave="leave">
-	<slot></slot>
+	@enter="enter"
+	@leave="leave">
+	<slot/>
 </transition-group>

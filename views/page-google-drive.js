@@ -2,7 +2,7 @@
 /* global NA, Vue */
 module.exports = function (specific, template, mixin, options) {
 	return {
-		name: 'page-google-drive',
+		name: 'PageGoogleDrive',
 		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {

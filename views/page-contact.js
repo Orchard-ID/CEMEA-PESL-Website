@@ -2,7 +2,7 @@
 /* global NA */
 module.exports = function (specific, template, mixin, options) {
 	return {
-		name: 'page-contact',
+		name: 'PageContact',
 		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {

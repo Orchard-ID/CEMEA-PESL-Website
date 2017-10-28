@@ -1,0 +1,102 @@
+.the-parallax
+	width 100%
+	height 100%
+	position fixed
+	z-index 0
+	background-color transparent
+	top 0
+
+	&--scene
+		position relative
+		z-index 0
+		width 100%
+		height 100%
+
+	&--layer
+		position absolute
+		display block
+		width 100%
+		height 100%
+
+		&.is-tiny
+			img
+				transform translate(-50%, -50%) scale(.4)
+
+		&.is-small
+			img
+				transform translate(-50%, -50%) scale(.6)
+
+		&.is-medium
+			img
+				transform translate(-50%, -50%) scale(.8)
+
+		&.is-big
+			img
+				transform translate(-50%, -50%) scale(1)
+
+		&:nth-child(1)
+			img
+				top 18%
+				left 25%
+
+		&:nth-child(2)
+			img
+				top 43%
+				left 45%
+
+		&:nth-child(3)
+			img
+				top 23%
+				left 95%
+
+		&:nth-child(4)
+			img
+				top 88%
+				left 15%
+
+		&:nth-child(5)
+			img
+				top 73%
+				left 85%
+
+		&:nth-child(6)
+			img
+				top 13%
+				left 61%
+
+		&:nth-child(7)
+			img
+				top 66%
+				left 53%
+
+		&:nth-child(8)
+			img
+				top 43%
+				left 95%
+
+		&:nth-child(9)
+			img
+				top 95%
+				left 61%
+
+		&:nth-child(10)
+			img
+				top 46%
+				left 13%
+
+		&:nth-child(11)
+			img
+				top 5%
+				left 97%
+
+		&:nth-child(12)
+			img
+				top 5%
+				left 11%
+
+		img
+			transform-origin center center
+			position absolute
+			width 25%
+			max-width 150px
+			top -100%

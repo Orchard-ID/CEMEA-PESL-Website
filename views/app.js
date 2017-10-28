@@ -1,9 +1,8 @@
 /* jshint node: true */
-/* global NA */
 module.exports = function (common, specific, template, router, webconfig, extra) {
 
 	return {
-		name: 'app',
+		name: 'App',
 		template: template,
 		router: router,
 		data: {

@@ -1,0 +1,27 @@
+.the-header
+	float left
+	width auto
+	@media (min-width: 420px)
+		width 348px
+	padding 24px
+	height 95px
+	position relative
+	z-index 2
+
+	&.is-opened
+		a
+			color $linkColorReversed
+			&:hover
+				color $highlightLinkColorReversed
+
+	&--title
+		display inline-block
+		font-size 2.0rem
+		font-weight bold
+		line-height 2.2rem
+		margin-right 24px
+
+	&--aside
+		display inline-block
+		@media (max-width: 419px)
+			display none

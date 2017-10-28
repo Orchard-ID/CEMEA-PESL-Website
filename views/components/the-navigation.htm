@@ -1,0 +1,49 @@
+<nav class="the-navigation" :class="{ 'is-opened': global.navigation }">
+	<h1 class="the-navigation--title" @click="toggleMenu" >
+		<edit-inline v-model="common.navigation.title" :global="global"/>
+	</h1>
+	<div class="the-navigation--menu">
+		<nav class="the-navigation--menu--main">
+			<ul>
+				<li v-for="(link, index) in common.navigation.main.links">
+					<edit-wrapper-attr :global="global">
+						<router-link :to="link.href" v-html="link.content"/>
+						<template slot="attrs">
+							<edit-attr :label="'Content: '" v-model="common.navigation.main.links[index].content" :global="global"/>
+							<edit-attr :label="'Link: '" v-model="common.navigation.main.links[index].href" :global="global"/>
+						</template>
+					</edit-wrapper-attr>
+				</li>
+			</ul>
+		</nav>
+		<nav class="the-navigation--members-area">
+			<ul v-if="global.me.id">
+				<li v-if="link.status === 'auth' && checkRoles(link)" v-for="(link, index) in common.navigation.privates.links">
+					<edit-wrapper-attr :global="global">
+						<div v-if="link.href === '#logout'">
+							<button @click="doUnauthentication" v-html="link.content"></button>
+						</div>
+						<div v-else>
+							<router-link :to="link.href" v-html="link.content"/>
+						</div>
+						<template slot="attrs">
+							<edit-attr :label="'Content: '" v-model="common.navigation.privates.links[index].content" :global="global"/>
+							<edit-attr :label="'Link: '" v-model="common.navigation.privates.links[index].href" :global="global"/>
+						</template>
+					</edit-wrapper-attr>
+				</li>
+			</ul>
+			<ul v-else>
+				<li v-if="link.status !== 'auth'" v-for="(link, index) in common.navigation.privates.links">
+					<edit-wrapper-attr :global="global">
+						<router-link :to="link.href" v-html="link.content"/>
+						<template slot="attrs">
+							<edit-attr :label="'Content: '" v-model="common.navigation.privates.links[index].content" :global="global"/>
+							<edit-attr :label="'Link: '" v-model="common.navigation.privates.links[index].href" :global="global"/>
+						</template>
+					</edit-wrapper-attr>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</nav>

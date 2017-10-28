@@ -1,7 +1,7 @@
 /* jshint node: true */
 module.exports = function (specific, template, mixin, options) {
 	return {
-		name: 'page-about',
+		name: 'PageAbout',
 		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {

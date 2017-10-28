@@ -1,60 +1,60 @@
 {
-	"cmpt-ckeditor": {
-		"view": "components/cmpt-ckeditor.htm",
-		"model": "components/cmpt-ckeditor.js",
+	"edit-ckeditor": {
+		"view": "components/edit-ckeditor.htm",
+		"model": "components/edit-ckeditor.js",
 		"client": true
 	},
-	"cmpt-attr": {
-		"view": "components/cmpt-attr.htm",
-		"model": "components/cmpt-attr.js"
+	"edit-attr": {
+		"view": "components/edit-attr.htm",
+		"model": "components/edit-attr.js"
 	},
-	"cmpt-attrs": {
-		"view": "components/cmpt-attrs.htm",
-		"model": "components/cmpt-attrs.js"
+	"edit-wrapper-attr": {
+		"view": "components/edit-wrapper-attr.htm",
+		"model": "components/edit-wrapper-attr.js"
 	},
-	"cmpt-inline": {
-		"view": "components/cmpt-inline.htm",
-		"model": "components/cmpt-inline.js"
+	"edit-inline": {
+		"view": "components/edit-inline.htm",
+		"model": "components/edit-inline.js"
 	},
-	"cmpt-block": {
-		"view": "components/cmpt-block.htm",
-		"model": "components/cmpt-block.js"
+	"edit-block": {
+		"view": "components/edit-block.htm",
+		"model": "components/edit-block.js"
 	},
-	"cmpt-edit": {
-		"view": "components/cmpt-edit.htm",
-		"model": "components/cmpt-edit.js",
-		"module": "javascripts/modules/cmpt-edit.js",
+	"edit-global": {
+		"view": "components/edit-global.htm",
+		"model": "components/edit-global.js",
+		"module": "javascripts/modules/edit-global.js",
 		"client": true
 	},
-	"cmpt-alert": {
-		"view": "components/cmpt-alert.htm",
-		"model": "components/cmpt-alert.js",
+	"popup-alert": {
+		"view": "components/popup-alert.htm",
+		"model": "components/popup-alert.js",
 		"client": true
 	},
-	"cmpt-confirm": {
-		"view": "components/cmpt-confirm.htm",
-		"model": "components/cmpt-confirm.js",
+	"popup-confirm": {
+		"view": "components/popup-confirm.htm",
+		"model": "components/popup-confirm.js",
 		"client": true
 	},
-	"cmpt-navigation": {
-		"view": "components/cmpt-navigation.htm",
-		"model": "components/cmpt-navigation.js",
-		"module": "javascripts/modules/cmpt-navigation.js"
+	"the-navigation": {
+		"view": "components/the-navigation.htm",
+		"model": "components/the-navigation.js",
+		"module": "javascripts/modules/the-navigation.js"
 	},
-	"cmpt-header": {
-		"view": "components/cmpt-header.htm",
-		"model": "components/cmpt-header.js"
+	"the-header": {
+		"view": "components/the-header.htm",
+		"model": "components/the-header.js"
 	},
-	"cmpt-footer": {
-		"view": "components/cmpt-footer.htm",
-		"model": "components/cmpt-footer.js"
+	"the-footer": {
+		"view": "components/the-footer.htm",
+		"model": "components/the-footer.js"
+	},
+	"the-parallax": {
+		"view": "components/the-parallax.htm",
+		"model": "components/the-parallax.js"
 	},
 	"anim-height": {
 		"view": "animations/anim-height.htm",
 		"model": "animations/anim-height.js"
-	},
-	"cmpt-parallax": {
-		"view": "components/cmpt-parallax.htm",
-		"model": "components/cmpt-parallax.js"
 	}
 }

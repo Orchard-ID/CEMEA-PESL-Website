@@ -2,20 +2,20 @@
 	<article class="page-about--article">
 		<div class="page-about--main">
 			<h1 class="page-about--title">
-				<cmpt-inline v-model="specific.title" :global="global" />
+				<edit-inline v-model="specific.title" :global="global"/>
 			</h1>
 			<div class="page-about--content">
-				<cmpt-block v-model="specific.content" :global="global" />
+				<edit-block v-model="specific.content" :global="global"/>
 			</div>
 		</div>
 	</article>
-	<cmpt-edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+	<edit-global v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
-		v-bind:global="global"
-		v-bind:common="common"
-		v-bind:file="$route.name"
-		v-bind:meta="meta"
-		v-bind:body="specific"
-		v-bind:current="common.edit.local"
-		v-bind:options="options"></cmpt-edit>
+		:global="global"
+		:common="common"
+		:file="$route.name"
+		:meta="meta"
+		:body="specific"
+		:current="common.edit.local"
+		:options="options"/>
 </div>

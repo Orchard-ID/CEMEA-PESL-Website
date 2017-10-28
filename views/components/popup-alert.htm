@@ -1,0 +1,11 @@
+<aside @click.self="close" class="popup-alert" :class="{ 'is-displayed': displayed }">
+	<div class="popup-alert--outer">
+		<div class="popup-alert--inner">
+			<h1 class="popup-alert--title" v-html="current.title"></h1>
+			<div class="popup-alert--message" v-html="current.message"></div>
+			<div class="popup-alert--actions">
+				<button @click="close" class="popup-alert--ok" v-html="current.ok"></button>
+			</div>
+		</div>
+	</div>
+</aside>

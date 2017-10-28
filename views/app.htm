@@ -1,27 +1,27 @@
-<div class="layout" v-bind:class="{ 'as-loaded-page': global.isClient && !global.isWaiting }">
+<div class="layout" :class="{ 'as-loaded-page': global.isClient && !global.isWaiting }">
 	<div class="main-content">
 		<anim-height>
-			<router-view ref="router" key="router" v-bind:common="common" v-bind:global="global" v-on:specific="value => { specific = value }"></router-view>
+			<router-view ref="router" key="router" :common="common" :global="global" @specific="value => { specific = value }"/>
 		</anim-height>
 	</div>
 	<div class="upper-content">
 		<div class="upper-content--inner">
-			<cmpt-header v-bind:common="common" v-bind:global="global"></cmpt-header>
-			<cmpt-navigation v-bind:common="common" v-bind:global="global"></cmpt-navigation>
+			<the-header :common="common" :global="global"/>
+			<the-navigation :common="common" :global="global"/>
 		</div>
 	</div>
 	<div class="lower-content">
-		<cmpt-footer v-bind:common="common" v-bind:global="global"></cmpt-footer>
+		<the-footer :common="common" :global="global"/>
 	</div>
-	<cmpt-parallax v-bind:common="common" v-bind:global="global" v-bind:meta="meta"></cmpt-parallax>
+	<the-parallax :common="common" :global="global" :meta="meta"/>
 	<div class="loading" v-html="common.loading"></div>
-	<cmpt-edit v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+	<edit-global v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
-		v-bind:global="global"
-		v-bind:common="common"
-		v-bind:file="'common'"
-		v-bind:meta="meta"
-		v-bind:body="common"
-		v-bind:current="common.edit.global"
-		v-bind:options="options"></cmpt-edit>
+		:global="global"
+		:common="common"
+		:file="'common'"
+		:meta="meta"
+		:body="common"
+		:current="common.edit.global"
+		:options="options"/>
 </div>
