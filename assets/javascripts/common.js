@@ -3,6 +3,10 @@
 var version = document.getElementsByTagName("html")[0].getAttribute('data-version'),
 	popupCookieConsent;
 
+if (window.location.pathname.slice(-1) !== '/') {
+	window.location = window.location.pathname + '/';
+}
+
 window.cookieconsent.initialise({
 	"content": {
 		"message": "En poursuivant votre navigation vous consentez à l’utilisation de cookies pour des statistiques de visite.",
@@ -15,10 +19,6 @@ window.cookieconsent.initialise({
 });
 
 window.module = {};
-
-if (window.location.pathname.slice(-1) !== '/') {
-	window.location = window.location.pathname + '/';
-}
 
 CKEDITOR.stylesSet.add('website', [
 	{ name: 'Contenu Centré', element: 'p', attributes: { 'class': 'text-center' } },
@@ -63,13 +63,13 @@ Promise.all([
 	var common = results[0],
 		files = eval(results[1]),
 		webconfig = {
-			routes: JSON.parse(files[0]),
+			routes: JSON.parse(files.routes),
 			languageCode: document.getElementsByTagName('html')[0].getAttribute('lang')
 		},
 		app = {
-			view: files[1],
-			model: eval(files[2]),
-			module: eval(files[3])()
+			view: files.appView,
+			model: eval(files.appModel),
+			module: eval(files.appModule)()
 		},
 		modules = {},
 		keys = Object.keys(webconfig.routes),
@@ -90,15 +90,14 @@ Promise.all([
 					}
 				}
 			}
-		},
-		componentsCount = files.slice(4).length / 4;
+		};
 
-	for (var i = 4; i <= componentsCount * 4; i = i + 4) {
-		Vue.component(files[i], eval(files[i + 2])(files[i + 1]));
-		if (files[i + 3]) {
-			modules[files[i]] = eval(files[i + 3])();
+	files.names.forEach(function (name, i) {
+		Vue.component(name, eval(files.models[i])(files.views[i]));
+		if (files.modules[i]) {
+			modules[name] = eval(files.modules[i])();
 		}
-	}
+	});
 
 	mixin = function (unactive) {
 		return {

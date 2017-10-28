@@ -21,44 +21,106 @@ function setVueComponents(NA) {
 	});
 }
 
-function createBundleClient(NA, callback) {
+function openFile(NA, sourceFile, callback) {
 	var fs = NA.modules.fs,
-		async = NA.modules.async,
+		uglifyEs = NA.modules.uglifyEs;
+
+	if (/\.(js|htm|json)?$/g.test(sourceFile)) {
+		fs.readFile(sourceFile, 'utf-8', function (err, result) {
+			if (/\.js?$/g.test(sourceFile)) {
+				callback(null, uglifyEs.minify(result).code);
+			} else {
+				callback(null, result);
+			}
+		});
+	} else {
+		callback(null, sourceFile);
+	}
+}
+
+function createBundleClient(NA, callback) {
+	var async = NA.modules.async,
 		path = NA.modules.path,
-		uglifyEs = NA.modules.uglifyEs,
-		components = [
-			path.join(NA.serverPath, "routes.json"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.htm"),
-			path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.js"),
-			path.join(NA.serverPath, NA.webconfig.assetsRelativePath, "javascripts/app.js"),
-		],
+		components = {
+			"routes": path.join(NA.serverPath, "routes.json"),
+			"appView": path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.htm"),
+			"appModel": path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.js"),
+			"appModule": path.join(NA.serverPath, NA.webconfig.assetsRelativePath, "javascripts/app.js"),
+			"names": [],
+			"views": [],
+			"models": [],
+			"modules": []
+		},
 		keys = Object.keys(NA.webconfig._components);
 
 	keys.forEach(function (name) {
-		components.push(name);
-		components.push(path.join(NA.serverPath, NA.webconfig.viewsRelativePath, NA.webconfig._components[name].view));
-		components.push(path.join(NA.serverPath, NA.webconfig.viewsRelativePath, NA.webconfig._components[name].model));
+		components.names.push(name);
+		components.views.push(path.join(NA.serverPath, NA.webconfig.viewsRelativePath, NA.webconfig._components[name].view));
+		components.models.push(path.join(NA.serverPath, NA.webconfig.viewsRelativePath, NA.webconfig._components[name].model));
 		if (NA.webconfig._components[name].module) {
-			components.push(path.join(NA.serverPath, NA.webconfig.assetsRelativePath, NA.webconfig._components[name].module));
+			components.modules.push(path.join(NA.serverPath, NA.webconfig.assetsRelativePath, NA.webconfig._components[name].module));
 		} else {
-			components.push("");
+			components.modules.push("");
 		}
 	});
 
-	async.map(components, function (sourceFile, callback) {
-		if (/\.(js|htm|json)?$/g.test(sourceFile)) {
-			fs.readFile(sourceFile, 'utf-8', function (err, result) {
-				if (/\.js?$/g.test(sourceFile)) {
-					callback(null, uglifyEs.minify(result).code);
-				} else {
-					callback(null, result);
-				}
+	async.parallel([
+		function(callback) {
+			openFile(NA, components.routes, function (error, result) {
+				components.routes = result;
+				callback(null);
 			});
-		} else {
-			callback(null, sourceFile);
+		},
+		function(callback) {
+			openFile(NA, components.appView, function (error, result) {
+				components.appView = result;
+				callback(null);
+			});
+		},
+		function(callback) {
+			openFile(NA, components.appModel, function (error, result) {
+				components.appModel = result;
+				callback(null);
+			});
+		},
+		function(callback) {
+			openFile(NA, components.appModule, function (error, result) {
+				components.appModule = result;
+				callback(null);
+			});
+		},
+		function(callback) {
+			async.map(components.views, function (sourceFile, callback) {
+				openFile(NA, sourceFile, function (error, result) {
+					callback(null, result);
+				});
+			}, function (error, results) {
+				components.views = results;
+				callback(null);
+			});
+		},
+		function(callback) {
+			async.map(components.models, function (sourceFile, callback) {
+				openFile(NA, sourceFile, function (error, result) {
+					callback(null, result);
+				});
+			}, function (error, results) {
+				components.models = results;
+				callback(null);
+			});
+		},
+		function(callback) {
+			async.map(components.modules, function (sourceFile, callback) {
+				openFile(NA, sourceFile, function (error, result) {
+					callback(null, result);
+				});
+			}, function (error, results) {
+				components.modules = results;
+				callback(null);
+			});
 		}
-	}, function (error, results) {
-		callback(JSON.stringify(results));
+	], function () {
+		callback("(function () { return " + JSON.stringify(components) + " })()");
 	});
 }
 
@@ -132,6 +194,24 @@ exports.setRoutes = function (next) {
 	next();
 };
 
+exports.setSockets = function () {
+	var NA = this,
+		io = NA.io,
+		edit = NA.modules.edit;
+
+	io.on('connection', function (socket) {
+		var session = socket.request.session,
+			sessionID = socket.request.sessionID;
+
+		socket.on('app--init', function () {
+			var user = (session.user) ? session.user.publics : {};
+				socket.emit('app--init', sessionID, user);
+		});
+	});
+
+	edit.setSockets.call(NA);
+};
+
 exports.changeDom = function (next, locals, request, response) {
 	var NA = this,
 
@@ -160,7 +240,6 @@ exports.changeDom = function (next, locals, request, response) {
 		setVueComponents(NA);
 	}
 
-	// We open the component view file.
 	fs.readFile(view, "utf-8",  function (error, template) {
 		var component = Vue.component(locals.routeKey.split('_')[0], require(model)(specific, template)),
 			currentRoute = {
@@ -169,10 +248,7 @@ exports.changeDom = function (next, locals, request, response) {
 				props: ['common', 'global']
 			};
 
-		// We open the main app view.
 		fs.readFile(appView, "utf-8", function (error, template) {
-
-			// We create router with current route and subroute and pass some config.
 			var router = new VueRouter({
 					routes: [currentRoute]
 				}),
@@ -184,39 +260,17 @@ exports.changeDom = function (next, locals, request, response) {
 					languageCode: NA.webconfig.languageCode
 				},
 
-				// We create the render.
 				stream = renderer.renderToStream(new Vue(require(appModel)(common, specific, template, router, webconfig, extra)), locals);
 
-			// We set the current (only) route to allows content to be rendered.
 			router.push(locals.routeParameters.url);
 
-			// We send data as soon as possible.
 			stream.on('data', function (chunk) {
 				response.write(chunk);
 			});
 
-			// We inform client the response is ended.
 			stream.on('end', function () {
 				response.end();
 			});
 		});
 	});
-};
-
-exports.setSockets = function () {
-	var NA = this,
-		io = NA.io,
-		edit = NA.modules.edit;
-
-	io.on('connection', function (socket) {
-		var session = socket.request.session,
-			sessionID = socket.request.sessionID;
-
-		socket.on('app--init', function () {
-			var user = (session.user) ? session.user.publics : {};
-				socket.emit('app--init', sessionID, user);
-		});
-	});
-
-	edit.setSockets.call(NA);
 };
