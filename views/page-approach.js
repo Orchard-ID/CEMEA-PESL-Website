@@ -3,7 +3,6 @@
 module.exports = function (specific, template, mixin, options) {
 	return {
 		name: 'PageApproach',
-		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {
 			common: {
@@ -14,6 +13,14 @@ module.exports = function (specific, template, mixin, options) {
 				type: Object,
 				required: true
 			}
+		},
+		data: function () {
+			return {
+				options: options,
+				meta: specific.meta,
+				specific: specific.body,
+				searchQuery: ""
+			};
 		},
 		beforeMount: function () {
 			var data = document.getElementsByClassName('page-approach')[0];
@@ -30,14 +37,6 @@ module.exports = function (specific, template, mixin, options) {
 				}
 			});
 		},
-		data: function () {
-			return {
-				options: options,
-				meta: specific.meta,
-				specific: specific.body,
-				searchQuery: ""
-			};
-		},
 		methods: {
 			searchResult: function (query) {
 				var vm = this;
@@ -49,6 +48,7 @@ module.exports = function (specific, template, mixin, options) {
 			getSearchResult: function () {
 				this.searchResult(this.searchQuery);
 			}
-		}
+		},
+		template: template
 	};
 };

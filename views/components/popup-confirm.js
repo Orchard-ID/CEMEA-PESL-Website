@@ -1,9 +1,7 @@
 /* jshint node: true, esversion: 6 */
 module.exports = function (template) {
-
 	return {
 		name: "PopupConfirm",
-		template: template,
 		props: {
 			current: {
 				type: Object,
@@ -28,6 +26,7 @@ module.exports = function (template) {
 			close: function () {
 				this.$emit('close');
 			}
-		}
+		},
+		template: template
 	};
 };

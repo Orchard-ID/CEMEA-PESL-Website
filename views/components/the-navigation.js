@@ -3,7 +3,6 @@
 module.exports = function (template) {
 	return {
 		name: "TheNavigation",
-		template: template,
 		props: {
 			common: {
 				type: Object,
@@ -43,6 +42,7 @@ module.exports = function (template) {
 					}
 				});
 			}
-		}
+		},
+		template: template
 	};
 };

@@ -3,7 +3,6 @@
 module.exports = function (template) {
 	return {
 		name: "TheParallax",
-		template: template,
 		props: {
 			common: {
 				type: Object,
@@ -17,6 +16,11 @@ module.exports = function (template) {
 				type: Object,
 				required: true
 			}
+		},
+		data: function () {
+			return {
+				parallax: this.meta.parallax
+			};
 		},
 		mounted: function(){
 			var scene = document.getElementsByClassName('the-parallax--scene')[0];
@@ -38,10 +42,6 @@ module.exports = function (template) {
 				}
 			}
 		},
-		data: function () {
-			return {
-				parallax: this.meta.parallax
-			};
-		}
+		template: template
 	};
 };

@@ -3,7 +3,6 @@
 module.exports = function (specific, template, mixin, options) {
 	return {
 		name: 'PageGoogleDrive',
-		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {
 			common: {
@@ -49,6 +48,7 @@ module.exports = function (specific, template, mixin, options) {
 			getSearchResult: function () {
 				this.searchResult(this.searchQuery);
 			}
-		}
+		},
+		template: template
 	};
 };

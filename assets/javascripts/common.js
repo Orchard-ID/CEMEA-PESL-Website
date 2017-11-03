@@ -101,25 +101,6 @@ Promise.all([
 
 	mixin = function (unactive) {
 		return {
-			beforeRouteLeave: function (to, from, next) {
-				vm.global.isWaiting = true;
-				popupCookieConsent.setStatus(window.cookieconsent.status.allow);
-				popupCookieConsent.close();
-				next();
-			},
-			beforeRouteEnter: function (to, from, next) {
-				next(function (vmComponent) {
-					app.module.setHistoryLink(historyRouterLink);
-
-					if (unactive) {
-						app.module.setBeforeRouterEnter(vmComponent, to);
-						modules['edit-global'].setBeforeRouterEnter(vmComponent);
-						modules['the-navigation'].setBeforeRouterEnter(vm);
-					}
-
-					vm.global.isWaiting = false;
-				});
-			},
 			watch: {
 				common: {
 					handler: function() {
@@ -151,8 +132,27 @@ Promise.all([
 					deep: true
 				}
 			},
+			beforeRouteEnter: function (to, from, next) {
+				next(function (vmComponent) {
+					app.module.setHistoryLink(historyRouterLink);
+
+					if (unactive) {
+						app.module.setBeforeRouterEnter(vmComponent, to);
+						modules['edit-global'].setBeforeRouterEnter(vmComponent);
+						modules['the-navigation'].setBeforeRouterEnter(vm);
+					}
+
+					vm.global.isWaiting = false;
+				});
+			},
 			mounted: function () {
 				this.$emit('specific', this.specific);
+			},
+			beforeRouteLeave: function (to, from, next) {
+				vm.global.isWaiting = true;
+				popupCookieConsent.setStatus(window.cookieconsent.status.allow);
+				popupCookieConsent.close();
+				next();
 			}
 		};
 	};

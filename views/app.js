@@ -2,9 +2,8 @@
 module.exports = function (common, specific, template, router, webconfig, extra) {
 
 	return {
-		name: 'App',
-		template: template,
 		router: router,
+		name: 'App',
 		data: {
 			meta: common.meta,
 			common: common.body,
@@ -23,6 +22,7 @@ module.exports = function (common, specific, template, router, webconfig, extra)
 				global: true,
 				isLoaded: false
 			}
-		}
+		},
+		template: template
 	};
 };

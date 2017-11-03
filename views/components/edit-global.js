@@ -55,7 +55,6 @@ module.exports = function (template) {
 
 	return {
 		name: "EditGlobal",
-		template: template,
 		props: {
 			global: {
 				type: Object,
@@ -113,7 +112,13 @@ module.exports = function (template) {
 				}
 			},
 			save: function () {
-				NA.socket.emit('edit-global--save', this.file, this.body, this.meta);
+				var file = this.file.replace(/^([A-Z])/g, function(match) {
+					return match.toLowerCase();
+				}).replace(/([A-Z])/g, function(match) {
+					return "-" + match.toLowerCase();
+				});
+
+				NA.socket.emit('edit-global--save', file, this.body, this.meta);
 				NA.socket.once('edit-global--save', () => {
 					Vue.nextTick(() => {
 						if (this.editorMeta) {
@@ -165,6 +170,7 @@ module.exports = function (template) {
 					}
 				}
 			}
-		}
+		},
+		template: template
 	};
 };

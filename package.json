@@ -1,6 +1,6 @@
 {
   "name": "cemea-pesl-website",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "Site web des Projets Éducatifs Sociaux Locaux",
   "main": "server.na",
   "scripts": {

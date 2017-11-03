@@ -2,7 +2,6 @@
 module.exports = function (specific, template, mixin, options) {
 	return {
 		name: 'PageAbout',
-		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {
 			common: {
@@ -20,6 +19,7 @@ module.exports = function (specific, template, mixin, options) {
 				meta: specific.meta,
 				specific: specific.body
 			};
-		}
+		},
+		template: template
 	};
 };

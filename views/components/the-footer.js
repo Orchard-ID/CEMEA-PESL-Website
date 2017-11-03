@@ -2,7 +2,6 @@
 module.exports = function (template) {
 	return {
 		name: "TheFooter",
-		template: template,
 		props: {
 			common: {
 				type: Object,
@@ -12,6 +11,7 @@ module.exports = function (template) {
 				type: Object,
 				required: true
 			}
-		}
+		},
+		template: template
 	};
 };

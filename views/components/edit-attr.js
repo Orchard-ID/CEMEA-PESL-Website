@@ -3,7 +3,6 @@
 module.exports = function (template) {
 	return {
 		name: 'EditAttr',
-		template: template,
 		props: {
 			value: {
 				type: String,
@@ -45,6 +44,7 @@ module.exports = function (template) {
 					this.$emit('input', this.output);
 				});
 			}
-		}
+		},
+		template: template
 	};
 };

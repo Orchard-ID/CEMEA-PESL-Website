@@ -5,7 +5,6 @@ module.exports = function (template) {
 
 	return {
 		name: 'EditCkeditor',
-		template: template,
 		props: {
 			value: {
 				type: String,
@@ -47,11 +46,6 @@ module.exports = function (template) {
 				return CKEDITOR.instances[this.id];
 			}
 		},
-		beforeUpdate: function () {
-			if (this.value !== this.instance.getData()) {
-				this.instance.setData(this.value);
-			}
-		},
 		mounted: function () {
 			var config = {
 				entities_latin: false,
@@ -78,6 +72,11 @@ module.exports = function (template) {
 				}
 			});
 		},
+		beforeUpdate: function () {
+			if (this.value !== this.instance.getData()) {
+				this.instance.setData(this.value);
+			}
+		},
 		beforeDestroy: function () {
 			if (this.instance) {
 				this.instance.focusManager.blur(true);
@@ -85,6 +84,7 @@ module.exports = function (template) {
 				this.instance.destroy();
 				this.instance = null;
 			}
-		}
+		},
+		template: template
 	};
 };

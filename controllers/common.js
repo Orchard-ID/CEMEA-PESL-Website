@@ -236,8 +236,8 @@ exports.changeDom = function (next, locals, request, response) {
 		var component = Vue.component(locals.routeKey.split('_')[0], require(model)(specific, template)),
 			currentRoute = {
 				path: locals.routeParameters.url,
-				component: component,
-				props: ['common', 'global']
+				props: ['common', 'global'],
+				component: component
 			};
 
 		fs.readFile(appView, "utf-8", function (error, template) {

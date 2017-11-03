@@ -3,7 +3,6 @@
 module.exports = function (specific, template, mixin, options) {
 	return {
 		name: 'PageContact',
-		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {
 			common: {
@@ -70,6 +69,7 @@ module.exports = function (specific, template, mixin, options) {
 					this.message = undefined;
 				}
 			}
-		}
+		},
+		template: template
 	};
 };

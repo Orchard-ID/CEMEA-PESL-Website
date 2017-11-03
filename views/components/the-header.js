@@ -2,7 +2,6 @@
 module.exports = function (template) {
 	return {
 		name: "TheHeader",
-		template: template,
 		props: {
 			common: {
 				type: Object,
@@ -17,6 +16,7 @@ module.exports = function (template) {
 			toggleMenu: function () {
 				this.global.navigation = !this.global.navigation;
 			}
-		}
+		},
+		template: template
 	};
 };

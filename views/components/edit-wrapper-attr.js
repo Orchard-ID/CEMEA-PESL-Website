@@ -2,12 +2,12 @@
 module.exports = function (template) {
 	return {
 		name: 'EditWrapperAttr',
-		template: template,
 		props: {
 			global: {
 				type: Object,
 				required: true
 			}
-		}
+		},
+		template: template
 	};
 };

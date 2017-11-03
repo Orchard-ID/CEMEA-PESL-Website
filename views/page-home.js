@@ -2,7 +2,6 @@
 module.exports = function (specific, template, mixin, options) {
 	return {
 		name: 'PageHome',
-		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {
 			common: {
@@ -41,6 +40,7 @@ module.exports = function (specific, template, mixin, options) {
 			goToNextSlide: function (slide) {
 				this.slider = (this.slider < this.common.partner.partners.length - 1) ? this.slider + 1 : 0;
 			}
-		}
+		},
+		template: template
 	};
 };

@@ -4,7 +4,6 @@
 module.exports = function (template) {
 	return {
 		name: "AnimHeight",
-		template: template,
 		data: function () {
 			return {
 				paddingTop: NaN,
@@ -54,6 +53,7 @@ module.exports = function (template) {
 					}
 				});
 			}
-		}
+		},
+		template: template
 	};
 };

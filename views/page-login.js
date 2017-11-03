@@ -3,7 +3,6 @@
 module.exports = function (specific, template, mixin, options) {
 	return {
 		name: 'PageLogin',
-		template: template,
 		mixins: (mixin) ? [mixin] : undefined,
 		props: {
 			common: {
@@ -54,6 +53,7 @@ module.exports = function (specific, template, mixin, options) {
 					this.global.me = {};
 				});
 			}
-		}
+		},
+		template: template
 	};
 };
