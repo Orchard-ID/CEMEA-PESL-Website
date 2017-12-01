@@ -1,4 +1,4 @@
-<div class="page-approach" :data-search="JSON.stringify(global.search.results)">
+<div class="page-approach">
 	<article class="page-approach--article">
 		<div class="page-approach--image">
 			<edit-inline v-model="specific.image" :global="global" :empty="'Image manquante'"/>
@@ -49,7 +49,7 @@
 				<input @keyup.enter="getSearchResult" type="text" id="approach-form--search" class="approach-form--search" name="search" :placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
 			</div>
 		</div>
-		<div class="page-approach--search-result">
+		<div class="page-approach--search-result" :data-search="JSON.stringify(global.search.results)">
 			<ul v-if="global.search.results.length > 0">
 				<li v-for="(item, index) in global.search.results" :key="item.id">
 					<div class="page-approach--documentation--result">

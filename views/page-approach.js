@@ -23,7 +23,7 @@ module.exports = function (specific, template, mixin, options) {
 			};
 		},
 		beforeMount: function () {
-			var data = document.getElementsByClassName('page-approach')[0];
+			var data = document.getElementsByClassName('page-approach--search-result')[0];
 			Vue.set(this.global, 'search', {});
 			Vue.set(this.global.search, 'results', {});
 			if (data) {

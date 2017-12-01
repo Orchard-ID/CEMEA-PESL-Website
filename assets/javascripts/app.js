@@ -45,6 +45,8 @@ module.exports = function () {
 
 			window.addEventListener('keydown', function (e) {
 				e = e || event;
+				e.which = e.which || e.keyCode;
+
 				keys[e.which] = true;
 				ctrl[e.which] = e.ctrlKey;
 
@@ -56,6 +58,8 @@ module.exports = function () {
 
 			window.addEventListener('keyup', function (e) {
 				e = e || event;
+				e.which = e.which || e.keyCode;
+
 				keys[e.which] = false;
 				ctrl[e.which] = false;
 			});

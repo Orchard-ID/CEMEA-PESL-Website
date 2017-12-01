@@ -1,4 +1,4 @@
-<div class="page-google-drive" :data-search="JSON.stringify(global.search.results)">
+<div class="page-google-drive">
 	<article class="page-google-drive--article">
 		<div class="page-google-drive--image">
 			<edit-inline v-model="specific.image" :global="global" :empty="'Image manquante'"/>
@@ -42,7 +42,7 @@
 				<input @keyup.enter="getSearchResult" type="text" id="google-drive-form--search" class="google-drive-form--search" name="search" :placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
 			</div>
 		</div>
-		<div class="page-google-drive--search-result">
+		<div class="page-google-drive--search-result" :data-search="JSON.stringify(global.search.results)">
 			<ul v-if="global.search.results.length > 0">
 				<li v-for="(item, index) in global.search.results" :key="item.id">
 					<div class="page-google-drive--documentation--result">
