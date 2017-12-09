@@ -224,7 +224,7 @@ Promise.all([
 		fallback: false,
 		base: '/',
 		routes: routes,
-		scrollBehavior (to, from, savedPosition) {
+		scrollBehavior: function (to, from, savedPosition) {
 			if (to.hash) {
 				return {
 					selector: to.hash

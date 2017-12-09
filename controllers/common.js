@@ -240,6 +240,7 @@ exports.changeDom = function (next, locals, request, response) {
 		setVueComponents(NA);
 	}
 
+	// We open the component view file.
 	fs.readFile(view, 'utf-8',  function (error, template) {
 		var appMixin = {
 				methods: {
@@ -249,11 +250,14 @@ exports.changeDom = function (next, locals, request, response) {
 			component = Vue.component(locals.routeKey.split('_')[0], require(model)(template, specific)),
 			currentRoute = {
 				path: locals.routeParameters.url,
-				props: ['common', 'global'],
-				component: component
+				component: component,
+				props: ['common', 'global']
 			};
 
+		// We open the main app view.
 		fs.readFile(appView, 'utf-8', function (error, template) {
+
+			// We create router with current route and subroute and pass some config.
 			var router = new VueRouter({
 					routes: [currentRoute]
 				}),
@@ -264,14 +268,19 @@ exports.changeDom = function (next, locals, request, response) {
 					routes: NA.webconfig.routes,
 					languageCode: NA.webconfig.languageCode
 				},
+
+				// We create the render.
 				stream = renderer.renderToStream(new Vue(require(appModel)(template, router, appMixin, webconfig, common, specific, extra)), locals);
 
+			// We set the current (only) route to allows content to be rendered.
 			router.push(locals.routeParameters.url);
 
+			// We send data as soon as possible.
 			stream.on('data', function (chunk) {
 				response.write(chunk);
 			});
 
+			// We inform client the response is ended.
 			stream.on('end', function () {
 				response.end();
 			});
