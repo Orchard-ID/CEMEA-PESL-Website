@@ -1,11 +1,24 @@
 {
+	"cache": true,
+	"socketServerOptions": {
+		"transports": ["polling"]
+	},
 	"httpSecure": true,
-	"httpPort": 8080,
+	"httpPort": 8082,
 	"urlPort": 443,
-	"urlHostname": "cemea-pesl-website-haeresis.c9users.io",
+	"urlHostname": "staging.cemea-pesl.fr",
+	"languageCode": "fr-fr",
 	"variation": "common.json",
+	"variationsRelativePath": "../data/cemea-pesl/variations/",
+	"controller": "common.js",
 	"view": "layout.htm",
+	"bundles": "bundles.json",
+	"statics": "statics.js",
 	"routes": "routes.json",
-	"pageNotFound": "/page-inexistante/",
-	"_robots": "noindex, nofollow"
+	"_components": "components.json",
+	"_robots": "noindex, nofollow",
+	"_data": "../data/cemea-pesl/",
+	"_smtp": "smtp.json",
+	"_googledrive": "google-drive.json",
+	"_min": true
 }

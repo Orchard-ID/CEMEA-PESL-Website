@@ -1,0 +1,141 @@
+.page-google-drive
+
+	img
+		max-width 100%
+		height auto!important
+
+	&--article
+		overflow hidden
+
+	&--image
+		height 264px
+		overflow hidden
+		width 578px
+		text-align center
+		@media (min-width: 600px)
+			width auto
+			overflow auto
+			height auto
+		@media (min-width: 900px)
+			img
+				width 100%!important
+				max-width auto
+		@media (min-width: 950px)
+			min-height 320px
+
+	&--documentation
+	&--information
+	&--main
+		max-width 920px
+		margin 0 auto
+		padding 0 24px
+		@media (min-width: 600px)
+			padding 0 64px
+
+	&--main
+		position relative
+		background-color $backgroundColorReversed
+		@media (min-width: 600px)
+			padding 64px
+		@media (min-width: 950px)
+			margin -300px auto 0
+
+	&--information
+		padding-bottom 32px
+		h3
+			font-weight bold
+			font-size 1.8rem
+			@media (min-width: 600px)
+				font-size 2.4rem
+
+	&--title
+	&--documentation--title
+	&--information--title
+		font-size 2.4rem
+		font-weight bold
+		margin-top 24px
+		margin-bottom 24px
+		line-height 4.2rem
+		text-align center
+
+		@media (min-width: 600px)
+			text-align left
+			margin-top 0
+			font-size 4rem
+
+		&::after
+			margin 16px auto 0
+			@media (min-width: 600px)
+				margin 16px 0 0
+			content ""
+			width 48px
+			height 3px
+			border 1px solid $backgroundColor
+			border-radius 8px
+			display block
+			clear both
+			background-color $backgroundColor
+
+	&--tips
+		margin-top 48px
+		border-radius 8px
+		padding 24px
+		@media (min-width: 600px)
+			padding 48px
+		box-shadow 0 0 10px 2px #e0e0e0
+
+	&--documentation
+		padding-bottom 32px
+		&--result
+			border-radius 8px
+			padding 24px
+			box-shadow 0 0 10px 2px #e0e0e0
+			margin-bottom 24px
+
+			&::after
+				content ""
+				display block
+				clear both
+
+			&--title
+				font-weight bold
+				margin-bottom 8px
+				font-size 1.8rem
+
+			@media (max-width: 599px)
+				&--detail
+					strong
+						display block
+
+			&--image
+				float right
+				img
+					margin-top -16px
+					margin-bottom -16px
+					border 1px solid #e0e0e0
+					height 84px!important
+					margin-left 16px
+
+		button
+			border 0
+			margin-top 2px
+			position absolute
+			top 0
+			right 0
+			background-color transparent
+			opacity 1
+
+		label
+			margin-left 16px
+
+		input
+			border 1px solid $borderColor
+			border-radius 24px
+			padding: 1.4rem 16px .2rem;
+
+
+		.field
+			position relative
+
+			&.empty input
+				padding: 0.8rem 16px;

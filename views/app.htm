@@ -1,0 +1,45 @@
+<div class="layout"
+	:class="{ 'as-loaded-page': global.isClient && !global.isWaiting }">
+	<div class="main-content">
+		<anim-height>
+			<router-view
+				ref="router"
+				key="router"
+				:common="common"
+				:global="global"
+				@specific="value => { specific = value }" />
+		</anim-height>
+	</div>
+	<div class="upper-content">
+		<div class="upper-content--inner">
+			<the-header
+				:common="common"
+				:global="global" />
+			<the-navigation
+				:common="common"
+				:global="global"
+				:check-roles="checkRoles" />
+		</div>
+	</div>
+	<div class="lower-content">
+		<the-footer
+			:common="common"
+			:global="global" />
+	</div>
+	<the-parallax
+		:common="common"
+		:global="global"
+		:meta="meta" />
+	<div class="loading"
+		v-html="common.loading"></div>
+	<edit-global
+		v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+		ref="edit"
+		:global="global"
+		:common="common"
+		:file="'common'"
+		:meta="meta"
+		:body="common"
+		:current="common.edit.global"
+		:options="options" />
+</div>

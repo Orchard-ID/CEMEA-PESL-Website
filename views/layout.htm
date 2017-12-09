@@ -1,29 +1,56 @@
 <!DOCTYPE html>
-<html lang="<?= languageCode ?>">
+<html lang="<?= (languageCode) ? languageCode : 'fr-fr' ?>" data-version="<?= webconfig.version ?>">
 	<head>
 		<meta charset="utf-8" />
 		<base href="<?= urlBasePath ?>/" />
-		<title><?-specific.title ?> - <?- common.title ?></title>
-		<meta name="description" content="Site web de la société Orchard ID.">
-		<meta name="robots" content="<?= webconfig._robots ?>" />
-		<meta name="og:url" content="http://www.orchard-id.com/index.html">
-		<meta name="og:locale" content="fr-fr">
-		<meta name="og:type" content="website">
-		<meta name="og:title" content="Bienvenue sur orchard-id.com">
-		<meta name="og:description" content="Ce site est actuellement en construction.">
-		<meta name="og:updated_time" content="1486378417">
-		<link rel="stylesheet" href="//static.sharedbox.com/assets/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
-		<!--[if IE]><meta name="viewport" content="width=device-width" /><![endif]-->
-		<!--[if !IE]><!--><meta name="viewport" content="initial-scale=1.0" /><!--<![endif]-->
+		<title><? if (routeParameters._parent) { ?>
+			<?- specific.meta.subtitles[routeKey.split('_')[0]] ?>
+		<? } else { ?>
+			<?- specific.meta.title ?>
+		<? } ?></title>
 
+		<meta name="description" content="<?-specific.meta.description ?>">
+		<meta name="robots" content="<?= webconfig._robots ?>" />
+
+		<meta name="og:url" content="<?= urlBasePath ?>/">
+		<meta name="og:locale" content="<?= (languageCode) ? languageCode : 'fr-fr' ?>">
+		<meta name="og:type" content="website">
+		<meta name="og:title" content="<?-specific.meta.title ?> - <?- common.title ?>">
+		<meta name="og:description" content="<?- specific.meta.description ?>">
+		<meta name="og:image" content="<?= urlBasePath ?>/media/images/logo.jpg">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+		<link rel="apple-touch-icon" sizes="180x180" href="media/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="media/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+
+		<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+		<? if (webconfig._min) { ?>
+		<link rel="stylesheet" href="stylesheets/common.<?= webconfig.version ?>.min.css">
+		<? } else { ?>
 		<link rel="stylesheet" href="stylesheets/common.css">
+		<? } ?>
 	</head>
-	<body>
-		<div class="layout">
-			<?- include(routeParameters.view) ?>
-		</div>
+	<body data-ua='<?= webconfig._ua ?>'>
+		<!--vue-ssr-outlet-->
+		<? if (webconfig._min) { ?>
+		<script src="javascripts/common.<?= webconfig.version ?>.min.js"></script>
+		<? } else { ?>
+		<script src="javascripts/config.js"></script>
 		<script src="socket.io/socket.io.js"></script>
 		<script src="node-atlas/socket.io.js"></script>
+		<script src="javascripts/vendors/cookieconsent.js"></script>
+		<script src="javascripts/vendors/parallax.js"></script>
+		<script src="javascripts/vendors/jshashes.js"></script>
+		<script src="javascripts/vendors/velocity.js"></script>
+		<script src="javascripts/vendors/ckeditor/ckeditor.js"></script>
+		<script src="javascripts/vendors/vue.js"></script>
+		<script src="javascripts/vendors/vue.router.js"></script>
+		<script src="javascripts/common.js"></script>
+		<? } ?>
 	</body>
 </html>

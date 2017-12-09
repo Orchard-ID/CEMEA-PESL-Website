@@ -1,0 +1,14 @@
+<header class="the-header"
+	:class="{ 'is-opened': global.navigation }">
+	<h1 class="the-header--title">
+		<edit-inline
+			v-model="common.title"
+			:global="global" />
+	</h1>
+	<aside class="the-header--aside">
+		<edit-inline
+			v-model="common.subtitle"
+			:global="global"
+			:empty="'Image manquante'" />
+	</aside>
+</header>

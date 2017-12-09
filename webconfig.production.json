@@ -1,10 +1,25 @@
 {
-	"httpPort": 7777,
-	"urlPort": 80,
-	"urlHostname": "???",
+	"cache": true,
+	"socketServerOptions": {
+		"transports": ["polling"]
+	},
+	"httpSecure": true,
+	"httpPort": 7772,
+	"urlPort": 443,
+	"urlHostname": "www.cemea-pesl.fr",
+	"languageCode": "fr-fr",
 	"variation": "common.json",
+	"variationsRelativePath": "../data/cemea-pesl/variations/",
+	"controller": "common.js",
 	"view": "layout.htm",
+	"bundles": "bundles.json",
+	"statics": "statics.js",
 	"routes": "routes.json",
-	"pageNotFound": "/page-inexistante/",
-	"_robots": "noindex, nofollow"
+	"_components": "components.json",
+	"_robots": "index, follow",
+	"_data": "../data/cemea-pesl/",
+	"_smtp": "smtp.json",
+	"_googledrive": "google-drive.json",
+	"_ua": "UA-91358693-5",
+	"_min": true
 }

@@ -1,0 +1,52 @@
+.cc-window
+    opacity 1
+    transition opacity 1s ease
+    background-color rgb(239, 239, 239)
+
+    &.cc-invisible
+        opacity 0
+
+.cc-compliance
+    margin 0
+    padding .8em 1.8em
+    height 100%
+    position absolute
+    top 0
+    right 0
+    width 120px
+    background-color $backgroundColor
+
+.cc-dismiss
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    color $textColorReversed
+    font-weight bold
+
+.cc-revoke
+.cc-window
+    position fixed
+    overflow hidden
+    box-sizing border-box
+    font-size 1.4rem
+    line-height 1.5em
+    display -ms-flexbox
+    z-index 9999
+
+.cc-message
+    display inline-block
+    float left
+    width calc(100% - 120px)
+    padding 16px
+
+.cc-window.cc-banner
+    width 100%
+
+.cc-banner.cc-bottom
+    left 0
+    right 0
+    bottom 0
+
+.cc-theme-edgeless.cc-window
+    padding 0

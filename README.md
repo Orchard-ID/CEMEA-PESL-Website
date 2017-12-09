@@ -1,8 +1,8 @@
-# Site web des CEMEA de Basse-Normandie pour le PESL
+# Site web des CEMEA-PESL #
 
 [Node.js]: https://nodejs.org/en/ "Node.js"
-[NNodeAtlas]: https//node-atlas.js.org/ "NodeAtlas"
-[NPM]: https://www.npmjs.com/ "Node Package Manager"
+[NodeAtlas]: https//node-atlas.js.org/ "NodeAtlas"
+[npm]: https://www.npmjs.com/ "Node Package Manager"
 [Git]: https://git-scm.com/ "Git"
 
 
@@ -11,7 +11,9 @@
 
 ## Avant-propos ##
 
-Ce dépôt contient l'intégralité du code source permettant de mettre en ligne le site web CEMEA PESL. Celui-ci fonctionne avec [NodeAtlas] qui est un module [NPM] tournant sous [Node.js].
+Ce dépôt contient l'intégralité du code source permettant de mettre en ligne le site web https://www.cemea-pesl.fr/. Celui-ci fonctionne avec [NodeAtlas] qui est un module [npm] tournant sous [Node.js].
+
+Il peut servir d'inspiration pour créer d'autres sites.
 
 
 
@@ -21,7 +23,7 @@ Ce dépôt contient l'intégralité du code source permettant de mettre en ligne
 
 ### Flot ###
 
-Quand vous aurez récupérer le dépôt sur votre machine, [respectez ce flot pour le versionnement](https://blog.lesieur.name/comprendre-et-utiliser-git-avec-vos-projets/).
+Quand vous aurez récupéré le dépôt sur votre machine, [respectez ce flot pour le versionnement](https://blog.lesieur.name/comprendre-et-utiliser-git-avec-vos-projets/).
 
 ### Conventions ###
 
@@ -29,56 +31,88 @@ Quand vous devrez ajouter, modifier ou supprimer du code, [respectez ces convent
 
 
 
+
+
 ## Environnement de développement ##
 
 ### Installation ###
 
-Pour modifier le site avec un rendu en temps réel, il vous faudra installer [Node.js] sur votre poste de développement ainsi que [Git] :
+Pour modifier le site avec un rendu en temps réel, il vous faudra :
 
-- [Télécharger Node.js](https://nodejs.org/en/download/)
-- [Télécharger Git](https://git-scm.com/downloads)
+1. installer [Node.js] sur votre poste de développement ainsi que [Git] :
 
-puis récupérer le dépôt en local sur votre machine :
+   - [Télécharger Node.js](https://nodejs.org/en/download/)
+   - [Télécharger Git](https://git-scm.com/downloads)
+
+2. installer [NodeAtlas] en global sur votre poste de développement :
+
+   ```bash
+   $ npm install -g node-atlas
+   ```
+
+3. récupérer la structure du site sur votre poste de développement depuis le dépôt `Orchard-ID/CEMEA-PESL-Website` sur la branche `develop` :
+
+   ```bash
+   $ cd </chemin/vers/votre/espace/de/travail/>
+   $ git clone https://github.com/Orchard-ID/CEMEA-PESL-Website.git
+   ```
+
+4. récupérer un jeu de donnée pour le site sur votre poste de développement depuis le dépôt `Orchard-ID/Data` sur la branche `develop` :
+
+   ```bash
+   $ cd </chemin/vers/votre/espace/de/travail/>
+   $ git clone https://github.com/Orchard-ID/Data.git
+   ```
+
+5. initialiser le dossier `CEMEA-PESL-Website` :
+
+   ```bash
+   $ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
+   $ npm install
+   ```
+
+
+
+### Version standard ###
+
+Lancer le site avec la commande :
 
 ```bash
-$ cd </path/to/workspace/>
-$ git clone https://github.com/Orchard-ID/Website.git
+$ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
+$ npm run start # ou `$ node-atlas --browse`
 ```
 
-puis initialisez la branche de développement :
+Le site sera accessible à l'adresse suivante :
+
+- *http://localhost:7772/*
+
+
+
+### Version rechargement à chaud ###
+
+Lancer le site avec browserSync pour recharger votre navigateur à chaud lors des changements dans les fichiers du dossier `assets` avec la commande :
 
 ```bash
-git checkout develop
+$ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
+$ npm run watch # ou `$ node server.na --browse`
 ```
 
-puis installer [NodeAtlas] et les autres module [NPM] dont dépend le projet dans le dossier projet :
+Le site sera accessible à l'adresse suivante :
+
+- *http://localhost:57772/*
+
+
+
+### Version débogue ###
+
+Lancer le débogeur [Node.js] dans Chrome avec la commande :
 
 ```bash
-$ cd Website
-$ npm install
+$ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
+$ npm run debug # ou `$ node --inspect server.na --browse`
 ```
 
-puis lancez le site avec la commande :
-
-```bash
-$ npm start
-```
-
-ou lancez `server.na` en double cliquant dessus :
-- en expliquant à votre OS que les fichiers `.na` sont lancé par défaut par `node`,
-- en étant sur que votre variable d'environnement `NODE_PATH` pointe bien sur le dossier des `node_modules` globaux.
-
-Les version française et internationale du site seront accessible aux adresses suivantes :
-
-- *http://localhost:7777/*
-
-Vous pouvez également lancez le débogeur [Node.js] dans Chrome avec la commande :
-
-```bash
-$ npm test
-```
-
-il vous suffit ensuite d'atteindre l'url de debug proposé par la console.
+Le site sera accessible à l'adresse de debug proposée par la console.
 
 
 
@@ -86,118 +120,64 @@ il vous suffit ensuite d'atteindre l'url de debug proposé par la console.
 
 ## Environnement de pré-production ##
 
-### Rejoindre ###
+L'environnement de pré-production est visible à l'adresse :
 
-L'environnement de préproduction est visible à l'adresse : 
+- https://staging.orchard-id.com/
 
-- https://cemea-pesl-website-haeresis.c9users.io/
+Et se trouve sur l'hébergement web `orchard-nodejs`.
 
-L'ensemble des fichiers est listé ici :
 
-- https://preview.c9users.io/haeresis/cemea-pesl-website
 
-### Démarrer le serveur ###
+### (Re)démarrer le site ###
 
-Il est possible que le serveur ne tourne pas, dans ce cas il faut le lancer en vous rendant à l'adresse :
-
-- https://ide.c9.io/haeresis/cemea-pesl-website
-
-Et en lançant dans la console (onglet "bash") la commande
-
-```bash
-$ node-atlas --webconfig webconfig.staging.json
-```
-
-### Mettre à jour l'environnement ###
-
-Pour mettre à jour l'environnement avec la version que vous souhaitez, utilisez git.
-
-- Par exemple pour mettre à jour avec la dernière version de la branche `develop` :
+1. se mettre dans l'environnement du site avec la commande :
 
    ```bash
+   nvm use 6.11.0
+   ```
+
+2. vérifier que le site tourne avec la commande :
+
+   ```bash
+   forever list
+   ```
+
+   et trouver l'entrée
+
+   ```bash
+   XXXX /home/clients/xxx...xxx/.nvm/versions/node/v6.11.0/bin/node /home/clients/xxx...xxx/.nvm/versions/node/v6.11.0/bin/node-atlas --    path /home/clients/xxx...xxx/staging.orchard-id.com/ --webconfig webconfig.staging.json
+   ```
+
+3. démarrer le serveur **si l'entrée précédente n'est pas dans la liste** avec la commande :
+
+   ```bash
+   forever start /home/clients/xxx...xxx/.nvm/versions/node/v6.11.0/bin/node-atlas --path /home/clients/xxx...xxx/staging.orchard-id.com/ --webconfig webconfig.staging.json
+   ```
+
+   ou si l'entrée est dans la liste, repérer la valeur de `XXXX` et utiliser la commande
+
+   ```bash
+   forever restart XXXX # par ex. si XXXX vaut eg-v, la commande sera `forever restart eg-v`
+   ```
+
+### Mettre à jour le site ###
+
+Pour mettre à jour le site avec la dernière version (`master`) prète à tourner, utilisez Git.
+
+```bash
+$ cd /home/clients/xxx...xxx/staging.orchard-id.com/
 $ git checkout develop
-$ git pull
-```
-
-- Par exemple pour récupérer la version du commit `13b55fbdb8b4ba332becb15ebe54187464aae179`
-
-   ```bash
-$ git checkout 13b55fbdb8b4ba332becb15ebe54187464aae179
-```
-
-
-
-
-
-## Environnement de production ##
-
-L'environnement de production est visible à l'adresse : 
-
-- `[Adresse à définir]`
-
-### Redémarrer le serveur ###
-
-Le serveur tourne forcément. Pour le redémarrez il faut repérer dans la liste des applications Node.js de `forever` laquelle est la notre :
-
-```bash
-forever list
-```
-
-Pour la repérer, il faut trouver celle avec `--path .../orchard-id.com/` et récupérer son code en amont.
-
-Exemple : pour le retour suivant
-
-```bash
-                                                                                                                                                                                                                                                                                                                            pid     id       logfile                                                          uptime
-data: [0] ev-3 /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/bin/node /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/lib/node_modules/node-atlas/ --path /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/orchard-id.com/ --webconfig webconfig.production.json 	24827   24833    /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.forever/ev-3.log 0:2:56:55.421
-```
-
-le site est la ligne `[0]` car on a `--path .../orchard-id.com/` et le code en amont est `ev-3`.
-
-Il faut alors utiliser
-
-```bash
-forever restart ev-3
-```
-
-**Si le serveur est down** (et que l'entrée ou que l'entrée n'est pas dans forver)
-
-Pour le démarrez utilisez la commande suivante :
-
-```bash
-forever start /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/.nvm/versions/node/v6.9.5/lib/node_modules/node-atlas/ --path /home/clients/2005ddd98a72fd1b0e0f75fcf662b8a9/orchard-id.com/ --webconfig webconfig.production.json
-```
-
-*Note : la version de Node.js peut être différente.*
-
-### Mettre à jour l'environnement ###
-
-Pour mettre à jour l'environnement avec la dernière version (`master`) prète à tourner, utilisez git.
-
-```bash
-$ git checkout master
 $ git pull
 ```
 
 puis redémarrez avec
 
 ```bash
-forever restart ev-3
+forever restart XXXX
 ```
 
 ### Serveur frontal ###
 
-L'application Node.js tourne sous son propre serveur HTTP sur le port `7777`. Pour qu'il puisse répondre publiquement sur Internet par le port 80, il faut que le serveur apache qui tourne sur ce port redirige les demandes. Pour cela on utilise :
+L'application [Node.js] tourne sous son propre serveur HTTP sur le port `7772`. Pour qu'il puisse répondre publiquement sur Internet par le port 80, il faut que le serveur Apache qui tourne redirige les demandes de `staging.orchard-id.com` sur ce port. Pour cela on utilise le Gist `staging.orchard-id.com`.
 
-```bash
-RewriteEngine On
-RewriteRule "^(.*)$" "http://localhost:7777/$1" [L,P]
-```
-
-on peut également forcer toute les demandes de `orchard-id.com` vers `www.orchard-id.com` avec
-
-```bash
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^orchard-id\.com
-RewriteRule ^(.*)$ http://www.orchard-id.com$1 [R=permanent,L]
-```
+La configuration pour rediriger `staging.orchard-id.com` est dans le fichier serveur `/home/clients/xxx...xxx/.htaccess`

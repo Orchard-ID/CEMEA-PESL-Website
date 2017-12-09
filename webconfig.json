@@ -1,9 +1,22 @@
 {
-	"stylus": true,
-	"httpPort": 7777,
+	"stylus": {
+		"files": "stylus.json",
+		"autoprefix": true
+	},
+	"httpPort": 7772,
+	"languageCode": "fr-fr",
 	"variation": "common.json",
+	"controller": "common.js",
 	"view": "layout.htm",
+	"optimizations": "optimizations.json",
+	"variationsRelativePath": "../data/cemea-pesl/variations/",
+	"bundles": "bundles.json",
+	"statics": "statics.js",
 	"routes": "routes.json",
-	"pageNotFound": "/page-inexistante/",
-	"_robots": "noindex, nofollow"
+	"_components": "components.json",
+	"_robots": "noindex, nofollow",
+	"_data": "../data/cemea-pesl/",
+	"_smtp": "smtp.json",
+	"_googledrive": "google-drive.json",
+	"_min": false
 }

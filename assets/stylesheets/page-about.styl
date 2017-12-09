@@ -1,0 +1,44 @@
+.page-about
+
+	img
+		max-width 100%
+		height auto!important
+
+	&--main
+		max-width 920px
+		margin 0 auto
+		padding 0 24px
+		@media (min-width: 600px)
+			padding 0 64px
+
+	&--main
+		position relative
+		background-color $backgroundColorReversed
+		@media (min-width: 600px)
+			padding 64px
+
+	&--title
+		font-size 2.4rem
+		font-weight bold
+		margin-top 24px
+		margin-bottom 24px
+		line-height 4.2rem
+		text-align center
+
+		@media (min-width: 600px)
+			text-align left
+			margin-top 0
+			font-size 4rem
+
+		&::after
+			margin 16px auto 0
+			@media (min-width: 600px)
+				margin 16px 0 0
+			content ""
+			width 48px
+			height 3px
+			border 1px solid $backgroundColor
+			border-radius 8px
+			display block
+			clear both
+			background-color $backgroundColor

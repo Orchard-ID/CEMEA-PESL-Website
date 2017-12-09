@@ -1,0 +1,86 @@
+.page-login
+	background-color $backgroundColor
+	color $textColorReversed
+
+	h1
+		font-size 2.4rem
+		font-weight bold
+		margin-bottom 16px
+
+		&::after
+			margin 6px auto 0
+			content ""
+			width 48px
+			height 3px
+			border 1px solid $backgroundColorReversed
+			border-radius 8px
+			display block
+			clear both
+			background-color $backgroundColorReversed
+
+	input
+		color $textColorReversed
+		background-color $backgroundColor
+		border-bottom: 1px solid $backgroundColorReversed;
+		margin-left 32px
+		width calc(100% - 24px)
+		&:focus
+			color #4bd1db
+			border-color #4bd1db
+
+	label
+		margin-left 32px
+
+	::-webkit-input-placeholder {
+		color: #fff;
+	}
+	:-moz-placeholder {
+		color: #fff;
+		opacity: 1;
+	}
+	::-moz-placeholder {
+		color: #fff;
+		opacity: 1;
+	}
+	::-ms-input-placeholder {
+		color: #fff;
+	}
+
+	.errors
+		color #ff0068
+
+	.invalid
+		input
+			&:focus
+				color #ff0068
+				border-color #ff0068
+
+	&--me
+		padding-bottom 16px
+
+	&--form
+		margin-top 16px
+
+		.field
+			position relative
+			text-align left
+
+			img
+				position absolute
+				bottom 0
+				left 0
+
+	&--inner
+		padding 32px
+		text-align center
+		max-width 400px
+		margin 0 auto
+		background-color $backgroundColor
+
+		button
+			color $textColorReversed
+			border-color $borderColorReversed
+			background-color $backgroundColor
+			&:hover
+				color $highlightLinkColor
+				border-color $highlightLinkColor

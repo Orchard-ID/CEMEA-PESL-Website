@@ -1,0 +1,79 @@
+<nav class="the-navigation"
+	:class="{ 'is-opened': global.navigation }">
+	<h1 class="the-navigation--title"
+		@click="toggleMenu">
+		<edit-inline
+			v-model="common.navigation.title"
+			:global="global" />
+	</h1>
+	<div class="the-navigation--menu">
+		<nav class="the-navigation--menu--main">
+			<ul>
+				<li v-for="(link, index) in common.navigation.main.links">
+					<edit-wrapper-attr :global="global">
+						<router-link
+							:to="link.href"
+							v-html="link.content" />
+						<template slot="attrs">
+							<edit-attr
+								v-model="common.navigation.main.links[index].content"
+								:label="'Content: '"
+								:global="global" />
+							<edit-attr
+								v-model="common.navigation.main.links[index].href"
+								:label="'Link: '"
+								:global="global" />
+						</template>
+					</edit-wrapper-attr>
+				</li>
+			</ul>
+		</nav>
+		<nav class="the-navigation--members-area">
+			<ul v-if="global.me.id">
+				<li v-for="(link, index) in authorizedLinks">
+					<edit-wrapper-attr :global="global">
+						<div v-if="link.href === '#logout'">
+							<button
+								@click="doUnauthentication"
+								v-html="link.content"></button>
+						</div>
+						<div v-else>
+							<router-link
+								:to="link.href"
+								v-html="link.content" />
+						</div>
+						<template slot="attrs">
+							<edit-attr
+								v-model="common.navigation.privates.links[index].content"
+								:label="'Content: '"
+								:global="global" />
+							<edit-attr
+								v-model="common.navigation.privates.links[index].href"
+								:label="'Link: '"
+								:global="global" />
+						</template>
+					</edit-wrapper-attr>
+				</li>
+			</ul>
+			<ul v-else>
+				<li v-for="(link, index) in unauthenticatedLinks">
+					<edit-wrapper-attr :global="global">
+						<router-link
+							:to="link.href"
+							v-html="link.content" />
+						<template slot="attrs">
+							<edit-attr
+								v-model="common.navigation.privates.links[index].content"
+								:label="'Content: '"
+								:global="global" />
+							<edit-attr
+								v-model="common.navigation.privates.links[index].href"
+								:label="'Link: '"
+								:global="global" />
+						</template>
+					</edit-wrapper-attr>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</nav>

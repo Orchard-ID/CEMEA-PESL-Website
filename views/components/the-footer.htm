@@ -1,0 +1,56 @@
+<footer class="the-footer">
+	<div class="the-footer--contact">
+		<h2 class="the-footer--contact--title">
+			<edit-inline
+				v-model="common.contact.title"
+				:global="global" />
+		</h2>
+		<div class="the-footer--contact--cemea">
+			<edit-block
+				v-model="common.contact.cemea"
+				:global="global" />
+		</div>
+		<div class="the-footer--contact--pesl">
+			<edit-block
+				v-model="common.contact.pesl"
+				:global="global" />
+		</div>
+	</div>
+	<div class="the-footer--partner">
+		<h2 class="the-footer--partner--title">
+			<edit-inline
+				v-model="common.partner.title"
+				:global="global" />
+		</h2>
+		<div class="the-footer--partner--content">
+			<edit-block
+				v-model="common.partner.content"
+				:global="global" />
+		</div>
+	</div>
+	<div class="the-footer--copyright">
+		<edit-wrapper-attr
+			tag="span"
+			:global="global">
+			{{ common.navigation.aside.links[0].copyright }} ·
+			<router-link class="cookies"
+				:to="common.navigation.aside.links[0].href"
+				v-html="common.navigation.aside.links[0].content" />
+			<template slot="attrs">
+				<edit-attr
+					:label="'Content: '"
+					v-model="common.navigation.aside.links[0].content"
+					:global="global" />
+				<edit-attr
+					:label="'Link: '"
+					v-model="common.navigation.aside.links[0].href"
+					:global="global" />
+				<edit-attr
+					:label="'Copyright: '"
+					v-model="common.navigation.aside.links[0].copyright"
+					:global="global" />
+			</template>
+			 · Ce site est une réalisation <a href='https://www.orchard-id.com/' target='_blank'>Orchard ID</a>
+		</edit-wrapper-attr>
+	</div>
+</footer>

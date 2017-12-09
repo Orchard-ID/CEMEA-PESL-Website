@@ -1,0 +1,22 @@
+<div class="page-error">
+	<div class="page-error--inner">
+		<h1>
+			<edit-inline
+				v-model="specific.title"
+				:global="global" />
+		</h1>
+		<edit-block
+			v-model="specific.content"
+			:global="global" />
+		<edit-global
+			v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+			ref="edit"
+			:global="global"
+			:common="common"
+			:file="$options.name.replace(/page-/, '')"
+			:meta="meta"
+			:body="specific"
+			:current="common.edit.local"
+			:options="options" />
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<aside class="the-parallax">
+	<ul class="the-parallax--scene">
+		<template v-for="(n, index) in parallax.quantity">
+			<li class="the-parallax--layer is-tiny"
+				v-if="index < 3"
+				:data-depth="0.25">
+				<img :src="getRandomParallaxImage()">
+			</li>
+			<li class="the-parallax--layer is-small"
+				v-if="index >= 3 && index < 6"
+				:data-depth="0.5">
+				<img :src="getRandomParallaxImage()">
+			</li>
+			<li class="the-parallax--layer is-medium"
+				v-if="index >= 6 && index < 9"
+				:data-depth="0.5">
+				<img :src="getRandomParallaxImage()">
+			</li>
+			<li class="the-parallax--layer is-big"
+				v-if="index >= 9 && index < 12"
+				:data-depth="0.75">
+				<img :src="getRandomParallaxImage()">
+			</li>
+		</template>
+	</ul>
+</aside>

@@ -1,10 +1,54 @@
 {
-	"/": {
-		"view": "index.htm",
-		"variation": "index.json"
+	"home_fr-fr": {
+		"url": "/",
+		"view": "page-home",
+		"variation": "home.json"
 	},
-	"/page-inexistante/": {
-		"view": "error.htm",
+	"projects_fr-fr": {
+		"url": "/presentation/",
+		"view": "page-projects",
+		"variation": "projects.json"
+	},
+	"approach_fr-fr": {
+		"url": "/demarches/",
+		"view": "page-approach",
+		"variation": "approach.json",
+		"controller": "google-drive.js"
+	},
+	"coordinator_fr-fr": {
+		"middlewares": ["is-authenticated.js"],
+		"url": "/coordonnateurs/",
+		"view": "page-google-drive",
+		"variation": "coordinator.json",
+		"controller": "google-drive.js"
+	},
+	"partner_fr-fr": {
+		"middlewares": ["is-authenticated.js"],
+		"url": "/partenaires-institutionnels/",
+		"view": "page-google-drive",
+		"variation": "partner.json",
+		"controller": "google-drive.js"
+	},
+	"contact_fr-fr": {
+		"url": "/contact/",
+		"view": "page-contact",
+		"controller": "contact.js",
+		"variation": "contact.json"
+	},
+	"cookies_fr-fr": {
+		"url": "/cookies/",
+		"view": "page-about",
+		"variation": "cookies.json"
+	},
+	"login_fr-fr": {
+		"url": "/espace-membres/",
+		"view": "page-login",
+		"controller": "login.js",
+		"variation": "login.json"
+	},
+	"error_fr-fr": {
+		"url": "/*",
+		"view": "page-error",
 		"variation": "error.json",
 		"statusCode": 404
 	}
