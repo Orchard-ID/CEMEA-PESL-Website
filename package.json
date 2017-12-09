@@ -64,7 +64,6 @@
     "middlewares/*",
     "models/*",
     "views/*",
-    ".gitignore",
     "bundles.json",
     "components.json",
     "LICENSE",
