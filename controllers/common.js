@@ -46,6 +46,7 @@ function createBundleClient(NA, callback) {
 			'appView': path.join(NA.serverPath, NA.webconfig.viewsRelativePath, 'app.htm'),
 			'appModel': path.join(NA.serverPath, NA.webconfig.viewsRelativePath, 'app.js'),
 			'appModule': path.join(NA.serverPath, NA.webconfig.assetsRelativePath, 'javascripts/app.js'),
+			'helper': path.join(NA.serverPath, NA.webconfig.controllersRelativePath, 'modules/helper.js'),
 			'names': [],
 			'views': [],
 			'models': [],
@@ -82,6 +83,11 @@ function createBundleClient(NA, callback) {
 	}, function (callback) {
 		openFile(NA, components.appModule, function (error, result) {
 			components.appModule = result;
+			callback(null);
+		});
+	}, function (callback) {
+		openFile(NA, components.helper, function (error, result) {
+			components.helper = result;
 			callback(null);
 		});
 	}, function (callback) {
@@ -133,8 +139,9 @@ exports.setModules = function () {
 	NA.modules.googleApis = require('googleapis');
 	NA.modules.googleAuthLibrary = require('google-auth-library');
 
-	NA.modules.helper = require('./modules/helper.js')(NA);
+	NA.modules.emailManager = require('./modules/email-manager.js')(NA);
 	NA.modules.edit = require('./modules/edit.js');
+	NA.modules.helper = require('./modules/helper.js');
 
 	NA.models = {};
 	NA.models.User = require('../models/connectors/user.js');
@@ -206,6 +213,7 @@ exports.setSockets = function () {
 
 exports.changeDom = function (next, locals, request, response) {
 	var NA = this,
+		helper = NA.modules.helper,
 
 		Vue = NA.modules.Vue,
 		VueRouter = NA.modules.VueRouter,
@@ -233,7 +241,12 @@ exports.changeDom = function (next, locals, request, response) {
 	}
 
 	fs.readFile(view, 'utf-8',  function (error, template) {
-		var component = Vue.component(locals.routeKey.split('_')[0], require(model)(template, specific)),
+		var appMixin = {
+				methods: {
+					checkRoles: helper.checkRoles
+				}
+			},
+			component = Vue.component(locals.routeKey.split('_')[0], require(model)(template, specific)),
 			currentRoute = {
 				path: locals.routeParameters.url,
 				props: ['common', 'global'],
@@ -251,8 +264,7 @@ exports.changeDom = function (next, locals, request, response) {
 					routes: NA.webconfig.routes,
 					languageCode: NA.webconfig.languageCode
 				},
-
-				stream = renderer.renderToStream(new Vue(require(appModel)(template, router, webconfig, common, specific, extra)), locals);
+				stream = renderer.renderToStream(new Vue(require(appModel)(template, router, appMixin, webconfig, common, specific, extra)), locals);
 
 			router.push(locals.routeParameters.url);
 

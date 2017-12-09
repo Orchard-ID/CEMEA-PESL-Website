@@ -1,47 +1,18 @@
 /* jshint node: true */
-module.exports = function (NA) {
-	return {
-		sendEmail: function (to, subject, content, next) {
-			var nodemailer = NA.modules.nodemailer,
-				path = NA.modules.path,
-				fs = NA.modules.fs,
-				mailOptions = {
-					from: '"CEMÉA PESL" <contact@cemea-pesl.fr>',
-					to: 'contact@cemea-pesl.fr',
-					replyTo: to,
-					subject: subject,
-					text: content
-				},
-				transporter,
-				file;
+module.exports = {
+	checkRoles: function (roleList, currentRole) {
+		var output = false;
 
-			if (NA.webconfig._smtp) {
-				transporter = nodemailer.createTransport('smtps://' + NA.webconfig._smtp.login + ':' + NA.webconfig._smtp.password + '@in-v3.mailjet.com');
-				transporter.sendMail(mailOptions, function (error, info) {
-					if (error) {
-						console.log(error);
-						console.log(info);
-						return next && next(false);
-					}
-
-					if (next) {
-						next(true);
-					}
-				});
-			} else {
-				file = path.join(NA.serverPath, NA.webconfig._data, 'data', 'email', (+new Date()) + '_' + mailOptions.to + '.json');
-				fs.writeFile(file, JSON.stringify(mailOptions, undefined, '	'), function (error) {
-					if (error) {
-						console.log(error);
-						return next && next(false);
-					}
-
-					if (next) {
-						next(true);
-					}
-				});
-			}
-
+		if (roleList.roles) {
+			roleList.roles.forEach(function (role) {
+				if (currentRole === role) {
+					output = true;
+				}
+			});
+		} else {
+			output = true;
 		}
-	};
+
+		return output;
+	}
 };

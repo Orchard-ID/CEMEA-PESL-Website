@@ -11,12 +11,17 @@ module.exports = function (template) {
 			global: {
 				type: Object,
 				required: true
+			},
+			checkRoles: {
+				type: Function,
+				required: true
 			}
 		},
 		computed: {
 			authorizedLinks: function () {
+				var vm = this;
 				return this.common.navigation.privates.links.filter(function (link) {
-					return link.status === 'auth' && this.checkRoles(link);
+					return link.status === 'auth' && vm.checkRoles(link, vm.global.me.role);
 				});
 			},
 			unauthenticatedLinks: function () {
@@ -26,21 +31,6 @@ module.exports = function (template) {
 			}
 		},
 		methods: {
-			checkRoles: function (link) {
-				var vm = this,
-					output = false;
-
-				if (link.roles) {
-					link.roles.forEach(function (role) {
-						if (vm.global.me.role === role) {
-							output = true;
-						}
-					});
-				} else {
-					output = true;
-				}
-				return output;
-			},
 			toggleMenu: function () {
 				this.global.navigation = !this.global.navigation;
 			},

@@ -1,12 +1,18 @@
 /* jshint esversion: 6 */
 /* global Vue, VueRouter, CKEDITOR */
-var version = document.getElementsByTagName("html")[0].getAttribute('data-version'),
-	popupCookieConsent;
 
+// If path not ending by `/`, redirect to the correct path.
 if (window.location.pathname.slice(-1) !== '/') {
 	window.location = window.location.pathname + '/';
 }
 
+var version = document.getElementsByTagName("html")[0].getAttribute('data-version'),
+	popupCookieConsent;
+
+// Allow CommonJS modules way to work.
+window.module = {};
+
+// Manage cookie law by provide a popup
 window.cookieconsent.initialise({
 	"content": {
 		"message": "En poursuivant votre navigation vous consentez à l’utilisation de cookies pour des statistiques de visite.",
@@ -18,8 +24,7 @@ window.cookieconsent.initialise({
 	popupCookieConsent = popup;
 });
 
-window.module = {};
-
+// Parameter the CKEditor that allow edition
 CKEDITOR.stylesSet.add('website', [
 	{ name: 'Contenu Centré', element: 'p', attributes: { 'class': 'text-center' } },
 	{ name: 'Contenu Justifié', element: 'p', attributes: { 'class': 'text-justify' } },
@@ -27,6 +32,7 @@ CKEDITOR.stylesSet.add('website', [
 ]);
 CKEDITOR.config.stylesSet = 'website';
 
+// Do XHRHttpRequest
 function xhr(url) {
 	return new Promise(function (resolve, reject) {
 		var request = new XMLHttpRequest(),
@@ -56,6 +62,7 @@ function xhr(url) {
 	});
 }
 
+// Start the Hydratation and front-end mechanisms.
 Promise.all([
 	xhr('variations/common.json'),
 	xhr('javascripts/bundle.' + version + '.js')
@@ -74,9 +81,11 @@ Promise.all([
 		modules = {},
 		keys = Object.keys(webconfig.routes),
 		routes = [],
+		appMixin,
 		mixin,
 		router,
 		vm,
+		helper = eval(files.helper),
 		historyRouterLink = function (e) {
 			var url;
 
@@ -99,6 +108,7 @@ Promise.all([
 		}
 	});
 
+	// Prepare the behavior sharing by all Route components.
 	mixin = function (unactive) {
 		return {
 			watch: {
@@ -157,35 +167,11 @@ Promise.all([
 		};
 	};
 
-	window.replaceData = function (source, replacement) {
-		var parsed = parseHTML(source);
-
-		function parseHTML(htmlString) {
-			var body = document.implementation.createHTMLDocument().body;
-			body.innerHTML = htmlString;
-			return body.childNodes;
+	// Prepare an extra behavior for App component.
+	appMixin = {
+		methods: {
+			checkRoles: helper.checkRoles
 		}
-
-		Array.prototype.forEach.call(parsed[0].querySelectorAll("[data-replace]"), function (item) {
-			item.innerHTML = replacement[item.getAttribute('data-replace')];
-		});
-
-		return parsed[0].outerHTML;
-	};
-
-	window.checkRoles = function (link) {
-		var output = false;
-
-		if (link.roles) {
-			link.roles.forEach(function (role) {
-				if (vm.global.me.role === role) {
-					output = true;
-				}
-			});
-		} else {
-			output = true;
-		}
-		return output;
 	};
 
 	// Create the app tree.
@@ -223,7 +209,7 @@ Promise.all([
 					dirty: false
 				};
 
-				resolve(eval(model)(template, specific, mixin(!webconfig.routes[key]._children), options));
+				resolve(eval(model)(template, specific, mixin(), options));
 			});
 		};
 
@@ -258,14 +244,14 @@ Promise.all([
 		router.push({ path: e.target.getAttribute('href') });
 	});
 
-	vm = new Vue(app.model(app.view, router, webconfig, common, { body: {} }, {}));
+	vm = new Vue(app.model(app.view, router, appMixin, webconfig, common, { body: {} }, {}));
 
 	router.onReady(function () {
 		vm.$mount('.layout');
 		vm.global.isClient = true;
 
 		router.beforeEach(function (to, from, next) {
-			if (vm.global.webconfig.routes[to.name + '_' + vm.global.webconfig.languageCode].middlewares && !window.checkRoles({ roles: ['admin', 'double', to.name] })) {
+			if (vm.global.webconfig.routes[to.name + '_' + vm.global.webconfig.languageCode].middlewares && !appMixin.methods.checkRoles({ roles: ['admin', 'double', to.name] }, vm.global.me.role)) {
 				vm.$router.replace({ path: '/' });
 				vm.$router.replace({ path: '/espace-membres/' });
 			}

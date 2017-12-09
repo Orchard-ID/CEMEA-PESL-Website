@@ -9,9 +9,9 @@ module.exports = function () {
 			}
 		},
 		setHistoryLink: function (historyRouterLink) {
-			Array.prototype.forEach.call(document.querySelectorAll(".textoi"), function (link) {
-				link.removeEventListener("click", historyRouterLink);
-				link.addEventListener("click", historyRouterLink);
+			Array.prototype.forEach.call(document.querySelectorAll('.textoi'), function (link) {
+				link.removeEventListener('click', historyRouterLink);
+				link.addEventListener('click', historyRouterLink);
 			});
 		},
 		setBeforeRouterEnter: function (vmComponent, to) {

@@ -1,4 +1,4 @@
-/* jshint node: true, esversion: 6 */
+/* jshint node: true */
 /* global NA, Vue */
 module.exports = function () {
 	return {
@@ -69,7 +69,9 @@ module.exports = function () {
 						document.title = currentMeta.title;
 					}
 
-					currentEdit && currentEdit.updateJSON(currentMeta, currentBody);
+					if (currentEdit) {
+						currentEdit.updateJSON(currentMeta, currentBody);
+					}
 				}
 
 				// When a page is updated from outside tab, this part is used if

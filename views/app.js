@@ -1,8 +1,9 @@
 /* jshint node: true */
-module.exports = function (template, router, webconfig, common, specific, extra) {
+module.exports = function (template, router, mixin, webconfig, common, specific, extra) {
 	return {
 		router: router,
 		name: 'App',
+		mixins: (mixin) ? [mixin] : undefined,
 		data: {
 			meta: common.meta,
 			common: common.body,
