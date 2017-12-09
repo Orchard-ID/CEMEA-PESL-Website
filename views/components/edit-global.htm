@@ -1,17 +1,48 @@
-<aside key="edit" class="edit-global" :class="{ 'is-opened': state, 'is-global': options && options.global }"><button v-if="options.dirty" @click="save" class="edit-global--save" v-html="common.edit.save"></button><button @mousedown="isMoved" @mouseup="toggleEdit" class="edit-global--start">
-		<span v-show="!state" v-html="current"></span>
-		<span v-show="state" v-html="common.edit.close"></span>
+<aside class="edit-global"
+	key="edit"
+	:class="{ 'is-opened': state, 'is-global': options && options.global }">
+	<button class="edit-global--save"
+		v-if="options.dirty"
+		@click="save"
+		v-html="common.edit.save"></button>
+	<button class="edit-global--start"
+		@mousedown="isMoved"
+		@mouseup="toggleEdit">
+		<span
+			v-show="!state"
+			v-html="current"></span>
+		<span
+			v-show="state"
+			v-html="common.edit.close"></span>
 	</button>
 	<anim-height>
-		<div key="box" v-show="state" class="edit-global--editbox">
+		<div class="edit-global--editbox"
+			v-show="state"
+			key="box">
 			<div class="edit-global--tabs">
-				<span class="edit-global--editbox--set-body" :class="{ 'is-current': tab === 'body' }" @click="tab = 'body'" v-html="common.edit.data"></span>
-				<span class="edit-global--editbox--set-meta" :class="{ 'is-current': tab === 'meta' }" @click="tab = 'meta'" v-html="common.edit.metadata"></span>
+				<span class="edit-global--editbox--set-body"
+					:class="{ 'is-current': tab === 'body' }"
+					@click="tab = 'body'"
+					v-html="common.edit.data"></span>
+				<span class="edit-global--editbox--set-meta"
+					:class="{ 'is-current': tab === 'meta' }"
+					@click="tab = 'meta'"
+					v-html="common.edit.metadata"></span>
 			</div>
-			<div v-show="tab === 'body'" class="edit-global--editbox--body"></div>
-			<div v-show="tab === 'meta'" class="edit-global--editbox--meta"></div>
+			<div class="edit-global--editbox--body"
+				v-show="tab === 'body'"></div>
+			<div class="edit-global--editbox--meta"
+				v-show="tab === 'meta'"></div>
 		</div>
 	</anim-height>
-	<popup-confirm ref="confirm" @close="confirmUpdateJSON = false" :displayed="confirmUpdateJSON" :current="common.edit.updateJSON"/>
-	<popup-alert ref="alert" @close="alertLostJSON = false" :displayed="alertLostJSON" :current="common.edit.lostJSON"/>
+	<popup-confirm
+		ref="confirm"
+		:displayed="confirmUpdateJSON"
+		:current="common.edit.updateJSON"
+		@close="confirmUpdateJSON = false" />
+	<popup-alert
+		ref="alert"
+		:displayed="alertLostJSON"
+		:current="common.edit.lostJSON"
+		@close="alertLostJSON = false" />
 </aside>

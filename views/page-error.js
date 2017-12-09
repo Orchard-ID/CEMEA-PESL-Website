@@ -1,5 +1,5 @@
 /* jshint node: true */
-module.exports = function (specific, template, mixin, options) {
+module.exports = function (template, specific, mixin, options) {
 	return {
 		name: 'PageError',
 		mixins: (mixin) ? [mixin] : undefined,

@@ -2,7 +2,7 @@
 /* global Parallax */
 module.exports = function (template) {
 	return {
-		name: "TheParallax",
+		name: 'TheParallax',
 		props: {
 			common: {
 				type: Object,
@@ -22,15 +22,15 @@ module.exports = function (template) {
 				parallax: this.meta.parallax
 			};
 		},
-		mounted: function(){
+		mounted: function () {
 			var scene = document.getElementsByClassName('the-parallax--scene')[0];
 			new Parallax(scene);
 		},
 		methods: {
-			getRandomParallaxImage: function(){
+			getRandomParallaxImage: function () {
 				return this.parallax.images[Math.floor(Math.random() * this.parallax.images.length)];
 			},
-			getParallaxDepth: function(index){
+			getParallaxDepth: function (index) {
 				if (index <= 3) {
 					return '1';
 				} else if (index >= 4 && index <= 6) {

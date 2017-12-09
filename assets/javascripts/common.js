@@ -223,7 +223,7 @@ Promise.all([
 					dirty: false
 				};
 
-				resolve(eval(model)(specific, template, mixin(!webconfig.routes[key]._children), options));
+				resolve(eval(model)(template, specific, mixin(!webconfig.routes[key]._children), options));
 			});
 		};
 
@@ -258,7 +258,7 @@ Promise.all([
 		router.push({ path: e.target.getAttribute('href') });
 	});
 
-	vm = new Vue(app.model(common, { body: {} }, app.view, router, webconfig, {}));
+	vm = new Vue(app.model(app.view, router, webconfig, common, { body: {} }, {}));
 
 	router.onReady(function () {
 		vm.$mount('.layout');

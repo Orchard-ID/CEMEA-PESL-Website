@@ -54,7 +54,7 @@ module.exports = function (template) {
 	}
 
 	return {
-		name: "EditGlobal",
+		name: 'EditGlobal',
 		props: {
 			global: {
 				type: Object,
@@ -115,7 +115,7 @@ module.exports = function (template) {
 				var file = this.file.replace(/^([A-Z])/g, function(match) {
 					return match.toLowerCase();
 				}).replace(/([A-Z])/g, function(match) {
-					return "-" + match.toLowerCase();
+					return '-' + match.toLowerCase();
 				});
 
 				NA.socket.emit('edit-global--save', file, this.body, this.meta);
@@ -150,11 +150,11 @@ module.exports = function (template) {
 					if (!this.global.isInit) {
 						this.global.isInit = true;
 						this.isInit = true;
-						jsonEditorJS = document.createElement("script");
-						jsonEditorCSS = document.createElement("link");
+						jsonEditorJS = document.createElement('script');
+						jsonEditorCSS = document.createElement('link');
 						jsonEditorJS.async = true;
 						jsonEditorJS.defer = true;
-						jsonEditorJS.src = 'javascripts/vendors/jsoneditor.' + min.getAttribute('lang') + "." + min.getAttribute('data-version') + '.min.js';
+						jsonEditorJS.src = 'javascripts/vendors/jsoneditor.' + min.getAttribute('lang') + '.' + min.getAttribute('data-version') + '.min.js';
 						jsonEditorCSS.href = 'stylesheets/vendors/jsoneditor.css';
 						jsonEditorCSS.rel = 'stylesheet';
 						jsonEditorJS.addEventListener('load', () => {

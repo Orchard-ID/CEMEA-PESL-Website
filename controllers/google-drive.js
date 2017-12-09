@@ -1,5 +1,4 @@
 /* jshint node: true */
-
 function getGoogleDrive(NA, query, variation, mainCallback) {
 	var fs = NA.modules.fs,
 		path = NA.modules.path,

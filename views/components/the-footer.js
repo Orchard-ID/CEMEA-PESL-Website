@@ -1,7 +1,7 @@
 /* jshint node: true */
 module.exports = function (template) {
 	return {
-		name: "TheFooter",
+		name: 'TheFooter',
 		props: {
 			common: {
 				type: Object,

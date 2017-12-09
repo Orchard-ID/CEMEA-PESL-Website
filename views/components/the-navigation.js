@@ -2,7 +2,7 @@
 /* global NA */
 module.exports = function (template) {
 	return {
-		name: "TheNavigation",
+		name: 'TheNavigation',
 		props: {
 			common: {
 				type: Object,
@@ -11,6 +11,18 @@ module.exports = function (template) {
 			global: {
 				type: Object,
 				required: true
+			}
+		},
+		computed: {
+			authorizedLinks: function () {
+				return this.common.navigation.privates.links.filter(function (link) {
+					return link.status === 'auth' && this.checkRoles(link);
+				});
+			},
+			unauthenticatedLinks: function () {
+				return this.common.navigation.privates.links.filter(function (link) {
+					return link.status !== 'auth';
+				});
 			}
 		},
 		methods: {

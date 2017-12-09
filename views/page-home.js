@@ -1,5 +1,5 @@
 /* jshint node: true, esversion: 6 */
-module.exports = function (specific, template, mixin, options) {
+module.exports = function (template, specific, mixin, options) {
 	return {
 		name: 'PageHome',
 		mixins: (mixin) ? [mixin] : undefined,
@@ -34,10 +34,10 @@ module.exports = function (specific, template, mixin, options) {
 			goToSlide: function (slide) {
 				this.slider = slide;
 			},
-			goToPreviousSlide: function (slide) {
+			goToPreviousSlide: function () {
 				this.slider = (this.slider > 0) ? this.slider - 1 : this.common.partner.partners.length - 1;
 			},
-			goToNextSlide: function (slide) {
+			goToNextSlide: function () {
 				this.slider = (this.slider < this.common.partner.partners.length - 1) ? this.slider + 1 : 0;
 			}
 		},

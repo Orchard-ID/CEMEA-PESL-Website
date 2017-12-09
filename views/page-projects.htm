@@ -1,105 +1,147 @@
 <div class="page-projects">
 	<article class="page-projects--article">
 		<div class="page-projects--image">
-			<edit-inline v-model="specific.image" :global="global" :empty="'Image manquante'"/>
+			<edit-inline
+				v-model="specific.image"
+				:global="global" :empty="'Image manquante'" />
 		</div>
 		<div class="page-projects--main">
 			<h1 class="page-projects--title">
-				<edit-inline v-model="specific.title" :global="global"/>
+				<edit-inline
+					v-model="specific.title"
+					:global="global" />
 			</h1>
 			<div class="page-projects--content">
-				<edit-block v-model="specific.content" :global="global"/>
+				<edit-block
+					v-model="specific.content"
+					:global="global" />
 			</div>
 			<div class="page-projects--cta">
 				<ul>
 					<li v-for="(item, index) in specific.cta">
 						<div class="page-projects--cta--link">
-							<edit-inline v-model="specific.cta[index].content" :global="global"/>
+							<edit-inline
+								v-model="specific.cta[index].content"
+								:global="global" />
 						</div>
 					</li>
 				</ul>
 			</div>
 			<div class="page-projects--quote">
-				<edit-block v-model="specific.quote" :global="global"/>
+				<edit-block
+					v-model="specific.quote"
+					:global="global" />
 			</div>
 		</div>
 		<aside id="definition" class="page-projects--about">
 			<div class="page-projects--about--main">
 				<h2 class="page-projects--about--title">
-					<edit-inline v-model="specific.about.title" :global="global"/>
+					<edit-inline
+						v-model="specific.about.title"
+						:global="global" />
 				</h2>
 				<div class="page-projects--about--content">
-					<edit-block v-model="specific.about.content" :global="global"/>
+					<edit-block
+						v-model="specific.about.content"
+						:global="global" />
 				</div>
 			</div>
 			<div class="page-projects--about--image">
-				<edit-inline v-model="specific.about.image" :global="global" :empty="'Image manquante'"/>
+				<edit-inline
+					v-model="specific.about.image"
+					:global="global" :empty="'Image manquante'" />
 			</div>
 		</aside>
 	</article>
 	<section id="principes" class="page-projects--overview">
 		<h2 class="page-projects--overview--title">
-			<edit-inline v-model="specific.overview.title" :global="global"/>
+			<edit-inline
+				v-model="specific.overview.title"
+				:global="global" />
 		</h2>
 		<div class="page-projects--overview--slider">
 			<div class="page-projects--overview--slider--content">
 				<ul>
-					<li v-for="(item, index) in specific.overview.overviews" :class="{ 'is-selected': index === slider }">
+					<li
+						v-for="(item, index) in specific.overview.overviews"
+						:class="{ 'is-selected': index === slider }">
 						<div class="page-projects--overview--image">
-							<edit-inline v-model="specific.overview.overviews[index].image" :global="global" :empty="'Image manquante'"/>
+							<edit-inline
+								v-model="specific.overview.overviews[index].image"
+								:global="global" :empty="'Image manquante'" />
 						</div>
 						<div class="page-projects--overview--content">
-							<edit-block v-model="specific.overview.overviews[index].content" :global="global"/>
+							<edit-block
+								v-model="specific.overview.overviews[index].content"
+								:global="global" />
 						</div>
 					</li>
 				</ul>
 			</div>
 			<div class="page-projects--overview--slider--navigation">
-				<div @click="goToPreviousSlide" class="left">
+				<div class="left"
+					@click="goToPreviousSlide">
 					<img src="./media/images/left-arrow.svg" width="10" alt="Précedent">
 				</div>
-				<div @click="goToNextSlide" class="right">
+				<div class="right"
+					@click="goToNextSlide">
 					<img src="./media/images/right-arrow.svg" width="10" alt="Suivant">
 				</div>
 			</div>
 			<div class="page-projects--overview--slider--pagination">
 				<ul>
-					<li @click="goToSlide(index)" v-for="(overview, index) in specific.overview.overviews" :class="{ 'is-selected': index === slider }"></li>
+					<li
+						v-for="(overview, index) in specific.overview.overviews"
+						:class="{ 'is-selected': index === slider }"
+						@click="goToSlide(index)"></li>
 				</ul>
 			</div>
 		</div>
 	</section>
 	<section id="champs-intervention" class="page-projects--more">
 		<h2 class="page-projects--more--title">
-			<edit-inline v-model="specific.more.title" :global="global"/>
+			<edit-inline
+				v-model="specific.more.title"
+				:global="global" />
 		</h2>
 		<ul>
 			<li v-for="(item, index) in specific.more.sections">
 				<div class="page-projects--more--image">
-					<edit-inline v-model="specific.more.sections[index].image" :global="global" :empty="'Image manquante'"/>
+					<edit-inline
+						v-model="specific.more.sections[index].image"
+						:global="global" :empty="'Image manquante'" />
 				</div>
 				<div class="page-projects--more--content">
-					<edit-block v-model="specific.more.sections[index].content" :global="global"/>
+					<edit-block
+						v-model="specific.more.sections[index].content"
+						:global="global" />
 				</div>
 			</li>
 		</ul>
 	</section>
 	<section class="page-projects--goal">
 		<h2 class="page-projects--goal--title">
-			<edit-inline v-model="specific.goal.title" :global="global"/>
+			<edit-inline
+				v-model="specific.goal.title"
+				:global="global" />
 		</h2>
 		<ul>
 			<li v-for="(item, index) in specific.goal.goals">
 				<div class="page-projects--goal--image">
-					<edit-inline v-model="specific.goal.goals[index].image" :global="global" :empty="'Image manquante'"/>
+					<edit-inline
+						v-model="specific.goal.goals[index].image"
+						:global="global" :empty="'Image manquante'" />
 				</div>
 				<div class="page-projects--goal--content">
-					<edit-block v-model="specific.goal.goals[index].content" :global="global"/>
+					<edit-block
+						v-model="specific.goal.goals[index].content"
+						:global="global" />
 				</div>
 			</li>
 		</ul>
 	</section>
-	<edit-global v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+	<edit-global
+		v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
 		:global="global"
 		:common="common"
@@ -107,5 +149,5 @@
 		:meta="meta"
 		:body="specific"
 		:current="common.edit.local"
-		:options="options"/>
+		:options="options" />
 </div>

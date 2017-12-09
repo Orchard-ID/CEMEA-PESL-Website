@@ -1,6 +1,6 @@
 /* jshint node: true, esversion: 6 */
 /* global NA */
-module.exports = function (specific, template, mixin, options) {
+module.exports = function (template, specific, mixin, options) {
 	return {
 		name: 'PageContact',
 		mixins: (mixin) ? [mixin] : undefined,
@@ -58,9 +58,6 @@ module.exports = function (specific, template, mixin, options) {
 						}
 					});
 				}
-			},
-			moreDetails: function () {
-				alert('TO DO');
 			},
 			newMessage: function () {
 				if (!this.global.isEditable) {

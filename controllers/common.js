@@ -42,14 +42,14 @@ function createBundleClient(NA, callback) {
 	var async = NA.modules.async,
 		path = NA.modules.path,
 		components = {
-			"routes": path.join(NA.serverPath, "routes.json"),
-			"appView": path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.htm"),
-			"appModel": path.join(NA.serverPath, NA.webconfig.viewsRelativePath, "app.js"),
-			"appModule": path.join(NA.serverPath, NA.webconfig.assetsRelativePath, "javascripts/app.js"),
-			"names": [],
-			"views": [],
-			"models": [],
-			"modules": []
+			'routes': path.join(NA.serverPath, 'routes.json'),
+			'appView': path.join(NA.serverPath, NA.webconfig.viewsRelativePath, 'app.htm'),
+			'appModel': path.join(NA.serverPath, NA.webconfig.viewsRelativePath, 'app.js'),
+			'appModule': path.join(NA.serverPath, NA.webconfig.assetsRelativePath, 'javascripts/app.js'),
+			'names': [],
+			'views': [],
+			'models': [],
+			'modules': []
 		},
 		keys = Object.keys(NA.webconfig._components);
 
@@ -60,7 +60,7 @@ function createBundleClient(NA, callback) {
 		if (NA.webconfig._components[name].module) {
 			components.modules.push(path.join(NA.serverPath, NA.webconfig.assetsRelativePath, NA.webconfig._components[name].module));
 		} else {
-			components.modules.push("");
+			components.modules.push('');
 		}
 	});
 
@@ -112,7 +112,7 @@ function createBundleClient(NA, callback) {
 			callback(null);
 		});
 	}], function () {
-		callback("(function () { return " + JSON.stringify(components) + " })()");
+		callback('(function () { return ' + JSON.stringify(components) + ' })()');
 	});
 }
 
@@ -123,22 +123,22 @@ exports.setModules = function () {
 	NA.webconfig._smtp = (NA.webconfig._smtp) ? require(join(NA.serverPath, NA.webconfig._data, NA.webconfig._smtp)) : undefined;
 	NA.webconfig._components = require(join(NA.serverPath, NA.webconfig._components));
 
-	NA.modules.Vue = require("vue");
-	NA.modules.VueRouter = require("vue-router");
-	NA.modules.VueServerRenderer = require("vue-server-renderer");
+	NA.modules.Vue = require('vue');
+	NA.modules.VueRouter = require('vue-router');
+	NA.modules.VueServerRenderer = require('vue-server-renderer');
 
-	NA.modules.nodemailer = require("nodemailer");
+	NA.modules.nodemailer = require('nodemailer');
 	NA.modules.RedisStore = require('connect-redis');
 	NA.modules.readline = require('readline');
 	NA.modules.googleApis = require('googleapis');
 	NA.modules.googleAuthLibrary = require('google-auth-library');
 
-	NA.modules.helper = require("./modules/helper.js")(NA);
-	NA.modules.edit = require("./modules/edit.js");
+	NA.modules.helper = require('./modules/helper.js')(NA);
+	NA.modules.edit = require('./modules/edit.js');
 
 	NA.models = {};
-	NA.models.User = require("../models/connectors/user.js");
-	NA.models.Edit = require("../models/connectors/edit.js");
+	NA.models.User = require('../models/connectors/user.js');
+	NA.models.Edit = require('../models/connectors/edit.js');
 
 	NA.modules.Vue.use(NA.modules.VueRouter);
 };
@@ -169,15 +169,15 @@ exports.setRoutes = function (next) {
 		if (!NA.webconfig.cache) {
 			createBundleClient(NA, function (result) {
 				output = result;
-				response.writeHead(200, { "Content-Type": "application/javascript", "Charset": "utf-8" });
+				response.writeHead(200, { 'Content-Type': 'application/javascript', 'Charset': 'utf-8' });
 				response.end(output);
 			});
 		} else {
 			response.writeHead(200, {
-				"Content-Type": "application/javascript",
-				"Charset": "utf-8",
-				"Cache-Control": "public, max-age=2592000",
-				"Last-Modified": (new Date()).toString()
+				'Content-Type': 'application/javascript',
+				'Charset': 'utf-8',
+				'Cache-Control': 'public, max-age=2592000',
+				'Last-Modified': (new Date()).toString()
 			 });
 			response.end(output);
 		}
@@ -221,10 +221,10 @@ exports.changeDom = function (next, locals, request, response) {
 		path = join(NA.serverPath, NA.webconfig.viewsRelativePath),
 		specific = locals.specific,
 
-		view = join(path, locals.routeParameters.view + ".htm"),
-		model = join(path, locals.routeParameters.view + ".js"),
-		appModel = join(path, "app.js"),
-		appView = join(path, "app.htm");
+		view = join(path, locals.routeParameters.view + '.htm'),
+		model = join(path, locals.routeParameters.view + '.js'),
+		appModel = join(path, 'app.js'),
+		appView = join(path, 'app.htm');
 
 	if (!NA.webconfig.cache) {
 		delete require.cache[model];
@@ -232,15 +232,15 @@ exports.changeDom = function (next, locals, request, response) {
 		setVueComponents(NA);
 	}
 
-	fs.readFile(view, "utf-8",  function (error, template) {
-		var component = Vue.component(locals.routeKey.split('_')[0], require(model)(specific, template)),
+	fs.readFile(view, 'utf-8',  function (error, template) {
+		var component = Vue.component(locals.routeKey.split('_')[0], require(model)(template, specific)),
 			currentRoute = {
 				path: locals.routeParameters.url,
 				props: ['common', 'global'],
 				component: component
 			};
 
-		fs.readFile(appView, "utf-8", function (error, template) {
+		fs.readFile(appView, 'utf-8', function (error, template) {
 			var router = new VueRouter({
 					routes: [currentRoute]
 				}),
@@ -252,7 +252,7 @@ exports.changeDom = function (next, locals, request, response) {
 					languageCode: NA.webconfig.languageCode
 				},
 
-				stream = renderer.renderToStream(new Vue(require(appModel)(common, specific, template, router, webconfig, extra)), locals);
+				stream = renderer.renderToStream(new Vue(require(appModel)(template, router, webconfig, common, specific, extra)), locals);
 
 			router.push(locals.routeParameters.url);
 

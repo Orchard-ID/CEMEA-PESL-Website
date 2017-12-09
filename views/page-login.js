@@ -1,6 +1,6 @@
 /* jshint node: true, esversion: 6 */
 /* global NA, Hashes */
-module.exports = function (specific, template, mixin, options) {
+module.exports = function (template, specific, mixin, options) {
 	return {
 		name: 'PageLogin',
 		mixins: (mixin) ? [mixin] : undefined,

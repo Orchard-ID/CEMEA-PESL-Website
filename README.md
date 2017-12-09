@@ -45,7 +45,7 @@ Pour modifier le site avec un rendu en temps réel, il vous faudra :
    - [Télécharger Git](https://git-scm.com/downloads)
 
 2. installer [NodeAtlas] en global sur votre poste de développement :
-   
+
    ```bash
    $ npm install -g node-atlas
    ```
@@ -58,14 +58,14 @@ Pour modifier le site avec un rendu en temps réel, il vous faudra :
    ```
 
 4. récupérer un jeu de donnée pour le site sur votre poste de développement depuis le dépôt `Orchard-ID/Data` sur la branche `develop` :
-   
+
    ```bash
    $ cd </chemin/vers/votre/espace/de/travail/>
    $ git clone https://github.com/Orchard-ID/Data.git
    ```
 
 5. initialiser le dossier `CEMEA-PESL-Website` :
-  
+
    ```bash
    $ cd </chemin/vers/votre/espace/de/travail/>CEMEA-PESL-Website
    $ npm install
@@ -131,7 +131,7 @@ Et se trouve sur l'hébergement web `orchard-nodejs`.
 ### (Re)démarrer le site ###
 
 1. se mettre dans l'environnement du site avec la commande :
-   
+
    ```bash
    nvm use 6.11.0
    ```
@@ -141,7 +141,7 @@ Et se trouve sur l'hébergement web `orchard-nodejs`.
    ```bash
    forever list
    ```
-   
+
    et trouver l'entrée
 
    ```bash
@@ -149,13 +149,13 @@ Et se trouve sur l'hébergement web `orchard-nodejs`.
    ```
 
 3. démarrer le serveur **si l'entrée précédente n'est pas dans la liste** avec la commande :
-   
+
    ```bash
    forever start /home/clients/xxx...xxx/.nvm/versions/node/v6.11.0/bin/node-atlas --path /home/clients/xxx...xxx/staging.orchard-id.com/ --webconfig webconfig.staging.json
    ```
-   
+
    ou si l'entrée est dans la liste, repérer la valeur de `XXXX` et utiliser la commande
-   
+
    ```bash
    forever restart XXXX # par ex. si XXXX vaut eg-v, la commande sera `forever restart eg-v`
    ```

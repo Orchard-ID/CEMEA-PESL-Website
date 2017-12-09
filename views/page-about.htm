@@ -2,14 +2,19 @@
 	<article class="page-about--article">
 		<div class="page-about--main">
 			<h1 class="page-about--title">
-				<edit-inline v-model="specific.title" :global="global"/>
+				<edit-inline
+					v-model="specific.title"
+					:global="global" />
 			</h1>
 			<div class="page-about--content">
-				<edit-block v-model="specific.content" :global="global"/>
+				<edit-block
+					v-model="specific.content"
+					:global="global" />
 			</div>
 		</div>
 	</article>
-	<edit-global v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+	<edit-global
+		v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
 		:global="global"
 		:common="common"
@@ -17,5 +22,5 @@
 		:meta="meta"
 		:body="specific"
 		:current="common.edit.local"
-		:options="options"/>
+		:options="options" />
 </div>

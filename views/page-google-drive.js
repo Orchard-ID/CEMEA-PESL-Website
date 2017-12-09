@@ -1,6 +1,6 @@
 /* jshint node: true */
 /* global NA, Vue */
-module.exports = function (specific, template, mixin, options) {
+module.exports = function (template, specific, mixin, options) {
 	return {
 		name: 'PageGoogleDrive',
 		mixins: (mixin) ? [mixin] : undefined,

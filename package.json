@@ -1,12 +1,12 @@
 {
   "name": "cemea-pesl-website",
-  "version": "0.13.1",
+  "version": "0.14.0",
   "description": "Site web des Projets Éducatifs Sociaux Locaux",
-  "main": "server.na",
+  "main": "server.js",
   "scripts": {
-    "test": "node --inspect server.na --browse",
-    "debug": "node --inspect server.na --browse",
-    "watch": "node server.na --browse",
+    "test": "node --inspect server.js --browse",
+    "debug": "node --inspect server.js --browse",
+    "watch": "node server.js --browse",
     "start": "node-atlas --browse",
     "postinstall": "node-atlas --generate --webconfig webconfig.production.json"
   },
@@ -23,7 +23,7 @@
   ],
   "author": "Orchard ID Team",
   "bin": {
-    "weboid": "server.na"
+    "weboid": "server.js"
   },
   "contributors": [
     {
@@ -58,28 +58,27 @@
     "vue-router": "2.7.x",
     "vue-server-renderer": "2.3.x"
   },
-  "devDependencies": {
-    "browser-sync": "2.18.x"
-  },
   "files": [
     "assets/*",
     "controllers/*",
-    "data/*",
+    "middlewares/*",
     "models/*",
-    "variations/*",
     "views/*",
+    ".gitignore",
     "bundles.json",
+    "components.json",
     "LICENSE",
+    "optimizations.json",
+    "package-lock.json",
     "package.json",
     "README.md",
     "routes.json",
-    "server.na",
+    "server.js",
     "statics.js",
     "stylus.json",
     "webconfig.json",
     "webconfig.production.json",
-    "webconfig.staging.json",
-    "webconfig.test.json"
+    "webconfig.staging.json"
   ],
   "homepage": "https://github.com/Orchard-ID/CEMEA-PESL-Website#readme",
   "engines": {

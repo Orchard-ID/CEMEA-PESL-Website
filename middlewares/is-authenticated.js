@@ -1,3 +1,4 @@
+/* jshint node: true */
 module.exports = function (request, response, next) {
 	var NA = this;
 
@@ -18,10 +19,10 @@ module.exports = function (request, response, next) {
 	}
 
 	if (!request.session.user) {
-		return response.redirect(NA.webconfig.urlRoot + NA.webconfig.urlRelativeSubPath + "/espace-membres/");
+		return response.redirect(NA.webconfig.urlRoot + NA.webconfig.urlRelativeSubPath + '/espace-membres/');
 	} else {
 		if (!checkRoles({ roles: ['admin', 'double', response.locals.routeKey.split('_')[0]] })) {
-			return response.redirect(NA.webconfig.urlRoot + NA.webconfig.urlRelativeSubPath + "/espace-membres/");
+			return response.redirect(NA.webconfig.urlRoot + NA.webconfig.urlRelativeSubPath + '/espace-membres/');
 		}
 	}
 

@@ -1,7 +1,7 @@
 /* jshint node: true, esversion: 6 */
 module.exports = function (template) {
 	return {
-		name: "PopupConfirm",
+		name: 'PopupConfirm',
 		props: {
 			current: {
 				type: Object,

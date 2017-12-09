@@ -1,9 +1,8 @@
 /* jshint node: true */
 /* global Velocity */
-
 module.exports = function (template) {
 	return {
-		name: "AnimHeight",
+		name: 'AnimHeight',
 		data: function () {
 			return {
 				paddingTop: NaN,

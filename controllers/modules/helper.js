@@ -6,8 +6,8 @@ module.exports = function (NA) {
 				path = NA.modules.path,
 				fs = NA.modules.fs,
 				mailOptions = {
-					from: "\"CEMÉA PESL\" <contact@cemea-pesl.fr>",
-					to: "contact@cemea-pesl.fr",
+					from: '"CEMÉA PESL" <contact@cemea-pesl.fr>',
+					to: 'contact@cemea-pesl.fr',
 					replyTo: to,
 					subject: subject,
 					text: content
@@ -25,18 +25,20 @@ module.exports = function (NA) {
 					}
 
 					if (next) {
-						next && next(true);
+						next(true);
 					}
 				});
 			} else {
-				file = path.join(NA.serverPath, NA.webconfig._data, "data", "email", (+new Date()) + '_' + mailOptions.to + '.json');
+				file = path.join(NA.serverPath, NA.webconfig._data, 'data', 'email', (+new Date()) + '_' + mailOptions.to + '.json');
 				fs.writeFile(file, JSON.stringify(mailOptions, undefined, '	'), function (error) {
 					if (error) {
 						console.log(error);
 						return next && next(false);
 					}
 
-					next && next(true);
+					if (next) {
+						next(true);
+					}
 				});
 			}
 

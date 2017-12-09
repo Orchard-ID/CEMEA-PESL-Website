@@ -8,7 +8,7 @@ exports.setSockets = function () {
 		var session = socket.request.session;
 
 		socket.on('edit-global--save', function (file, body, meta) {
-			file = file.replace(/page-/, "");
+			file = file.replace(/page-/, '');
 			if (session.user && session.user.publics.role === 'admin') {
 				Edit.save.call(NA, file, body, meta, function () {
 					socket.emit('edit-global--save');

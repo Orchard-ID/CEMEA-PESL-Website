@@ -1,21 +1,32 @@
 <div class="page-home">
 	<h1 class="page-home--title">
-		<edit-inline v-model="specific.title" :global="global"/>
+		<edit-inline
+			v-model="specific.title"
+			:global="global" />
 	</h1>
 	<section class="page-home--about">
 		<div class="page-home--about--inner">
 			<div class="page-home--about--image">
-				<edit-inline v-model="specific.about.image" :global="global" :empty="'Image manquante'"/>
+				<edit-inline
+					v-model="specific.about.image"
+					:global="global"
+					:empty="'Image manquante'" />
 			</div>
 			<div class="page-home--about--main">
 				<h2 class="page-home--about--title">
-					<edit-inline v-model="specific.about.title" :global="global"/>
+					<edit-inline
+						v-model="specific.about.title"
+						:global="global" />
 				</h2>
 				<div class="page-home--about--content">
-					<edit-block v-model="specific.about.content" :global="global"/>
+					<edit-block
+						v-model="specific.about.content"
+						:global="global" />
 				</div>
 				<div class="page-home--about--cta">
-					<edit-inline v-model="specific.about.cta" :global="global"/>
+					<edit-inline
+						v-model="specific.about.cta"
+						:global="global" />
 				</div>
 			</div>
 		</div>
@@ -24,53 +35,74 @@
 	<!-- <hr class="separator"> -->
 	<section class="page-home--approach">
 		<div class="page-home--approach--image">
-			<edit-inline v-model="specific.approach.image" :global="global" :empty="'Image manquante'"/>
+			<edit-inline
+				v-model="specific.approach.image"
+				:global="global" :empty="'Image manquante'" />
 		</div>
 		<div class="page-home--approach--main">
 			<h2 class="page-home--approach--title">
-				<edit-inline v-model="specific.approach.title" :global="global"/>
+				<edit-inline
+					v-model="specific.approach.title"
+					:global="global" />
 			</h2>
 			<div class="page-home--approach--content">
-				<edit-block v-model="specific.approach.content" :global="global"/>
+				<edit-block
+					v-model="specific.approach.content"
+					:global="global" />
 			</div>
 			<div class="page-home--approach--cta">
-				<edit-inline v-model="specific.approach.cta" :global="global"/>
+				<edit-inline
+					v-model="specific.approach.cta"
+					:global="global" />
 			</div>
 		</div>
 	</section>
 	<section class="page-home--partner">
 		<h2 class="page-home--partner--title">
-			<edit-inline v-model="common.partner.title" :global="global"/>
+			<edit-inline
+				v-model="common.partner.title"
+				:global="global" />
 		</h2>
 		<div class="page-home--partner--slider">
 			<div class="page-home--partner--slider--content">
 				<ul>
-					<li v-for="(partner, index) in common.partner.partners" :class="{ 'is-selected': index === slider }">
+					<li
+						v-for="(partner, index) in common.partner.partners"
+						:class="{ 'is-selected': index === slider }">
 						<div class="page-home--partner--image">
-							<edit-inline v-model="common.partner.partners[index].image" :global="global" :empty="'Image manquante'"/>
+							<edit-inline
+								v-model="common.partner.partners[index].image"
+								:global="global" :empty="'Image manquante'" />
 						</div>
 						<div class="page-home--partner--content">
-							<edit-block v-model="common.partner.partners[index].content" :global="global"/>
+							<edit-block
+								v-model="common.partner.partners[index].content"
+								:global="global" />
 						</div>
 					</li>
 				</ul>
 			</div>
 			<div class="page-home--partner--slider--navigation">
-				<div @click="goToPreviousSlide" class="left">
+				<div class="left"
+					@click="goToPreviousSlide">
 					<img src="./media/images/left-arrow.svg" width="10" alt="Précedent">
 				</div>
-				<div @click="goToNextSlide" class="right">
+				<div class="right"
+					@click="goToNextSlide">
 					<img src="./media/images/right-arrow.svg" width="10" alt="Suivant">
 				</div>
 			</div>
 			<div class="page-home--partner--slider--pagination">
 				<ul>
-					<li @click="goToSlide(index)" v-for="(partner, index) in common.partner.partners" :class="{ 'is-selected': index === slider }"></li>
+					<li v-for="(partner, index) in common.partner.partners"
+					:class="{ 'is-selected': index === slider }"
+					@click="goToSlide(index)"></li>
 				</ul>
 			</div>
 		</div>
 	</section>
-	<edit-global v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+	<edit-global
+		v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
 		:global="global"
 		:common="common"
@@ -78,5 +110,5 @@
 		:meta="meta"
 		:body="specific"
 		:current="common.edit.local"
-		:options="options"/>
+		:options="options" />
 </div>

@@ -1,1 +1,8 @@
-<div :class="{ 'is-attr': global.isClient && global.me.id && global.isEditable }"><slot/><span v-if="global.isClient && global.me.id && global.isEditable" class="attr-list"><slot name="attrs"/></span></div>
+<div
+	:class="{ 'is-attr': global.isClient && global.me.id && global.isEditable }"><!--
+	--><slot/><!--
+	--><span class="attr-list"
+			v-if="global.isClient && global.me.id && global.isEditable"><!--
+		--><slot name="attrs"/><!--
+	--></span><!--
+--></div>

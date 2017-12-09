@@ -1,7 +1,6 @@
 /* jshint node: true */
 module.exports = (function () {
 	var NA = this.NA,
-		path = NA.modules.path,
 		lang = NA.webconfig.languageCode;
 
 	return {

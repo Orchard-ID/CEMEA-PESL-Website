@@ -1,6 +1,6 @@
 /* jshint node: true */
 /* global NA, Vue */
-module.exports = function (specific, template, mixin, options) {
+module.exports = function (template, specific, mixin, options) {
 	return {
 		name: 'PageApproach',
 		mixins: (mixin) ? [mixin] : undefined,
@@ -19,7 +19,7 @@ module.exports = function (specific, template, mixin, options) {
 				options: options,
 				meta: specific.meta,
 				specific: specific.body,
-				searchQuery: ""
+				searchQuery: ''
 			};
 		},
 		beforeMount: function () {

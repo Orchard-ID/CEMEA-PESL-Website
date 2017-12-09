@@ -1,30 +1,45 @@
 <div class="page-approach">
 	<article class="page-approach--article">
 		<div class="page-approach--image">
-			<edit-inline v-model="specific.image" :global="global" :empty="'Image manquante'"/>
+			<edit-inline
+				v-model="specific.image"
+				:global="global"
+				:empty="'Image manquante'" />
 		</div>
 		<div class="page-approach--main">
 			<h1 class="page-approach--title">
-				<edit-inline v-model="specific.title" :global="global"/>
+				<edit-inline
+					v-model="specific.title"
+					:global="global" />
 			</h1>
 			<div class="page-approach--content">
-				<edit-block v-model="specific.content" :global="global"/>
+				<edit-block
+					v-model="specific.content"
+					:global="global" />
 			</div>
 			<div class="page-approach--quote">
-				<edit-block v-model="specific.quote" :global="global"/>
+				<edit-block
+					v-model="specific.quote"
+					:global="global" />
 			</div>
 		</div>
 	</article>
 	<section class="page-approach--structure">
 		<h2 class="page-approach--structure--title">
-			<edit-inline v-model="specific.structure.title" :global="global"/>
+			<edit-inline
+				v-model="specific.structure.title"
+				:global="global" />
 		</h2>
 		<ul>
 			<li v-for="(item, index) in specific.structure.roles">
 				<div class="page-approach--structure--role">
-					<edit-block v-model="specific.structure.roles[index].content" :global="global"/>
+					<edit-block
+						v-model="specific.structure.roles[index].content"
+						:global="global" />
 					<div class="page-approach--structure--role--image">
-						<edit-inline v-model="specific.structure.roles[index].image" :global="global" :empty="'Image manquante'"/>
+						<edit-inline
+							v-model="specific.structure.roles[index].image"
+							:global="global" :empty="'Image manquante'" />
 					</div>
 				</div>
 			</li>
@@ -32,39 +47,62 @@
 	</section>
 	<section class="page-approach--documentation">
 		<h2 class="page-approach--documentation--title">
-			<edit-inline v-model="specific.documentation.title" :global="global"/>
+			<edit-inline
+				v-model="specific.documentation.title"
+				:global="global" />
 		</h2>
 		<div class="page-approach--search-bar">
-			<div class="field search" :class="{ empty: searchQuery === '' }">
+			<div class="field search"
+				:class="{ empty: searchQuery === '' }">
 				<button @click="getSearchResult">
-					<edit-inline v-model="specific.documentation.button" :global="global"/>
+					<edit-inline
+						v-model="specific.documentation.button"
+						:global="global" />
 				</button>
 				<edit-wrapper-attr :global="global">
-					<label for="approach-form--search" v-html="specific.documentation.search.label.content"></label>
+					<label for="approach-form--search"
+						v-html="specific.documentation.search.label.content"></label>
 					<template slot="attrs">
-						<edit-attr :label="'Placeholder -: '" v-model="specific.documentation.search.label.placeholder" :global="global"/>
-						<edit-attr :label="'Placeholder +: '" v-model="specific.documentation.search.label.content" :global="global"/>
+						<edit-attr
+							v-model="specific.documentation.search.label.placeholder"
+							:label="'Placeholder -: '"
+							:global="global" />
+						<edit-attr
+							v-model="specific.documentation.search.label.content"
+							:label="'Placeholder +: '"
+							:global="global" />
 					</template>
 				</edit-wrapper-attr>
-				<input @keyup.enter="getSearchResult" type="text" id="approach-form--search" class="approach-form--search" name="search" :placeholder="specific.documentation.search.label.placeholder" v-model="searchQuery">
+				<input @keyup.enter="getSearchResult" type="text" id="approach-form--search" class="approach-form--search" name="search" 
+					v-model="searchQuery"
+					:placeholder="specific.documentation.search.label.placeholder" />
 			</div>
 		</div>
-		<div class="page-approach--search-result" :data-search="JSON.stringify(global.search.results)">
+		<div class="page-approach--search-result"
+			:data-search="JSON.stringify(global.search.results)">
 			<ul v-if="global.search.results.length > 0">
-				<li v-for="(item, index) in global.search.results" :key="item.id">
+				<li
+					v-for="(item, index) in global.search.results"
+					:key="item.id">
 					<div class="page-approach--documentation--result">
-						<div class="page-approach--documentation--result--image" v-html="global.search.results[index].image"></div>
-						<div class="page-approach--documentation--result--title" v-html="global.search.results[index].title"></div>
-						<div class="page-approach--documentation--result--detail" v-html="global.search.results[index].detail"></div>
+						<div class="page-approach--documentation--result--image"
+							v-html="global.search.results[index].image"></div>
+						<div class="page-approach--documentation--result--title"
+							v-html="global.search.results[index].title"></div>
+						<div class="page-approach--documentation--result--detail"
+							v-html="global.search.results[index].detail"></div>
 					</div>
 				</li>
 			</ul>
 			<div v-else>
-				<edit-inline v-model="specific.documentation.empty" :global="global"/>
+				<edit-inline
+					v-model="specific.documentation.empty"
+					:global="global" />
 			</div>
 		</div>
 	</section>
-	<edit-global v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+	<edit-global
+		v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 		ref="edit"
 		:global="global"
 		:common="common"
@@ -72,5 +110,5 @@
 		:meta="meta"
 		:body="specific"
 		:current="common.edit.local"
-		:options="options"/>
+		:options="options" />
 </div>

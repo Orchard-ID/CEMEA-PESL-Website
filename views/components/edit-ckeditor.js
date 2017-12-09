@@ -2,7 +2,6 @@
 /* global CKEDITOR */
 module.exports = function (template) {
 	var inc = 0;
-
 	return {
 		name: 'EditCkeditor',
 		props: {

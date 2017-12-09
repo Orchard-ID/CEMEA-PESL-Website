@@ -1,10 +1,15 @@
 <div class="page-error">
 	<div class="page-error--inner">
 		<h1>
-			<edit-inline v-model="specific.title" :global="global"/>
+			<edit-inline
+				v-model="specific.title"
+				:global="global" />
 		</h1>
-		<edit-block v-model="specific.content" :global="global"/>
-		<edit-global v-if="global.isClient && global.me.id && global.me.role === 'admin'"
+		<edit-block
+			v-model="specific.content"
+			:global="global" />
+		<edit-global
+			v-if="global.isClient && global.me.id && global.me.role === 'admin'"
 			ref="edit"
 			:global="global"
 			:common="common"
@@ -12,6 +17,6 @@
 			:meta="meta"
 			:body="specific"
 			:current="common.edit.local"
-			:options="options"/>
+			:options="options" />
 	</div>
 </div>

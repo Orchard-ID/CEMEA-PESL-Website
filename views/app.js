@@ -1,6 +1,5 @@
 /* jshint node: true */
-module.exports = function (common, specific, template, router, webconfig, extra) {
-
+module.exports = function (template, router, webconfig, common, specific, extra) {
 	return {
 		router: router,
 		name: 'App',
