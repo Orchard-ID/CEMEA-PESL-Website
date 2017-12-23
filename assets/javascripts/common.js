@@ -239,6 +239,7 @@ Promise.all([
 		}
 	});
 
+	// Allow cookie consent to use view system
 	document.getElementsByClassName('cc-link')[0].addEventListener('click', function (e) {
 		e.preventDefault();
 		router.push({ path: e.target.getAttribute('href') });
